@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://c2trace.local/schemas/c2trace.bench.case.v4",
+  "title": "C2Trace Bench v4 case",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "name",
+    "status",
+    "dataset_stratum",
+    "source_kind",
+    "source",
+    "claim",
+    "scope",
+    "contracts",
+    "safety"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "c2trace.bench.case.v4"
+    },
+    "case_id": {
+      "$ref": "#/$defs/caseId"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "mapping_pending",
+        "qualification_pending_live",
+        "admitted",
+        "excluded"
+      ]
+    },
+    "dataset_stratum": {
+      "enum": [
+        "named_chain_projection",
+        "micro_emulation_plan",
+        "platform_native_control"
+      ]
+    },
+    "source_kind": {
+      "enum": [
+        "attack_flow",
+        "attack_evaluations",
+        "ctid_micro",
+        "caldera_native"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "source_lock",
+        "artifact_id",
+        "artifact_path",
+        "artifact_sha256"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]{2,80}$"
+        },
+        "source_lock": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "artifact_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "claim_type",
+        "statement",
+        "full_original_reproduction"
+      ],
+      "properties": {
+        "claim_type": {
+          "enum": [
+            "single_windows_endpoint_projection",
+            "compound_behavior_plan",
+            "platform_native_control"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "full_original_reproduction": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "platform",
+        "endpoint_count",
+        "included",
+        "excluded"
+      ],
+      "properties": {
+        "platform": {
+          "const": "windows"
+        },
+        "endpoint_count": {
+          "const": 1
+        },
+        "included": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "excluded": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "contracts": {
+      "type": "object",
+      "required": [
+        "mapping",
+        "ground_truth",
+        "target_profile",
+        "operation_plan",
+        "evidence_plan",
+        "cleanup_plan",
+        "caldera_bundle"
+      ],
+      "properties": {
+        "mapping": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "ground_truth": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "target_profile": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "operation_plan": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "evidence_plan": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "cleanup_plan": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "caldera_bundle": {
+          "$ref": "#/$defs/relativePath"
+        }
+      },
+      "additionalProperties": false
+    },
+    "dependency_paths": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/relativePath"
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "isolated_lab_only",
+        "vm_snapshot_required",
+        "control_agent_protected",
+        "destructive_impact_allowed",
+        "cleanup_after_scoring"
+      ],
+      "properties": {
+        "isolated_lab_only": {
+          "const": true
+        },
+        "vm_snapshot_required": {
+          "const": true
+        },
+        "control_agent_protected": {
+          "const": true
+        },
+        "destructive_impact_allowed": {
+          "const": false
+        },
+        "cleanup_after_scoring": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "caseId": {
+      "type": "string",
+      "pattern": "^(AF|AEL|MEP|STK)-[A-Z0-9][A-Z0-9-]*$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "relativePath": {
+      "type": "string",
+      "pattern": "^(?![A-Za-z]:)(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+"
+    }
+  },
+  "additionalProperties": false
+}

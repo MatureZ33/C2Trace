@@ -1,0 +1,42 @@
+{
+  "schema_version": "c2trace.bench.operation_plan.v4",
+  "case_id": "AURORA-CHAIN-002",
+  "source_id": "aurora-demo-chain-002-20260731",
+  "dataset_stratum": "public_tool_benchmark",
+  "planner_id": "00000000-0000-0000-0000-000000000001",
+  "obfuscator": "plain-text",
+  "runtime_source": {
+    "id_template": "4e8ccf19-7d23-62b3-c0e8-5f3a6b7d8c91",
+    "facts": [
+      "c2trace.victim_ip",
+      "c2trace.kali_ip",
+      "c2trace.target_name"
+    ]
+  },
+  "operations": [
+    {
+      "role": "bootstrap",
+      "execution_agent_role": "control",
+      "adversary_id": "00000000-0000-0000-0000-000000000010",
+      "agent_group_template": "c2t-control",
+      "atomic_ordering": [
+        "b83657a1-fdc7-5d2e-a6b9-c0e8532f7bd1"
+      ],
+      "mandatory_ability_ids": [
+        "b83657a1-fdc7-5d2e-a6b9-c0e8532f7bd1"
+      ]
+    },
+    {
+      "role": "scenario",
+      "execution_agent_role": "driver",
+      "adversary_id": "00000000-0000-0000-0000-000000000020",
+      "agent_group_template": "c2t-driver",
+      "atomic_ordering": [
+        "c94768b2-0ed8-5e3f-b7ca-d1f9643a8ce2"
+      ],
+      "mandatory_ability_ids": [
+        "c94768b2-0ed8-5e3f-b7ca-d1f9643a8ce2"
+      ]
+    }
+  ]
+}

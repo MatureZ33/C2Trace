@@ -1,0 +1,98 @@
+{
+  "schema_version": "c2trace.bench.mapping.v4",
+  "case_id": "AEL-CARBANAK-RAT-001",
+  "source_id": "ael-carbanak-rat-001-20260813",
+  "source_kind": "attack_evaluations",
+  "dataset_stratum": "named_chain_projection",
+  "status": "static_mapping_complete",
+  "source_steps": [
+    {
+      "step_id": "carbanak.deploy",
+      "name": "Stage and execute Carbanak http-rat.js via cscript.exe",
+      "description": "The public AEL http-rat.js script is copied to the victim and started via cscript.exe, establishing an outbound HTTPS connection to the Carbon-ACK C2 server.",
+      "technique_id": "T1071.001",
+      "role": "mandatory",
+      "fidelity": "parameterized",
+      "scope_reason": "A public-source http-rat.js script is hash-verified and deployed to a run-scoped path; one HTTPS callback session is established via cscript.exe.",
+      "implementation": {
+        "kind": "carbanak_cscript_rat",
+        "operation_role": "bootstrap",
+        "implementation_mode": "controlled_reimplementation",
+        "ability_id": "a06ae874-1cf9-5e47-8043-ea834577a654",
+        "execution_platform": "windows",
+        "effective_platform": "windows",
+        "executor": "cscript",
+        "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "upstream_ability_id": null,
+        "upstream_source": "https://github.com/attackevals/ael",
+        "privilege": "user_context",
+        "requirements": [],
+        "cleanup_policy": "deferred_external",
+        "cleanup_action_id": "cleanup.carbanak_script",
+        "trace_fact_ids": [
+          "trace.carbanak.file",
+          "trace.carbanak.process",
+          "trace.carbanak.network"
+        ],
+        "fact_dependencies": [
+          "c2trace.target_name",
+          "c2trace.victim_ip",
+          "c2trace.kali_ip"
+        ],
+        "payload_dependencies": []
+      }
+    },
+    {
+      "step_id": "carbanak.enum_system",
+      "name": "Issue ENUM_SYSTEM via Carbanak HTTPS callback",
+      "description": "One ENUM_SYSTEM task is issued through the established HTTPS callback to retrieve system and process information.",
+      "technique_id": "T1087",
+      "role": "mandatory",
+      "fidelity": "controlled_reimplementation",
+      "scope_reason": "The AEL enum-system task is issued via the Carbon-ACK tasking.html file channel.",
+      "implementation": {
+        "kind": "carbanak_task",
+        "operation_role": "scenario",
+        "implementation_mode": "controlled_reimplementation",
+        "ability_id": "5fa2d563-6d8e-5326-ab34-037f7dce531b",
+        "execution_platform": "linux",
+        "effective_platform": "windows",
+        "executor": "carbon_ack_tasking",
+        "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "upstream_ability_id": null,
+        "upstream_source": "https://github.com/attackevals/ael",
+        "privilege": "user_context",
+        "requirements": [],
+        "cleanup_policy": "deferred_external",
+        "cleanup_action_id": null,
+        "trace_fact_ids": [
+          "trace.carbanak.enum_system"
+        ],
+        "fact_dependencies": [
+          "c2trace.target_name",
+          "c2trace.victim_ip",
+          "c2trace.kali_ip"
+        ],
+        "payload_dependencies": []
+      }
+    }
+  ],
+  "source_relations": [
+    {
+      "source_step_id": "carbanak.deploy",
+      "target_step_id": "carbanak.enum_system",
+      "relation": "sequence"
+    }
+  ],
+  "linearization": {
+    "source_step_order": [
+      "carbanak.deploy",
+      "carbanak.enum_system"
+    ],
+    "ability_order": [
+      "a06ae874-1cf9-5e47-8043-ea834577a654",
+      "5fa2d563-6d8e-5326-ab34-037f7dce531b"
+    ],
+    "interpretation": "Deterministic Carbon-ACK tasking preserves the frozen source order/causality inside the declared single-endpoint boundary."
+  }
+}

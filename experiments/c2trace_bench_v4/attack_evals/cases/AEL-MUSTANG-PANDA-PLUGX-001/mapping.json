@@ -1,0 +1,31 @@
+{
+  "schema_version": "c2trace.bench.mapping.v4",
+  "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+  "source_id": "ael-mustang-panda-plugx-001-20260923",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "ability_mappings": [
+    {
+      "ability_id": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+      "operation_role": "bootstrap",
+      "source_step_ids": [
+        "plugx.deploy"
+      ],
+      "attack_techniques": [
+        "T1105"
+      ],
+      "description": "Deploy PlugX implant to Windows host"
+    },
+    {
+      "ability_id": "f4e3d2c1-b6a5-4d8f-9c0b-1e2f3a4b5c6d",
+      "operation_role": "scenario",
+      "source_step_ids": [
+        "plugx.enum_processes"
+      ],
+      "attack_techniques": [
+        "T1057"
+      ],
+      "description": "Process enumeration via PlugX C2 channel"
+    }
+  ]
+}

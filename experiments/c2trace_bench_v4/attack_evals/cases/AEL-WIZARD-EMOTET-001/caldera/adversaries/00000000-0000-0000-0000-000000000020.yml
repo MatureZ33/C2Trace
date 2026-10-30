@@ -1,0 +1,7 @@
+---
+id: 00000000-0000-0000-0000-000000000020
+name: c2t-emotet-scenario
+description: Issue process enumeration via Emotet C2
+adversary_id: 00000000-0000-0000-0000-000000000020
+atomic_ordering:
+- d4c3b2a1-f6e5-5b7a-9d8c-1f0e2a3b4c5d

@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://c2trace.local/schemas/c2trace.bench.operation_plan.v4",
+  "title": "C2Trace Bench v4 CALDERA operation plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "source_id",
+    "dataset_stratum",
+    "planner_id",
+    "obfuscator",
+    "runtime_source",
+    "operations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "c2trace.bench.operation_plan.v4"
+    },
+    "case_id": {
+      "$ref": "#/$defs/caseId"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dataset_stratum": {
+      "enum": [
+        "named_chain_projection",
+        "micro_emulation_plan",
+        "platform_native_control"
+      ]
+    },
+    "planner_id": {
+      "$ref": "#/$defs/uuid"
+    },
+    "obfuscator": {
+      "const": "plain-text"
+    },
+    "runtime_source": {
+      "type": "object",
+      "required": [
+        "id_template",
+        "facts"
+      ],
+      "properties": {
+        "id_template": {
+          "type": "string",
+          "minLength": 1
+        },
+        "facts": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^c2trace\\.[a-z0-9_.-]+$"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "operations": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "#/$defs/operation"
+      }
+    }
+  },
+  "$defs": {
+    "caseId": {
+      "type": "string",
+      "pattern": "^(AF|AEL|MEP|STK)-[A-Z0-9][A-Z0-9-]*$"
+    },
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "operation": {
+      "type": "object",
+      "required": [
+        "role",
+        "execution_agent_role",
+        "adversary_id",
+        "agent_group_template",
+        "atomic_ordering",
+        "mandatory_ability_ids"
+      ],
+      "properties": {
+        "role": {
+          "enum": [
+            "bootstrap",
+            "scenario"
+          ]
+        },
+        "execution_agent_role": {
+          "enum": [
+            "control",
+            "target",
+            "driver"
+          ]
+        },
+        "adversary_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "agent_group_template": {
+          "type": "string",
+          "minLength": 1
+        },
+        "atomic_ordering": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/uuid"
+          }
+        },
+        "mandatory_ability_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/uuid"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

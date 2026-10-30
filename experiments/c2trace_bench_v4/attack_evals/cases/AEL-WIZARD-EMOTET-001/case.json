@@ -1,0 +1,40 @@
+{
+  "schema_version": "c2trace.bench.case.v4",
+  "case_id": "AEL-WIZARD-EMOTET-001",
+  "source_id": "ael-wizard-emotet-001-20260923",
+  "source_kind": "attack_evaluations",
+  "dataset_stratum": "named_chain_projection",
+  "adversary_group": "wizard_spider",
+  "c2_tool": "Emotet",
+  "title": "Emotet DLL HTTP C2 Implant (Wizard Spider)",
+  "description": "Wizard Spider Emotet DLL backdoor loaded via rundll32.exe with HTTP C2 and AES-encrypted communications",
+  "live_allowed": true,
+  "target_collection": "attack_evals",
+  "contracts": {
+    "mapping": "attack_evals/cases/AEL-WIZARD-EMOTET-001/mapping.json",
+    "ground_truth": "attack_evals/cases/AEL-WIZARD-EMOTET-001/ground_truth.template.json",
+    "target_profile": "attack_evals/cases/AEL-WIZARD-EMOTET-001/target_profile.json",
+    "operation_plan": "attack_evals/cases/AEL-WIZARD-EMOTET-001/operation_plan.json",
+    "evidence_plan": "attack_evals/cases/AEL-WIZARD-EMOTET-001/evidence_plan.json",
+    "cleanup_plan": "attack_evals/cases/AEL-WIZARD-EMOTET-001/cleanup_plan.json",
+    "caldera_bundle": "attack_evals/cases/AEL-WIZARD-EMOTET-001/caldera/deployment_manifest.json"
+  },
+  "dependency_paths": [
+    "attack_evals/cases/AEL-WIZARD-EMOTET-001/caldera/deployment_manifest.json"
+  ],
+  "safety": {
+    "isolated_lab_only": true,
+    "vm_snapshot_required": false,
+    "control_agent_protected": true,
+    "destructive_impact_allowed": false,
+    "cleanup_after_scoring": true
+  },
+  "source": {
+    "source_id": "ael-wizard-emotet-001-20260923",
+    "source_lock": "attack_evals/raw/ManagedServices/wizard_spider/Emulation_Plan/README.md",
+    "artifact_id": "ael-wizard-emotet",
+    "artifact_path": "ManagedServices/wizard_spider/Resources/Emotet/EmotetClientDLL/dllmain.cpp",
+    "artifact_sha256": "9d4ac7addbfe956c904a6ab3b4a74e47b224ec002fe241ed41edf638444e993c"
+  },
+  "status": "qualification_pending_live"
+}

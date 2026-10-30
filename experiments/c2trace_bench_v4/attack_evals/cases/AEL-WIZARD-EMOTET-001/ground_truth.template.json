@@ -1,0 +1,179 @@
+{
+  "schema_version": "c2trace.bench.ground_truth.v4",
+  "case_id": "AEL-WIZARD-EMOTET-001",
+  "source_id": "ael-wizard-emotet-001-20260923",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "target_kind": "emotet_dll_implant",
+  "ability_instances": [
+    {
+      "instance_key": "bootstrap.deploy_emotet",
+      "operation_role": "bootstrap",
+      "operation_id": "FILL_FROM_BOOTSTRAP_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "a1b2c3d4-e5f6-5a7b-8c9d-0e1f2a3b4c5d",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_step_ids": [
+        "emotet.deploy"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.emotet.file",
+          "trace_type": "file",
+          "canonical_key": "file:path+sha256",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:file"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_emotet",
+          "expected_value": {
+            "path": "C:\\Users\\Public\\c2t_<run_id>.dll",
+            "sha256": "9d4ac7addbfe956c904a6ab3b4a74e47b224ec002fe241ed41edf638444e993c"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/file",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        },
+        {
+          "trace_id": "trace.emotet.process",
+          "trace_type": "process",
+          "canonical_key": "process:pid+creation_time+path",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:process"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_emotet",
+          "expected_value": {
+            "pid": "FILL_FROM_TARGET",
+            "creation_time": "FILL_FROM_BEFORE_RESPONSE",
+            "path": "FILL_FROM_EXECUTABLE_PATH"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/process",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        },
+        {
+          "trace_id": "trace.emotet.network",
+          "trace_type": "network_connection",
+          "canonical_key": "network:protocol+src_ip+src_port+dst_ip+dst_port+pid",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:network_connection"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_emotet",
+          "expected_value": {
+            "protocol": "tcp",
+            "src_ip": "#{c2trace.victim_ip}",
+            "src_port": "FILL_FROM_SURICATA",
+            "dst_ip": "#{c2trace.kali_ip}",
+            "dst_port": 80,
+            "pid": "FILL_FROM_TARGET"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/network",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        }
+      ]
+    },
+    {
+      "instance_key": "scenario.enum_processes",
+      "operation_role": "scenario",
+      "operation_id": "FILL_FROM_SCENARIO_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "d4c3b2a1-f6e5-5b7a-9d8c-1f0e2a3b4c5d",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_step_ids": [
+        "emotet.enum_processes"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.emotet.enum_processes",
+          "trace_type": "process",
+          "canonical_key": "process:pid+creation_time+path",
+          "required": true,
+          "discriminative": false,
+          "anchor": false,
+          "shared_context": true,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:process"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "scenario.enum_processes",
+          "expected_value": {
+            "pid": "FILL_FROM_TARGET",
+            "creation_time": "FILL_FROM_BEFORE_RESPONSE",
+            "path": "FILL_FROM_EXECUTABLE_PATH"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/process",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Process enumeration is issued through the same rundll32 process; the process must be observable."
+        }
+      ]
+    }
+  ],
+  "response_actions": [
+    {
+      "tool": "kill_process",
+      "required": true,
+      "arguments": {
+        "pid": "FILL_FROM_TARGET",
+        "expected_path": "FILL_FROM_EXECUTABLE_PATH"
+      },
+      "target": "response_target"
+    },
+    {
+      "tool": "remove_file",
+      "required": true,
+      "arguments": {
+        "path": "C:\\Users\\Public\\c2t_<run_id>.dll"
+      },
+      "target": "response_target"
+    }
+  ]
+}

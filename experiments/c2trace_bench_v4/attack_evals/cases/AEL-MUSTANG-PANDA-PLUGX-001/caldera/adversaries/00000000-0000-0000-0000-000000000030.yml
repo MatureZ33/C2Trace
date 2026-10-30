@@ -1,0 +1,5 @@
+id: 00000000-0000-0000-0000-000000000030
+name: PlugX Bootstrap
+description: Deploy PlugX implant
+atomic_ordering:
+- e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b

@@ -1,0 +1,54 @@
+{
+  "schema_version": "c2trace.bench.case.v4",
+  "case_id": "MEP-WINDOWS-WEBSHELL-01",
+  "name": "CTID Windows WebShell target qualification",
+  "status": "qualification_pending_live",
+  "dataset_stratum": "micro_emulation_plan",
+  "source_kind": "ctid_micro",
+  "source": {
+    "source_id": "ctid-micro-emulation-plans-2025-05-28",
+    "source_lock": "ctid_micro/source_lock.json",
+    "artifact_id": "artifact-98c08cbc69a91287",
+    "artifact_path": "ctid_micro/raw/micro_emulation_plans/src/webshell/README_windows_webshell.md",
+    "artifact_sha256": "f8379503532398b33d6adcbdb073cbb0620bcd9abfb3f179b9652a4fba79c69e"
+  },
+  "claim": {
+    "claim_type": "compound_behavior_plan",
+    "statement": "Pinned official CTID Windows WebShell deployed as the response target; CALDERA Kali driver deterministically executes two published discovery commands.",
+    "full_original_reproduction": false
+  },
+  "scope": {
+    "platform": "windows",
+    "endpoint_count": 1,
+    "included": [
+      "official WebShell deployment",
+      "HTTP listener",
+      "group discovery",
+      "process discovery"
+    ],
+    "excluded": [
+      "random command loop",
+      "IIS/PHP variants",
+      "internet exposure"
+    ]
+  },
+  "contracts": {
+    "mapping": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/mapping.json",
+    "ground_truth": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/ground_truth.template.json",
+    "target_profile": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/target_profile.json",
+    "operation_plan": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/operation_plan.json",
+    "evidence_plan": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/evidence_plan.json",
+    "cleanup_plan": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/cleanup_plan.json",
+    "caldera_bundle": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/caldera/deployment_manifest.json"
+  },
+  "dependency_paths": [
+    "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/caldera/deployment_manifest.json"
+  ],
+  "safety": {
+    "isolated_lab_only": true,
+    "vm_snapshot_required": true,
+    "control_agent_protected": true,
+    "destructive_impact_allowed": false,
+    "cleanup_after_scoring": true
+  }
+}

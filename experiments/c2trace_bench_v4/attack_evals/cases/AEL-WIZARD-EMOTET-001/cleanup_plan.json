@@ -1,0 +1,44 @@
+{
+  "schema_version": "c2trace.bench.cleanup_plan.v4",
+  "case_id": "AEL-WIZARD-EMOTET-001",
+  "source_id": "ael-wizard-emotet-001-20260923",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "fail_closed": true,
+  "actions": [
+    {
+      "action_id": "cleanup.emotet_process",
+      "source_step_ids": [
+        "emotet.deploy"
+      ],
+      "phase": "after_scoring",
+      "tool": "stop_process",
+      "target_template": {
+        "path": "C:\\Users\\Public\\c2t_<run_id>.dll"
+      },
+      "identity_validation": [
+        "path",
+        "pid",
+        "creation_time",
+        "run_id"
+      ],
+      "required": true
+    },
+    {
+      "action_id": "cleanup.emotet_dll",
+      "source_step_ids": [
+        "emotet.deploy"
+      ],
+      "phase": "after_scoring",
+      "tool": "remove_file",
+      "target_template": {
+        "path": "C:\\Users\\Public\\c2t_<run_id>.dll"
+      },
+      "identity_validation": [
+        "path",
+        "sha256"
+      ],
+      "required": true
+    }
+  ]
+}

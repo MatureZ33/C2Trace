@@ -1,0 +1,34 @@
+{
+  "schema_version": "c2trace.bench.mapping.v4",
+  "case_id": "AEL-WIZARD-EMOTET-001",
+  "source_id": "ael-wizard-emotet-001-20260923",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "techniques": [
+    {
+      "technique_id": "T1071.001",
+      "tactic": "command-and-control",
+      "description": "Application Layer Protocol: Web Protocols"
+    },
+    {
+      "technique_id": "T1055",
+      "tactic": "defense-evasion",
+      "description": "Process Injection: Dynamic-link Library Injection (rundll32)"
+    },
+    {
+      "technique_id": "T1087",
+      "tactic": "discovery",
+      "description": "Account Discovery"
+    },
+    {
+      "technique_id": "T1082",
+      "tactic": "discovery",
+      "description": "System Information Discovery"
+    },
+    {
+      "technique_id": "T1573.001",
+      "tactic": "command-and-control",
+      "description": "Encrypted Channel: Symmetric Cryptography (AES)"
+    }
+  ]
+}

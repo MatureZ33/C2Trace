@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://c2trace.local/schemas/c2trace.bench.admission.v4",
+  "title": "C2Trace Bench v4 immutable admission dependency binding",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "admission_id",
+    "status",
+    "case_id",
+    "dataset_stratum",
+    "trial_class",
+    "dependency_lock",
+    "qualification_hashes",
+    "vm_snapshot_id",
+    "software_lock_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "c2trace.bench.admission.v4"
+    },
+    "admission_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "status": {
+      "const": "admitted"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^(AF|AEL|MEP|STK)-[A-Z0-9][A-Z0-9-]*$"
+    },
+    "dataset_stratum": {
+      "enum": [
+        "named_chain_projection",
+        "micro_emulation_plan",
+        "platform_native_control"
+      ]
+    },
+    "trial_class": {
+      "enum": [
+        "evaluation_valid_pass",
+        "evaluation_valid_fail"
+      ]
+    },
+    "dependency_lock": {
+      "type": "object"
+    },
+    "qualification_hashes": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "vm_snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "software_lock_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": false
+}

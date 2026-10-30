@@ -1,0 +1,7 @@
+---
+id: 00000000-0000-0000-0000-000000000010
+name: c2t-emotet-bootstrap
+description: Deploy Emotet C2 DLL implant
+adversary_id: 00000000-0000-0000-0000-000000000010
+atomic_ordering:
+- a1b2c3d4-e5f6-5a7b-8c9d-0e1f2a3b4c5d

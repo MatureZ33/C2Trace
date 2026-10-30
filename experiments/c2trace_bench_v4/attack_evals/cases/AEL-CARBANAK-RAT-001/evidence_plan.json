@@ -1,0 +1,67 @@
+{
+  "schema_version": "c2trace.bench.evidence_plan.v4",
+  "case_id": "AEL-CARBANAK-RAT-001",
+  "source_id": "ael-carbanak-rat-001-20260813",
+  "dataset_stratum": "named_chain_projection",
+  "captures": [
+    {
+      "capture_id": "baseline.host",
+      "stage": "baseline",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.js"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "before.host",
+      "stage": "before_response",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [
+        "trace.carbanak.file",
+        "trace.carbanak.process",
+        "trace.carbanak.network",
+        "trace.carbanak.enum_system"
+      ],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.js",
+        "case_id": "AEL-CARBANAK-RAT-001"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "before.network",
+      "stage": "before_response",
+      "collector": "suricata",
+      "trace_fact_ids": [
+        "trace.carbanak.network"
+      ],
+      "selector": {
+        "signature_id": 9400001,
+        "network_mode": "outbound_established"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "after_dryrun.host",
+      "stage": "after_dryrun",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.js"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "after_execute.host",
+      "stage": "after_execute",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.js"
+      },
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+name: Deploy PlugX Implant
+description: Deploy PlugX Python implant to Windows host
+tactics:
+- tactic: command-and-control
+  technique_id: T1105
+technique:
+  attack_id: T1105
+  name: Ingress Tool Transfer
+platforms:
+  windows:
+    psh:
+      command: echo plugx_deploy
+executors:
+- name: psh
+  platform: windows
+  command: echo plugx_deploy

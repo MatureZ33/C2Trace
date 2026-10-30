@@ -1,0 +1,44 @@
+{
+  "schema_version": "c2trace.bench.cleanup_plan.v4",
+  "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+  "source_id": "ael-mustang-panda-plugx-001-20260923",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "fail_closed": true,
+  "actions": [
+    {
+      "action_id": "cleanup.plugx_process",
+      "source_step_ids": [
+        "plugx.deploy"
+      ],
+      "phase": "after_scoring",
+      "tool": "stop_process",
+      "target_template": {
+        "path": "C:\\Users\\Public\\c2t_<run_id>.py"
+      },
+      "identity_validation": [
+        "path",
+        "pid",
+        "creation_time",
+        "run_id"
+      ],
+      "required": true
+    },
+    {
+      "action_id": "cleanup.plugx_implant",
+      "source_step_ids": [
+        "plugx.deploy"
+      ],
+      "phase": "after_scoring",
+      "tool": "remove_file",
+      "target_template": {
+        "path": "C:\\Users\\Public\\c2t_<run_id>.py"
+      },
+      "identity_validation": [
+        "path",
+        "sha256"
+      ],
+      "required": true
+    }
+  ]
+}

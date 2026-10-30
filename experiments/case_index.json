@@ -1,0 +1,138 @@
+[
+  {
+    "id": "C1",
+    "case_id": "AURORA-CHAIN-001",
+    "path": "experiments/c2trace_bench_v4/aurora/cases/AURORA-CHAIN-001",
+    "title": null,
+    "source": {
+      "source_id": "aurora-demo-chain-001-20260731",
+      "source_lock": "aurora/source_lock.json",
+      "artifact_id": "aurora-chain-001-sliver-mtls",
+      "artifact_path": "attacks/v2.0/chain-001/attack_chain.yml",
+      "artifact_sha256": "c811eb3ab50d57ddbf34037e9eb5ef66b7bde7354c9a336ad8c714a7e9a72cc"
+    },
+    "claim_boundary": null,
+    "source_repository": "https://github.com/LexusWang/Aurora-demos",
+    "source_commit": "1701d8fa848576c4f13aeb7a59ff874b6a927957",
+    "reproduction_boundary": null
+  },
+  {
+    "id": "C2",
+    "case_id": "AURORA-CHAIN-002",
+    "path": "experiments/c2trace_bench_v4/aurora/cases/AURORA-CHAIN-002",
+    "title": null,
+    "source": {
+      "source_id": "aurora-demo-chain-002-20260731",
+      "source_lock": "aurora/source_lock.json",
+      "artifact_id": "aurora-chain-002-meterpreter-reverse-tcp",
+      "artifact_path": "attacks/v2.0/chain-002/attack_chain.yml",
+      "artifact_sha256": "c811eb3ab50d57ddbf34037e9eb5ef66b7bde7354c9a336ad8c714a7e9a72cc"
+    },
+    "claim_boundary": null,
+    "source_repository": "https://github.com/LexusWang/Aurora-demos",
+    "source_commit": "1701d8fa848576c4f13aeb7a59ff874b6a927957",
+    "reproduction_boundary": null
+  },
+  {
+    "id": "C3",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "path": "experiments/c2trace_bench_v4/attack_evals/cases/AEL-OILRIG-SIDETWIST-001",
+    "title": "SideTwist HTTP C2 Implant (OilRig APT34)",
+    "source": {
+      "source_id": "ael-oilrig-sidetwist-001-20260923",
+      "source_lock": "attack_evals/raw/ManagedServices/oilrig/Emulation_Plan/README.md",
+      "artifact_id": "ael-oilrig-sidetwist",
+      "artifact_path": "ManagedServices/oilrig/Resources/SideTwist/SideTwist/src/SideTwist.cpp",
+      "artifact_sha256": "dc3dfbc995908186ff04d4d888fbe2a3c5c9be92090a0d83c3984f731be6b0e9"
+    },
+    "claim_boundary": null,
+    "source_repository": "https://github.com/attackevals/ael",
+    "source_commit": "5594518da57ba41faaaaa99b3e0078d29504b033",
+    "reproduction_boundary": null
+  },
+  {
+    "id": "C4",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "path": "experiments/c2trace_bench_v4/attack_evals/cases/AEL-SANDWORM-EXARAMEL-WIN-001",
+    "title": "Exaramel-Windows HTTPS C2 RAT",
+    "source": {
+      "source_id": "ael-sandworm-exaramel-win-001-20260923",
+      "source_lock": "attack_evals/raw/Enterprise/sandworm/Emulation_Plan/Scenario_1/README.md",
+      "artifact_id": "ael-sandworm-exaramel-windows",
+      "artifact_path": "Enterprise/sandworm/Resources/Exaramel-Windows/main.go",
+      "artifact_sha256": "c25e4bed28d218b8ca8c29c985c9aee9eb52a0ae9ff7d9d8d911cb3a69245fbc"
+    },
+    "claim_boundary": null,
+    "source_repository": "https://github.com/attackevals/ael",
+    "source_commit": "5594518da57ba41faaaaa99b3e0078d29504b033",
+    "reproduction_boundary": null
+  },
+  {
+    "id": "C5",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "path": "experiments/c2trace_bench_v4/attack_evals/cases/AEL-WIZARD-EMOTET-001",
+    "title": "Emotet DLL HTTP C2 Implant (Wizard Spider)",
+    "source": {
+      "source_id": "ael-wizard-emotet-001-20260923",
+      "source_lock": "attack_evals/raw/ManagedServices/wizard_spider/Emulation_Plan/README.md",
+      "artifact_id": "ael-wizard-emotet",
+      "artifact_path": "ManagedServices/wizard_spider/Resources/Emotet/EmotetClientDLL/dllmain.cpp",
+      "artifact_sha256": "9d4ac7addbfe956c904a6ab3b4a74e47b224ec002fe241ed41edf638444e993c"
+    },
+    "claim_boundary": null,
+    "source_repository": "https://github.com/attackevals/ael",
+    "source_commit": "5594518da57ba41faaaaa99b3e0078d29504b033",
+    "reproduction_boundary": null
+  },
+  {
+    "id": "C6",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "path": "experiments/c2trace_bench_v4/attack_evals/cases/AEL-CARBANAK-RAT-001",
+    "title": null,
+    "source": {
+      "source_id": "ael-carbanak-rat-001-20260813",
+      "source_lock": "attack_evals/raw/Enterprise/carbanak/Emulation_Plan/Scenario_1/README.md",
+      "artifact_id": "ael-carbanak-http-rat",
+      "artifact_path": "Enterprise/carbanak/Resources/step1/http-rat.js",
+      "artifact_sha256": "49159d814f7b66d77c11c1570528876ce2865892d7da7207e8c986e6e11fabb8"
+    },
+    "claim_boundary": null,
+    "source_repository": "https://github.com/attackevals/ael",
+    "source_commit": "5594518da57ba41faaaaa99b3e0078d29504b033",
+    "reproduction_boundary": null
+  },
+  {
+    "id": "C7",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "path": "experiments/c2trace_bench_v4/attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001",
+    "title": "PlugX HTTP C2 Implant (Mustang Panda)",
+    "source": {
+      "source_id": "ael-mustang-panda-plugx-001-20260923",
+      "source_lock": "attack_evals/raw/ManagedServices/mustang_panda/Emulation_Plan/README.md",
+      "artifact_id": "ael-mustang-panda-plugx",
+      "artifact_path": "ManagedServices/mustang_panda/Resources/PlugX/plugx_implant.py",
+      "artifact_sha256": "a2a040c4881266a65c1b795fa9229442d8a337e3781d88afcfe1800aee835032"
+    },
+    "claim_boundary": null,
+    "source_repository": "https://github.com/attackevals/ael",
+    "source_commit": "5594518da57ba41faaaaa99b3e0078d29504b033",
+    "reproduction_boundary": null
+  },
+  {
+    "id": "C8",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "path": "experiments/c2trace_bench_v4/ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01",
+    "title": null,
+    "source": {
+      "source_id": "ctid-micro-emulation-plans-2025-05-28",
+      "source_lock": "ctid_micro/source_lock.json",
+      "artifact_id": "artifact-98c08cbc69a91287",
+      "artifact_path": "ctid_micro/raw/micro_emulation_plans/src/webshell/README_windows_webshell.md",
+      "artifact_sha256": "f8379503532398b33d6adcbdb073cbb0620bcd9abfb3f179b9652a4fba79c69e"
+    },
+    "claim_boundary": null,
+    "source_repository": "https://github.com/center-for-threat-informed-defense/adversary_emulation_library",
+    "source_commit": "4467a6eed6e67d25009704130e1d27d1a8007f57",
+    "reproduction_boundary": null
+  }
+]

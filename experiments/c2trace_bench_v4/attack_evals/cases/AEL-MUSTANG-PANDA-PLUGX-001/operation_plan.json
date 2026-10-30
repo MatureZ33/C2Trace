@@ -1,0 +1,43 @@
+{
+  "schema_version": "c2trace.bench.operation_plan.v4",
+  "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+  "source_id": "ael-mustang-panda-plugx-001-20260923",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "planner_id": "00000000-0000-0000-0000-000000000001",
+  "obfuscator": "plain-text",
+  "runtime_source": {
+    "id_template": "c4f8e3b2-d5e7-4f9a-1b3c-4d5e6f7a8b9c",
+    "facts": [
+      "c2trace.victim_ip",
+      "c2trace.kali_ip",
+      "c2trace.target_name"
+    ]
+  },
+  "operations": [
+    {
+      "role": "bootstrap",
+      "execution_agent_role": "control",
+      "adversary_id": "00000000-0000-0000-0000-000000000030",
+      "agent_group_template": "c2t-control",
+      "atomic_ordering": [
+        "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b"
+      ],
+      "mandatory_ability_ids": [
+        "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b"
+      ]
+    },
+    {
+      "role": "scenario",
+      "execution_agent_role": "driver",
+      "adversary_id": "00000000-0000-0000-0000-000000000040",
+      "agent_group_template": "c2t-driver",
+      "atomic_ordering": [
+        "f4e3d2c1-b6a5-4d8f-9c0b-1e2f3a4b5c6d"
+      ],
+      "mandatory_ability_ids": [
+        "f4e3d2c1-b6a5-4d8f-9c0b-1e2f3a4b5c6d"
+      ]
+    }
+  ]
+}

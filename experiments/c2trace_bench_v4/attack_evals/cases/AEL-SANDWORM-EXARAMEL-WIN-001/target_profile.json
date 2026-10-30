@@ -1,0 +1,70 @@
+{
+  "schema_version": "c2trace.bench.target_profile.v4",
+  "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+  "source_id": "ael-sandworm-exaramel-win-001-20260923",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "control_agent": {
+    "kind": "sandcat",
+    "group": "c2t-control",
+    "batch_lifetime": true
+  },
+  "target": {
+    "kind": "exaramel_windows_https_rat",
+    "target_type": "exaramel_https_outbound",
+    "network_mode": "outbound_active_flow",
+    "agent_backed": false,
+    "bootstrap_required": true,
+    "group_template": null,
+    "path_template": "C:\\Users\\Public\\c2t_<run_id>.exe",
+    "executor_order": [
+      "exe"
+    ],
+    "contact": {
+      "protocol": "tcp",
+      "direction": "outbound",
+      "listener_address_template": "192.168.21.132",
+      "listener_port": 18449,
+      "peer_address_template": "<victim_ip>",
+      "peer_port": null,
+      "suricata_signature_id": 9500001
+    },
+    "response_identity": "process_file_network"
+  },
+  "runtime_facts": [
+    {
+      "trait": "c2trace.target_name",
+      "value_template": "c2t_<run_id>",
+      "sensitive": false
+    },
+    {
+      "trait": "c2trace.victim_ip",
+      "value_template": "<victim_ip>",
+      "sensitive": false
+    },
+    {
+      "trait": "c2trace.kali_ip",
+      "value_template": "192.168.21.132",
+      "sensitive": false
+    }
+  ],
+  "identity_requirements": {
+    "new_paw": false,
+    "created_after_bootstrap": true,
+    "exact_path": true,
+    "different_pid_from_control": true,
+    "exactly_one_match": true
+  },
+  "protected_control": {
+    "bind": [
+      "paw",
+      "pid",
+      "creation_time",
+      "path",
+      "sha256",
+      "group",
+      "host",
+      "contact"
+    ]
+  }
+}

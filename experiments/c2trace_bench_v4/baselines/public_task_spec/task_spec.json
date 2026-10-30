@@ -1,0 +1,41 @@
+{
+  "schema_version": "c2trace.public_react_task.v1",
+  "task": {
+    "name": "single-host C2 alert investigation and response",
+    "objective": "Use the supplied alert and live Windows observations to report relevant entities and request narrowly scoped response actions.",
+    "scope": "one Windows endpoint and one network alert",
+    "evidence_rule": "Report only facts returned by a tool or present in the supplied alert. Do not invent identities or outcomes.",
+    "response_rule": "Request a response only after inspecting the relevant object. A successful tool result is the only proof that an action executed.",
+    "post_check_rule": "A post-state check is optional and must report observations; it is not a special verification stage."
+  },
+  "alert_fields": {
+    "required": [
+      "schema_version",
+      "alert_id",
+      "case_id",
+      "source",
+      "alert_type",
+      "victim_ip",
+      "remote_ip",
+      "remote_port",
+      "protocol"
+    ],
+    "optional": [
+      "local_ip",
+      "local_port",
+      "signature",
+      "signature_id",
+      "flow_id",
+      "timestamp",
+      "time_window",
+      "confidence",
+      "description"
+    ],
+    "forbidden": "Evaluation answers, target identities, expected outcomes, and private framework reports are never supplied."
+  },
+  "context_policy": {
+    "ground_truth_available": false,
+    "case_specific_answer_available": false,
+    "tool_results_are_authoritative_for_observed_facts": true
+  }
+}

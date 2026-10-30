@@ -1,0 +1,1168 @@
+{
+  "schema_version": "c2trace.baseline.formal_live_schedule.v2",
+  "created_at": "2026-10-04T00:00:00Z",
+  "formal_live_started": false,
+  "design": "8 cases x 2 systems x 3 repetitions = 48 trials; 24 paired blocks",
+  "seed_label": "c2trace-baseline-v5-formal-20261003",
+  "seed_sha256": "ec71975c79a3fdd2274f4d1700e13a8f8155454b2cd95f2291b5021362ec659c",
+  "case_order_source": "lexicographic frozen CASES list in close_baseline_offline.py",
+  "system_order_source": "per-block deterministic hash-derived shuffle",
+  "failure_policy": {
+    "automatic_rerun": false,
+    "failed_trial_is_retained": true,
+    "replacement_trial": "requires explicit protocol amendment and is excluded from the original primary analysis",
+    "trial_statuses": [
+      "planned",
+      "completed",
+      "infrastructure_invalid",
+      "evaluation_valid_pass",
+      "evaluation_valid_fail"
+    ]
+  },
+  "blocks": [
+    {
+      "block_id": "PB-001",
+      "case_id": "AURORA-CHAIN-002",
+      "repetition": 3,
+      "within_block_order": [
+        "c2trace",
+        "react"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-001-R3-C2TRACE",
+          "block_id": "PB-001",
+          "case_id": "AURORA-CHAIN-002",
+          "repetition": 3,
+          "system": "c2trace",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-001-R3-REACT",
+          "block_id": "PB-001",
+          "case_id": "AURORA-CHAIN-002",
+          "repetition": 3,
+          "system": "react",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-002",
+      "case_id": "AEL-WIZARD-EMOTET-001",
+      "repetition": 1,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-002-R1-REACT",
+          "block_id": "PB-002",
+          "case_id": "AEL-WIZARD-EMOTET-001",
+          "repetition": 1,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-002-R1-C2TRACE",
+          "block_id": "PB-002",
+          "case_id": "AEL-WIZARD-EMOTET-001",
+          "repetition": 1,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-003",
+      "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "repetition": 2,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-003-R2-REACT",
+          "block_id": "PB-003",
+          "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+          "repetition": 2,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-003-R2-C2TRACE",
+          "block_id": "PB-003",
+          "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+          "repetition": 2,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-004",
+      "case_id": "AURORA-CHAIN-001",
+      "repetition": 2,
+      "within_block_order": [
+        "c2trace",
+        "react"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-004-R2-C2TRACE",
+          "block_id": "PB-004",
+          "case_id": "AURORA-CHAIN-001",
+          "repetition": 2,
+          "system": "c2trace",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-004-R2-REACT",
+          "block_id": "PB-004",
+          "case_id": "AURORA-CHAIN-001",
+          "repetition": 2,
+          "system": "react",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-005",
+      "case_id": "MEP-WINDOWS-WEBSHELL-01",
+      "repetition": 1,
+      "within_block_order": [
+        "c2trace",
+        "react"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-005-R1-C2TRACE",
+          "block_id": "PB-005",
+          "case_id": "MEP-WINDOWS-WEBSHELL-01",
+          "repetition": 1,
+          "system": "c2trace",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-005-R1-REACT",
+          "block_id": "PB-005",
+          "case_id": "MEP-WINDOWS-WEBSHELL-01",
+          "repetition": 1,
+          "system": "react",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-006",
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "repetition": 1,
+      "within_block_order": [
+        "c2trace",
+        "react"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-006-R1-C2TRACE",
+          "block_id": "PB-006",
+          "case_id": "AEL-CARBANAK-RAT-001",
+          "repetition": 1,
+          "system": "c2trace",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-006-R1-REACT",
+          "block_id": "PB-006",
+          "case_id": "AEL-CARBANAK-RAT-001",
+          "repetition": 1,
+          "system": "react",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-007",
+      "case_id": "AURORA-CHAIN-001",
+      "repetition": 1,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-007-R1-REACT",
+          "block_id": "PB-007",
+          "case_id": "AURORA-CHAIN-001",
+          "repetition": 1,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-007-R1-C2TRACE",
+          "block_id": "PB-007",
+          "case_id": "AURORA-CHAIN-001",
+          "repetition": 1,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-008",
+      "case_id": "AEL-WIZARD-EMOTET-001",
+      "repetition": 2,
+      "within_block_order": [
+        "c2trace",
+        "react"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-008-R2-C2TRACE",
+          "block_id": "PB-008",
+          "case_id": "AEL-WIZARD-EMOTET-001",
+          "repetition": 2,
+          "system": "c2trace",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-008-R2-REACT",
+          "block_id": "PB-008",
+          "case_id": "AEL-WIZARD-EMOTET-001",
+          "repetition": 2,
+          "system": "react",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-009",
+      "case_id": "AURORA-CHAIN-001",
+      "repetition": 3,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-009-R3-REACT",
+          "block_id": "PB-009",
+          "case_id": "AURORA-CHAIN-001",
+          "repetition": 3,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-009-R3-C2TRACE",
+          "block_id": "PB-009",
+          "case_id": "AURORA-CHAIN-001",
+          "repetition": 3,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-010",
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "repetition": 3,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-010-R3-REACT",
+          "block_id": "PB-010",
+          "case_id": "AEL-OILRIG-SIDETWIST-001",
+          "repetition": 3,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-010-R3-C2TRACE",
+          "block_id": "PB-010",
+          "case_id": "AEL-OILRIG-SIDETWIST-001",
+          "repetition": 3,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-011",
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "repetition": 3,
+      "within_block_order": [
+        "c2trace",
+        "react"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-011-R3-C2TRACE",
+          "block_id": "PB-011",
+          "case_id": "AEL-CARBANAK-RAT-001",
+          "repetition": 3,
+          "system": "c2trace",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-011-R3-REACT",
+          "block_id": "PB-011",
+          "case_id": "AEL-CARBANAK-RAT-001",
+          "repetition": 3,
+          "system": "react",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-012",
+      "case_id": "AURORA-CHAIN-002",
+      "repetition": 2,
+      "within_block_order": [
+        "c2trace",
+        "react"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-012-R2-C2TRACE",
+          "block_id": "PB-012",
+          "case_id": "AURORA-CHAIN-002",
+          "repetition": 2,
+          "system": "c2trace",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-012-R2-REACT",
+          "block_id": "PB-012",
+          "case_id": "AURORA-CHAIN-002",
+          "repetition": 2,
+          "system": "react",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-013",
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "repetition": 2,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-013-R2-REACT",
+          "block_id": "PB-013",
+          "case_id": "AEL-OILRIG-SIDETWIST-001",
+          "repetition": 2,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-013-R2-C2TRACE",
+          "block_id": "PB-013",
+          "case_id": "AEL-OILRIG-SIDETWIST-001",
+          "repetition": 2,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-014",
+      "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+      "repetition": 1,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-014-R1-REACT",
+          "block_id": "PB-014",
+          "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+          "repetition": 1,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-014-R1-C2TRACE",
+          "block_id": "PB-014",
+          "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+          "repetition": 1,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-015",
+      "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+      "repetition": 3,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-015-R3-REACT",
+          "block_id": "PB-015",
+          "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+          "repetition": 3,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-015-R3-C2TRACE",
+          "block_id": "PB-015",
+          "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+          "repetition": 3,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-016",
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "repetition": 2,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-016-R2-REACT",
+          "block_id": "PB-016",
+          "case_id": "AEL-CARBANAK-RAT-001",
+          "repetition": 2,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-016-R2-C2TRACE",
+          "block_id": "PB-016",
+          "case_id": "AEL-CARBANAK-RAT-001",
+          "repetition": 2,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-017",
+      "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+      "repetition": 2,
+      "within_block_order": [
+        "c2trace",
+        "react"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-017-R2-C2TRACE",
+          "block_id": "PB-017",
+          "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+          "repetition": 2,
+          "system": "c2trace",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-017-R2-REACT",
+          "block_id": "PB-017",
+          "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+          "repetition": 2,
+          "system": "react",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-018",
+      "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "repetition": 1,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-018-R1-REACT",
+          "block_id": "PB-018",
+          "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+          "repetition": 1,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-018-R1-C2TRACE",
+          "block_id": "PB-018",
+          "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+          "repetition": 1,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-019",
+      "case_id": "AEL-WIZARD-EMOTET-001",
+      "repetition": 3,
+      "within_block_order": [
+        "c2trace",
+        "react"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-019-R3-C2TRACE",
+          "block_id": "PB-019",
+          "case_id": "AEL-WIZARD-EMOTET-001",
+          "repetition": 3,
+          "system": "c2trace",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-019-R3-REACT",
+          "block_id": "PB-019",
+          "case_id": "AEL-WIZARD-EMOTET-001",
+          "repetition": 3,
+          "system": "react",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-020",
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "repetition": 1,
+      "within_block_order": [
+        "c2trace",
+        "react"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-020-R1-C2TRACE",
+          "block_id": "PB-020",
+          "case_id": "AEL-OILRIG-SIDETWIST-001",
+          "repetition": 1,
+          "system": "c2trace",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-020-R1-REACT",
+          "block_id": "PB-020",
+          "case_id": "AEL-OILRIG-SIDETWIST-001",
+          "repetition": 1,
+          "system": "react",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-021",
+      "case_id": "MEP-WINDOWS-WEBSHELL-01",
+      "repetition": 3,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-021-R3-REACT",
+          "block_id": "PB-021",
+          "case_id": "MEP-WINDOWS-WEBSHELL-01",
+          "repetition": 3,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-021-R3-C2TRACE",
+          "block_id": "PB-021",
+          "case_id": "MEP-WINDOWS-WEBSHELL-01",
+          "repetition": 3,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-022",
+      "case_id": "AURORA-CHAIN-002",
+      "repetition": 1,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-022-R1-REACT",
+          "block_id": "PB-022",
+          "case_id": "AURORA-CHAIN-002",
+          "repetition": 1,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-022-R1-C2TRACE",
+          "block_id": "PB-022",
+          "case_id": "AURORA-CHAIN-002",
+          "repetition": 1,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-023",
+      "case_id": "MEP-WINDOWS-WEBSHELL-01",
+      "repetition": 2,
+      "within_block_order": [
+        "react",
+        "c2trace"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-023-R2-REACT",
+          "block_id": "PB-023",
+          "case_id": "MEP-WINDOWS-WEBSHELL-01",
+          "repetition": 2,
+          "system": "react",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-023-R2-C2TRACE",
+          "block_id": "PB-023",
+          "case_id": "MEP-WINDOWS-WEBSHELL-01",
+          "repetition": 2,
+          "system": "c2trace",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "block_id": "PB-024",
+      "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "repetition": 3,
+      "within_block_order": [
+        "c2trace",
+        "react"
+      ],
+      "trials": [
+        {
+          "trial_id": "V8-PB-024-R3-C2TRACE",
+          "block_id": "PB-024",
+          "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+          "repetition": 3,
+          "system": "c2trace",
+          "within_block_order": 1,
+          "status": "planned"
+        },
+        {
+          "trial_id": "V8-PB-024-R3-REACT",
+          "block_id": "PB-024",
+          "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+          "repetition": 3,
+          "system": "react",
+          "within_block_order": 2,
+          "status": "planned"
+        }
+      ]
+    }
+  ],
+  "trials": [
+    {
+      "trial_id": "V8-PB-001-R3-C2TRACE",
+      "block_id": "PB-001",
+      "case_id": "AURORA-CHAIN-002",
+      "repetition": 3,
+      "system": "c2trace",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-001-R3-REACT",
+      "block_id": "PB-001",
+      "case_id": "AURORA-CHAIN-002",
+      "repetition": 3,
+      "system": "react",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-002-R1-REACT",
+      "block_id": "PB-002",
+      "case_id": "AEL-WIZARD-EMOTET-001",
+      "repetition": 1,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-002-R1-C2TRACE",
+      "block_id": "PB-002",
+      "case_id": "AEL-WIZARD-EMOTET-001",
+      "repetition": 1,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-003-R2-REACT",
+      "block_id": "PB-003",
+      "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "repetition": 2,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-003-R2-C2TRACE",
+      "block_id": "PB-003",
+      "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "repetition": 2,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-004-R2-C2TRACE",
+      "block_id": "PB-004",
+      "case_id": "AURORA-CHAIN-001",
+      "repetition": 2,
+      "system": "c2trace",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-004-R2-REACT",
+      "block_id": "PB-004",
+      "case_id": "AURORA-CHAIN-001",
+      "repetition": 2,
+      "system": "react",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-005-R1-C2TRACE",
+      "block_id": "PB-005",
+      "case_id": "MEP-WINDOWS-WEBSHELL-01",
+      "repetition": 1,
+      "system": "c2trace",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-005-R1-REACT",
+      "block_id": "PB-005",
+      "case_id": "MEP-WINDOWS-WEBSHELL-01",
+      "repetition": 1,
+      "system": "react",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-006-R1-C2TRACE",
+      "block_id": "PB-006",
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "repetition": 1,
+      "system": "c2trace",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-006-R1-REACT",
+      "block_id": "PB-006",
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "repetition": 1,
+      "system": "react",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-007-R1-REACT",
+      "block_id": "PB-007",
+      "case_id": "AURORA-CHAIN-001",
+      "repetition": 1,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-007-R1-C2TRACE",
+      "block_id": "PB-007",
+      "case_id": "AURORA-CHAIN-001",
+      "repetition": 1,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-008-R2-C2TRACE",
+      "block_id": "PB-008",
+      "case_id": "AEL-WIZARD-EMOTET-001",
+      "repetition": 2,
+      "system": "c2trace",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-008-R2-REACT",
+      "block_id": "PB-008",
+      "case_id": "AEL-WIZARD-EMOTET-001",
+      "repetition": 2,
+      "system": "react",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-009-R3-REACT",
+      "block_id": "PB-009",
+      "case_id": "AURORA-CHAIN-001",
+      "repetition": 3,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-009-R3-C2TRACE",
+      "block_id": "PB-009",
+      "case_id": "AURORA-CHAIN-001",
+      "repetition": 3,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-010-R3-REACT",
+      "block_id": "PB-010",
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "repetition": 3,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-010-R3-C2TRACE",
+      "block_id": "PB-010",
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "repetition": 3,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-011-R3-C2TRACE",
+      "block_id": "PB-011",
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "repetition": 3,
+      "system": "c2trace",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-011-R3-REACT",
+      "block_id": "PB-011",
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "repetition": 3,
+      "system": "react",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-012-R2-C2TRACE",
+      "block_id": "PB-012",
+      "case_id": "AURORA-CHAIN-002",
+      "repetition": 2,
+      "system": "c2trace",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-012-R2-REACT",
+      "block_id": "PB-012",
+      "case_id": "AURORA-CHAIN-002",
+      "repetition": 2,
+      "system": "react",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-013-R2-REACT",
+      "block_id": "PB-013",
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "repetition": 2,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-013-R2-C2TRACE",
+      "block_id": "PB-013",
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "repetition": 2,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-014-R1-REACT",
+      "block_id": "PB-014",
+      "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+      "repetition": 1,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-014-R1-C2TRACE",
+      "block_id": "PB-014",
+      "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+      "repetition": 1,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-015-R3-REACT",
+      "block_id": "PB-015",
+      "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+      "repetition": 3,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-015-R3-C2TRACE",
+      "block_id": "PB-015",
+      "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+      "repetition": 3,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-016-R2-REACT",
+      "block_id": "PB-016",
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "repetition": 2,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-016-R2-C2TRACE",
+      "block_id": "PB-016",
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "repetition": 2,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-017-R2-C2TRACE",
+      "block_id": "PB-017",
+      "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+      "repetition": 2,
+      "system": "c2trace",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-017-R2-REACT",
+      "block_id": "PB-017",
+      "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+      "repetition": 2,
+      "system": "react",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-018-R1-REACT",
+      "block_id": "PB-018",
+      "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "repetition": 1,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-018-R1-C2TRACE",
+      "block_id": "PB-018",
+      "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "repetition": 1,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-019-R3-C2TRACE",
+      "block_id": "PB-019",
+      "case_id": "AEL-WIZARD-EMOTET-001",
+      "repetition": 3,
+      "system": "c2trace",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-019-R3-REACT",
+      "block_id": "PB-019",
+      "case_id": "AEL-WIZARD-EMOTET-001",
+      "repetition": 3,
+      "system": "react",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-020-R1-C2TRACE",
+      "block_id": "PB-020",
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "repetition": 1,
+      "system": "c2trace",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-020-R1-REACT",
+      "block_id": "PB-020",
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "repetition": 1,
+      "system": "react",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-021-R3-REACT",
+      "block_id": "PB-021",
+      "case_id": "MEP-WINDOWS-WEBSHELL-01",
+      "repetition": 3,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-021-R3-C2TRACE",
+      "block_id": "PB-021",
+      "case_id": "MEP-WINDOWS-WEBSHELL-01",
+      "repetition": 3,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-022-R1-REACT",
+      "block_id": "PB-022",
+      "case_id": "AURORA-CHAIN-002",
+      "repetition": 1,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-022-R1-C2TRACE",
+      "block_id": "PB-022",
+      "case_id": "AURORA-CHAIN-002",
+      "repetition": 1,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-023-R2-REACT",
+      "block_id": "PB-023",
+      "case_id": "MEP-WINDOWS-WEBSHELL-01",
+      "repetition": 2,
+      "system": "react",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-023-R2-C2TRACE",
+      "block_id": "PB-023",
+      "case_id": "MEP-WINDOWS-WEBSHELL-01",
+      "repetition": 2,
+      "system": "c2trace",
+      "within_block_order": 2,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-024-R3-C2TRACE",
+      "block_id": "PB-024",
+      "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "repetition": 3,
+      "system": "c2trace",
+      "within_block_order": 1,
+      "status": "planned"
+    },
+    {
+      "trial_id": "V8-PB-024-R3-REACT",
+      "block_id": "PB-024",
+      "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "repetition": 3,
+      "system": "react",
+      "within_block_order": 2,
+      "status": "planned"
+    }
+  ],
+  "supersedes": "formal_live_schedule_v1.json",
+  "amendment": {
+    "reason": "Avoid reuse of retained historical failed logical trial ID PB-001-R3-C2TRACE",
+    "historical_trial_id": "PB-001-R3-C2TRACE",
+    "historical_status": "evaluation_valid_fail",
+    "historical_run_id": "formal-PB-001-R3-C2TRACE-20261003T170449Z",
+    "historical_excluded_from_primary": true,
+    "new_trial_id_namespace": "V8-PB"
+  },
+  "trial_id_namespace": "V8-PB",
+  "historical_trial_ids_excluded": [
+    "PB-001-R3-C2TRACE"
+  ],
+  "schedule_sha256": "07e05c3da4be627bd55ee6cf3b0b42cdbdd882d94fab17640c051ad4788a5112"
+}

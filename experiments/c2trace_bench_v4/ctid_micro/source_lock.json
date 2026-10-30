@@ -1,0 +1,139 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "artifact-c693279643b8cd5d",
+      "media_type": "application/octet-stream",
+      "path": "ctid_micro/raw/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "size": 11357
+    },
+    {
+      "artifact_id": "artifact-1d8155df7ed6eb33",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/README.md",
+      "sha256": "454b331ae4e4131ab59779b42504d5a8cd60501640378c028d84ac3558524850",
+      "size": 11994
+    },
+    {
+      "artifact_id": "artifact-33851227dd93ca9a",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/caldera-integration/README.MD",
+      "sha256": "6c3f752b620844e75d2e4320cd35ff3e7cca7d73ed5e6bc1c615b4b7f4c3e1b5",
+      "size": 5540
+    },
+    {
+      "artifact_id": "artifact-ec745ea22c81e2fd",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/ad_enum/README.md",
+      "sha256": "4513649f4dfd2759622cdf8d0c3252499d24d27556e9890dfd82edcfa4ec5309",
+      "size": 9497
+    },
+    {
+      "artifact_id": "artifact-1445899214a77ec8",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/apache_rce/README.md",
+      "sha256": "85971e7ccc8598bbc7ddff8e943eb2d9d5452083d10611e1803a1156497ff45a",
+      "size": 6268
+    },
+    {
+      "artifact_id": "artifact-eeb4ae0484a38137",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/data_exfil/README.md",
+      "sha256": "77dfca4152e419987de7036550030aa0bc140ca3f9d819e6b6efd0f3348a34cb",
+      "size": 5881
+    },
+    {
+      "artifact_id": "artifact-80db3937b9ece744",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/dll_sideloading/README.md",
+      "sha256": "b2f19cbf66a9431d949b6b4c3495d050d5b6fbe21ecb76b40c0790a5063e87a0",
+      "size": 8878
+    },
+    {
+      "artifact_id": "artifact-8b2f10dce92b4c0b",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/file_access/README.md",
+      "sha256": "90b9e9aa37c9950978fcdd7a425154c2b4d6aa5a865a0da99247cb7bad8b000d",
+      "size": 5596
+    },
+    {
+      "artifact_id": "artifact-a94ff8593e5c3556",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/log_clearing/README.md",
+      "sha256": "bc20d1980fb550faac804bddae370f9235069797e939d594717d485078ed1547",
+      "size": 5076
+    },
+    {
+      "artifact_id": "artifact-6acc4c457d445250",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/named_pipes/README.md",
+      "sha256": "e7313d75b930f52e093aceef4b236bdf4c00ff15f70db4a360121ef61bb48a1f",
+      "size": 10989
+    },
+    {
+      "artifact_id": "artifact-92d1e9cf25c56dc8",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/process_injection/README.md",
+      "sha256": "f1bee9b72c379adc62eccaa9d71f57f47c5532d03060ca3cc1859b1d9d8819a3",
+      "size": 7272
+    },
+    {
+      "artifact_id": "artifact-69c2f0233805b2a3",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/reflective_loading/README.md",
+      "sha256": "83ae029544d561512a0487661b8d62654b216ad1d90306bb00f31fe54b34edba",
+      "size": 4896
+    },
+    {
+      "artifact_id": "artifact-59182a814764502c",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/user_execution/README_user_execution.md",
+      "sha256": "c1b4d89f2eb16929b2498b223fa0e4df7b165390079ad26b60a861426b158378",
+      "size": 5021
+    },
+    {
+      "artifact_id": "artifact-c1ce0d914dc23575",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/webshell/README.md",
+      "sha256": "7362baf350e0b2e712dcc7aa7a55d4abecbf7018bc995fff86f1fcfa74c412f4",
+      "size": 6930
+    },
+    {
+      "artifact_id": "artifact-98c08cbc69a91287",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/webshell/README_windows_webshell.md",
+      "sha256": "f8379503532398b33d6adcbdb073cbb0620bcd9abfb3f179b9652a4fba79c69e",
+      "size": 12513
+    },
+    {
+      "artifact_id": "artifact-8536a1d2a2762759",
+      "media_type": "application/zip",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/webshell/windows_webshell.zip",
+      "sha256": "056bb041b34d619e31c90639af508a2e6428fd42ccdad28e2d97f0360c333540",
+      "size": 5638451
+    },
+    {
+      "artifact_id": "artifact-497aca9e7e6e82e5",
+      "media_type": "text/markdown",
+      "path": "ctid_micro/raw/micro_emulation_plans/src/windows_registry/README.md",
+      "sha256": "898d8b5704a237c3677fa845678e26f1cf181994428bca57f8c34b6d79208af4",
+      "size": 7388
+    }
+  ],
+  "dataset_stratum": "micro_emulation_plan",
+  "license": {
+    "path": "ctid_micro/raw/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "spdx": "Apache-2.0"
+  },
+  "repository": "https://github.com/center-for-threat-informed-defense/adversary_emulation_library",
+  "retrieved_on": "2026-07-15",
+  "revision": {
+    "commit": "4467a6eed6e67d25009704130e1d27d1a8007f57",
+    "commit_date": "2025-05-28T15:37:04-04:00",
+    "tag": null
+  },
+  "schema_version": "c2trace.bench.source_lock.v4",
+  "source_id": "ctid-micro-emulation-plans-2025-05-28",
+  "source_kind": "ctid_micro"
+}

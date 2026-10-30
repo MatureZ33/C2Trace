@@ -1,0 +1,42 @@
+{
+  "schema_version": "c2trace.public_react_safety.v1",
+  "purpose": "Target-agnostic safety boundary for an independent baseline.",
+  "protected_process_names": [
+    "system",
+    "smss.exe",
+    "csrss.exe",
+    "wininit.exe",
+    "services.exe",
+    "lsass.exe",
+    "winlogon.exe",
+    "svchost.exe",
+    "dwm.exe",
+    "explorer.exe",
+    "c2t_control.exe",
+    "c2t_driver.exe",
+    "sandcat.exe",
+    "splunkd.exe"
+  ],
+  "protected_service_names": [
+    "rpcss",
+    "eventlog",
+    "plugplay",
+    "winmgmt",
+    "windefend",
+    "wuauserv",
+    "c2t_control",
+    "c2t_driver"
+  ],
+  "protected_registry_prefixes": [
+    "HKLM\\SYSTEM",
+    "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce"
+  ],
+  "protected_task_prefixes": [
+    "\\Microsoft\\Windows"
+  ],
+  "allowed_file_roots": [
+    "C:\\Users\\Public"
+  ],
+  "case_object_binding": false,
+  "answer_lookup": false
+}

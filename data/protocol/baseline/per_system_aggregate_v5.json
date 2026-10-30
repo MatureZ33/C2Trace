@@ -1,0 +1,24 @@
+[
+  {
+    "system": "c2trace",
+    "n": 24,
+    "pass_count": 24,
+    "fail_count": 0,
+    "pass_rate": 1.0,
+    "macro_trace_f1": 0.8344155844155846,
+    "macro_response_action_f1": 1.0,
+    "total_tokens": 2085895,
+    "wrong_target_any": false
+  },
+  {
+    "system": "react",
+    "n": 24,
+    "pass_count": 12,
+    "fail_count": 12,
+    "pass_rate": 0.5,
+    "macro_trace_f1": 0.6634437321937322,
+    "macro_response_action_f1": 0.9523809523809526,
+    "total_tokens": 4905751,
+    "wrong_target_any": false
+  }
+]

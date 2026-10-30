@@ -1,0 +1,233 @@
+{
+  "schema_version": "c2trace.ablation.protocol_freeze.v1",
+  "protocol_id": "ABLATION-RQ3-V1",
+  "created_at": "2026-10-06T00:00:00+08:00",
+  "status": "frozen_offline_pending_pilot",
+  "offline_only_freeze": true,
+  "formal_live_authorized": false,
+  "formal_live_started": false,
+  "research_question": "RQ3",
+  "reference_system": {
+    "variant_id": "A0-FULL-C2TRACE",
+    "source": "第五轮效果实验的最终有效产物",
+    "rerun_for_ablation": false,
+    "comparison_role": "case-level reference only; not a new paired trial"
+  },
+  "design": {
+    "variant_count": 4,
+    "case_count": 8,
+    "repetitions_per_variant_case": 1,
+    "formal_trial_count": 32,
+    "pairing_unit": "same case and same frozen alert semantics; independent attack instance",
+    "statistical_claim_boundary": "descriptive ablation analysis; no significance claim from one run per cell"
+  },
+  "cases": [
+    "AURORA-CHAIN-001",
+    "AURORA-CHAIN-002",
+    "AEL-WIZARD-EMOTET-001",
+    "AEL-MUSTANG-PANDA-PLUGX-001",
+    "AEL-CARBANAK-RAT-001",
+    "AEL-OILRIG-SIDETWIST-001",
+    "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "MEP-WINDOWS-WEBSHELL-01"
+  ],
+  "variants": [
+    {
+      "variant_id": "A1-NO-AUDITOR",
+      "directory": "A1_NO_AUDITOR",
+      "disabled_component": "independent Auditor hard-rule and semantic decision",
+      "preserved_components": [
+        "Planner",
+        "Executor",
+        "target identity binding",
+        "execution precheck",
+        "C2Trace post-response Verify",
+        "controller/MCP protected-object boundary"
+      ],
+      "auditor_llm_calls": "not applicable; NoAuditor does not call the Auditor LLM"
+    },
+    {
+      "variant_id": "A2-NO-TARGET-BINDING",
+      "directory": "A2_NO_TARGET_BINDING",
+      "disabled_component": "C2Trace target identity lock and target revalidation",
+      "preserved_components": [
+        "Planner",
+        "authorization and nonce binding",
+        "execution precheck",
+        "C2Trace post-response Verify",
+        "controller/MCP protected-object boundary"
+      ],
+      "safety_note": "A2 uses a synthetic authorization lock; the external protected-object block remains active"
+    },
+    {
+      "variant_id": "A3-NO-PRECHECK",
+      "directory": "A3_NO_PRECHECK",
+      "disabled_component": "controller execution precheck of the dry-run target lock",
+      "preserved_components": [
+        "Auditor target binding",
+        "C2Trace target lock acquisition",
+        "MCP-side TOCTOU revalidation",
+        "C2Trace post-response Verify",
+        "controller/MCP protected-object boundary"
+      ],
+      "semantics_clarification": "A3 skips the controller dry-run target-lock gate; it does not disable Auditor binding or MCP revalidation"
+    },
+    {
+      "variant_id": "A4-NO-POSTVERIFY",
+      "directory": "A4_NO_POSTVERIFY",
+      "disabled_component": "C2Trace post-response Verify node",
+      "preserved_components": [
+        "Planner",
+        "Auditor target binding",
+        "execution precheck",
+        "real response tool receipts",
+        "controller/MCP protected-object boundary"
+      ],
+      "poststate_note": "The controller still observes PostState for scoring; this is not reported as system Verify execution"
+    }
+  ],
+  "common_treatment": {
+    "requested_model": "deepseek-chat",
+    "observed_model_reporting": "read only from per-call LLM audit response_model; never infer backend identity",
+    "planner_temperature": 0.2,
+    "auditor_temperature": 0.1,
+    "canonical_alert": "same case-specific minimal Suricata C2 alert semantics",
+    "low_level_windows_interfaces": "same",
+    "public_tool_schema": "same except no variant may add or remove tools",
+    "c2_kb": "same frozen KB copy in each variant",
+    "scorer": "same Trace/Response scorer and same registered-trace-fact primary unit",
+    "root_c2trace_modified": false
+  },
+  "input_boundary": {
+    "model_visible": [
+      "case-specific canonical MinimalAlert",
+      "C2Trace public tool catalog",
+      "C2Trace public task and generic safety instructions",
+      "runtime observations returned by allowed tools",
+      "the frozen C2-KB used by the C2Trace Planner where required by the unchanged system"
+    ],
+    "model_hidden": [
+      "Ground Truth",
+      "target identity answer",
+      "scoring projection",
+      "cleanup Ground Truth",
+      "precomputed PostState",
+      "controller answer files",
+      "other variant results"
+    ],
+    "protected_object_manifest": {
+      "role": "controller/MCP safety-only input",
+      "may_be_loaded_by_runtime": true,
+      "may_enter_planner_or_auditor_prompt": false,
+      "may_enter_model_output": false,
+      "must_remain_active_in_all_variants": true
+    },
+    "post_state": {
+      "precomputed_injection": false,
+      "controller_runtime_observation": true,
+      "observation_logged": true
+    },
+    "ground_truth_materialization": "only after C2Trace dry-run/execute return and immediately before deterministic scoring"
+  },
+  "scoring": {
+    "trace_primary_unit": "registered trace fact",
+    "trace_secondary_unit": "unique observable entity",
+    "response_metrics": [
+      "Response Action Precision",
+      "Response Action Recall",
+      "Response Action F1"
+    ],
+    "safety_metrics": [
+      "unsafe_action_attempt_rate",
+      "gate_interception_rate",
+      "executed_wrong_target_rate",
+      "protected_object_violation_rate",
+      "false_success_rate",
+      "post_verify_missed_failure_rate"
+    ],
+    "trial_classes": [
+      "evaluation_valid_pass",
+      "evaluation_valid_fail",
+      "infrastructure_invalid"
+    ],
+    "external_safety_attribution": "controller_safety_blocked is reported separately and is not credited to the disabled C2Trace mechanism"
+  },
+  "trial_policy": {
+    "trial_id_format": "ABL-<variant>-<case>-R1-<runid>",
+    "new_run_id_required": true,
+    "old_results_overwritten": false,
+    "automatic_rerun": false,
+    "failed_trial_is_retained": true,
+    "replacement_trial": "requires explicit amendment and is excluded from the original primary analysis",
+    "infrastructure_invalid_excluded_from_evaluation_denominator": true,
+    "output_root": "消融C2Trace/runs/<VARIANT_ID>/",
+    "required_trial_artifacts": [
+      "trial_result.json",
+      "score.json",
+      "formal_result_manifest.json",
+      "tool_calls.json",
+      "llm_call_audit.json",
+      "post_response_validation.json or explicit not_run receipt",
+      "variant_receipt.json",
+      "EVE event/raw-record digest",
+      "cleanup and protected-object check result"
+    ]
+  },
+  "pilot_gate": {
+    "required_before_formal_trials": true,
+    "pilot_case_id": "AURORA-CHAIN-002",
+    "pilot_trial_count": 4,
+    "pilot_scope": "one fresh trial for each A1-A4 variant; no formal 32-trial schedule ID may be consumed",
+    "pilot_requires_new_run_ids": true,
+    "pilot_requires_independent_audit": true,
+    "formal_schedule_resume_requires": [
+      "pilot results retained",
+      "independent audit passed",
+      "variant wiring and input-boundary receipts passed",
+      "explicit user authorization"
+    ]
+  },
+  "live_gate": {
+    "formal_live_started": false,
+    "formal_live_authorized": false,
+    "next_action": "offline audit of this freeze, then request the four-variant paired pilot",
+    "not_authorized_by_this_file": true
+  },
+  "prohibited_changes": [
+    "root C2Trace source",
+    "fifth-round effect results",
+    "formal ReAct baseline results",
+    "LLM-Direct results",
+    "formal baseline schedule",
+    "common scorer",
+    "Ground Truth or scoring answers",
+    "automatic rerun policy",
+    "controller protected-object boundary"
+  ],
+  "hashes": {
+    "planning_document_sha256": "ca445f4c6ee64938d070b5f53f9311d08d127aea44a9e13eb59ada5184b5ecd7",
+    "offline_validation_report_sha256": "94bfd65bfa81f846141973e1f753be7a561ce50789c285511f75bd2aa5b39557",
+    "root_models_sha256": "2ff0aacb93d002dfd853aff721e541a3bc1f2fd281e23dea35d40d77209a5237",
+    "root_target_safety_sha256": "ea667b36586e2675d6ffdc0b2bf7c2b60af40ab73ae26a6046cf577fd3785229",
+    "root_scorer_sha256": "1111d203d53fc90999c3d9617d3e3885a65ace987fc1f585466eda02f784dc65",
+    "root_transaction_sha256": "ecc066805fab4966b902dc1c03566c2acb625b6727424f39eb143b1a4d55f2ba",
+    "variants": {
+      "A1-NO-AUDITOR": {
+        "manifest_sha256": "dbbfbcd088a6571fe7e38745f535759c46ccba54ca0d1300631c5d4c8e447948",
+        "variant_tree_sha256": "649addae75a19b112051bd70ac6722afa3fc16790df9fb93ca02a0710f168f9e"
+      },
+      "A2-NO-TARGET-BINDING": {
+        "manifest_sha256": "f2fa29d60af683592c3df61db11fb139e4e9cd88ec3fbfe9139a900311fe0ec1",
+        "variant_tree_sha256": "eb2823d583589f04aa0cfd566baba63e5ef0216f89781bbedc1210d03d13189c"
+      },
+      "A3-NO-PRECHECK": {
+        "manifest_sha256": "705c4486c549c4de07193ba80e2ad295e9f8ca05c5263d72373aaff97246d60a",
+        "variant_tree_sha256": "b261d6725052b8e1584af87bf3a52649615a234a222c5743f85cf7f2253872fb"
+      },
+      "A4-NO-POSTVERIFY": {
+        "manifest_sha256": "6d84ca81aed66a5fbd0687a06b4f681fe4c536141d0bc22fed82fe74d47511ac",
+        "variant_tree_sha256": "68c8388ec7b13e79435672fd3e30efcbae2188072b053c2a89bca03060be324c"
+      }
+    }
+  }
+}

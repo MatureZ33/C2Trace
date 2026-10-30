@@ -1,0 +1,534 @@
+{
+  "schema_version": "llm_direct.offline_inventory.v1",
+  "source": "第一轮基线对比实验/LLM-Direct-SetB-20261001",
+  "cases": [
+    {
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "required_files": {
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
+        "llm_call.json": true,
+        "prediction_ir.json": true,
+        "casefile.json": true,
+        "proposed_action_score.json": true,
+        "score.json": true,
+        "formal_result_manifest.json": true
+      },
+      "all_required_files_present": true,
+      "source_manifest_sha256": "d2727c8d0a4f4887a1f21cbd5671d5445a27a4f68eb024cb18f2ae4f92ffdf6f",
+      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AEL-CARBANAK-RAT-001/formal_result_manifest.normalized.json",
+      "trial_class": "evaluation_valid_fail",
+      "trace": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "tokens": 2906,
+      "prompt_tokens": 2106,
+      "completion_tokens": 800,
+      "duration_ms": 2725.21509998478,
+      "model": "deepseek-chat",
+      "prompt_sha256": "cde7ecac7abd210e0d1672be8f569e307ec00e6c47935eb25d59c3afff961498",
+      "input_evidence_sha256": "28b06548d74ce6589f92fe76f4027061f84ed3825754e136e06820d42f1c1fc5",
+      "model_output_sha256": "6dce8d31629410bf00e08defc34457e87922a5512d0913f5bc30ffbb64d077d2",
+      "prompt_isolation": {
+        "forbidden_token_hits": [],
+        "passed": true
+      },
+      "sanitizer": {
+        "input_sha256": "289c8050a8efbaac5c329b1902a48af047506764f9d9ff549136ffb0120437d9",
+        "output_sha256": "28b06548d74ce6589f92fe76f4027061f84ed3825754e136e06820d42f1c1fc5",
+        "evidence_sha256": "30e53782c4928b1ffe478cb082e9dea8a2aab67e74721dd3900a37092d1a2303",
+        "receipt_sha256": "f4d7cecbe761c9ffe7a2b2924131dec5f2fc63b16846f2a701dde7bec458165f"
+      },
+      "actual_response_executed": false,
+      "post_state": "not_applicable_for_llm_direct",
+      "source_files_sha256": {
+        "sanitized_evidence.json": "30e53782c4928b1ffe478cb082e9dea8a2aab67e74721dd3900a37092d1a2303",
+        "sanitizer_receipt.json": "f4d7cecbe761c9ffe7a2b2924131dec5f2fc63b16846f2a701dde7bec458165f",
+        "llm_call.json": "55e4c2ebe3d78f7eb6958eeebb1b08313b649e41e97267806185ca85e4753a86",
+        "prediction_ir.json": "386ac082c1cc2385bb6aac885c194bd2980efabef6f801da3c9c3857bc211c74",
+        "casefile.json": "74928f8f0d834263c3022530e552217b4c32dc05cafe148983a9688b38f41ba2",
+        "proposed_action_score.json": "addcaa23923b6ce22a3d125ecb31fe29324909ae813ad0047b21211aa0dd12be",
+        "score.json": "0638948eadc19582f771aa64e6428f8160ea27e4ff529da53e20bce7fdf130ed",
+        "formal_result_manifest.json": "d2727c8d0a4f4887a1f21cbd5671d5445a27a4f68eb024cb18f2ae4f92ffdf6f"
+      }
+    },
+    {
+      "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+      "required_files": {
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
+        "llm_call.json": true,
+        "prediction_ir.json": true,
+        "casefile.json": true,
+        "proposed_action_score.json": true,
+        "score.json": true,
+        "formal_result_manifest.json": true
+      },
+      "all_required_files_present": true,
+      "source_manifest_sha256": "318047abcf8740d9ab7bad2546768f136c33442233814f310be4c19b02c41ec5",
+      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AEL-MUSTANG-PANDA-PLUGX-001/formal_result_manifest.normalized.json",
+      "trial_class": "evaluation_valid_fail",
+      "trace": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "tokens": 3002,
+      "prompt_tokens": 2125,
+      "completion_tokens": 877,
+      "duration_ms": 3022.6232000859454,
+      "model": "deepseek-chat",
+      "prompt_sha256": "952d684830f5b4dc098e66cd762a3e4a1731b90da8f8842d9b500a796b59c69e",
+      "input_evidence_sha256": "5c2a5239cdd096f100e2827472517e8e1e9ca49e58303e5c801b4a0bcffa22fd",
+      "model_output_sha256": "d5274926fc152d8f64903558c6510c4c83a8f1ffefd548b4f3e9970144325224",
+      "prompt_isolation": {
+        "forbidden_token_hits": [],
+        "passed": true
+      },
+      "sanitizer": {
+        "input_sha256": "5165dda4fa5ca5f25a451e77e466a6127887376e6d170bf4ec231899e9f05b88",
+        "output_sha256": "5c2a5239cdd096f100e2827472517e8e1e9ca49e58303e5c801b4a0bcffa22fd",
+        "evidence_sha256": "3601f9f1f81800f3ac2b716db701d8188b5f1edc25a21f50009ea340c20e8b25",
+        "receipt_sha256": "5146e9fe3990cf8ce1783a185fca092537998fc4e8249936febb528e47558879"
+      },
+      "actual_response_executed": false,
+      "post_state": "not_applicable_for_llm_direct",
+      "source_files_sha256": {
+        "sanitized_evidence.json": "3601f9f1f81800f3ac2b716db701d8188b5f1edc25a21f50009ea340c20e8b25",
+        "sanitizer_receipt.json": "5146e9fe3990cf8ce1783a185fca092537998fc4e8249936febb528e47558879",
+        "llm_call.json": "27ddaa21d15fe5681de95f0fa4ec203003f077a3854154c97ec445648e7e72ff",
+        "prediction_ir.json": "9359aa4772fb6c46ac3b291a38e584d722f0d963ce5a1dbc1b09439064b0fd3c",
+        "casefile.json": "dc213c4637df7372d4173f08af81b7fb3812ba28446ebe5ab22de68e5edb2d3f",
+        "proposed_action_score.json": "e6e4b3808693ddcfee4886b1233732d1ad48f5869b22df120ed0cb0c85b4e4ca",
+        "score.json": "87094138adf81e8cc555ef3c680be7904dbfdc3c2938fa5c2eb8ed1d1f80915a",
+        "formal_result_manifest.json": "318047abcf8740d9ab7bad2546768f136c33442233814f310be4c19b02c41ec5"
+      }
+    },
+    {
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "required_files": {
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
+        "llm_call.json": true,
+        "prediction_ir.json": true,
+        "casefile.json": true,
+        "proposed_action_score.json": true,
+        "score.json": true,
+        "formal_result_manifest.json": true
+      },
+      "all_required_files_present": true,
+      "source_manifest_sha256": "70ecc4cc724fd9343307b3084c6cdcf0c9867ac9e5eb51f5f0076c957d6741e3",
+      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AEL-OILRIG-SIDETWIST-001/formal_result_manifest.normalized.json",
+      "trial_class": "evaluation_valid_fail",
+      "trace": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "tokens": 2980,
+      "prompt_tokens": 2143,
+      "completion_tokens": 837,
+      "duration_ms": 3261.0087000066414,
+      "model": "deepseek-chat",
+      "prompt_sha256": "8525c7d03fc57db9cf5a5be91cefbeb96c250fa1c1fa7e838b5318aa519f0dc7",
+      "input_evidence_sha256": "987521adddbf41e62abae6e638c88069210e79b0d0360b2b0096dd6e373e968b",
+      "model_output_sha256": "5384f18bb8c4692d8e33dbe41550405f98f7d8fbebbc3130d2252b48ee506577",
+      "prompt_isolation": {
+        "forbidden_token_hits": [],
+        "passed": true
+      },
+      "sanitizer": {
+        "input_sha256": "65d7bc4cf7231b2236eb7b188902eac43062f506865670cdc75634235a6ac57f",
+        "output_sha256": "987521adddbf41e62abae6e638c88069210e79b0d0360b2b0096dd6e373e968b",
+        "evidence_sha256": "85745197e2545935649224c8a3f4d866bad6dd4d4bb9440ae40db52536d933ed",
+        "receipt_sha256": "ebba36204b1433cff17d881267841e8f6b73017334ef801e682b64358460c440"
+      },
+      "actual_response_executed": false,
+      "post_state": "not_applicable_for_llm_direct",
+      "source_files_sha256": {
+        "sanitized_evidence.json": "85745197e2545935649224c8a3f4d866bad6dd4d4bb9440ae40db52536d933ed",
+        "sanitizer_receipt.json": "ebba36204b1433cff17d881267841e8f6b73017334ef801e682b64358460c440",
+        "llm_call.json": "68b8c02d83ed02fc3cfdc979b9a13e468e1acdc2f6873c3331a8bf80298205b4",
+        "prediction_ir.json": "058846c4eab0f53ead887e0c76886890d9c17e079858cc34f8d0d6535d72d82c",
+        "casefile.json": "b09b5a6ec9db14fd6dea35076d505d25565bc353674d45963b8d3880ad257786",
+        "proposed_action_score.json": "672729c246ccbb5ee36ac92e859623de80c50e6f3113fc0f24cc868392b24e00",
+        "score.json": "8cc1a864ff69312d34dbf672b6225febdb4f97a81356c86138ad84e55eec2590",
+        "formal_result_manifest.json": "70ecc4cc724fd9343307b3084c6cdcf0c9867ac9e5eb51f5f0076c957d6741e3"
+      }
+    },
+    {
+      "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "required_files": {
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
+        "llm_call.json": true,
+        "prediction_ir.json": true,
+        "casefile.json": true,
+        "proposed_action_score.json": true,
+        "score.json": true,
+        "formal_result_manifest.json": true
+      },
+      "all_required_files_present": true,
+      "source_manifest_sha256": "7817653d1602de514bd2788f4edb054ca3462f5d9abbf39e7733f4b45d4d0ab3",
+      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AEL-SANDWORM-EXARAMEL-WIN-001/formal_result_manifest.normalized.json",
+      "trial_class": "evaluation_valid_fail",
+      "trace": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "tokens": 3069,
+      "prompt_tokens": 2143,
+      "completion_tokens": 926,
+      "duration_ms": 3114.4568999297917,
+      "model": "deepseek-chat",
+      "prompt_sha256": "2690201518ec58477bc880e075f186e62dedb907b80fcac664473d2b3fe5644d",
+      "input_evidence_sha256": "cb1c5c7958c2819c3ec63a0946510abf0c3090c801dd6d4f831a0030d0668ff2",
+      "model_output_sha256": "afa22429da15ddbd6c00cbe4a939c8e018fa59c3e77d1a93669bce7502705486",
+      "prompt_isolation": {
+        "forbidden_token_hits": [],
+        "passed": true
+      },
+      "sanitizer": {
+        "input_sha256": "be854ff326cdca0f958ed15a5c3f1804b9b0361d2a76c25d4e2327d48f9bdcad",
+        "output_sha256": "cb1c5c7958c2819c3ec63a0946510abf0c3090c801dd6d4f831a0030d0668ff2",
+        "evidence_sha256": "9ebf710fb488bc725b1ae3c284072c56fec3f1ccea5a46bb29c0aa4ac96dbc54",
+        "receipt_sha256": "08f732f6d8926f3d7f63d96dade041a2aa2b3e5fd6be0b225f5ef91d1d1a6c08"
+      },
+      "actual_response_executed": false,
+      "post_state": "not_applicable_for_llm_direct",
+      "source_files_sha256": {
+        "sanitized_evidence.json": "9ebf710fb488bc725b1ae3c284072c56fec3f1ccea5a46bb29c0aa4ac96dbc54",
+        "sanitizer_receipt.json": "08f732f6d8926f3d7f63d96dade041a2aa2b3e5fd6be0b225f5ef91d1d1a6c08",
+        "llm_call.json": "7a402fbf8db736153367c7f672b666d710bdad13c24f6afd399fc1aed1b66626",
+        "prediction_ir.json": "60fb68afdf9d5174203e2089c595a00bf7bcdeffe7efef42b693fe4066c1f6de",
+        "casefile.json": "e4754baa551935a7fbef33310f7f89174a919692706043c4416cc793393d3563",
+        "proposed_action_score.json": "02e29e3ae3a2a60a3194a03a2bd34f9ba90cd31d6703aa14f7d3b60c7ea47d85",
+        "score.json": "469f49afe1dc56debed692165862c41305f888b53a134d14f60fef4e68dfc7bc",
+        "formal_result_manifest.json": "7817653d1602de514bd2788f4edb054ca3462f5d9abbf39e7733f4b45d4d0ab3"
+      }
+    },
+    {
+      "case_id": "AEL-WIZARD-EMOTET-001",
+      "required_files": {
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
+        "llm_call.json": true,
+        "prediction_ir.json": true,
+        "casefile.json": true,
+        "proposed_action_score.json": true,
+        "score.json": true,
+        "formal_result_manifest.json": true
+      },
+      "all_required_files_present": true,
+      "source_manifest_sha256": "d674d405f8eb99a406398cef28b944cc62050355f3e5cd4b46c88a95a3ed00d4",
+      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AEL-WIZARD-EMOTET-001/formal_result_manifest.normalized.json",
+      "trial_class": "evaluation_valid_fail",
+      "trace": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "tokens": 2967,
+      "prompt_tokens": 2071,
+      "completion_tokens": 896,
+      "duration_ms": 2971.384499920532,
+      "model": "deepseek-chat",
+      "prompt_sha256": "54f9407523dfbe558fb9abe23bd2ec2546bcf56b644c2d39ca6fced918389f02",
+      "input_evidence_sha256": "accb38e02bd279454d07cb96c1b3d85c50a643d829148a1ae79af9d01ec671b8",
+      "model_output_sha256": "21e8e40e5c6343914e31c44162406f5a44df92f38fa8c61810614e216d7b99b3",
+      "prompt_isolation": {
+        "forbidden_token_hits": [],
+        "passed": true
+      },
+      "sanitizer": {
+        "input_sha256": "7f75fda93d4e98aeb28016ba9d1b6eddf3912895d5e86055c187279ad42f2ba1",
+        "output_sha256": "accb38e02bd279454d07cb96c1b3d85c50a643d829148a1ae79af9d01ec671b8",
+        "evidence_sha256": "8eea743802c0d9574508bdc44c4fcae10afddc9f12e615abb0c02e15513ac697",
+        "receipt_sha256": "9d3a95f0f5e7611df75b4e4428695ee5026c58c62ba723c508429f7e0f4ee9ed"
+      },
+      "actual_response_executed": false,
+      "post_state": "not_applicable_for_llm_direct",
+      "source_files_sha256": {
+        "sanitized_evidence.json": "8eea743802c0d9574508bdc44c4fcae10afddc9f12e615abb0c02e15513ac697",
+        "sanitizer_receipt.json": "9d3a95f0f5e7611df75b4e4428695ee5026c58c62ba723c508429f7e0f4ee9ed",
+        "llm_call.json": "de0975bf88bbfc9d2d6ce52e87a2059c1acbf28845102405fd7faba9ec0e410f",
+        "prediction_ir.json": "5bbc44d5603b226d268b836bc206c1c8ce8b9068c60cee4befbfbc6e5312d214",
+        "casefile.json": "bff5ca45b5f01a698e477189926750a00224f35b2bc4ca28f1504ada3a735dc9",
+        "proposed_action_score.json": "d5f6b253afd7f012a11b08f199d509f5a276ab3db8756f4a697a45f8e4b9b1f3",
+        "score.json": "727523f87a51662062b61a7bcdf84f80c09d672b7f2b89c2ad2fbbd7fdb8932b",
+        "formal_result_manifest.json": "d674d405f8eb99a406398cef28b944cc62050355f3e5cd4b46c88a95a3ed00d4"
+      }
+    },
+    {
+      "case_id": "AURORA-CHAIN-001",
+      "required_files": {
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
+        "llm_call.json": true,
+        "prediction_ir.json": true,
+        "casefile.json": true,
+        "proposed_action_score.json": true,
+        "score.json": true,
+        "formal_result_manifest.json": true
+      },
+      "all_required_files_present": true,
+      "source_manifest_sha256": "5b6f49ebfe40f49adb51b2d8862ddd95176cea6b48c31959c52c2d290edbf910",
+      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AURORA-CHAIN-001/formal_result_manifest.normalized.json",
+      "trial_class": "evaluation_valid_fail",
+      "trace": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "tokens": 2999,
+      "prompt_tokens": 2112,
+      "completion_tokens": 887,
+      "duration_ms": 3181.890400010161,
+      "model": "deepseek-chat",
+      "prompt_sha256": "79b9fcb028beb750e6657e3adb09516dfed2255573b854fda8f04424c79eff94",
+      "input_evidence_sha256": "d81444a9217319c5f09151aecd32eac19fe24322c3ebf31c78e1a377ee38d631",
+      "model_output_sha256": "d60a9fa1268a162fd863af6043bd6489361e74d2e8af328e82e6465366650107",
+      "prompt_isolation": {
+        "forbidden_token_hits": [],
+        "passed": true
+      },
+      "sanitizer": {
+        "input_sha256": "610f5b4efb84dabbbe204a26a855eef909a1ba4171fdb41c84b8d1fa7cd29dca",
+        "output_sha256": "d81444a9217319c5f09151aecd32eac19fe24322c3ebf31c78e1a377ee38d631",
+        "evidence_sha256": "c5aeb3cdbb46e431043b5f733f0906e47c0dced0905b0374a2c43c32ad4e8d29",
+        "receipt_sha256": "9c0eaf233c687a250260b59c4004474c0c0b2d34b63399ac38444a3d1e358c46"
+      },
+      "actual_response_executed": false,
+      "post_state": "not_applicable_for_llm_direct",
+      "source_files_sha256": {
+        "sanitized_evidence.json": "c5aeb3cdbb46e431043b5f733f0906e47c0dced0905b0374a2c43c32ad4e8d29",
+        "sanitizer_receipt.json": "9c0eaf233c687a250260b59c4004474c0c0b2d34b63399ac38444a3d1e358c46",
+        "llm_call.json": "56e49544eabbc71c9c84e1e9e0b7e97e85023f8d68af640deb35adcff224bcd9",
+        "prediction_ir.json": "f167b43a630558e4e40294d0dc2ffaebbee2be18e709923404fd1d84f6a2ee64",
+        "casefile.json": "12754e6466c3bbeb172db64b7ba2e090324ea31a9cc8390cbdb602a735bee5b8",
+        "proposed_action_score.json": "36fd44e6ec172bd2023727e9e014ab3f9f4728fa04aa00dbc61ad69a9121b271",
+        "score.json": "c9b590ef4a2b6958c42cae21fa71f229633148115d97303e6ba93b71b6571d11",
+        "formal_result_manifest.json": "5b6f49ebfe40f49adb51b2d8862ddd95176cea6b48c31959c52c2d290edbf910"
+      }
+    },
+    {
+      "case_id": "AURORA-CHAIN-002",
+      "required_files": {
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
+        "llm_call.json": true,
+        "prediction_ir.json": true,
+        "casefile.json": true,
+        "proposed_action_score.json": true,
+        "score.json": true,
+        "formal_result_manifest.json": true
+      },
+      "all_required_files_present": true,
+      "source_manifest_sha256": "c1ae25ae2d0a2cf263567be6485d4186ef80eeea6a5a6fd7df465b65f77177dc",
+      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AURORA-CHAIN-002/formal_result_manifest.normalized.json",
+      "trial_class": "evaluation_valid_fail",
+      "trace": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 6,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 2,
+        "fn": 2,
+        "precision": 0.3333333333333333,
+        "recall": 0.3333333333333333,
+        "f1": 0.3333333333333333
+      },
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "tokens": 3768,
+      "prompt_tokens": 2634,
+      "completion_tokens": 1134,
+      "duration_ms": 3427.493300056085,
+      "model": "deepseek-chat",
+      "prompt_sha256": "de55409d50f535a6f3c55e6979c51fecd30a28ce18cbda570931e2f791766d50",
+      "input_evidence_sha256": "863ad5a21523a4df3d87c40128ab560c2e80271db3c78114de9677b9c3260479",
+      "model_output_sha256": "1269c3b65d3b11a17cd090ce2e525e3ff76a45447b4ba5c71f7b22da3e51aa5d",
+      "prompt_isolation": {
+        "forbidden_token_hits": [],
+        "passed": true
+      },
+      "sanitizer": {
+        "input_sha256": "299406efecaff76d3840c66e8cbabbe2b99ddcd923ad5bd2c894cc8d0e881b46",
+        "output_sha256": "863ad5a21523a4df3d87c40128ab560c2e80271db3c78114de9677b9c3260479",
+        "evidence_sha256": "dea7dc7864b398340d18b2cb4c4f0265644229209291caee832b96dfde69e829",
+        "receipt_sha256": "a342552e17aa6551a982e1cb67a6878eb860fe31a86e80a9bf5cbdff736f5b2e"
+      },
+      "actual_response_executed": false,
+      "post_state": "not_applicable_for_llm_direct",
+      "source_files_sha256": {
+        "sanitized_evidence.json": "dea7dc7864b398340d18b2cb4c4f0265644229209291caee832b96dfde69e829",
+        "sanitizer_receipt.json": "a342552e17aa6551a982e1cb67a6878eb860fe31a86e80a9bf5cbdff736f5b2e",
+        "llm_call.json": "1a1c53039f1253bf5acc75593c2b0704ba64d6a02f8db149f0aa6988890adfa1",
+        "prediction_ir.json": "88fe14f6fdd0252d37cc35d6ad2f5a655123e0fc71497a939da885a700cdb74b",
+        "casefile.json": "1fcfc269f75c425c907ce9e2a547c1124741fce11f676756021d483ea5ccb1a3",
+        "proposed_action_score.json": "a2b6b5ba7c65a1e8f2574c3b8b5c534027c2904db519016ec38ea290a3ca20e1",
+        "score.json": "056c7310617769159fa87f1c2bd10ed10e939ceafd8b018b0a2b139d77412d86",
+        "formal_result_manifest.json": "c1ae25ae2d0a2cf263567be6485d4186ef80eeea6a5a6fd7df465b65f77177dc"
+      }
+    },
+    {
+      "case_id": "MEP-WINDOWS-WEBSHELL-01",
+      "required_files": {
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
+        "llm_call.json": true,
+        "prediction_ir.json": true,
+        "casefile.json": true,
+        "proposed_action_score.json": true,
+        "score.json": true,
+        "formal_result_manifest.json": true
+      },
+      "all_required_files_present": true,
+      "source_manifest_sha256": "371ca0fe7a10e8243b5d96704851920873a78f10797b0f81d6113380ca4c9ed4",
+      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/MEP-WINDOWS-WEBSHELL-01/formal_result_manifest.normalized.json",
+      "trial_class": "evaluation_valid_fail",
+      "trace": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 3,
+        "fn": 1,
+        "precision": 0.25,
+        "recall": 0.5,
+        "f1": 0.3333333333333333
+      },
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "tokens": 4019,
+      "prompt_tokens": 2590,
+      "completion_tokens": 1429,
+      "duration_ms": 4395.111899939366,
+      "model": "deepseek-chat",
+      "prompt_sha256": "654d1186f227a7ccc6e131d27092648d7c57a8f1cbe63c794b510268db44c2c6",
+      "input_evidence_sha256": "64f99e60667ff004c8df33452e333a3a580592225d3a05e64568cf9ae409232f",
+      "model_output_sha256": "229aff2d7e1a0c2c1902ab26d949506758de0c0294facc736ba6049bb354c8e4",
+      "prompt_isolation": {
+        "forbidden_token_hits": [],
+        "passed": true
+      },
+      "sanitizer": {
+        "input_sha256": "c57017a87557720e24280884fb0f28b98e3f94c0e1308fef163e18f443931ca9",
+        "output_sha256": "64f99e60667ff004c8df33452e333a3a580592225d3a05e64568cf9ae409232f",
+        "evidence_sha256": "440457480f3743cf2276aa7c2b36c38a4dbc479e928c83e92636f8bcd4da84bd",
+        "receipt_sha256": "0b50bf2b379312975be6deb308178ad802e1e6e54b072254e1cb2a1d6a3dbfd0"
+      },
+      "actual_response_executed": false,
+      "post_state": "not_applicable_for_llm_direct",
+      "source_files_sha256": {
+        "sanitized_evidence.json": "440457480f3743cf2276aa7c2b36c38a4dbc479e928c83e92636f8bcd4da84bd",
+        "sanitizer_receipt.json": "0b50bf2b379312975be6deb308178ad802e1e6e54b072254e1cb2a1d6a3dbfd0",
+        "llm_call.json": "9ae68bd1f04f0778d0d14e821d8aab27f860aab29c45ae991bb7d64a0ad09376",
+        "prediction_ir.json": "ab55d70b459f2a6e87e1390998c1ac69ace6ec90421f50335d10db567ace0552",
+        "casefile.json": "5faebf9ec6922ae79acf875a4daff2fe9413aa508168b553b2aaf1353d4ee234",
+        "proposed_action_score.json": "1a6232fd4326460b8e7d565e6ac4057d5dc73c540ae13644766ca1f41b4d0cbb",
+        "score.json": "5943addb0b359d0475e1d97a36354c04a07ee047072036ba0ae2353049fdc002",
+        "formal_result_manifest.json": "371ca0fe7a10e8243b5d96704851920873a78f10797b0f81d6113380ca4c9ed4"
+      }
+    }
+  ]
+}

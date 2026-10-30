@@ -1,0 +1,179 @@
+{
+  "schema_version": "c2trace.bench.ground_truth.v4",
+  "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+  "source_id": "ael-sandworm-exaramel-win-001-20260923",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "target_kind": "exaramel_windows_https_rat",
+  "ability_instances": [
+    {
+      "instance_key": "bootstrap.deploy_exaramel",
+      "operation_role": "bootstrap",
+      "operation_id": "FILL_FROM_BOOTSTRAP_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "a1b2c3d4-1e2f-5a3b-8c4d-5e6f7a8b9c0d",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_step_ids": [
+        "exaramel.deploy"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.exaramel.file",
+          "trace_type": "file",
+          "canonical_key": "file:path+sha256",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:file"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_exaramel",
+          "expected_value": {
+            "path": "C:\\Users\\Public\\c2t_<run_id>.exe",
+            "sha256": "FILL_FROM_BEFORE_RESPONSE"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/file",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        },
+        {
+          "trace_id": "trace.exaramel.process",
+          "trace_type": "process",
+          "canonical_key": "process:pid+creation_time+path",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:process"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_exaramel",
+          "expected_value": {
+            "pid": "FILL_FROM_TARGET",
+            "creation_time": "FILL_FROM_BEFORE_RESPONSE",
+            "path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/process",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        },
+        {
+          "trace_id": "trace.exaramel.network",
+          "trace_type": "network_connection",
+          "canonical_key": "network:protocol+src_ip+src_port+dst_ip+dst_port+pid",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:network_connection"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_exaramel",
+          "expected_value": {
+            "protocol": "tcp",
+            "src_ip": "#{c2trace.victim_ip}",
+            "src_port": "FILL_FROM_SURICATA",
+            "dst_ip": "#{c2trace.kali_ip}",
+            "dst_port": 18449,
+            "pid": "FILL_FROM_TARGET"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/network",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        }
+      ]
+    },
+    {
+      "instance_key": "scenario.get_user",
+      "operation_role": "scenario",
+      "operation_id": "FILL_FROM_SCENARIO_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "b2c3d4e5-2f3a-6b4c-9d5e-6f7a8b9c0d1e",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_step_ids": [
+        "exaramel.get_user"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.exaramel.get_user",
+          "trace_type": "process",
+          "canonical_key": "process:pid+creation_time+path",
+          "required": true,
+          "discriminative": false,
+          "anchor": false,
+          "shared_context": true,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:process"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "scenario.get_user",
+          "expected_value": {
+            "pid": "FILL_FROM_TARGET",
+            "creation_time": "FILL_FROM_BEFORE_RESPONSE",
+            "path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/process",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "get-user is issued through the same exaramel process; the process must be observable."
+        }
+      ]
+    }
+  ],
+  "response_actions": [
+    {
+      "tool": "kill_process",
+      "required": true,
+      "arguments": {
+        "pid": "FILL_FROM_TARGET",
+        "expected_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "target": "response_target"
+    },
+    {
+      "tool": "remove_file",
+      "required": true,
+      "arguments": {
+        "path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "target": "response_target"
+    }
+  ]
+}

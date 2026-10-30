@@ -1,0 +1,333 @@
+{
+  "schema_version": "llm_direct.per_case_aggregate.v1",
+  "cases": [
+    {
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "n": 1,
+      "trace": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "trace_mean": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "trace_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "response_action_proposal_mean": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "response_action_proposal_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      }
+    },
+    {
+      "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+      "n": 1,
+      "trace": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "trace_mean": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "trace_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "response_action_proposal_mean": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "response_action_proposal_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      }
+    },
+    {
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "n": 1,
+      "trace": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "trace_mean": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "trace_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "response_action_proposal_mean": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "response_action_proposal_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      }
+    },
+    {
+      "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "n": 1,
+      "trace": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "trace_mean": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "trace_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "response_action_proposal_mean": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "response_action_proposal_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      }
+    },
+    {
+      "case_id": "AEL-WIZARD-EMOTET-001",
+      "n": 1,
+      "trace": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "trace_mean": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "trace_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "response_action_proposal_mean": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "response_action_proposal_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      }
+    },
+    {
+      "case_id": "AURORA-CHAIN-001",
+      "n": 1,
+      "trace": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "trace_mean": {
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "trace_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "response_action_proposal_mean": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "response_action_proposal_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      }
+    },
+    {
+      "case_id": "AURORA-CHAIN-002",
+      "n": 1,
+      "trace": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 6,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 2,
+        "fn": 2,
+        "precision": 0.3333333333333333,
+        "recall": 0.3333333333333333,
+        "f1": 0.3333333333333333
+      },
+      "trace_mean": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "trace_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "response_action_proposal_mean": {
+        "precision": 0.3333333333333333,
+        "recall": 0.3333333333333333,
+        "f1": 0.3333333333333333
+      },
+      "response_action_proposal_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      }
+    },
+    {
+      "case_id": "MEP-WINDOWS-WEBSHELL-01",
+      "n": 1,
+      "trace": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "response_action_proposal": {
+        "metric_semantics": "proposal only; no host response executed",
+        "tp": 1,
+        "fp": 3,
+        "fn": 1,
+        "precision": 0.25,
+        "recall": 0.5,
+        "f1": 0.3333333333333333
+      },
+      "trace_mean": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "trace_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "response_action_proposal_mean": {
+        "precision": 0.25,
+        "recall": 0.5,
+        "f1": 0.3333333333333333
+      },
+      "response_action_proposal_sd": {
+        "precision": null,
+        "recall": null,
+        "f1": null
+      }
+    }
+  ]
+}

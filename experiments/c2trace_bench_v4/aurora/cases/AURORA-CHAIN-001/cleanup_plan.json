@@ -1,0 +1,44 @@
+{
+  "schema_version": "c2trace.bench.cleanup_plan.v4",
+  "case_id": "AURORA-CHAIN-001",
+  "source_id": "aurora-demo-chain-001-20260731",
+  "dataset_stratum": "public_tool_benchmark",
+  "fail_closed": true,
+  "actions": [
+    {
+      "action_id": "cleanup.sliver_process",
+      "source_step_ids": [
+        "sliver.deploy"
+      ],
+      "phase": "after_scoring",
+      "tool": "stop_process",
+      "target_template": {
+        "path": "C:\\Users\\Public\\#{c2trace.target_name}.exe"
+      },
+      "identity_validation": [
+        "path",
+        "pid",
+        "creation_time",
+        "run_id"
+      ],
+      "required": true
+    },
+    {
+      "action_id": "cleanup.sliver_file",
+      "source_step_ids": [
+        "sliver.deploy"
+      ],
+      "phase": "after_scoring",
+      "tool": "remove_file",
+      "target_template": {
+        "path": "C:\\Users\\Public\\#{c2trace.target_name}.exe"
+      },
+      "identity_validation": [
+        "path",
+        "sha256",
+        "run_id"
+      ],
+      "required": true
+    }
+  ]
+}

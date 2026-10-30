@@ -1,0 +1,5 @@
+id: 00000000-0000-0000-0000-000000000020
+name: C2Trace v4 AEL-SANDWORM-EXARAMEL-WIN-001 Scenario
+description: Issue get-user task via Exaramel C2
+atomic_ordering:
+- b2c3d4e5-2f3a-6b4c-9d5e-6f7a8b9c0d1e

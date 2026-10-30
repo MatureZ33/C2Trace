@@ -1,0 +1,11 @@
+id: 3f7bbe08-6c12-51a2-bfd1-6244985e865f
+name: AEL Carbanak run-scoped runtime source
+facts:
+- trait: c2trace.run_id
+  value: <run_id>
+- trait: c2trace.kali_ip
+  value: 192.168.21.132
+- trait: c2trace.victim_ip
+  value: <victim_ip>
+- trait: c2trace.target_name
+  value: c2t_<run_id>

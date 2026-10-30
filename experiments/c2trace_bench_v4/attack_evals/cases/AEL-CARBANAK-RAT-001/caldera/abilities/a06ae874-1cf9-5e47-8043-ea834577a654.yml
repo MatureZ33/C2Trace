@@ -1,0 +1,19 @@
+---
+- id: a06ae874-1cf9-5e47-8043-ea834577a654
+  name: Stage AEL Carbanak http-rat.js [AEL-CARBANAK-RAT-001]
+  description: Copies the pinned AEL http-rat.js to a run-scoped path after SHA-256 verification.
+  tactic: command-and-control
+  technique:
+    attack_id: T1105
+    name: Ingress Tool Transfer
+  repeatable: false
+  platforms:
+    windows:
+      psh:
+        command: >-
+          $runId = "#{c2trace.run_id}"; if ($runId -notmatch "^[a-z0-9][a-z0-9-]{7,79}$") { throw };
+          $root = Join-Path $env:ProgramData ("C2TraceBenchmark"+$runId); $target = Join-Path $root "ael-carbanak-http-rat.js";
+          if (Test-Path $root) { throw }; New-Item -ItemType Directory -Path $root | Out-Null;
+          $src = "C:\Users\Public\"+$runId+".js"; if (-not (Test-Path $src)) { throw }; Copy-Item $src $target;
+          $h = (Get-FileHash -LiteralPath $target -Algorithm SHA256).Hash.ToLower();
+          if ($h -ne "49159d814f7b66d77c11c1570528876ce2865892d7da7207e8c986e6e11fabb8") { throw }; $target

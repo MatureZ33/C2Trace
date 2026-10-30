@@ -1,0 +1,45 @@
+{
+  "schema_version": "c2trace.bench.caldera_bundle.v4",
+  "case_id": "AEL-WIZARD-EMOTET-001",
+  "source_id": "ael-wizard-emotet-001-20260923",
+  "abilities": [
+    {
+      "id": "a1b2c3d4-e5f6-5a7b-8c9d-0e1f2a3b4c5d",
+      "path": "attack_evals/cases/AEL-WIZARD-EMOTET-001/caldera/abilities/a1b2c3d4-e5f6-5a7b-8c9d-0e1f2a3b4c5d.yml",
+      "sha256": "5aad9d9c8e9a344fa890b0d6a06fd2d3c37c878a8d61846fb05c3f2b45bf399e",
+      "role": "bootstrap",
+      "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "d4c3b2a1-f6e5-5b7a-9d8c-1f0e2a3b4c5d",
+      "path": "attack_evals/cases/AEL-WIZARD-EMOTET-001/caldera/abilities/d4c3b2a1-f6e5-5b7a-9d8c-1f0e2a3b4c5d.yml",
+      "sha256": "b7ac8f029a605a399abb5d56349ee5af8ac240f4410d0fbe11997e09746ccf5a",
+      "role": "scenario",
+      "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "adversaries": [
+    {
+      "id": "00000000-0000-0000-0000-000000000010",
+      "path": "attack_evals/cases/AEL-WIZARD-EMOTET-001/caldera/adversaries/00000000-0000-0000-0000-000000000010.yml",
+      "sha256": "6a62be955f9fedf3e62e5540519f93f38a2b31fb8494602742e21a61bef6c1ad",
+      "operation_role": "bootstrap",
+      "execution_agent_role": "control"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000020",
+      "path": "attack_evals/cases/AEL-WIZARD-EMOTET-001/caldera/adversaries/00000000-0000-0000-0000-000000000020.yml",
+      "sha256": "75782698a26dc23a8f980db6a0de91cd913aebae14ce03fcac380406f7befe37",
+      "operation_role": "scenario",
+      "execution_agent_role": "driver"
+    }
+  ],
+  "sources": [
+    {
+      "id": "b3f7e2a1-c4d6-5e8f-9a1b-2c3d4e5f6a7b",
+      "path": "attack_evals/cases/AEL-WIZARD-EMOTET-001/caldera/sources/b3f7e2a1-c4d6-5e8f-9a1b-2c3d4e5f6a7b.template.yml",
+      "sha256": "ad577f465925608354b8957019cf6af2e71ba04d37d81752319c43a3ed2dc011",
+      "operation_role": "runtime"
+    }
+  ]
+}

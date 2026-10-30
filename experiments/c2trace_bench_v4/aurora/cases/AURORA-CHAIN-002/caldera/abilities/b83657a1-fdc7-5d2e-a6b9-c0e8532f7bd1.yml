@@ -1,0 +1,10 @@
+id: b83657a1-fdc7-5d2e-a6b9-c0e8532f7bd1
+name: c2trace_meterpreter_deploy_dual_implant
+description: Deploy and execute dual Meterpreter reverse-TCP implants on Windows
+tactic: command-and-control
+technique_id: T1105
+platforms:
+  windows:
+    psh:
+      command: Start-Process c2t_implant.exe
+executor: psh

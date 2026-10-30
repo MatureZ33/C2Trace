@@ -1,0 +1,7 @@
+---
+id: 00000000-0000-0000-0000-000000000020
+name: c2t-sidetwist-scenario
+description: Issue whoami via SideTwist C2
+adversary_id: 00000000-0000-0000-0000-000000000020
+atomic_ordering:
+- 1bf5dcff-a65b-5606-becc-a6327f063578

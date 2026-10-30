@@ -1,0 +1,6 @@
+id: 3a169ff6-4a1d-5500-bd43-d6122920a18a
+name: MEP-WINDOWS-WEBSHELL-01 - scenario
+description: Frozen Bench v4 scenario adversary for MEP-WINDOWS-WEBSHELL-01.
+atomic_ordering:
+- dc934e5a-3184-5b6f-8535-a78cc2adfac5
+- 87bd9d84-f8b7-5810-9a53-ce0a9cdb589d

@@ -1,0 +1,11 @@
+id: 705acfa3-a4f7-54a8-8d25-8687d4d86f8b
+name: MEP-WINDOWS-WEBSHELL-01 runtime facts template
+facts:
+- trait: c2trace.caldera_http
+  value: http://192.168.21.132:8888
+- trait: c2trace.target_name
+  value: c2t_<run_id>
+- trait: c2trace.victim_ip
+  value: <victim_ip>
+- trait: c2trace.webshell_port
+  value: <allocated_18080_18979>

@@ -1,0 +1,68 @@
+{
+  "schema_version": "c2trace.bench.evidence_plan.v4",
+  "case_id": "MEP-WINDOWS-WEBSHELL-01",
+  "source_id": "ctid-micro-emulation-plans-2025-05-28",
+  "dataset_stratum": "micro_emulation_plan",
+  "captures": [
+    {
+      "capture_id": "baseline.host",
+      "stage": "baseline",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "before.host",
+      "stage": "before_response",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [
+        "trace.webshell.file",
+        "trace.webshell.process",
+        "trace.webshell.listener",
+        "trace.webshell.groups.file",
+        "trace.webshell.tasks.file"
+      ],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.exe",
+        "case_id": "MEP-WINDOWS-WEBSHELL-01"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "before.network",
+      "stage": "before_response",
+      "collector": "suricata",
+      "trace_fact_ids": [
+        "trace.webshell.listener"
+      ],
+      "selector": {
+        "signature_id": 9204005,
+        "network_mode": "inbound_listener"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "after_dryrun.host",
+      "stage": "after_dryrun",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "after_execute.host",
+      "stage": "after_execute",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "required": true
+    }
+  ]
+}

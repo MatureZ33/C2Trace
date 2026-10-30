@@ -1,0 +1,46 @@
+{
+  "schema_version": "c2trace.bench.caldera_bundle.v4",
+  "case_id": "AEL-CARBANAK-RAT-001",
+  "source_id": "ael-carbanak-rat-001-20260813",
+  "abilities": [
+    {
+      "id": "a06ae874-1cf9-5e47-8043-ea834577a654",
+      "path": "attack_evals/cases/AEL-CARBANAK-RAT-001/caldera/abilities/a06ae874-1cf9-5e47-8043-ea834577a654.yml",
+      "role": "bootstrap",
+      "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "sha256": "82d2befda50a87c25d174f8bc51efc3cc93aa2ca036f336388dbf0241d535782"
+    },
+    {
+      "id": "5fa2d563-6d8e-5326-ab34-037f7dce531b",
+      "path": "attack_evals/cases/AEL-CARBANAK-RAT-001/caldera/abilities/5fa2d563-6d8e-5326-ab34-037f7dce531b.yml",
+      "role": "scenario",
+      "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "sha256": "1cdcc55626f80827c06e046d93f445f83d167c37c83af1cd4639c8df0e1ef484"
+    }
+  ],
+  "adversaries": [
+    {
+      "id": "00000000-0000-0000-0000-000000000010",
+      "path": "attack_evals/cases/AEL-CARBANAK-RAT-001/caldera/adversaries/00000000-0000-0000-0000-000000000010.yml",
+      "operation_role": "bootstrap",
+      "execution_agent_role": "control",
+      "sha256": "3c37c16fafe981fc9e93b7489135321d1509d9976624b70eab5354668c332e6b"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000020",
+      "path": "attack_evals/cases/AEL-CARBANAK-RAT-001/caldera/adversaries/00000000-0000-0000-0000-000000000020.yml",
+      "operation_role": "scenario",
+      "execution_agent_role": "driver",
+      "sha256": "556a0b00a490e0767082063502259e1272d1d3a4ea09c9e385c28c4a269813e9"
+    }
+  ],
+  "sources": [
+    {
+      "id": "3f7bbe08-6c12-51a2-bfd1-6244985e865f",
+      "path": "attack_evals/cases/AEL-CARBANAK-RAT-001/caldera/sources/3f7bbe08-6c12-51a2-bfd1-6244985e865f.template.yml",
+      "operation_role": "shared",
+      "sha256": "13b4b1921f93d3b47bef6aa08f8dba4e7bdae83a1499ad34bf118f9a24e729bc"
+    }
+  ],
+  "payloads": []
+}

@@ -1,0 +1,810 @@
+[
+  {
+    "experiment": "effect",
+    "case_id": "AURORA-CHAIN-001",
+    "run_id": "aurora-chain-001-20260929T104324Z",
+    "path": "data/effect/AURORA-CHAIN-001",
+    "system": "c2trace"
+  },
+  {
+    "experiment": "effect",
+    "case_id": "AURORA-CHAIN-002",
+    "run_id": "aurora-chain-002-20260929T104655Z",
+    "path": "data/effect/AURORA-CHAIN-002",
+    "system": "c2trace"
+  },
+  {
+    "experiment": "effect",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "run_id": "sidetwist-001-20260929T105337Z",
+    "path": "data/effect/AEL-OILRIG-SIDETWIST-001",
+    "system": "c2trace"
+  },
+  {
+    "experiment": "effect",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "run_id": "exaramel-win-001-20260929T105858Z",
+    "path": "data/effect/AEL-SANDWORM-EXARAMEL-WIN-001",
+    "system": "c2trace"
+  },
+  {
+    "experiment": "effect",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "run_id": "emotet-001-20260929T141149Z",
+    "path": "data/effect/AEL-WIZARD-EMOTET-001",
+    "system": "c2trace"
+  },
+  {
+    "experiment": "effect",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "run_id": "carbanak-rat-001-20260929T141934Z",
+    "path": "data/effect/AEL-CARBANAK-RAT-001",
+    "system": "c2trace"
+  },
+  {
+    "experiment": "effect",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "run_id": "plugx-001-20260929T142244Z",
+    "path": "data/effect/AEL-MUSTANG-PANDA-PLUGX-001",
+    "system": "c2trace"
+  },
+  {
+    "experiment": "effect",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "run_id": "mep-webshell-001-20260929T143059Z",
+    "path": "data/effect/MEP-WINDOWS-WEBSHELL-01",
+    "system": "c2trace"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AURORA-CHAIN-002",
+    "trial_id": "V8-PB-001-R3-C2TRACE",
+    "run_id": "formal-V8-PB-001-R3-C2TRACE-20261004T081854Z",
+    "block_id": "PB-001",
+    "repetition": 3,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-001-R3-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AURORA-CHAIN-002",
+    "trial_id": "V8-PB-001-R3-REACT",
+    "run_id": "formal-V8-PB-001-R3-REACT-20261004T082634Z",
+    "block_id": "PB-001",
+    "repetition": 3,
+    "system": "react",
+    "path": "data/baseline/V8-PB-001-R3-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "trial_id": "V8-PB-002-R1-REACT",
+    "run_id": "formal-V8-PB-002-R1-REACT-20261004T011816Z",
+    "block_id": "PB-002",
+    "repetition": 1,
+    "system": "react",
+    "path": "data/baseline/V8-PB-002-R1-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "trial_id": "V8-PB-002-R1-C2TRACE",
+    "run_id": "formal-V8-PB-002-R1-C2TRACE-20261004T012017Z",
+    "block_id": "PB-002",
+    "repetition": 1,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-002-R1-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "trial_id": "V8-PB-003-R2-REACT",
+    "run_id": "formal-V8-PB-003-R2-REACT-20261004T030042Z",
+    "block_id": "PB-003",
+    "repetition": 2,
+    "system": "react",
+    "path": "data/baseline/V8-PB-003-R2-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "trial_id": "V8-PB-003-R2-C2TRACE",
+    "run_id": "formal-V8-PB-003-R2-C2TRACE-20261004T030303Z",
+    "block_id": "PB-003",
+    "repetition": 2,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-003-R2-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AURORA-CHAIN-001",
+    "trial_id": "V8-PB-004-R2-C2TRACE",
+    "run_id": "formal-V8-PB-004-R2-C2TRACE-20261004T033207Z",
+    "block_id": "PB-004",
+    "repetition": 2,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-004-R2-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AURORA-CHAIN-001",
+    "trial_id": "V8-PB-004-R2-REACT",
+    "run_id": "formal-V8-PB-004-R2-REACT-20261004T033352Z",
+    "block_id": "PB-004",
+    "repetition": 2,
+    "system": "react",
+    "path": "data/baseline/V8-PB-004-R2-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "trial_id": "V8-PB-005-R1-C2TRACE",
+    "run_id": "formal-V8-PB-005-R1-C2TRACE-20261004T035550Z",
+    "block_id": "PB-005",
+    "repetition": 1,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-005-R1-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "trial_id": "V8-PB-005-R1-REACT",
+    "run_id": "V8-PB-005-R1-REACT-REPLACEMENT-SAFETYFIX-20261005T160000Z",
+    "block_id": "PB-005",
+    "repetition": 1,
+    "system": "react",
+    "path": "data/baseline/V8-PB-005-R1-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "trial_id": "V8-PB-006-R1-C2TRACE",
+    "run_id": "formal-V8-PB-006-R1-C2TRACE-20261004T141500Z",
+    "block_id": "PB-006",
+    "repetition": 1,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-006-R1-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "trial_id": "V8-PB-006-R1-REACT",
+    "run_id": "formal-V8-PB-006-R1-REACT-20261004T142000Z",
+    "block_id": "PB-006",
+    "repetition": 1,
+    "system": "react",
+    "path": "data/baseline/V8-PB-006-R1-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AURORA-CHAIN-001",
+    "trial_id": "V8-PB-007-R1-REACT",
+    "run_id": "formal-V8-PB-007-R1-REACT-20261004T143000Z",
+    "block_id": "PB-007",
+    "repetition": 1,
+    "system": "react",
+    "path": "data/baseline/V8-PB-007-R1-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AURORA-CHAIN-001",
+    "trial_id": "V8-PB-007-R1-C2TRACE",
+    "run_id": "formal-V8-PB-007-R1-C2TRACE-20261004T144000Z",
+    "block_id": "PB-007",
+    "repetition": 1,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-007-R1-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "trial_id": "V8-PB-008-R2-C2TRACE",
+    "run_id": "formal-V8-PB-008-R2-C2TRACE-20261004T145500Z",
+    "block_id": "PB-008",
+    "repetition": 2,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-008-R2-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "trial_id": "V8-PB-008-R2-REACT",
+    "run_id": "formal-V8-PB-008-R2-REACT-20261004T150000Z",
+    "block_id": "PB-008",
+    "repetition": 2,
+    "system": "react",
+    "path": "data/baseline/V8-PB-008-R2-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AURORA-CHAIN-001",
+    "trial_id": "V8-PB-009-R3-REACT",
+    "run_id": "V8-PB-009-R3-REACT-REPAIR-20261005T161500Z",
+    "block_id": "PB-009",
+    "repetition": 3,
+    "system": "react",
+    "path": "data/baseline/V8-PB-009-R3-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AURORA-CHAIN-001",
+    "trial_id": "V8-PB-009-R3-C2TRACE",
+    "run_id": "V8-PB-009-R3-C2TRACE-REPLACEMENT-MODELSVC-20261014T004845Z",
+    "block_id": "PB-009",
+    "repetition": 3,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-009-R3-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "trial_id": "V8-PB-010-R3-REACT",
+    "run_id": "V8-PB-010-R3-REACT-REPLACEMENT-MODELSVC-20261014T005045Z",
+    "block_id": "PB-010",
+    "repetition": 3,
+    "system": "react",
+    "path": "data/baseline/V8-PB-010-R3-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "trial_id": "V8-PB-010-R3-C2TRACE",
+    "run_id": "V8-PB-010-R3-C2TRACE-REPLACEMENT-MODELSVC-20261014T005251Z",
+    "block_id": "PB-010",
+    "repetition": 3,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-010-R3-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "trial_id": "V8-PB-011-R3-C2TRACE",
+    "run_id": "V8-PB-011-R3-C2TRACE-REPLACEMENT-MODELSVC-20261014T005511Z",
+    "block_id": "PB-011",
+    "repetition": 3,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-011-R3-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "trial_id": "V8-PB-011-R3-REACT",
+    "run_id": "V8-PB-011-R3-REACT-REPLACEMENT-MODELSVC-20261014T005717Z",
+    "block_id": "PB-011",
+    "repetition": 3,
+    "system": "react",
+    "path": "data/baseline/V8-PB-011-R3-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AURORA-CHAIN-002",
+    "trial_id": "V8-PB-012-R2-C2TRACE",
+    "run_id": "V8-PB-012-R2-C2TRACE-REPLACEMENT2-20261005T033000Z",
+    "block_id": "PB-012",
+    "repetition": 2,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-012-R2-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AURORA-CHAIN-002",
+    "trial_id": "V8-PB-012-R2-REACT",
+    "run_id": "V8-PB-012-R2-REACT-REPLACEMENT-MODELSVC-20261014T021405Z",
+    "block_id": "PB-012",
+    "repetition": 2,
+    "system": "react",
+    "path": "data/baseline/V8-PB-012-R2-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "trial_id": "V8-PB-013-R2-REACT",
+    "run_id": "V8-PB-013-R2-REACT-20261005T041000Z",
+    "block_id": "PB-013",
+    "repetition": 2,
+    "system": "react",
+    "path": "data/baseline/V8-PB-013-R2-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "trial_id": "V8-PB-013-R2-C2TRACE",
+    "run_id": "V8-PB-013-R2-C2TRACE-20261005T042000Z",
+    "block_id": "PB-013",
+    "repetition": 2,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-013-R2-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "trial_id": "V8-PB-014-R1-REACT",
+    "run_id": "V8-PB-014-R1-REACT-REPLACEMENT3-20261005T045000Z",
+    "block_id": "PB-014",
+    "repetition": 1,
+    "system": "react",
+    "path": "data/baseline/V8-PB-014-R1-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "trial_id": "V8-PB-014-R1-C2TRACE",
+    "run_id": "V8-PB-014-R1-C2TRACE-20261005T050000Z",
+    "block_id": "PB-014",
+    "repetition": 1,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-014-R1-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "trial_id": "V8-PB-015-R3-REACT",
+    "run_id": "V8-PB-015-R3-REACT-20261005T050500Z",
+    "block_id": "PB-015",
+    "repetition": 3,
+    "system": "react",
+    "path": "data/baseline/V8-PB-015-R3-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "trial_id": "V8-PB-015-R3-C2TRACE",
+    "run_id": "V8-PB-015-R3-C2TRACE-REPLACEMENT-20261005T051000Z",
+    "block_id": "PB-015",
+    "repetition": 3,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-015-R3-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "trial_id": "V8-PB-016-R2-REACT",
+    "run_id": "V8-PB-016-R2-REACT-20261005T060000Z",
+    "block_id": "PB-016",
+    "repetition": 2,
+    "system": "react",
+    "path": "data/baseline/V8-PB-016-R2-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "trial_id": "V8-PB-016-R2-C2TRACE",
+    "run_id": "V8-PB-016-R2-C2TRACE-REPLACEMENT-20261005T061500Z",
+    "block_id": "PB-016",
+    "repetition": 2,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-016-R2-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "trial_id": "V8-PB-017-R2-C2TRACE",
+    "run_id": "V8-PB-017-R2-C2TRACE-20261005T070000Z",
+    "block_id": "PB-017",
+    "repetition": 2,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-017-R2-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "trial_id": "V8-PB-017-R2-REACT",
+    "run_id": "V8-PB-017-R2-REACT-20261005T071000Z",
+    "block_id": "PB-017",
+    "repetition": 2,
+    "system": "react",
+    "path": "data/baseline/V8-PB-017-R2-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "trial_id": "V8-PB-018-R1-REACT",
+    "run_id": "V8-PB-018-R1-REACT-20261005T080000Z",
+    "block_id": "PB-018",
+    "repetition": 1,
+    "system": "react",
+    "path": "data/baseline/V8-PB-018-R1-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "trial_id": "V8-PB-018-R1-C2TRACE",
+    "run_id": "V8-PB-018-R1-C2TRACE-20261005T081000Z",
+    "block_id": "PB-018",
+    "repetition": 1,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-018-R1-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "trial_id": "V8-PB-019-R3-C2TRACE",
+    "run_id": "V8-PB-019-R3-C2TRACE-20261005T090000Z",
+    "block_id": "PB-019",
+    "repetition": 3,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-019-R3-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "trial_id": "V8-PB-019-R3-REACT",
+    "run_id": "V8-PB-019-R3-REACT-20261005T091000Z",
+    "block_id": "PB-019",
+    "repetition": 3,
+    "system": "react",
+    "path": "data/baseline/V8-PB-019-R3-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "trial_id": "V8-PB-020-R1-C2TRACE",
+    "run_id": "V8-PB-020-R1-C2TRACE-20261005T100000Z",
+    "block_id": "PB-020",
+    "repetition": 1,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-020-R1-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "trial_id": "V8-PB-020-R1-REACT",
+    "run_id": "V8-PB-020-R1-REACT-20261005T101000Z",
+    "block_id": "PB-020",
+    "repetition": 1,
+    "system": "react",
+    "path": "data/baseline/V8-PB-020-R1-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "trial_id": "V8-PB-021-R3-REACT",
+    "run_id": "V8-PB-021-R3-REACT-REPLACEMENT4-20261005T120000Z",
+    "block_id": "PB-021",
+    "repetition": 3,
+    "system": "react",
+    "path": "data/baseline/V8-PB-021-R3-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "trial_id": "V8-PB-021-R3-C2TRACE",
+    "run_id": "V8-PB-021-R3-C2TRACE-REPLACEMENT-20261005T121500Z",
+    "block_id": "PB-021",
+    "repetition": 3,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-021-R3-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AURORA-CHAIN-002",
+    "trial_id": "V8-PB-022-R1-REACT",
+    "run_id": "V8-PB-022-R1-REACT-REPLACEMENT-20261005T124500Z",
+    "block_id": "PB-022",
+    "repetition": 1,
+    "system": "react",
+    "path": "data/baseline/V8-PB-022-R1-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AURORA-CHAIN-002",
+    "trial_id": "V8-PB-022-R1-C2TRACE",
+    "run_id": "V8-PB-022-R1-C2TRACE-20261005T131500Z",
+    "block_id": "PB-022",
+    "repetition": 1,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-022-R1-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "trial_id": "V8-PB-023-R2-REACT",
+    "run_id": "V8-PB-023-R2-REACT-20261005T140000Z",
+    "block_id": "PB-023",
+    "repetition": 2,
+    "system": "react",
+    "path": "data/baseline/V8-PB-023-R2-REACT"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "trial_id": "V8-PB-023-R2-C2TRACE",
+    "run_id": "V8-PB-023-R2-C2TRACE-20261005T143000Z",
+    "block_id": "PB-023",
+    "repetition": 2,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-023-R2-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "trial_id": "V8-PB-024-R3-C2TRACE",
+    "run_id": "V8-PB-024-R3-C2TRACE-20261005T150000Z",
+    "block_id": "PB-024",
+    "repetition": 3,
+    "system": "c2trace",
+    "path": "data/baseline/V8-PB-024-R3-C2TRACE"
+  },
+  {
+    "experiment": "baseline",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "trial_id": "V8-PB-024-R3-REACT",
+    "run_id": "V8-PB-024-R3-REACT-20261005T153000Z",
+    "block_id": "PB-024",
+    "repetition": 3,
+    "system": "react",
+    "path": "data/baseline/V8-PB-024-R3-REACT"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AURORA-CHAIN-001",
+    "run_id": "ABL-F32-A1-CASE01-20261007T005117Z-aurora-chain-001-r01",
+    "system": "A1",
+    "path": "data/ablation/A1/AURORA-CHAIN-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AURORA-CHAIN-002",
+    "run_id": "ABL-F32-A1-CASE02-20261007T012017Z-aurora-chain-002-r01",
+    "system": "A1",
+    "path": "data/ablation/A1/AURORA-CHAIN-002"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "run_id": "ABL-F32-A1-CASE03-20261007T014623Z-ael-wizard-emotet-001-r01",
+    "system": "A1",
+    "path": "data/ablation/A1/AEL-WIZARD-EMOTET-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "run_id": "ABL-F32-A1-CASE04-20261007T015231Z-ael-mustang-panda-plugx-001-r01",
+    "system": "A1",
+    "path": "data/ablation/A1/AEL-MUSTANG-PANDA-PLUGX-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "run_id": "ABL-F32-A1-CASE05-20261007T012727Z-ael-carbanak-rat-001-r01",
+    "system": "A1",
+    "path": "data/ablation/A1/AEL-CARBANAK-RAT-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "run_id": "ABL-F32-A1-CASE06-20261007T013236Z-ael-oilrig-sidetwist-001-r01",
+    "system": "A1",
+    "path": "data/ablation/A1/AEL-OILRIG-SIDETWIST-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "run_id": "ABL-F32-A1-CASE07-20261007T013838Z-ael-sandworm-exaramel-win-001-r01",
+    "system": "A1",
+    "path": "data/ablation/A1/AEL-SANDWORM-EXARAMEL-WIN-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "run_id": "ABL-F32-A1-CASE08-20261007T015929Z-mep-windows-webshell-01-r01",
+    "system": "A1",
+    "path": "data/ablation/A1/MEP-WINDOWS-WEBSHELL-01"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AURORA-CHAIN-001",
+    "run_id": "ABL-F32-A2-CASE01-20261007T005232Z-aurora-chain-001-r01",
+    "system": "A2",
+    "path": "data/ablation/A2/AURORA-CHAIN-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AURORA-CHAIN-002",
+    "run_id": "ABL-F32-A2-CASE02-20261007T022750Z-aurora-chain-002-r01",
+    "system": "A2",
+    "path": "data/ablation/A2/AURORA-CHAIN-002"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "run_id": "ABL-F32-A2-CASE03-20261007T014756Z-ael-wizard-emotet-001-r01",
+    "system": "A2",
+    "path": "data/ablation/A2/AEL-WIZARD-EMOTET-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "run_id": "ABL-F32-A2-CASE04-20261007T015403Z-ael-mustang-panda-plugx-001-r01",
+    "system": "A2",
+    "path": "data/ablation/A2/AEL-MUSTANG-PANDA-PLUGX-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "run_id": "ABL-F32-A2-CASE05-20261007T012830Z-ael-carbanak-rat-001-r01",
+    "system": "A2",
+    "path": "data/ablation/A2/AEL-CARBANAK-RAT-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "run_id": "ABL-F32-A2-CASE06-20261007T013411Z-ael-oilrig-sidetwist-001-r01",
+    "system": "A2",
+    "path": "data/ablation/A2/AEL-OILRIG-SIDETWIST-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "run_id": "ABL-F32-A2-CASE07-20261007T013952Z-ael-sandworm-exaramel-win-001-r01",
+    "system": "A2",
+    "path": "data/ablation/A2/AEL-SANDWORM-EXARAMEL-WIN-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "run_id": "ABL-F32-A2-CASE08-20261007T020323Z-mep-windows-webshell-01-r01",
+    "system": "A2",
+    "path": "data/ablation/A2/MEP-WINDOWS-WEBSHELL-01"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AURORA-CHAIN-001",
+    "run_id": "ABL-F32-A3-CASE01-20261007T005334Z-aurora-chain-001-r01",
+    "system": "A3",
+    "path": "data/ablation/A3/AURORA-CHAIN-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AURORA-CHAIN-002",
+    "run_id": "ABL-F32-A3-CASE02-20261007T005812Z-aurora-chain-002-r01",
+    "system": "A3",
+    "path": "data/ablation/A3/AURORA-CHAIN-002"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "run_id": "ABL-F32-A3-CASE03-20261007T014915Z-ael-wizard-emotet-001-r01",
+    "system": "A3",
+    "path": "data/ablation/A3/AEL-WIZARD-EMOTET-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "run_id": "ABL-F32-A3-CASE04-20261007T015521Z-ael-mustang-panda-plugx-001-r01",
+    "system": "A3",
+    "path": "data/ablation/A3/AEL-MUSTANG-PANDA-PLUGX-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "run_id": "ABL-F32-A3-CASE05-20261007T012941Z-ael-carbanak-rat-001-r01",
+    "system": "A3",
+    "path": "data/ablation/A3/AEL-CARBANAK-RAT-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "run_id": "ABL-F32-A3-CASE06-20261007T013529Z-ael-oilrig-sidetwist-001-r01",
+    "system": "A3",
+    "path": "data/ablation/A3/AEL-OILRIG-SIDETWIST-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "run_id": "ABL-F32-A3-CASE07-20261007T014055Z-ael-sandworm-exaramel-win-001-r01",
+    "system": "A3",
+    "path": "data/ablation/A3/AEL-SANDWORM-EXARAMEL-WIN-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "run_id": "ABL-F32-A3-CASE08-20261007T020628Z-mep-windows-webshell-01-r01",
+    "system": "A3",
+    "path": "data/ablation/A3/MEP-WINDOWS-WEBSHELL-01"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AURORA-CHAIN-001",
+    "run_id": "ABL-F32-A4-CASE01-20261007T005454Z-aurora-chain-001-r01",
+    "system": "A4",
+    "path": "data/ablation/A4/AURORA-CHAIN-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AURORA-CHAIN-002",
+    "run_id": "ABL-F32-A4-CASE02-20261007T010318Z-aurora-chain-002-r01",
+    "system": "A4",
+    "path": "data/ablation/A4/AURORA-CHAIN-002"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "run_id": "ABL-F32-A4-CASE03-20261007T015054Z-ael-wizard-emotet-001-r01",
+    "system": "A4",
+    "path": "data/ablation/A4/AEL-WIZARD-EMOTET-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "run_id": "ABL-F32-A4-CASE04-20261007T015632Z-ael-mustang-panda-plugx-001-r01",
+    "system": "A4",
+    "path": "data/ablation/A4/AEL-MUSTANG-PANDA-PLUGX-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "run_id": "ABL-F32-A4-CASE05-20261007T013112Z-ael-carbanak-rat-001-r01",
+    "system": "A4",
+    "path": "data/ablation/A4/AEL-CARBANAK-RAT-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "run_id": "ABL-F32-A4-CASE06-20261007T013703Z-ael-oilrig-sidetwist-001-r01",
+    "system": "A4",
+    "path": "data/ablation/A4/AEL-OILRIG-SIDETWIST-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "run_id": "ABL-F32-A4-CASE07-20261007T015810Z-ael-sandworm-exaramel-win-001-r01",
+    "system": "A4",
+    "path": "data/ablation/A4/AEL-SANDWORM-EXARAMEL-WIN-001"
+  },
+  {
+    "experiment": "ablation",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "run_id": "ABL-F32-A4-CASE08-20261007T021022Z-mep-windows-webshell-01-r01",
+    "system": "A4",
+    "path": "data/ablation/A4/MEP-WINDOWS-WEBSHELL-01"
+  },
+  {
+    "experiment": "llm_direct",
+    "case_id": "AURORA-CHAIN-001",
+    "system": "llm_direct",
+    "path": "data/llm_direct/AURORA-CHAIN-001"
+  },
+  {
+    "experiment": "llm_direct",
+    "case_id": "AURORA-CHAIN-002",
+    "system": "llm_direct",
+    "path": "data/llm_direct/AURORA-CHAIN-002"
+  },
+  {
+    "experiment": "llm_direct",
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "system": "llm_direct",
+    "path": "data/llm_direct/AEL-OILRIG-SIDETWIST-001"
+  },
+  {
+    "experiment": "llm_direct",
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "system": "llm_direct",
+    "path": "data/llm_direct/AEL-SANDWORM-EXARAMEL-WIN-001"
+  },
+  {
+    "experiment": "llm_direct",
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "system": "llm_direct",
+    "path": "data/llm_direct/AEL-WIZARD-EMOTET-001"
+  },
+  {
+    "experiment": "llm_direct",
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "system": "llm_direct",
+    "path": "data/llm_direct/AEL-CARBANAK-RAT-001"
+  },
+  {
+    "experiment": "llm_direct",
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "system": "llm_direct",
+    "path": "data/llm_direct/AEL-MUSTANG-PANDA-PLUGX-001"
+  },
+  {
+    "experiment": "llm_direct",
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "system": "llm_direct",
+    "path": "data/llm_direct/MEP-WINDOWS-WEBSHELL-01"
+  }
+]

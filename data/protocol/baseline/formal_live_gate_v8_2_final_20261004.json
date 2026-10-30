@@ -1,0 +1,48 @@
+{
+  "schema_version": "c2trace.baseline.formal_live_gate.v8.2.final",
+  "created_at": "2026-10-04T00:00:00Z",
+  "offline_only": true,
+  "gate": "AUTHORIZED_TO_START_FORMAL_LIVE",
+  "formal_live_authorized": true,
+  "formal_live_started": false,
+  "protocol": {
+    "path": "protocol_freeze_baseline_v8_2_schedule_amendment_20261004.json",
+    "sha256": "d14dd855bfcb366bb6b36f22a9b083f81286060c31c3dff2cc9077a67e9fa4e5",
+    "base_protocol_path": "protocol_freeze_baseline_v8_amendment_20261004.json",
+    "base_protocol_sha256": "1dde902f3f34b3e0a81b847458a1bcc8bd603702da744c73d4b08783941a7c54"
+  },
+  "schedule": {
+    "path": "第一轮基线对比实验/formal_live_schedule_v2.json",
+    "sha256": "c130b0c8fd89ea321e0c4554d1b697feae3ab4ff980aebe6b7a5f59a7178ae7a",
+    "trial_count": 48,
+    "paired_block_count": 24,
+    "namespace": "V8-PB",
+    "all_trial_statuses_planned": true
+  },
+  "collision_resolution": {
+    "historical_trial_id": "PB-001-R3-C2TRACE",
+    "historical_run_id": "formal-PB-001-R3-C2TRACE-20261003T170449Z",
+    "historical_status": "evaluation_valid_fail",
+    "preserve": true,
+    "delete": false,
+    "overwrite": false,
+    "include_in_new_primary_48": false,
+    "replacement_namespace": "V8-PB"
+  },
+  "preconditions": {
+    "offline_readiness_v7": true,
+    "pilot_audit_closure": true,
+    "no_formal_live_started_before_freeze": true,
+    "source_code_changes_after_freeze": false
+  },
+  "stop_conditions": [
+    "preflight failure",
+    "hash mismatch",
+    "run/output collision",
+    "Ground Truth input leakage",
+    "credential exposure",
+    "protected-object risk",
+    "unauthorized code/protocol/prompt/tool/scorer change"
+  ],
+  "historical_results_preserved": true
+}

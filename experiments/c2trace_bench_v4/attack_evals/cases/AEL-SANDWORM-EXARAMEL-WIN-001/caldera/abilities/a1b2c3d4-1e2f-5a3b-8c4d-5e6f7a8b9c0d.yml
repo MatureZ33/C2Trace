@@ -1,0 +1,12 @@
+id: a1b2c3d4-1e2f-5a3b-8c4d-5e6f7a8b9c0d
+name: Deploy Exaramel-Windows implant
+description: Deploy the Exaramel-Windows HTTPS C2 implant
+tactic: command-and-control
+technique:
+  attack_id: T1071.001
+  name: Web Protocols
+platforms:
+  windows:
+    psh:
+      command: echo 'Exaramel-Windows implant deployed via runner'
+      timeout: 360

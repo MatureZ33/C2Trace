@@ -1,0 +1,32 @@
+[
+  {
+    "path": "archives/effect.zip",
+    "sha256": "9bf65080e7bcdc8780a4d40cb72cb3722dc91c1ccdbd0939ecc423e4c1443d68",
+    "bytes": 1132172,
+    "files": 331
+  },
+  {
+    "path": "archives/baseline.zip",
+    "sha256": "8b7b0b325338a4f0ad2e38a02e3f7b1671e37609c11376438553b75d190cac00",
+    "bytes": 5362509,
+    "files": 2088
+  },
+  {
+    "path": "archives/ablation.zip",
+    "sha256": "5319368db1dd69a956d899b71e84dd3c45189340fe5807c6e41933ff5ebae302",
+    "bytes": 3690753,
+    "files": 1276
+  },
+  {
+    "path": "archives/llm_direct.zip",
+    "sha256": "b2d8f1a855a9f7e1dbdbf572f00ac478aa8e1b1ed14de000948953cce6a4e7e2",
+    "bytes": 98526,
+    "files": 64
+  },
+  {
+    "path": "archives/ablation_sources.zip",
+    "sha256": "f55ee95b43825f4cf39543413e77189df27f521e02a1250c75656e335464ba00",
+    "bytes": 1492786,
+    "files": 404
+  }
+]

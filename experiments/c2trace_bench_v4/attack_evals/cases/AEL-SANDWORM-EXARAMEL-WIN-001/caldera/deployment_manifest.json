@@ -1,0 +1,46 @@
+{
+  "schema_version": "c2trace.bench.caldera_bundle.v4",
+  "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+  "source_id": "ael-sandworm-exaramel-win-001-20260923",
+  "abilities": [
+    {
+      "id": "a1b2c3d4-1e2f-5a3b-8c4d-5e6f7a8b9c0d",
+      "path": "attack_evals/cases/AEL-SANDWORM-EXARAMEL-WIN-001/caldera/abilities/a1b2c3d4-1e2f-5a3b-8c4d-5e6f7a8b9c0d.yml",
+      "sha256": "3f291b1278fe497d34d5c5aeb470a02dd3e8b54a4e24fd69edab5acae0c95991",
+      "role": "bootstrap",
+      "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "b2c3d4e5-2f3a-6b4c-9d5e-6f7a8b9c0d1e",
+      "path": "attack_evals/cases/AEL-SANDWORM-EXARAMEL-WIN-001/caldera/abilities/b2c3d4e5-2f3a-6b4c-9d5e-6f7a8b9c0d1e.yml",
+      "sha256": "a4949bd5e67498f46a5792de2542229ac59609eb5a5873b70819c47231d23074",
+      "role": "scenario",
+      "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "adversaries": [
+    {
+      "id": "00000000-0000-0000-0000-000000000010",
+      "path": "attack_evals/cases/AEL-SANDWORM-EXARAMEL-WIN-001/caldera/adversaries/00000000-0000-0000-0000-000000000010.yml",
+      "sha256": "0f00cd5596cb24e9ba352c7f8adc2156ad27b618b6b1b3ea33b6805100172a50",
+      "operation_role": "bootstrap",
+      "execution_agent_role": "control"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000020",
+      "path": "attack_evals/cases/AEL-SANDWORM-EXARAMEL-WIN-001/caldera/adversaries/00000000-0000-0000-0000-000000000020.yml",
+      "sha256": "9841d64d18280ea07ea8563a885b29b3970229f718a4e3b49b3051a1f839d563",
+      "operation_role": "scenario",
+      "execution_agent_role": "driver"
+    }
+  ],
+  "sources": [
+    {
+      "id": "5a8cfd21-3e7b-4c2a-9f1d-6b5e8a0c1234",
+      "path": "attack_evals/cases/AEL-SANDWORM-EXARAMEL-WIN-001/caldera/sources/5a8cfd21-3e7b-4c2a-9f1d-6b5e8a0c1234.template.yml",
+      "sha256": "7fdb8e3d70358bf552f85e72a6e9c8a8e04421f82722d6ee3062c7189d285617",
+      "operation_role": "shared"
+    }
+  ],
+  "payloads": []
+}

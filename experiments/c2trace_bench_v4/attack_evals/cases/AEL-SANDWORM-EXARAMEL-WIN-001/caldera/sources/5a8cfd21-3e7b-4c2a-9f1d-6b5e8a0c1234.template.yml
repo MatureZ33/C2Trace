@@ -1,0 +1,11 @@
+id: 5a8cfd21-3e7b-4c2a-9f1d-6b5e8a0c1234
+name: c2trace_exaramel_runtime_source
+facts:
+- trait: c2trace.target_name
+  value:
+    template: c2t_<run_id>
+- trait: c2trace.victim_ip
+  value:
+    template: <victim_ip>
+- trait: c2trace.kali_ip
+  value: 192.168.21.132

@@ -1,0 +1,250 @@
+{
+  "schema_version": "c2trace.bench.ground_truth.v4",
+  "case_id": "MEP-WINDOWS-WEBSHELL-01",
+  "source_id": "ctid-micro-emulation-plans-2025-05-28",
+  "source_kind": "ctid_micro",
+  "dataset_stratum": "micro_emulation_plan",
+  "target_kind": "ctid_windows_webshell",
+  "ability_instances": [
+    {
+      "instance_key": "bootstrap.stage_webshell",
+      "operation_role": "bootstrap",
+      "operation_id": "FILL_FROM_BOOTSTRAP_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "03677b83-9e45-54e3-9d87-b10d6ba2c201",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_step_ids": [
+        "webshell.deploy"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.webshell.file",
+          "trace_type": "file",
+          "canonical_key": "file:path+sha256",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:file"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.stage_webshell",
+          "expected_value": {
+            "path": "C:\\Users\\Public\\#{c2trace.target_name}.exe",
+            "sha256": "FILL_FROM_BEFORE_RESPONSE"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/file",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        }
+      ]
+    },
+    {
+      "instance_key": "bootstrap.start_webshell",
+      "operation_role": "bootstrap",
+      "operation_id": "FILL_FROM_BOOTSTRAP_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "7d8a50d4-9e38-50f4-bf5a-e34b7509e837",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_step_ids": [
+        "webshell.start"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.webshell.process",
+          "trace_type": "process",
+          "canonical_key": "process:pid+creation_time+path",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:process"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.start_webshell",
+          "expected_value": {
+            "pid": "FILL_FROM_TARGET",
+            "creation_time": "FILL_FROM_BEFORE_RESPONSE",
+            "path": "C:\\Users\\Public\\#{c2trace.target_name}.exe"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/process",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        },
+        {
+          "trace_id": "trace.webshell.listener",
+          "trace_type": "network_connection",
+          "canonical_key": "network:protocol+src_ip+src_port+dst_ip+dst_port+pid",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:network_connection"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.start_webshell",
+          "expected_value": {
+            "protocol": "tcp",
+            "src_ip": "192.168.21.132",
+            "src_port": "FILL_FROM_SURICATA",
+            "dst_ip": "#{c2trace.victim_ip}",
+            "dst_port": "#{c2trace.webshell_port}",
+            "pid": "FILL_FROM_TARGET"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/network",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        }
+      ]
+    },
+    {
+      "instance_key": "scenario.whoami",
+      "operation_role": "scenario",
+      "operation_id": "FILL_FROM_SCENARIO_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "dc934e5a-3184-5b6f-8535-a78cc2adfac5",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_step_ids": [
+        "webshell.groups"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.webshell.groups.file",
+          "trace_type": "file",
+          "canonical_key": "file:path+sha256",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:file"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "scenario.whoami",
+          "expected_value": {
+            "path": "C:\\Users\\Public\\#{c2trace.target_name}.groups.txt",
+            "sha256": "FILL_FROM_BEFORE_RESPONSE"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/files/webshell_groups",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        }
+      ]
+    },
+    {
+      "instance_key": "scenario.tasklist",
+      "operation_role": "scenario",
+      "operation_id": "FILL_FROM_SCENARIO_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "87bd9d84-f8b7-5810-9a53-ce0a9cdb589d",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_step_ids": [
+        "webshell.processes"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.webshell.tasks.file",
+          "trace_type": "file",
+          "canonical_key": "file:path+sha256",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:file"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "scenario.tasklist",
+          "expected_value": {
+            "path": "C:\\Users\\Public\\#{c2trace.target_name}.tasks.txt",
+            "sha256": "FILL_FROM_BEFORE_RESPONSE"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/files/webshell_tasks",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        }
+      ]
+    }
+  ],
+  "response_actions": [
+    {
+      "tool": "kill_process",
+      "required": true,
+      "arguments": {
+        "pid": "FILL_FROM_TARGET",
+        "expected_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "target": "response_target"
+    },
+    {
+      "tool": "remove_file",
+      "required": true,
+      "arguments": {
+        "path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "target": "response_target"
+    }
+  ],
+  "scoring_policy": {
+    "one_to_one_trace_matching": true,
+    "ability_precision": "not_applicable_without_independent_ability_predictions",
+    "seed_alert_scored": false,
+    "support_and_harness_traces_scored": false
+  }
+}

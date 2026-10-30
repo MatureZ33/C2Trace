@@ -1,0 +1,23 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+results/
+# Extracted copies are reproducible from the checked-in archives.
+data/effect/
+data/baseline/
+data/ablation/
+data/llm_direct/
+variants/A*/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.synctex.gz

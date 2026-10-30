@@ -1,0 +1,73 @@
+{
+  "schema_version": "c2trace.bench.case.v4",
+  "case_id": "AURORA-CHAIN-002",
+  "name": "Aurora chain-002 dual Meterpreter reverse-TCP slice",
+  "status": "admitted",
+  "dataset_stratum": "public_tool_benchmark",
+  "source_kind": "aurora",
+  "source": {
+    "source_id": "aurora-demo-chain-002-20260731",
+    "source_lock": "aurora/source_lock.json",
+    "artifact_id": "aurora-chain-002-meterpreter-reverse-tcp",
+    "artifact_path": "attacks/v2.0/chain-002/attack_chain.yml",
+    "artifact_sha256": "c811eb3ab50d57ddbf34037e9eb5ef66b7bde7354c9a336ad8c714a7e9a72cc"
+  },
+  "claim": {
+    "claim_type": "compound_behavior_plan",
+    "statement": "Source-derived Aurora slice using Metasploit Meterpreter as the public measured C2; two reverse-TCP implant instances deployed from the same payload, two sessions established, one ARP_QUERY task issued.",
+    "full_original_reproduction": false
+  },
+  "scope": {
+    "platform": "windows",
+    "endpoint_count": 1,
+    "included": [
+      "Meterpreter reverse-TCP dual implant deployment",
+      "two reverse-TCP session establishment",
+      "one ARP_QUERY task"
+    ],
+    "excluded": [
+      "scheduled-task persistence",
+      "service stop",
+      "derived command executor"
+    ]
+  },
+  "contracts": {
+    "mapping": "aurora/cases/AURORA-CHAIN-002/mapping.json",
+    "ground_truth": "aurora/cases/AURORA-CHAIN-002/ground_truth.template.json",
+    "target_profile": "aurora/cases/AURORA-CHAIN-002/target_profile.json",
+    "operation_plan": "aurora/cases/AURORA-CHAIN-002/operation_plan.json",
+    "evidence_plan": "aurora/cases/AURORA-CHAIN-002/evidence_plan.json",
+    "cleanup_plan": "aurora/cases/AURORA-CHAIN-002/cleanup_plan.json",
+    "caldera_bundle": "aurora/cases/AURORA-CHAIN-002/caldera/deployment_manifest.json"
+  },
+  "dependency_paths": [
+    "aurora/cases/AURORA-CHAIN-002/caldera/deployment_manifest.json"
+  ],
+  "safety": {
+    "isolated_lab_only": true,
+    "vm_snapshot_required": true,
+    "control_agent_protected": true,
+    "destructive_impact_allowed": false,
+    "cleanup_after_scoring": true
+  },
+  "qualification_trials": [
+    {
+      "run_id": "aurora-chain-002-qual-06",
+      "batch_id": "aurora002-qual-20260922T124933Z",
+      "result": "infrastructure_valid",
+      "trial_class": "evaluation_valid_fail"
+    },
+    {
+      "run_id": "aurora-chain-002-qual-07",
+      "batch_id": "aurora002-qual-20260922T130136Z",
+      "result": "infrastructure_valid",
+      "trial_class": "evaluation_valid_fail"
+    },
+    {
+      "run_id": "aurora-chain-002-qual-08",
+      "batch_id": "aurora002-qual-20260922T130623Z",
+      "result": "infrastructure_valid",
+      "trial_class": "evaluation_valid_fail"
+    }
+  ]
+}

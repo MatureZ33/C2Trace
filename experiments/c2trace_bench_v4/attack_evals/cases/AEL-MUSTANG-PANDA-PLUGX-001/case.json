@@ -1,0 +1,40 @@
+{
+  "schema_version": "c2trace.bench.case.v4",
+  "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+  "source_id": "ael-mustang-panda-plugx-001-20260923",
+  "source_kind": "attack_evaluations",
+  "dataset_stratum": "named_chain_projection",
+  "adversary_group": "mustang_panda",
+  "c2_tool": "PlugX",
+  "title": "PlugX HTTP C2 Implant (Mustang Panda)",
+  "description": "Mustang Panda PlugX RAT with HTTP C2 and RC4-encrypted communications",
+  "live_allowed": true,
+  "target_collection": "attack_evals",
+  "contracts": {
+    "mapping": "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/mapping.json",
+    "ground_truth": "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/ground_truth.template.json",
+    "target_profile": "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/target_profile.json",
+    "operation_plan": "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/operation_plan.json",
+    "evidence_plan": "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/evidence_plan.json",
+    "cleanup_plan": "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/cleanup_plan.json",
+    "caldera_bundle": "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/caldera/deployment_manifest.json"
+  },
+  "dependency_paths": [
+    "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/caldera/deployment_manifest.json"
+  ],
+  "safety": {
+    "isolated_lab_only": true,
+    "vm_snapshot_required": false,
+    "control_agent_protected": true,
+    "destructive_impact_allowed": false,
+    "cleanup_after_scoring": true
+  },
+  "source": {
+    "source_id": "ael-mustang-panda-plugx-001-20260923",
+    "source_lock": "attack_evals/raw/ManagedServices/mustang_panda/Emulation_Plan/README.md",
+    "artifact_id": "ael-mustang-panda-plugx",
+    "artifact_path": "ManagedServices/mustang_panda/Resources/PlugX/plugx_implant.py",
+    "artifact_sha256": "a2a040c4881266a65c1b795fa9229442d8a337e3781d88afcfe1800aee835032"
+  },
+  "status": "qualification_pending_live"
+}

@@ -1,0 +1,5 @@
+id: 00000000-0000-0000-0000-000000000040
+name: PlugX Scenario
+description: Enumerate processes via PlugX
+atomic_ordering:
+- f4e3d2c1-b6a5-4d8f-9c0b-1e2f3a4b5c6d

@@ -1,0 +1,43 @@
+{
+  "schema_version": "c2trace.bench.operation_plan.v4",
+  "case_id": "AEL-OILRIG-SIDETWIST-001",
+  "source_id": "ael-oilrig-sidetwist-001-20260923",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "planner_id": "00000000-0000-0000-0000-000000000001",
+  "obfuscator": "plain-text",
+  "runtime_source": {
+    "id_template": "a708ebb1-bda2-5113-8bb8-0cb594f1ef88",
+    "facts": [
+      "c2trace.victim_ip",
+      "c2trace.kali_ip",
+      "c2trace.target_name"
+    ]
+  },
+  "operations": [
+    {
+      "role": "bootstrap",
+      "execution_agent_role": "control",
+      "adversary_id": "00000000-0000-0000-0000-000000000010",
+      "agent_group_template": "c2t-control",
+      "atomic_ordering": [
+        "e2f21646-bd1c-51d2-8dec-674fa2b31136"
+      ],
+      "mandatory_ability_ids": [
+        "e2f21646-bd1c-51d2-8dec-674fa2b31136"
+      ]
+    },
+    {
+      "role": "scenario",
+      "execution_agent_role": "driver",
+      "adversary_id": "00000000-0000-0000-0000-000000000020",
+      "agent_group_template": "c2t-driver",
+      "atomic_ordering": [
+        "1bf5dcff-a65b-5606-becc-a6327f063578"
+      ],
+      "mandatory_ability_ids": [
+        "1bf5dcff-a65b-5606-becc-a6327f063578"
+      ]
+    }
+  ]
+}

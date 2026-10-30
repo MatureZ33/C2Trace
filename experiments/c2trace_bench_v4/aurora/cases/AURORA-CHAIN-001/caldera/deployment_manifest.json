@@ -1,0 +1,46 @@
+{
+  "schema_version": "c2trace.bench.caldera_bundle.v4",
+  "case_id": "AURORA-CHAIN-001",
+  "source_id": "aurora-demo-chain-001-20260731",
+  "abilities": [
+    {
+      "id": "a72564a0-edc6-5c1f-9559-d29469106754",
+      "path": "aurora/cases/AURORA-CHAIN-001/caldera/abilities/a72564a0-edc6-5c1f-9559-d29469106754.yml",
+      "sha256": "84e57a6e65b1ccf336da090d889ad9a1468a8de9eeea9eb909b445f5d18930ca",
+      "role": "bootstrap",
+      "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "12d97141-b4d0-5d7b-ac34-4bc81088edf7",
+      "path": "aurora/cases/AURORA-CHAIN-001/caldera/abilities/12d97141-b4d0-5d7b-ac34-4bc81088edf7.yml",
+      "sha256": "b822fae0b8ce605c79f0848e82c4ba4d978d99ac4d074e8540bf1d6514eb6aef",
+      "role": "scenario",
+      "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "adversaries": [
+    {
+      "id": "00000000-0000-0000-0000-000000000010",
+      "path": "aurora/cases/AURORA-CHAIN-001/caldera/adversaries/00000000-0000-0000-0000-000000000010.yml",
+      "sha256": "07ce9c2b696c81d1c221eedefa59bb833b3708284045885c4dca0e2b51f57cd9",
+      "operation_role": "bootstrap",
+      "execution_agent_role": "control"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000020",
+      "path": "aurora/cases/AURORA-CHAIN-001/caldera/adversaries/00000000-0000-0000-0000-000000000020.yml",
+      "sha256": "e72b03653610b111c1d5ca5f568c9c9039d97ad39ca460ce40b2518f4e1dc364",
+      "operation_role": "scenario",
+      "execution_agent_role": "driver"
+    }
+  ],
+  "sources": [
+    {
+      "id": "3f7bbe08-6c12-51a2-bfd1-6244985e865f",
+      "path": "aurora/cases/AURORA-CHAIN-001/caldera/sources/3f7bbe08-6c12-51a2-bfd1-6244985e865f.template.yml",
+      "sha256": "a703645552fc963cbe268d7ac0799ed83ea92cc67f8163c05e86ffe366c2216b",
+      "operation_role": "shared"
+    }
+  ],
+  "payloads": []
+}

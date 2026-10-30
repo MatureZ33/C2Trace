@@ -1,0 +1,132 @@
+{
+  "artifacts": [
+    {
+      "artifact_id": "artifact-657fb39aa1d20452",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/Enterprise/apt29/Emulation_Plan/Scenario_1/README.md",
+      "sha256": "f80592cf61ce4c9aed37f4093d49c6f5856131697799b07ae574b01ef03dd1c6",
+      "size": 33914
+    },
+    {
+      "artifact_id": "artifact-15d37f89c9190e2a",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/Enterprise/blind_eagle/Emulation_Plan/Blind_Eagle_Scenario.md",
+      "sha256": "1d491cf16a12115a6b6be815d9062e65ea223f86e47d4efa0a9475d6295b4d27",
+      "size": 16232
+    },
+    {
+      "artifact_id": "artifact-b5a40929214c0faf",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/Enterprise/carbanak/Emulation_Plan/Scenario_1/README.md",
+      "sha256": "377867c6d7daa43d972465beafa7f688472e29350198434f5cea8d27b4789f59",
+      "size": 44506
+    },
+    {
+      "artifact_id": "artifact-6ae53e6d482761b7",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/Enterprise/cl0p/Emulation_Plan/ER6_CL0P_Scenario.md",
+      "sha256": "137bcdcd2428c28e3f78888e8af4a7dc6e502e2bf3725600cfee55485c8f2293",
+      "size": 20934
+    },
+    {
+      "artifact_id": "artifact-566d9cd584b8b25a",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/Enterprise/dprk/Emulation_Plan/ER6_DPRK_Scenario.md",
+      "sha256": "9f8d07472bd2a851276a16d1071f906a7ba0a895b4682c1c9ac73ed0b25bc973",
+      "size": 17289
+    },
+    {
+      "artifact_id": "artifact-e901ab010333b02e",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/Enterprise/fin7/Emulation_Plan/Scenario_1/README.md",
+      "sha256": "dc076a02f619947428fdb88377f91f217074e5af1204d674fce0dc342523cb23",
+      "size": 37284
+    },
+    {
+      "artifact_id": "artifact-2492fbcdd82a54ef",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/Enterprise/lockbit/Emulation_Plan/ER6_LockBit_Scenario.md",
+      "sha256": "cafcb755155a496b4fe2e6444ba1ca9764a4f7a9238e8968b4507baaff29971b",
+      "size": 40227
+    },
+    {
+      "artifact_id": "artifact-df2d2d87470ab3b3",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/Enterprise/mustang_panda/Emulation_Plan/Mustang_Panda_Scenario.md",
+      "sha256": "c164d30850f4eb89da8c883c8c5be20c2154b7610ce496f90ea1f82031eb5419",
+      "size": 66381
+    },
+    {
+      "artifact_id": "artifact-39f426ff1c87a8de",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/Enterprise/sandworm/Emulation_Plan/Scenario_1/README.md",
+      "sha256": "534a1bb019951eb5c6b66c2c685c58c668446befae7de32873407bbbefb93e42",
+      "size": 22443
+    },
+    {
+      "artifact_id": "artifact-cfdb6b5b27f2bd6f",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/Enterprise/scattered_spider/Emulation_Plan/Scattered_Spider_Scenario.md",
+      "sha256": "29087e39b3c4199892c9ec75d9df8647de40e796c44d069762d19454f80531ba",
+      "size": 69129
+    },
+    {
+      "artifact_id": "artifact-c48dfcea5bbab620",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/Enterprise/turla/Emulation_Plan/yaml/Carbon_Scenario.md",
+      "sha256": "df90a555de91b28e96a5a2be35398e9913daf03b5d3d3f44cd74c49bdfd913a2",
+      "size": 5302
+    },
+    {
+      "artifact_id": "artifact-a74d768a627e2434",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/Enterprise/wizard_spider/Emulation_Plan/Scenario_1/README.md",
+      "sha256": "37c955cc8c5f67f2ccb59ac16bebc7c92651a71f1404d8f4e174081dbcf79547",
+      "size": 20839
+    },
+    {
+      "artifact_id": "artifact-c693279643b8cd5d",
+      "media_type": "application/octet-stream",
+      "path": "attack_evals/raw/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "size": 11357
+    },
+    {
+      "artifact_id": "artifact-c1c5b6092f4c7702",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/ManagedServices/alphv_blackcat/Emulation_Plan/ALPHV_BlackCat_Scenario.md",
+      "sha256": "9bb475916b69b4a14bdb5f051eefaf7ef96c1928ec149dfa8f8b1c7f11f1d119",
+      "size": 55462
+    },
+    {
+      "artifact_id": "artifact-4a12f9e59870a0bf",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/ManagedServices/menupass/Emulation_Plan/MSR2_menuPass_Scenario.md",
+      "sha256": "a1ea41411123b39cdc970f6bfbb9296a58cfe9e8ed2438a84fef62ea1ab372df",
+      "size": 64632
+    },
+    {
+      "artifact_id": "artifact-f90f630f85a21320",
+      "media_type": "text/markdown",
+      "path": "attack_evals/raw/ManagedServices/oilrig/Emulation_Plan/README.md",
+      "sha256": "6266a448691bc7eeddf85775d5bc50a0e2c35791044991a3a3d3db7ac7e12c56",
+      "size": 28410
+    }
+  ],
+  "dataset_stratum": "named_chain_projection",
+  "license": {
+    "path": "attack_evals/raw/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "spdx": "Apache-2.0"
+  },
+  "repository": "https://github.com/attackevals/ael",
+  "retrieved_on": "2026-07-15",
+  "revision": {
+    "commit": "5594518da57ba41faaaaa99b3e0078d29504b033",
+    "commit_date": "2026-01-22T12:55:48-05:00",
+    "tag": null
+  },
+  "schema_version": "c2trace.bench.source_lock.v4",
+  "source_id": "attack-evaluations-library-2026-01-22",
+  "source_kind": "attack_evaluations"
+}

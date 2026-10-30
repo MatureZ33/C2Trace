@@ -1,0 +1,5 @@
+id: 00000000-0000-0000-0000-000000000010
+name: C2Trace v4 AEL-SANDWORM-EXARAMEL-WIN-001 Bootstrap
+description: Deploy Exaramel-Windows implant
+atomic_ordering:
+- a1b2c3d4-1e2f-5a3b-8c4d-5e6f7a8b9c0d

@@ -1,0 +1,105 @@
+{
+  "schema_version": "c2trace.bench.cleanup_plan.v4",
+  "case_id": "MEP-WINDOWS-WEBSHELL-01",
+  "source_id": "ctid-micro-emulation-plans-2025-05-28",
+  "dataset_stratum": "micro_emulation_plan",
+  "fail_closed": true,
+  "actions": [
+    {
+      "action_id": "cleanup.webshell_process",
+      "source_step_ids": [
+        "webshell.start"
+      ],
+      "phase": "after_scoring",
+      "tool": "stop_process",
+      "target_template": {
+        "path": "C:\\Users\\Public\\#{c2trace.target_name}.exe",
+        "listener_port": "#{c2trace.webshell_port}"
+      },
+      "identity_validation": [
+        "path",
+        "pid",
+        "creation_time",
+        "run_id"
+      ],
+      "required": true
+    },
+    {
+      "action_id": "cleanup.webshell_file",
+      "source_step_ids": [
+        "webshell.deploy"
+      ],
+      "phase": "after_scoring",
+      "tool": "remove_file",
+      "target_template": {
+        "path": "C:\\Users\\Public\\#{c2trace.target_name}.exe"
+      },
+      "identity_validation": [
+        "path",
+        "sha256",
+        "run_id"
+      ],
+      "required": true
+    },
+    {
+      "action_id": "cleanup.webshell_archive",
+      "source_step_ids": [],
+      "phase": "after_scoring",
+      "tool": "remove_file",
+      "target_template": {
+        "path": "C:\\Users\\Public\\#{c2trace.target_name}.webshell.zip"
+      },
+      "identity_validation": [
+        "path",
+        "run_id"
+      ],
+      "required": true
+    },
+    {
+      "action_id": "cleanup.webshell_directory",
+      "source_step_ids": [],
+      "phase": "after_scoring",
+      "tool": "remove_directory",
+      "target_template": {
+        "path": "C:\\Users\\Public\\#{c2trace.target_name}.webshell"
+      },
+      "identity_validation": [
+        "path",
+        "run_id"
+      ],
+      "required": true
+    },
+    {
+      "action_id": "cleanup.groups_file",
+      "source_step_ids": [
+        "webshell.groups"
+      ],
+      "phase": "after_scoring",
+      "tool": "remove_file",
+      "target_template": {
+        "path": "C:\\Users\\Public\\#{c2trace.target_name}.groups.txt"
+      },
+      "identity_validation": [
+        "path",
+        "run_id"
+      ],
+      "required": true
+    },
+    {
+      "action_id": "cleanup.tasks_file",
+      "source_step_ids": [
+        "webshell.processes"
+      ],
+      "phase": "after_scoring",
+      "tool": "remove_file",
+      "target_template": {
+        "path": "C:\\Users\\Public\\#{c2trace.target_name}.tasks.txt"
+      },
+      "identity_validation": [
+        "path",
+        "run_id"
+      ],
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "schema_version": "c2trace.bench.ground_truth.v4",
+  "case_id": "AEL-CARBANAK-RAT-001",
+  "source_id": "ael-carbanak-rat-001-20260813",
+  "source_kind": "attack_evaluations",
+  "dataset_stratum": "named_chain_projection",
+  "target_kind": "carbanak_cscript_https_rat",
+  "ability_instances": [
+    {
+      "instance_key": "bootstrap.deploy_script_rat",
+      "operation_role": "bootstrap",
+      "operation_id": "FILL_FROM_BOOTSTRAP_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "a06ae874-1cf9-5e47-8043-ea834577a654",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_step_ids": [
+        "carbanak.deploy"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.carbanak.file",
+          "trace_type": "file",
+          "canonical_key": "file:path+sha256",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:file"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_script_rat",
+          "expected_value": {
+            "path": "C:\\Users\\Public\\c2t_<run_id>.js",
+            "sha256": "FILL_FROM_BEFORE_RESPONSE"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/file",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        },
+        {
+          "trace_id": "trace.carbanak.process",
+          "trace_type": "process",
+          "canonical_key": "process:pid+creation_time+path",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:process"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_script_rat",
+          "expected_value": {
+            "pid": "FILL_FROM_TARGET",
+            "creation_time": "FILL_FROM_BEFORE_RESPONSE",
+            "path": "FILL_FROM_EXECUTABLE_PATH"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/process",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        },
+        {
+          "trace_id": "trace.carbanak.network",
+          "trace_type": "network_connection",
+          "canonical_key": "network:protocol+src_ip+src_port+dst_ip+dst_port+pid",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:network_connection"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_script_rat",
+          "expected_value": {
+            "protocol": "tcp",
+            "src_ip": "#{c2trace.victim_ip}",
+            "src_port": "FILL_FROM_SURICATA",
+            "dst_ip": "#{c2trace.kali_ip}",
+            "dst_port": 18448,
+            "pid": "FILL_FROM_TARGET"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/network",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response."
+        }
+      ]
+    },
+    {
+      "instance_key": "scenario.enum_system",
+      "operation_role": "scenario",
+      "operation_id": "FILL_FROM_SCENARIO_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "5fa2d563-6d8e-5326-ab34-037f7dce531b",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_step_ids": [
+        "carbanak.enum_system"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.carbanak.enum_system",
+          "trace_type": "process",
+          "canonical_key": "process:pid+creation_time+path",
+          "required": true,
+          "discriminative": false,
+          "anchor": false,
+          "shared_context": true,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:process"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "scenario.enum_system",
+          "expected_value": {
+            "pid": "FILL_FROM_TARGET",
+            "creation_time": "FILL_FROM_BEFORE_RESPONSE",
+            "path": "FILL_FROM_EXECUTABLE_PATH"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/process",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "ENUM_SYSTEM is issued through the same cscript.exe process; the process must be observable."
+        }
+      ]
+    }
+  ],
+  "response_actions": [
+    {
+      "tool": "kill_process",
+      "required": true,
+      "arguments": {
+        "pid": "FILL_FROM_TARGET",
+        "expected_path": "FILL_FROM_EXECUTABLE_PATH"
+      },
+      "target": "response_target"
+    },
+    {
+      "tool": "remove_file",
+      "required": true,
+      "arguments": {
+        "path": "C:\\Users\\Public\\c2t_<run_id>.js"
+      },
+      "target": "response_target"
+    }
+  ],
+  "scoring_policy": {
+    "one_to_one_trace_matching": true,
+    "ability_precision": "not_applicable_without_independent_ability_predictions",
+    "seed_alert_scored": false,
+    "support_and_harness_traces_scored": false
+  }
+}

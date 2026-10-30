@@ -1,0 +1,122 @@
+{
+  "schema_version": "c2trace.bench.baseline_protocol_freeze.v8.1",
+  "created_at": "2026-10-03T23:39:04Z",
+  "offline_only_freeze": true,
+  "amendment_type": "observed_configuration_closure",
+  "treatment_changed": false,
+  "paired_pilot_reuse_allowed": true,
+  "supersedes": "protocol_freeze_baseline_v8.json",
+  "comparison": {
+    "system": "single-agent public-task LangGraph ReAct baseline",
+    "requested_model": "deepseek-chat",
+    "observed_response_model_policy": "Report per-call llm_call_audit.response_model; do not infer from requested_model.",
+    "observed_v8_response_models": {
+      "c2trace": [
+        "deepseek-flash"
+      ],
+      "react": [
+        "deepseek-flash"
+      ]
+    },
+    "temperature_scope": "The top-level temperature=0 applies to Public ReAct. C2Trace retains its native stage temperatures and they are disclosed below.",
+    "temperature": 0,
+    "stage_temperatures": {
+      "c2trace_planner": 0.0,
+      "c2trace_auditor": 0.1,
+      "react_dry_run": 0.0,
+      "react_execute": 0.0
+    },
+    "same_canonical_alert": true,
+    "same_low_level_windows_interfaces": true,
+    "private_treatment_components_injected": false
+  },
+  "auditor_policy": {
+    "require_auditor_llm": false,
+    "observed_v8_value": false,
+    "hard_rules_and_target_lock": "mandatory",
+    "semantic_llm_failure_behavior": "fall back to the hard-rule rationale; destructive actions remain subject to hard rules, target binding and authorization",
+    "disclosure": "The Auditor component is present in every C2Trace trial; semantic LLM explanation is optional under the observed runner setting. Changing this value requires a new paired pilot."
+  },
+  "input_boundary": {
+    "visible_to_react": [
+      "canonical MinimalAlert",
+      "public_task_spec",
+      "public_tool_schema",
+      "generic_system_safety",
+      "runtime tool observations requested by the model"
+    ],
+    "hidden_from_react": [
+      "evaluation answer data",
+      "target binding",
+      "precomputed post-run state",
+      "scoring projection",
+      "CaseFile",
+      "StrategyTree",
+      "C2-KB"
+    ],
+    "post_state": {
+      "precomputed_file_injection": false,
+      "runtime_check_post_state": true,
+      "runtime_observation_is_logged": true
+    },
+    "formal_artifact_requirement": "Each trial must include a model_input_manifest or an externally generated equivalent controller-only boundary receipt before scoring is accepted."
+  },
+  "scoring": {
+    "module": "c2trace.bench_v4.scorer.score_case",
+    "projection": "c2trace.baseline.neutral_records.project_for_scoring",
+    "projection_timing": "after model and tool execution return",
+    "model_context_contains_answer": false,
+    "primary_trace_unit": "registered trace fact",
+    "secondary_trace_unit": "unique observable entity deduplicated across ability instances"
+  },
+  "formal_schedule": {
+    "path": "第一轮基线对比实验/formal_live_schedule_v1.json",
+    "sha256": "f284095e001afa27a0b3eb8cf7d9c1c0dbfa475382a1a51724c3bb3ede388d6a",
+    "schedule_sha256": "83b7244f9ff33549669d41a5ce4c84aca432c4f725bc78d4090c17cf0f7d4f3c",
+    "trial_count": 48,
+    "paired_block_count": 24,
+    "formal_live_started": false
+  },
+  "v8_pilot_evidence": {
+    "pilot_root": "第一轮基线对比实验/paired-pilot-v8-20261004",
+    "case_id": "AURORA-CHAIN-002",
+    "c2trace_run_id": "pilot-v8-c2trace-aurora002-20261004T140000Z",
+    "react_run_id": "pilot-v8-react-aurora002-20261004T140000Z",
+    "protocol_v8_sha256": "5de85f3b881c6fac82aecc875659be96bc87b47ab93f8fd981c7bf9df94d52df",
+    "original_and_rescore_semantically_equal_except": [
+      "generated_at"
+    ],
+    "pilot_is_not_formal_statistical_result": true
+  },
+  "freeze_timing_note": {
+    "original_embedded_v8_frozen_at": "2026-10-04T00:00:00+00:00",
+    "raw_v8_trial_start_observed": "2026-10-03T22:15:24.436986+00:00",
+    "interpretation": "The embedded v8 timestamp is inconsistent with raw trial timestamps; the local file creation receipt is retained separately. This v8.1 amendment is the freeze for the future formal schedule and is created before any formal trial.",
+    "formal_preregistration_requirement": "Do not start formal Live unless this v8.1 hash and gate are recorded before the first formal trial."
+  },
+  "change_policy": {
+    "no_new_pilot_for": [
+      "report correction",
+      "readiness correction",
+      "input-boundary receipt reconstruction",
+      "documenting the observed temperature and Auditor settings without changing runtime"
+    ],
+    "new_pilot_required_for": [
+      "changing any temperature",
+      "changing require_auditor_llm",
+      "changing prompts, tools, model routing, runner behavior or scorer",
+      "unresolved inability to establish a pre-run freeze"
+    ]
+  },
+  "source_hashes": {
+    "protocol_freeze_baseline_v8": "5de85f3b881c6fac82aecc875659be96bc87b47ab93f8fd981c7bf9df94d52df",
+    "formal_live_schedule": "f284095e001afa27a0b3eb8cf7d9c1c0dbfa475382a1a51724c3bb3ede388d6a",
+    "public_task_spec": "6efb078282db82131f9c02cacf35b5cf95dc8596dea7b1f388bb3a7022a138f1",
+    "tool_schema": "2a69e6f86aa2e7b4c106b77dabbd770e8a905d2054f282b84c64682f6aea1988",
+    "src_c2trace_models": "2ff0aacb93d002dfd853aff721e541a3bc1f2fd281e23dea35d40d77209a5237",
+    "src_c2trace_baseline_react_runner": "45a3770c4a14a8c76b9b33ab322966d289f333f1e4cc9be8dfbcdb46d2fad098",
+    "scripts_public_react_runner": "4d1b885b3a2f1c27f4ce04838399d5b335798c30be92cac45f540b6bda0ae64b"
+  },
+  "formal_live_authorized": false,
+  "formal_live_started": false
+}

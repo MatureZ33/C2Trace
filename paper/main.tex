@@ -1,0 +1,787 @@
+% Target: Automated Software Engineering (Springer journal 10515).
+% Official Springer Nature template v3.1; baseline selection audited and updated 2026-10-15.
+% Anonymous author name is retained for this working draft at the user's request.
+% Before formal submission: authors/affiliations, declarations, bibliography status,
+% high-resolution original architecture, and journal-scope positioning need review.
+\documentclass[pdflatex,sn-basic]{sn-jnl}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xspace}
+\usepackage{microtype}
+\setlength{\emergencystretch}{1em}
+\newcommand{\system}{C2Trace\xspace}
+\newcommand{\NA}{\textsc{n/a}}
+\raggedbottom
+% Keep tall single-column figures near their cited sections.
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.6}
+% Confirmed senior edits; sn-jnl already loads hyperref.
+\def\sectionautorefname{\S}
+\def\subsectionautorefname{\S}
+\def\subsubsectionautorefname{\S}
+\def\figureautorefname{Figure}
+\def\tableautorefname{Table}
+\def\equationautorefname{Equation}
+\def\algorithmautorefname{Algorithm}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=purple,
+    anchorcolor=purple,
+    citecolor=purple,
+    filecolor=purple,
+    urlcolor=purple,
+    pdftitle={C2Trace: Evidence-Grounded Investigation and Verified Response to Command-and-Control Alerts},
+    pdfauthor={Anonymous Author(s)}
+}
+% Begin audited result macros; baseline v5, other experiment populations unchanged
+% Generated from verified_results.json; no manual result editing.
+\newcommand{\RqTracePMacro}{0.873}
+\newcommand{\RqTracePMicro}{0.833}
+\newcommand{\RqTraceRMacro}{0.719}
+\newcommand{\RqTraceRMicro}{0.714}
+\newcommand{\RqTraceFMacro}{0.779}
+\newcommand{\RqTraceFMicro}{0.769}
+\newcommand{\RqTraceTP}{25}
+\newcommand{\RqTraceFP}{5}
+\newcommand{\RqTraceFN}{10}
+\newcommand{\RqResponsePMacro}{1.000}
+\newcommand{\RqResponsePMicro}{1.000}
+\newcommand{\RqResponseRMacro}{1.000}
+\newcommand{\RqResponseRMicro}{1.000}
+\newcommand{\RqResponseFMacro}{1.000}
+\newcommand{\RqResponseFMicro}{1.000}
+\newcommand{\RqResponseTP}{17}
+\newcommand{\RqResponseFP}{0}
+\newcommand{\RqResponseFN}{0}
+\newcommand{\RqMeanLlm}{5.25}
+\newcommand{\RqMeanTools}{20.75}
+\newcommand{\RqMeanTokens}{83427.9}
+\newcommand{\DirectTracePMacro}{0.625}
+\newcommand{\DirectTracePMicro}{0.556}
+\newcommand{\DirectTraceRMacro}{0.156}
+\newcommand{\DirectTraceRMicro}{0.143}
+\newcommand{\DirectTraceFMacro}{0.250}
+\newcommand{\DirectTraceFMicro}{0.227}
+\newcommand{\DirectTraceTP}{5}
+\newcommand{\DirectTraceFP}{4}
+\newcommand{\DirectTraceFN}{30}
+\newcommand{\DirectResponsePMacro}{0.448}
+\newcommand{\DirectResponsePMicro}{0.421}
+\newcommand{\DirectResponseRMacro}{0.479}
+\newcommand{\DirectResponseRMicro}{0.471}
+\newcommand{\DirectResponseFMacro}{0.458}
+\newcommand{\DirectResponseFMicro}{0.444}
+\newcommand{\DirectResponseTP}{8}
+\newcommand{\DirectResponseFP}{11}
+\newcommand{\DirectResponseFN}{9}
+\newcommand{\DirectMeanLlm}{1.00}
+\newcommand{\DirectMeanTools}{0.00}
+\newcommand{\DirectMeanTokens}{3213.8}
+\newcommand{\RqMeanEtime}{120.3}
+\newcommand{\DirectTotalTokens}{25710}
+\newcommand{\BasCTracePMacro}{0.938}
+\newcommand{\BasCTracePMicro}{0.931}
+\newcommand{\BasCTraceRMacro}{0.760}
+\newcommand{\BasCTraceRMicro}{0.771}
+\newcommand{\BasCTraceFMacro}{0.834}
+\newcommand{\BasCTraceFMicro}{0.844}
+\newcommand{\BasCTraceTP}{81}
+\newcommand{\BasCTraceFP}{6}
+\newcommand{\BasCTraceFN}{24}
+\newcommand{\BasCResponsePMacro}{1.000}
+\newcommand{\BasCResponsePMicro}{1.000}
+\newcommand{\BasCResponseRMacro}{1.000}
+\newcommand{\BasCResponseRMicro}{1.000}
+\newcommand{\BasCResponseFMacro}{1.000}
+\newcommand{\BasCResponseFMicro}{1.000}
+\newcommand{\BasCResponseTP}{51}
+\newcommand{\BasCResponseFP}{0}
+\newcommand{\BasCResponseFN}{0}
+\newcommand{\BasCMeanLlm}{5.25}
+\newcommand{\BasCMeanTools}{20.75}
+\newcommand{\BasCMeanTokens}{86912.3}
+\newcommand{\BasCMeanEtime}{159.4}
+\newcommand{\BasCPass}{24}
+\newcommand{\BasCFail}{0}
+\newcommand{\BasCWrong}{0}
+\newcommand{\BasRTracePMacro}{0.698}
+\newcommand{\BasRTracePMicro}{0.591}
+\newcommand{\BasRTraceRMacro}{0.655}
+\newcommand{\BasRTraceRMicro}{0.648}
+\newcommand{\BasRTraceFMacro}{0.658}
+\newcommand{\BasRTraceFMicro}{0.618}
+\newcommand{\BasRTraceTP}{68}
+\newcommand{\BasRTraceFP}{47}
+\newcommand{\BasRTraceFN}{37}
+\newcommand{\BasRResponsePMacro}{1.000}
+\newcommand{\BasRResponsePMicro}{1.000}
+\newcommand{\BasRResponseRMacro}{0.812}
+\newcommand{\BasRResponseRMicro}{0.824}
+\newcommand{\BasRResponseFMacro}{0.961}
+\newcommand{\BasRResponseFMicro}{0.903}
+\newcommand{\BasRResponseTP}{42}
+\newcommand{\BasRResponseFP}{0}
+\newcommand{\BasRResponseFN}{9}
+\newcommand{\BasRMeanLlm}{12.38}
+\newcommand{\BasRMeanTools}{27.58}
+\newcommand{\BasRMeanTokens}{204406.3}
+\newcommand{\BasRMeanEtime}{142.5}
+\newcommand{\BasRPass}{12}
+\newcommand{\BasRFail}{12}
+\newcommand{\BasRWrong}{0}
+\newcommand{\PairedTraceCtraceHigher}{13}
+\newcommand{\PairedTraceTied}{11}
+\newcommand{\PairedTraceReactHigher}{0}
+\newcommand{\PairedTraceUndefined}{0}
+\newcommand{\PairedTraceComparable}{24}
+\newcommand{\PairedTraceN}{24}
+\newcommand{\PairedResponseCtraceHigher}{3}
+\newcommand{\PairedResponseTied}{18}
+\newcommand{\PairedResponseReactHigher}{0}
+\newcommand{\PairedResponseUndefined}{3}
+\newcommand{\PairedResponseComparable}{21}
+\newcommand{\PairedResponseN}{24}
+\newcommand{\AoneTracePMicro}{0.767}
+\newcommand{\AoneTraceRMicro}{0.657}
+\newcommand{\AoneTraceFMicro}{0.708}
+\newcommand{\AoneTraceTP}{23}
+\newcommand{\AoneTraceFP}{7}
+\newcommand{\AoneTraceFN}{12}
+\newcommand{\AoneResponsePMicro}{1.000}
+\newcommand{\AoneResponseRMicro}{0.765}
+\newcommand{\AoneResponseFMicro}{0.867}
+\newcommand{\AoneResponseTP}{13}
+\newcommand{\AoneResponseFP}{0}
+\newcommand{\AoneResponseFN}{4}
+\newcommand{\AtwoTracePMicro}{0.692}
+\newcommand{\AtwoTraceRMicro}{0.771}
+\newcommand{\AtwoTraceFMicro}{0.730}
+\newcommand{\AtwoTraceTP}{27}
+\newcommand{\AtwoTraceFP}{12}
+\newcommand{\AtwoTraceFN}{8}
+\newcommand{\AtwoResponsePMicro}{\NA}
+\newcommand{\AtwoResponseRMicro}{0.000}
+\newcommand{\AtwoResponseFMicro}{\NA}
+\newcommand{\AtwoResponseTP}{0}
+\newcommand{\AtwoResponseFP}{0}
+\newcommand{\AtwoResponseFN}{17}
+\newcommand{\AthreeTracePMicro}{0.759}
+\newcommand{\AthreeTraceRMicro}{0.629}
+\newcommand{\AthreeTraceFMicro}{0.688}
+\newcommand{\AthreeTraceTP}{22}
+\newcommand{\AthreeTraceFP}{7}
+\newcommand{\AthreeTraceFN}{13}
+\newcommand{\AthreeResponsePMicro}{1.000}
+\newcommand{\AthreeResponseRMicro}{0.765}
+\newcommand{\AthreeResponseFMicro}{0.867}
+\newcommand{\AthreeResponseTP}{13}
+\newcommand{\AthreeResponseFP}{0}
+\newcommand{\AthreeResponseFN}{4}
+\newcommand{\AfourTracePMicro}{0.750}
+\newcommand{\AfourTraceRMicro}{0.771}
+\newcommand{\AfourTraceFMicro}{0.761}
+\newcommand{\AfourTraceTP}{27}
+\newcommand{\AfourTraceFP}{9}
+\newcommand{\AfourTraceFN}{8}
+\newcommand{\AfourResponsePMicro}{1.000}
+\newcommand{\AfourResponseRMicro}{1.000}
+\newcommand{\AfourResponseFMicro}{1.000}
+\newcommand{\AfourResponseTP}{17}
+\newcommand{\AfourResponseFP}{0}
+\newcommand{\AfourResponseFN}{0}
+\newcommand{\MissingAblMeta}{12}
+\newcommand{\AblModelCalls}{92}
+\newcommand{\BasCAttempts}{126}
+\newcommand{\BasRAttempts}{297}
+\newcommand{\BasCModelConfirmed}{126}
+\newcommand{\BasRModelConfirmed}{297}
+\newcommand{\BasCModelMissing}{0}
+\newcommand{\BasCFailed}{0}
+\newcommand{\BasRErrors}{0}
+\newcommand{\RqModelMissing}{42}
+\newcommand{\RqCtwoTraceF}{0.545}
+\newcommand{\RqCsevenTraceF}{0.571}
+
+% End audited result macros
+
+\begin{document}
+\title[C2Trace: Investigation and Verified Response]{C2Trace: Evidence-Grounded Investigation and Verified Response to Command-and-Control Alerts}
+\author{Anonymous Author(s)}
+\abstract{A command-and-control network alert identifies suspicious communication but does not by itself identify the exact process, payload file, or persistence object that a response may safely modify. We present \system, a Windows post-alert investigation and response system that connects minimal network evidence to current host objects. A large language model (LLM) Planner proposes typed investigation strategies; a deterministic controller resolves observations and supplements bounded triage; an Auditor enforces action-specific evidence and protection rules; and an Executor submits argument-bound, short-lived authorizations to constrained host tools. A non-modifying rehearsal precedes refreshed investigation and response, while execution-time target checks and fresh host verification distinguish dispatch from completion. In eight controlled public-source scenario slices, an independent end-to-end effect round achieves pooled trace F1 of \RqTraceFMicro{} and response action F1 of \RqResponseFMicro{}, with all eight fresh post-response host-state checks passing. A separate 48-trial comparison against Public ReAct yields pooled trace F1 of \BasCTraceFMicro{} versus \BasRTraceFMicro{} and response action F1 of \BasCResponseFMicro{} versus \BasRResponseFMicro{}. Recorded mean calls and tokens are lower for \system, although mean end-to-end latency is higher. We additionally report 32 single-repetition smoke-mode ablation cells and eight offline action-proposal cases. Undefined metrics, retained failures, replacements, safety events, and incomplete prompt and call-level audit evidence are disclosed. The results describe bounded complete-system behavior rather than universal safety guarantees or causal effects of role separation.}
+\keywords{command and control, incident response, host attribution, large language models, authorization, auditability}
+\maketitle
+
+% Begin 1.introduction.tex
+\section{Introduction}
+\label{sec:introduction}
+
+% Begin figures/figure01_motivation.tex
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figure01_motivation.pdf}
+\caption{A real AURORA-CHAIN-002 run illustrates the gap between a network alert and host response targets. Live connection observations identify two process owners associated with one payload file; controlled response terminates both processes and removes the file before fresh host validation. Identifiers are abstracted. The diagram is not a claim that every observed relation was credited by the trace scorer; Ground Truth is external to model input}
+\label{fig:motivation}
+\end{figure}
+
+% End figures/figure01_motivation.tex
+
+
+A network detector can identify suspicious command-and-control (C2) communication without identifying a safe response target on the affected endpoint. An alert supplies a time and network identity, whereas terminating a process or deleting a file requires evidence about a current host object. This distinction becomes consequential when the process owning a connection is a legitimate interpreter whose command line references a malicious script or DLL. Deleting the interpreter would damage the host; deleting the payload requires a separate association. Conversely, two C2 processes may share one executable, so terminating the first connection owner does not complete the response. Figure~\ref{fig:motivation} illustrates these differences between network evidence, process identity, and response scope.
+
+Existing research addresses substantial parts of this problem. Provenance systems connect processes, files, and communication events to reconstruct intrusions or support detection and investigation~\citep{backtracker2003,protracer2016,sleuth2017,holmes2019,kairos2024}. Playbook and command standards structure workflows and interoperable actions~\citep{cacao2023,openc2-2019}; adaptive response systems select countermeasures using attack models or response costs~\citep{adepts2005,rre2014,orcef2015}. LLM-assisted investigation and guided response can synthesize context and suggest useful next steps~\citep{guided-response2025,kramer2025}. These capabilities motivate a complementary question: how should a generated investigation become an exact, authorized operation on a changing endpoint, and what evidence should establish that the operation resolved the observed activity?
+
+The transition has three difficulties. First, investigation must adapt to heterogeneous intermediate results without treating generic knowledge or a plausible explanation as a host observation. Second, proposing a response must not confer the authority to execute it. Host command lines, filenames, and other tool outputs are also untrusted text; instructions to a model alone do not provide an enforcement boundary, as prompt-injection and agent-safety studies demonstrate~\citep{greshake2023,agentdojo2024,injecagent2024,rjudge2024}. Third, evidence can become stale between observation and action. A process may exit, its PID may be reused, or a file may change. Even a correctly targeted command can leave another C2 instance active. Response therefore requires both execution-time identity checks and new observations afterward.
+
+To bridge these gaps, we present \system, a system for evidence-grounded investigation and verified response on one Windows endpoint. Its starting point is an independently generated C2 network alert and the identity of the investigated host. The system queries current connections or listeners, follows their owning processes to files and persistence objects, and records the evidence supporting each response candidate. This is a post-alert task: \system does not redetect C2 from raw traffic, reconstruct an enterprise attack graph, identify the human operator, repair the initial intrusion vulnerability, or disrupt remote infrastructure. Its output is an auditable case record, authorized response results, and an explicit post-response status.
+
+Figure~\ref{fig:architecture} shows the architecture. An LLM Planner proposes a typed investigation strategy. A deterministic workflow controller validates and schedules it, resolves host identities from recorded observations, and supplies bounded investigation supplements. An Auditor applies action-specific evidence and protection rules; an optional LLM explanation cannot change those rules. An Executor invokes constrained host tools. Response first passes a non-modifying rehearsal, then a second run repeats investigation and auditing against the reviewed target. Short-lived, one-shot authorizations bind prepared calls to their arguments and target identities. The tool service checks authorization and reobserves the target before mutation. Fresh host queries, followed by independent experimental PostState measurement, distinguish execution from verified completion.
+
+We organize the evaluation around three questions:
+\begin{itemize}[leftmargin=*,nosep]
+  \item \textbf{RQ1: Effectiveness.} How much trace evidence and correct response does \system recover across bounded Windows C2 scenarios, and what remains after response?
+  \item \textbf{RQ2: System comparison.} How do \system and an independent Public ReAct agent differ in trace recovery, response, and recorded resource use under matched alerts, low-level tools, and scoring?
+  \item \textbf{RQ3: Descriptive ablation.} What behavior is observed when audit, target binding, precheck, or post-verification is disabled, within the available execution and audit evidence?
+\end{itemize}
+
+Our contributions are an implemented alert-to-object investigation workflow that separates current facts from auxiliary knowledge; an enforcement architecture connecting independent response approval, argument-bound authorization, execution-time checks, and fresh verification; and an evaluation record linking public-source scenario slices to independent host evidence and retained outcomes. We examine eight end-to-end cases, 48 retained comparison trials in 24 paired blocks, 32 single-repetition smoke-mode ablation cells, and eight supplemental offline proposal cases. These experiments retain native system settings and incomplete prompt or call-level provenance where present. The comparison measures complete systems rather than isolating the causal effect of role count, and the ablations support descriptive observations rather than significance claims. Scenario fidelity and these limits are part of the evaluation protocol in Figure~\ref{fig:protocol}.
+
+% End 1.introduction.tex
+
+% Begin 2.methodology.tex
+\section{Methodology}
+\label{sec:methodology}
+
+% Begin figures/figure02_architecture.tex
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/architecture_original.png}
+\caption{The authors' original C2Trace architecture. An upstream network alert initiates investigation; the Planner, Auditor and Executor exchange strategies, findings, evidence links and decisions through the CaseFile, assisted by generic knowledge. History is optional and disabled in all 16 RQ1 stage configurations. The implementation also has a deterministic workflow controller, not separately drawn here. Audit hard rules remain mandatory, an LLM explanation is optional, and execution uses argument-bound authorization at the MCP service. Verification uses read-only queries; the figure's response-tool grouping represents workflow stages rather than mutation authority. Experimental Ground Truth, scoring and external cleanup remain outside the model attribution path. The depicted IP, port and HTTP fields are schematic: MinimalAlert supports other network protocols. Detailed trust, identity and receipt-projection limits are specified in the text and Figure~\ref{fig:protocol}}
+\label{fig:architecture}
+\end{figure}
+
+% End figures/figure02_architecture.tex
+
+
+\subsection{Task and Evidence Contract}
+
+\system investigates one Windows host identified by an upstream C2 alert. The \texttt{MinimalAlert} schema permits case and alert identifiers, source and alert type, victim host/address, peer IP/domain/URL and port, protocol, time window, confidence, and description. It requires a peer indicator and protocol, generates absent identifiers, and rejects unsupported top-level fields and host answers such as PID, process name/path, payload hash, persistence name, or attack-tool result. The evaluated Suricata input supplies network-level evidence rather than those answers. Its sanitized source event preserves the communication tuple, timestamp, rule information, and event identity; an artifact reference retains the source location, selected record, and digest for checking. Victim identity determines communication direction.
+
+A \texttt{CaseFile} records the alert, source references, strategy, timestamped findings and tool results, evidence links, audit decisions, errors, and final status. Host attribution must be grounded in these observations. A generic C2 knowledge base supplies tool descriptions, investigation patterns, and safety guidance, not current PIDs or file paths. An implemented experience store admits only audited, executed, successfully verified cases and sanitizes reusable patterns; history inputs were empty and updates disabled in the inspected evaluation configurations, so we attribute no measured benefit to it. Dedicated top-level target-lock and safety-observation fields are omitted from the compact case projection supplied to the Planner and explanatory Auditor LLM. Prior audit and tool receipts can nevertheless retain evidence-derived authorization claims, including target identities; the compact view is not a complete receipt-redaction boundary.
+
+\subsection{Roles and Trust Boundary}
+
+The architecture in Figure~\ref{fig:architecture} separates logical authorities. The Planner generates strategy JSON and cannot issue host commands or approve response. The deterministic Auditor can approve, request evidence, or reject; it cannot mutate the host. The Executor invokes prepared tools and records their receipts without autonomously expanding the response. The workflow controller is a deterministic scheduler, not a fourth LLM agent. It validates dependencies, resolves arguments, dispatches roles, and computes completion status. These roles are not three independently isolated operating-system processes.
+
+The Model Context Protocol (MCP) standardizes tool discovery, schemas, calls, and structured receipts. A separate host-tool service runs through stdio in read-only or response-enabled mode. Its capability interface does not itself establish safety: the enforcement comes from argument restrictions, Auditor signatures, replay checks, and target revalidation. The trusted components are the controller, deterministic audit and authorization code, tool service, and host observation mechanisms. Model output and host-derived text remain untrusted inputs. We do not claim resistance to compromise of these trusted components or comprehensive prompt-injection protection.
+
+\subsection{Planning and Deterministic Investigation}
+
+The Planner receives the minimal alert, compact case state, generic knowledge, configured experience context, and the actual tool catalog. It produces a \texttt{StrategyTree} with four node types: investigation, decision, response, and verification. Each node names its tool or condition, arguments, dependencies, and success/failure branches. Unknown identities use evidence placeholders. Validation restricts investigation and verification to read-only tools, response to an allowed mutation list, and decisions to conditions. Every response requires an evidence-sufficiency gate. The implementation can insert that gate, repair dependency errors, prune disallowed response tools, and supplement persistence-cleanup coverage; these are disclosed deterministic transformations of the generated plan.
+
+The controller executes ready nodes whose prerequisites permit progress, records outcomes, and activates branches, subject to a configurable step limit (default 60). It does not call the Planner after every observation: additional bounded read-only planning is requested when auditing needs more evidence. The current entrypoint also inserts a fixed recent-file query independent of case-specific filenames or Ground Truth. It examines only the first level of the public-user and current AppData roots, with at most 128 candidates and a default 4~MiB per-file hashing bound. Its window begins 15 minutes before the alert and ends at case start, with a maximum two-hour span. Unavailable roots or incomplete results fail this triage step. Investigation cannot be described as entirely model-selected or as unrestricted historical forensics.
+
+\subsection{Resolving Processes and Payloads}
+
+Network queries use the alert and source-event direction to identify outbound connections or an inbound listener. Outbound investigation enumerates connections to the peer endpoint rather than filtering to one ephemeral local port; the selected source event anchors the primary owner. Process and parent-chain queries enrich that exact owner. The controller restricts argument keys and replaces identity-sensitive arguments with observed case values rather than accepting a model-supplied PID or guessed path.
+
+The implementation distinguishes \texttt{process\_path}, the owning executable, from \texttt{payload\_path}, a script or DLL referenced by an interpreter's command line. A generic host/extension heuristic extracts candidate payload paths outside protected prefixes; recorded file observations supply further evidence. File inspection, persistence matching, and deletion use the payload path when available, while process termination retains the interpreter's executable identity. This prevents an interpreter-hosted payload from being represented solely as the system interpreter, but the heuristic is not a general Windows command-line parser.
+
+The controller also supplements a successful primary termination with responses to discovered same-executable sibling candidates. It queries each sibling's PID, path, and creation time before submitting a separate response through auditing. These supplemental nodes are recorded outside the replayed strategy tree, preventing premature replay of a previously observed sibling. They are deterministic additions, not evidence that the Planner independently recovered every process in a multi-instance scenario.
+
+
+% Begin figures/figure03_response_protocol.tex
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figure03_response_protocol.pdf}
+\caption{Host modification follows two independent runs. The first gathers read-only evidence, audits the plan and rehearses exact objects without modifying the host; an external gate reviews the target. The second refreshes evidence, repeats auditing and issues a new authorization bound to the current call. At the MCP service, authorization verification and target revalidation precede nonce consumption and the exact tool action. Fresh PostState, rather than command return or external cleanup, determines the response outcome. Fail-closed branches prevent modification or a verified-success claim as appropriate. The secondary-PID server-side branch performs weaker validation than the primary identity branch; the protocol is not an all-object TOCTOU guarantee}
+\label{fig:protocol}
+\end{figure}
+
+% End figures/figure03_response_protocol.tex
+
+
+\subsection{Audit and Two-Stage Response}
+
+The Auditor first checks whether current evidence supports the particular action. Termination requires an attributed network owner; deletion requires an exact file path linked to that process or related persistence; registry, task, and service removal require corresponding evidence-linked selectors. Protected objects and system paths are refused. Decisions distinguish approval, missing evidence, and rejection. An LLM may explain a hard-rule-approved action, but its response is not an independent approval channel. The evaluated configuration sets \texttt{require\_auditor\_llm=false}; a failed explanation therefore falls back to the deterministic reason.
+
+As shown in Figure~\ref{fig:protocol}, a first run investigates, audits, and previews exact response arguments without modifying the host. The external experimental controller checks the rehearsal record and unchanged state. An execute run then replays the strategy but reacquires observations and audit decisions. Its reviewed target comes from the dry-run \texttt{CaseFile}, not an expected malicious target supplied as an answer. The inspected entrypoint sets \texttt{expected\_target} to \texttt{None}. The protected-object manifest constrains safety; it does not establish attribution. A target validator owned by the Auditor compares current identity with the reviewed evidence-derived target before issuing authority. Experimental Ground Truth is materialized after investigation and response for scoring, and controller-owned recovery runs after measurement.
+
+\subsection{Prepared Calls and Execution-Time Checks}
+
+Before auditing, the Executor creates a \texttt{PreparedToolCall} containing a call identifier, strategy-node identifier, tool, canonical arguments, and evidence bindings. Its argument fingerprint hashes sorted canonical JSON after normalizing omitted or empty default values. The Auditor signs an Ed25519 authorization binding the case, audit decision, node, call, tool, argument hash, target lock and its hash, issuing-key fingerprint, issuance/expiry times, and fresh nonce. The default lifetime is 60 seconds. Only the public verification key is passed to the tool service; the model receives no signing authority.
+
+For a mutation, the service checks the signature, configured case, tool and argument binding, expiration, and nonce reuse. It then reobserves the signed target. Primary-process termination compares PID, canonical executable path, creation time, and executable hash. File deletion compares exact path and hash; persistence removal checks the locked selector against current configuration. The secondary-PID sibling branch is weaker: it checks unique PID presence at the service, following the controller's earlier identity query. These checks reduce stale-target execution but are not an atomic transaction with the operating system.
+
+After successful revalidation, the service consumes the nonce before dispatching the mutation. The consumed-nonce set is maintained by the verifier instance. This provides one-shot, at-most-once dispatch within that instance, not exactly-once completion: a dispatched tool can fail, and its authorization cannot be reused. Receipts preserve effective arguments, elapsed time, authorization checks, identity comparisons, and errors for the case record.
+
+\subsection{Fresh Verification and Completion}
+
+Following actual response, read-only verification checks that the C2 network activity and every executed action's exact object have disappeared. The controller requires verification after the last response, successful verification results, and findings linked to each response result and its arguments. Missing queries, failed queries, incomplete object removal, and successful non-modifying previews have different final statuses. A report is generated from the structured case rather than another model's reconstruction.
+
+Experimental fresh PostState is a separate independent measurement before controller cleanup. Cleanup may restore the VM after scoring, but cannot convert a failed measured response into success. Likewise, a correct action-match score alone does not establish verified completion. The prototype covers selected connections/listeners and common persistence mechanisms, not all Windows artifacts; domain-only clues require further observation before response. The evaluation also bounds scenario fidelity, source-version correspondence, and retained prompt/call evidence. Thus implementation checks, observed outcomes, and the completeness of their audit record remain distinct claims.
+
+% End 2.methodology.tex
+
+% Begin 3.evaluation.tex
+\section{Evaluation}
+\label{sec:evaluation}
+
+\subsection{Setting and Public-Source Scenarios}
+
+We analyze archived executions in one controlled Windows VM rather than a production deployment. The eight scenarios in Table~\ref{tab:scenarios} cover executable implants, interpreter-hosted DLL or script payloads, a dual-process reverse-TCP case, and an inbound webshell listener. Their sources include Aurora demonstrations, the ATT\&CK Evaluations Library (AEL), and CTID emulation material~\citep{aurora2026,attackevals-ael-repo,ctid-ael-repo}. They are bounded source-derived slices, not complete campaigns or proof of native malware-family fidelity. In particular, C7 implements a PlugX-like HTTP/RC4 protocol in Python rather than a native PlugX DLL. Protocol labels describe the source implementation; the selected EVE events report TCP transport and do not independently validate every higher-level protocol label. C1 includes an environment-query ability and C2 an ARP-query ability. These exercised behaviors do not imply coverage of other public-source steps.
+
+Each live evaluation separates experimental orchestration from model attribution. The controller starts a scenario, obtains an independent network alert, protects experiment-control objects, and supplies the permitted runtime evidence. \system uses a dry-run rehearsal and a refreshed execute run; the Public ReAct runner has its own investigation and execution stages. External Ground Truth and scoring projections match recovered trace facts and response objects after the run. Fresh PostState is measured before controller recovery, checking the selected target and protected controls. Infrastructure validity, measured response, wrong-target indicators, trial classification, and cleanup are separate fields. A later successful cleanup cannot change a failed measured response. Figure~\ref{fig:evidence-pipeline} distinguishes the four retained experiment populations; we never pool them into one overall result.
+
+
+% Begin tables/table1_scenarios.tex
+\begin{table}[htbp]
+\centering
+\caption{Bounded public-source Windows scenarios. Channel labels summarize the source implementation; the alert transport is TCP. C7 reconstructs a PlugX-like protocol in Python, rather than using a native PlugX DLL. Counts are the scoring universe, not inputs to investigation}
+\label{tab:scenarios}
+\fontsize{8.5}{10.5}\selectfont
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}p{23mm}p{13mm}p{21mm}Xrr@{}}
+\toprule
+Case & Public source & Scenario channel & Host carrier / payload & \shortstack{Trace\\facts} & Actions \\
+\midrule
+C1: Aurora 1 & Aurora & mTLS & EXE & 4 & 2 \\
+C2: Aurora 2 & Aurora & Reverse TCP & Two EXEs & 6 & 3 \\
+C3: SideTwist & AEL & HTTP/XOR & EXE & 4 & 2 \\
+C4: Exaramel & AEL & HTTPS & EXE & 4 & 2 \\
+C5: Emotet & AEL & HTTP & rundll32 / DLL & 4 & 2 \\
+C6: Carbanak & AEL & HTTPS & cscript / JS & 4 & 2 \\
+C7: PlugX & AEL & HTTP/RC4 & python / PY & 4 & 2 \\
+C8: WebShell & CTID & Inbound HTTP & EXE listener & 5 & 2 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% End tables/table1_scenarios.tex
+
+
+% Begin figures/figure04_evidence_pipeline.tex
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figure04_evidence_pipeline.pdf}
+\caption{The four evaluation streams share case semantics and a trace scoring core while retaining distinct sample populations and response semantics. The effect round covers eight cases; the baseline uses 48 logical slots in 24 paired blocks; LLM-Direct uses eight single-inference, zero-tool proposal trials; and ablation uses 32 smoke-mode cells with one execution each. Runtime evidence is separated from external Ground Truth, scoring and cleanup as a design boundary. Controller safety metadata is used for execution checks, not model attribution. Offline closure retains provenance and metric denominators, while complete prompt-body/per-call input-boundary evidence remains partial for baseline and ablation}
+\label{fig:evidence-pipeline}
+\end{figure}
+
+% End figures/figure04_evidence_pipeline.tex
+
+
+\subsection{Measurements and Aggregation}
+
+Trace scoring matches case-specific facts about the observed source activity and attributed host objects. Response action scoring matches the required object-specific actions; its precision and recall do not replace fresh PostState. We recompute precision and recall from archived $TP$, $FP$, and $FN$, retaining the scorer's denominator semantics. When precision is undefined because no prediction exists, precision and F1 remain \NA{} even if recall is zero. When predictions exist but none match and both relevant denominators are nonzero, F1 is zero. We do not replace either situation with the other.
+
+For repeated cases, we pool counts within each case before computing that case's metric. The case macro is the mean of available case metrics, with the non-null count $n/N$ stated when necessary. Pooled micro combines counts over all retained trials before computing the metric. This distinction matters when a system makes no response prediction in an entire case: a macro F1 over seven defined cases is not an eight-case success rate. We report all retained trials, including evaluation failures and wrong-target outcomes. Recorded costs include LLM calls, tool calls, and returned token usage. Controller end-to-end duration includes orchestration around the case; it is distinct from case, investigation, response, and verification durations. Costs are not inferred API invoices.
+
+All numerical tables are generated from a locally verified result file whose companion maps each displayed entry to source SHA-256, JSON fields, and derivation. The offline reconstruction checks archived originals against independent scoring and closure outputs without rerunning the scorer or executing scenarios. Our analysis is descriptive: we report no confidence intervals, significance tests, or causal estimates.
+
+
+\subsection{RQ1: Independent End-to-End Effectiveness}
+
+The primary effect round contains one run per case. All eight are classified \texttt{evaluation\_valid\_pass}, and every case has response F1 of 1.000 with passing fresh PostState (Table~\ref{tab:effectiveness}). Across the scoring universe, trace counts are $(TP,FP,FN)=(\RqTraceTP{},\RqTraceFP{},\RqTraceFN{})$, giving pooled precision/recall/F1 of \RqTracePMicro{}/\RqTraceRMicro{}/\RqTraceFMicro{}. Case macro trace F1 is \RqTraceFMacro{}. Thus perfect response matching in this round coexists with incomplete trace recovery: the system does not recover every scored fact merely because it removes the observed target.
+
+Response counts are $(\RqResponseTP{},\RqResponseFP{},\RqResponseFN{})$. PostState records target network, process, file, and relevant persistence absence and the continued presence of protected control processes, with no wrong-target indication. These observations support response completion for the selected slices. They do not establish complete intrusion eradication or the absence of every possible persistence mechanism. C2's trace F1 is \RqCtwoTraceF{} while response F1 is 1.000; its two-process case illustrates why recovering enough exact response objects and recovering all trace facts are different tasks. C7's trace F1 is \RqCsevenTraceF{} despite its passing response and PostState, also limiting attribution claims.
+
+Mean recorded cost is \RqMeanLlm{} LLM calls, \RqMeanTools{} tool calls, and \RqMeanTokens{} tokens per case. Mean controller end-to-end duration is \RqMeanEtime{} seconds, recomputed from the eight original duration fields rather than inherited from an earlier prose summary. The requested model alias is \texttt{deepseek-chat}, but none of the \RqModelMissing{} available call records identifies a returned backend model; later comparison metadata cannot retrospectively identify this round. All 16 stage configurations have empty history inputs and disabled experience writes, so this round evaluates no history benefit. Earlier engineering rounds are excluded, and the later model-migration round contains only C1; it is not an eight-case model-sensitivity study.
+
+
+% Begin tables/table4_effectiveness.tex
+\begin{table}[htbp]
+\centering
+\caption{RQ1: one independent end-to-end run per case. Macro uses all eight cases. Fresh PostState is measured before recovery and checks target network, process, file, persistence, and protected controls. It is separate from trace and action-match F1}
+\label{tab:effectiveness}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrl}
+\toprule
+Case & Trace F1 & Response F1 & Fresh PostState \\
+\midrule
+C1: Aurora 1 & 0.857 & 1.000 & Pass \\
+C2: Aurora 2 & 0.545 & 1.000 & Pass \\
+C3: SideTwist & 0.857 & 1.000 & Pass \\
+C4: Exaramel & 0.857 & 1.000 & Pass \\
+C5: Emotet & 0.857 & 1.000 & Pass \\
+C6: Carbanak & 0.857 & 1.000 & Pass \\
+C7: PlugX & 0.571 & 1.000 & Pass \\
+C8: WebShell & 0.833 & 1.000 & Pass \\
+\midrule
+Macro & 0.779 & 1.000 & -- \\
+Micro & 0.769 & 1.000 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% End tables/table4_effectiveness.tex
+
+
+\subsection{RQ2: Valid-Trial Comparison with Public ReAct}
+
+The comparison contains eight cases, two systems, and three repetitions: 48 unique logical slots in 24 case-and-repetition blocks, with one selected valid run per slot. A follow-up amendment revised the eligibility rule symmetrically: model-service or transport failures before the first valid model response, and experimental setup failures before the evaluated workflow, are invalid for method-performance analysis and replaced within the same slot. Failures following normal model output remain valid results. This rule does not increase the sample size. Alerts, low-level Windows tools, scorer, and the requested \texttt{deepseek-chat} alias are matched. Native system settings remain different: ReAct has independent per-stage ceilings of 50 tool calls, 20 LLM calls, and 300,000 tokens, while \system's Planner and optional explanatory Auditor use temperatures 0.0 and 0.1, respectively, and ReAct uses 0.0. Both deterministic \system audit rules and its controller supplements remain active. This comparison therefore evaluates complete systems and their orchestration rather than isolating a role count, temperature, or common treatment budget.
+
+Table~\ref{tab:baseline} and Figure~\ref{fig:baseline-f1} show the recomputed valid-trial results. \system's case macro trace F1 is \BasCTraceFMacro{}, compared with \BasRTraceFMacro{} for ReAct. Pooled trace counts are $(\BasCTraceTP{},\BasCTraceFP{},\BasCTraceFN{})$ and $(\BasRTraceTP{},\BasRTraceFP{},\BasRTraceFN{})$, giving pooled F1 of \BasCTraceFMicro{} and \BasRTraceFMicro{}. The difference includes fewer scored false positives for \system, although neither system recovers every scored fact. At the case level, \system has higher pooled trace F1 in five cases and ties in three, including Aurora 1, Exaramel, and Carbanak (Figure~\ref{fig:case-cost}). These descriptive observations do not establish superiority on unseen cases.
+
+For executed response actions, \system's case macro F1 is \BasCResponseFMacro{} over all eight cases. ReAct's is \BasRResponseFMacro{} over seven defined cases: its WebShell case has no response prediction, leaving precision and F1 undefined with zero recall. Pooled action counts are $(\BasCResponseTP{},\BasCResponseFP{},\BasCResponseFN{})$ for \system and $(\BasRResponseTP{},\BasRResponseFP{},\BasRResponseFN{})$ for ReAct, yielding F1 of \BasCResponseFMicro{} and \BasRResponseFMicro{}. Both have pooled response precision of 1.000; recall is \BasCResponseRMicro{} and \BasRResponseRMicro{}. Action matching concerns the registered response objects and remains separate from verified host-state completion.
+
+Retained trial classifications are \BasCPass{} passing and \BasCFail{} failing for \system, versus \BasRPass{} and \BasRFail{} for ReAct. Independent fresh PostState passes in 24/24 and 18/24 trials, respectively. Six ReAct trials pass PostState but retain a failing classification because the final observation schema rejects a \texttt{post\_state} field; they should not be described as failed target removal. All 48 selected trials have valid infrastructure, completed external cleanup, and no wrong-target indication. Cleanup occurs after measurement and cannot convert a failed measured state into a pass.
+
+Across paired blocks with defined trace F1 for both systems, \system is higher in \PairedTraceCtraceHigher{}, tied in \PairedTraceTied{}, and lower in \PairedTraceReactHigher{}; \PairedTraceUndefined{} blocks are undefined. For response F1 the corresponding counts are \PairedResponseCtraceHigher{}, \PairedResponseTied{}, \PairedResponseReactHigher{}, and \PairedResponseUndefined{}. Undefined differences remain incomparable. Blocks preserve logical case-and-repetition matching; selected runs span collection sessions and are not all contemporaneous adjacent executions. We report no significance or causal estimate from this pairing.
+
+Mean recorded LLM calls/tools/tokens are \BasCMeanLlm{}/\BasCMeanTools{}/\BasCMeanTokens{} for \system and \BasRMeanLlm{}/\BasRMeanTools{}/\BasRMeanTokens{} for ReAct. All \BasCAttempts{} and \BasRAttempts{} available request records in the selected valid trials are successful and identify the returned model as \texttt{deepseek-flash}. A shared returned label does not pin immutable backend weights across dates. Mean recorded tokens are 57.48\% lower for \system, while mean controller end-to-end duration is 11.85\% higher: \BasCMeanEtime{} versus \BasRMeanEtime{} seconds. We therefore make no faster-runtime claim. Costs describe the selected valid-trial measurement windows, including their native orchestration; they are neither a full campaign cost nor an API invoice.
+
+Input-boundary evidence remains partial. Stage metadata and call audits do not provide complete raw prompt bodies for verbatim replay. Selected alert records, trial scores, PostState observations, and logical-slot mappings support the measured comparison, but neither hash references nor controller metadata prove that every historical model input was captured and audited. We do not carry forward coverage counts from a superseded trial selection.
+
+% Begin tables/table2_baseline.tex
+\begin{table}[htbp]
+\centering
+\caption{RQ2: 24 valid selected trials per system (eight cases, three repetitions). Counts are pooled within case before macro averaging. Superscripts give defined cases when fewer than eight; recall includes all eight. Recorded usage means cover selected valid trials; all retained call records report success. E2E is controller elapsed time. Classification pass/fail is distinct from action F1 and independent fresh PostState}
+\label{tab:baseline}
+\fontsize{8.5}{10.5}\selectfont
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+System / task & \multicolumn{3}{c}{Case macro} & \multicolumn{3}{c}{Pooled micro} \\
+ & P & R & F1 & P & R & F1 \\
+\midrule
+\system / Trace & 0.938 & 0.760 & 0.834 & 0.931 & 0.771 & 0.844 \\
+\system / Response & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 \\
+Public ReAct / Trace & 0.698 & 0.655 & 0.658 & 0.591 & 0.648 & 0.618 \\
+Public ReAct / Response & 1.000$^{7/8}$ & 0.812 & 0.961$^{7/8}$ & 1.000 & 0.824 & 0.903 \\
+\midrule
+System & LLM calls & Tool calls & Tokens & E2E (s) & Pass & Fail \\
+\system & 5.25 & 20.75 & 86912.3 & 159.4 & 24 & 0 \\
+Public ReAct & 12.38 & 27.58 & 204406.3 & 142.5 & 12 & 12 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% End tables/table2_baseline.tex
+
+
+% Begin figures/figure05_baseline_f1.tex
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figure05_baseline_f1.pdf}
+\caption{C2Trace and Public ReAct valid-trial baseline F1 over 48 logical slots and 24 paired blocks (8 cases, 3 repetitions per system). Case macro averages each case's aggregate metric; pooled micro combines all TP/FP/FN before computing F1. Public ReAct Response Action macro uses 7 of 8 cases because one case has no valid precision/F1 denominator. Action F1 is distinct from PostState success. LLM-Direct proposal metrics are excluded from this live comparison}
+\label{fig:baseline-f1}
+\end{figure}
+
+% End figures/figure05_baseline_f1.tex
+
+
+% Begin figures/figure06_case_trace_and_cost.tex
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figure06_case_trace_and_cost.pdf}
+\caption{Per-case pooled Trace F1 (upper panel) and mean LLM calls, tool calls and token usage per valid selected trial (lower panel) in the 48-slot live baseline. Each case has three trials per system; cost means have 24 selected trials per system, with valid field counts preserved in the source manifest. Cost panels use separate zero-based scales and different units, and token values are in thousands. Connecting lines show paired system values for each case, not uncertainty intervals. These observations are specific to the evaluated model and environment}
+\label{fig:case-cost}
+\end{figure}
+
+% End figures/figure06_case_trace_and_cost.tex
+
+
+\subsection{RQ3: Descriptive Component-Removal Executions}
+
+The archived matrix has four variants and one execution for each of eight cases: A1 removes the Auditor, A2 target binding, A3 precheck, and A4 internal post-verification. All 32 selected executions are recorded as completed in smoke mode, with valid infrastructure, completed cleanup, and \texttt{evaluation\_valid\_fail} classifications. The old administrative gate still records formal authorization and start as false, while the schedule retains planned status. Reconciliation maps these entries to the actual completed runs recorded as crossing the Suricata-start boundary; it does not convert them into a fully audited formal campaign.
+
+Table~\ref{tab:ablation} and Figure~\ref{fig:ablation} retain every cell. Pooled trace F1 is \AoneTraceFMicro{}, \AtwoTraceFMicro{}, \AthreeTraceFMicro{}, and \AfourTraceFMicro{} for A1--A4. Pooled response F1 is \AoneResponseFMicro{}, \AtwoResponseFMicro{}, \AthreeResponseFMicro{}, and \AfourResponseFMicro{}. A2 has response counts $(\AtwoResponseTP{},\AtwoResponseFP{},\AtwoResponseFN{})$: no predictions, zero recall, and undefined precision/F1. This is different from an observed zero F1 with incorrect predictions. A1 and A3 each have response counts $(\AoneResponseTP{},\AoneResponseFP{},\AoneResponseFN{})$. Their available-case response macro F1 is 1.000 over six cases, while pooled recall is \AoneResponseRMicro{}; omitting the two undefined cases would conceal incomplete response.
+
+A4 matches all scored response actions but ends without internal post-verification in all eight cells. Independent external PostState can record object removal without replacing that missing system step. Its action F1 of 1.000 therefore cannot be reported as verified system completion, nor can it show post-verification is unnecessary. Similarly, the observed A2 lack of predictions is a property of these executions, not proof that every implementation without target binding must behave this way.
+
+Per-call provenance limits mechanistic attribution: all 32 cells lack a formal result manifest, variant receipt, independent LLM-call audit, and execute tool-call artifact; \MissingAblMeta{} lack execute metadata. Available stage metadata records \AblModelCalls{} calls under the requested chat alias and returned flash identity, but such metadata is not a substitute for the absent independent input/call audit. Four case metadata files include later qualification fields, and two qualification receipts have self-hash inconsistencies. We preserve the files and distinguish archive qualification from measured scoring. These cells support a descriptive sensitivity record with partial validation, not significance, an isolated component effect, or a universally audited safety result.
+
+
+% Begin tables/table3_ablation.tex
+\begin{table}[htbp]
+\centering
+\caption{RQ3: trace F1 above response F1 in each single-repetition smoke-mode cell. N/A preserves an undefined scorer value; it is not zero. Macro superscripts report n/8. All 32 trials have valid infrastructure and completed cleanup but are classified evaluation-valid-fail. A4 action matching does not establish internal verified completion}
+\label{tab:ablation}
+\fontsize{8.5}{10.5}\selectfont
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccc}
+\toprule
+Case & \shortstack{A1\\No Auditor} & \shortstack{A2\\No target binding} & \shortstack{A3\\No precheck} & \shortstack{A4\\No postverify} \\
+\midrule
+C1: Aurora 1 & \shortstack{0.750\\1.000} & \shortstack{0.750\\\NA} & \shortstack{0.750\\1.000} & \shortstack{0.750\\1.000} \\
+C2: Aurora 2 & \shortstack{0.909\\1.000} & \shortstack{0.667\\\NA} & \shortstack{0.769\\1.000} & \shortstack{0.833\\1.000} \\
+C3: SideTwist & \shortstack{0.750\\1.000} & \shortstack{0.750\\\NA} & \shortstack{0.750\\1.000} & \shortstack{0.750\\1.000} \\
+C4: Exaramel & \shortstack{0.750\\1.000} & \shortstack{0.750\\\NA} & \shortstack{\NA\\\NA} & \shortstack{0.750\\1.000} \\
+C5: Emotet & \shortstack{0.750\\1.000} & \shortstack{0.750\\\NA} & \shortstack{0.750\\1.000} & \shortstack{0.750\\1.000} \\
+C6: Carbanak & \shortstack{\NA\\\NA} & \shortstack{0.750\\\NA} & \shortstack{0.750\\1.000} & \shortstack{0.750\\1.000} \\
+C7: PlugX & \shortstack{0.500\\1.000} & \shortstack{0.500\\\NA} & \shortstack{\NA\\\NA} & \shortstack{0.500\\1.000} \\
+C8: WebShell & \shortstack{0.800\\\NA} & \shortstack{0.909\\\NA} & \shortstack{0.909\\1.000} & \shortstack{0.909\\1.000} \\
+\midrule
+Macro F1 & \shortstack{0.744$^{7/8}$\\1.000$^{6/8}$} & \shortstack{0.728$^{8/8}$\\\NA$^{0/8}$} & \shortstack{0.780$^{6/8}$\\1.000$^{6/8}$} & \shortstack{0.749$^{8/8}$\\1.000$^{8/8}$} \\
+Micro F1 & \shortstack{0.708\\0.867} & \shortstack{0.730\\\NA} & \shortstack{0.688\\0.867} & \shortstack{0.761\\1.000} \\
+Tool calls (sum) & 116 & 98 & 122 & 158 \\
+LLM calls (sum) & 8 & 8 & 34 & 42 \\
+Tokens (sum) & 51588 & 48787 & 556261 & 729009 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% End tables/table3_ablation.tex
+
+
+% Begin figures/figure07_ablation_heatmap.tex
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figure07_ablation_heatmap.pdf}
+\caption{Trace and Response Action F1 for the 32 selected descriptive ablation executions: eight cases by four component-removal variants, one smoke-mode run per cell. A1 removes the Auditor, A2 target binding, A3 Precheck, and A4 PostVerify. Hatched N/A cells retain null values: Trace N/A denotes an empty prediction denominator, while Response Action N/A denotes no action proposal. A2 null and A4 F1=1.0 describe this execution set; they do not establish a necessary mechanism effect. A4 completed without PostVerify, and one repetition per cell does not support significance conclusions}
+\label{fig:ablation}
+\end{figure}
+
+% End figures/figure07_ablation_heatmap.tex
+
+
+\subsection{Supplement: Offline Direct LLM}
+
+The SetB supplement performs one offline inference per case with zero host-tool calls. It synthesizes trace facts and proposes response actions; it does not execute them. All eight archived trials are classified \texttt{evaluation\_valid\_fail}; this retained classification does not supply an executed-response outcome. The requested alias is \texttt{deepseek-chat}, with no confirmed returned backend identity. We verify 64 original files and retained prompt/output isolation records against the offline closure, without treating them as executed response evidence.
+
+Table~\ref{tab:direct} reports trace macro/micro F1 of \DirectTraceFMacro{}/\DirectTraceFMicro{} and \emph{action-proposal} macro/micro F1 of \DirectResponseFMacro{}/\DirectResponseFMicro{}. Pooled trace counts are $(\DirectTraceTP{},\DirectTraceFP{},\DirectTraceFN{})$, and proposal counts $(\DirectResponseTP{},\DirectResponseFP{},\DirectResponseFN{})$. C2, C3, and C8 have genuine trace F1 of zero, which remains zero. Total recorded usage is \DirectTotalTokens{} tokens, or \DirectMeanTokens{} per case. Fresh PostState and cleanup success are unmeasured. This supplement illustrates offline proposal quality under its inputs; its proposal score is not plotted beside live action F1 as if both measured host response success.
+
+
+% Begin tables/table5_direct.tex
+\begin{table}[htbp]
+\centering
+\caption{Supplemental Direct LLM: offline interpretation and action proposals, with no host tools or executed response. Proposal F1 matches proposed actions, not measured host changes. PostState and cleanup success are unmeasured. Genuine trace F1 zeros remain zero}
+\label{tab:direct}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrr}
+\toprule
+Case & Trace F1 & Proposal F1 & Tokens \\
+\midrule
+C1: Aurora 1 & 0.400 & 0.500 & 2999 \\
+C2: Aurora 2 & 0.000 & 0.333 & 3768 \\
+C3: SideTwist & 0.000 & 0.500 & 2980 \\
+C4: Exaramel & 0.400 & 0.500 & 3069 \\
+C5: Emotet & 0.400 & 0.500 & 2967 \\
+C6: Carbanak & 0.400 & 0.500 & 2906 \\
+C7: PlugX & 0.400 & 0.500 & 3002 \\
+C8: WebShell & 0.000 & 0.333 & 4019 \\
+\midrule
+Macro & 0.250 & 0.458 & -- \\
+Micro & 0.227 & 0.444 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% End tables/table5_direct.tex
+
+
+% End 3.evaluation.tex
+
+% Begin 4.discussion.tex
+\section{Discussion and Limitations}
+\label{sec:discussion}
+
+\subsection{From Attribution to Authorized Response}
+
+The effect round shows that complete response to the selected target can coexist with partial trace recovery. Removing a correctly associated process and payload need not recover every scored source fact, while a plausible narrative need not identify a safe object at all. We therefore interpret trace coverage, action matching, system verification, and independent PostState as separate outcomes. Their separation is especially useful for interpreter-hosted payloads: deleting \texttt{rundll32.exe}, \texttt{cscript.exe}, or \texttt{python.exe} would differ fundamentally from removing the file supplied to that interpreter. A dual-process implant likewise makes a single successful termination an incomplete response.
+
+\system's observed usage and aggregate trace results are consistent with the value of explicit evidence contracts and controlled orchestration. They do not identify which architectural element causes the difference. The controller includes bounded file triage, dependency repair, payload extraction, and sibling-response supplements; ReAct has different native orchestration and independent resource ceilings. Inference temperature and optional explanatory auditing also differ by stage. Calling this an isolated comparison of three agents against one agent would overstate the design. \system separates logical authority, and only its Planner and optional explanation invoke an LLM.
+
+Lower calls and tokens also do not imply lower latency. The valid-trial baseline has higher mean end-to-end time for \system despite lower mean recorded token usage. Controller work, repeated observations, audit, host invocation, and external orchestration contribute different costs; the archived totals do not isolate each contribution. Further evaluation would need a declared timing boundary and matched configurations before making a latency attribution. We report the current usage and durations without extrapolating to all models, networks, or hosts.
+
+\subsection{Safety Claims and Failure Evidence}
+
+Argument-bound authorizations connect an audit decision to an exact prepared operation. Consuming a nonce before dispatch prevents reuse within the verifier instance, while fresh identity queries reduce the chance of acting on stale evidence. Neither mechanism provides an atomic operating-system transaction. The nonce store is in memory, and sibling termination has weaker service-side validation than the primary target. These are concrete implementation boundaries, not guarantees against every PID-reuse race, restart, compromised tool service, or concurrent file replacement.
+
+No selected valid baseline trial has a wrong-target indication. This observation and the baseline's scored action precision of 1.000 concern the registered objects and tested executions; neither is the probability that a deployed system will never harm an unrelated object. The previously documented protected-object safety incident remains a separate implementation-history limitation. Likewise, eight passing effect-round PostState checks cover specified target artifacts and controls, not credentials, initial vulnerabilities, remote infrastructure, or unmodeled persistence. No adversarial prompt-injection campaign or exhaustive race test is inferred from these measurements.
+
+The ablations further separate action matching from verified completion. A4 can match every required action while skipping internal verification, and A2's null precision/F1 reflects absent predictions. Available-case macro averaging can hide those omissions unless denominators accompany it. A1 and A3's macro response F1 of 1.000 over six cases should therefore be read together with their missing actions and pooled recall. One run per cell, incomplete call artifacts, and later metadata qualification prevent strong component-level causal conclusions.
+
+\subsection{External Validity and Reproducibility}
+
+The scenarios are controlled public-source Windows slices with limited activity and expected response objects. They do not represent complete enterprise incidents, unseen malware populations, Linux or cloud workloads, long-lived host histories, or a calibrated detection workload. The source-stratum labels and Python reconstruction must remain visible when interpreting family names. Public trace artifacts support scenario correspondence but do not establish exact upstream reproduction solely through a passing scorer.
+
+Model identity and context also limit transfer. RQ1 and Direct retain only requested aliases. RQ2 records identify the returned model label for every selected call, while available ablation metadata identifies only its retained subset. Selected baseline runs span collection dates, so a shared alias and model label do not establish unchanged backend weights or eliminate session effects. The later alternative-model round covers one case and cannot establish model robustness. Inspected history inputs are empty and updates disabled; no experience-learning gain is measured. Baseline prompt bodies and portions of input/call evidence are absent, so offline closure is not complete verbatim replay. The compact model view omits dedicated safety fields but can contain prior evidence-derived authorization claims in receipts; that distinction belongs in any future context-isolation audit.
+
+The local reconstruction preserves these gaps rather than repairing original experiment records. It provides counts, denominators, selected-run mappings, hashes, and readable figures from retained artifacts. Stronger claims would require newly authorized experiments with complete input capture, prospectively declared trial selection and component settings, repeated ablation cells, and dedicated safety validation. The present paper makes no claim that those experiments have already occurred.
+
+% End 4.discussion.tex
+
+% Begin 5.related_work.tex
+\section{Related Work}
+\label{sec:related}
+
+% Draft citation provenance: inherited metadata follows the supplied local
+% literature ledger. The four supplied 2026 preprints were checked locally;
+% this revision did not revalidate publisher metadata or publication status.
+
+\textbf{Provenance and attack investigation.}
+BackTracker reconstructs dependencies from operating-system events to explain an intrusion's origins~\citep{backtracker2003}.
+ProTracer alternates logging and tainting to control collection overhead and dependency growth~\citep{protracer2016}.
+SLEUTH reconstructs attack scenarios from commodity audit data, while HOLMES correlates suspicious information flows across attack stages~\citep{sleuth2017,holmes2019}.
+KAIROS uses whole-system provenance for detection and investigation~\citep{kairos2024}.
+These approaches provide ways to recover and prioritize relationships among processes, files, and communications.
+C2Trace studies a different interface: an existing C2 alert initiates queries of current Windows state, and the resulting evidence must identify objects sufficiently precisely for a bounded response.
+It does not replace continuous provenance capture or reconstruct every historical dependency.
+The distinction is between an investigative relationship and an execution target whose identity must still hold when a tool acts.
+
+\textbf{Playbooks and automated response.}
+CACAO describes exchangeable workflows, conditions, commands, and targets; OpenC2 defines an interoperable action--target command language~\citep{cacao2023,openc2-2019}.
+These interfaces complement evidence-based target selection and could express approved response actions.
+Automated response also extends beyond fixed scripts: ADEPTS selects responses using attack graphs, RRE models response and recovery through a game-theoretic framework, and ORCEF evaluates response costs using resource and operational dependencies~\citep{adepts2005,rre2014,orcef2015}.
+Their contributions address workflow representation, response selection, uncertainty, and business impact.
+C2Trace concentrates on linking an alert to a current process or payload, restricting the prepared tool call, and checking observed host state after execution.
+An actuator's success receipt and an independent observation of target disappearance answer different questions.
+Our local protection rules do not substitute for enterprise-wide response-cost models.
+
+\textbf{LLM assistance in incident response.}
+Guided Response uses incident context to recommend investigation, triage, and remediation steps~\citep{guided-response2025}.
+Kramer et al. examine how LLMs fit analysts' incident-response work and document limitations of autonomous summarization~\citep{kramer2025}.
+Such assistance can reduce the effort of interpreting heterogeneous evidence, while analyst collaboration remains consequential.
+C2Trace instead evaluates a restricted path from investigation to host actions.
+Its Planner proposes a structured strategy, and controller rules constrain the resulting calls.
+The Auditor remains a separate component, but its semantic LLM explanation is optional in the measured configuration; role separation is neither proof of independent errors nor a guarantee that model reasoning is correct.
+
+\textbf{Security of tool-using agents.}
+Indirect prompt injection can move attacker-controlled content into an application's decision process~\citep{greshake2023}.
+AgentDojo and InjecAgent examine this problem in agents interacting with external content and tools, while R-Judge evaluates awareness of risks in agent trajectories~\citep{agentdojo2024,injecagent2024,rjudge2024}.
+For incident response, command lines, file names, and returned logs create comparable trust boundaries.
+We therefore treat model proposals as inputs to enforcement rather than as authorization: action parameters, protected objects, target identity, and a one-time authorization remain controller concerns.
+This architectural choice does not itself demonstrate resistance to adaptive prompt injection.
+Our current experiments measure bounded investigation and response behavior, and their incomplete prompt and per-call records limit the available retrospective input-boundary audit.
+
+\textbf{Evaluation tasks and emulation sources.}
+Recent incident-response benchmarks distinguish several outcomes.
+SecRespond asks agents to inspect compromised-host snapshots and produce forensic reports and remediation plans, assessed through an LLM-judged checkpoint rubric~\citep{secrespond2026}.
+SIR-Bench measures triage, novel forensic findings, and tool appropriateness~\citep{sirbench2026}.
+OpenSec already provides state-changing actions and execution-based scoring in a dual-control simulator with adversarial evidence~\citep{opensec2026}.
+Thus, execution-based evaluation is not unique to our work.
+C2Trace's narrower task binds prepared Windows actions to observed process and payload identity and records fresh host PostState separately from action matching.
+These task and environment differences prevent direct comparison of reported scores.
+Aurora generates and executes causality-preserving attack emulations~\citep{aurora2026}; the ATT\&CK Evaluations Library and CTID resources provide additional source material~\citep{attackevals-ael-repo,ctid-ael-repo}.
+Our cases are bounded source-derived slices with disclosed adaptations, including a Python-based PlugX mechanism, rather than complete reproductions of the named campaigns.
+We cite the supplied preprint versions and retain inherited bibliographic metadata from the local literature ledger; this revision did not revalidate publisher records online.
+
+% End 5.related_work.tex
+
+% Begin 6.conclusion.tex
+\section{Conclusion}
+\label{sec:conclusion}
+
+\system connects minimal C2 network alerts to evidence-linked Windows response objects through typed investigation, deterministic auditing, constrained execution, and fresh verification. Its architecture distinguishes generating a strategy from authorizing an operation and distinguishes successful dispatch from measured host completion. Eight independent effect-round cases pass fresh PostState while retaining incomplete trace recovery. The separate retained comparison reports higher aggregate trace and action F1 and lower recorded mean calls and tokens than Public ReAct, alongside higher mean end-to-end duration and nonuniform case results. Smoke-mode component removals and offline proposal trials supply bounded supplemental observations. Retained failures, historical safety events, null metrics, native configuration differences, and incomplete audit artifacts restrict these findings to the measured complete systems and scenario slices. The accompanying source map and generated tables expose those restrictions so that further investigation can build on the evidence without treating closure as a universal safety guarantee.
+
+% End 6.conclusion.tex
+
+\backmatter
+\section*{Statements and Declarations}
+\subsection*{Funding}
+To be completed by the authors before submission.
+\subsection*{Competing interests}
+To be completed by the authors before submission.
+\subsection*{Author contributions}
+To be completed by the authors before submission.
+\subsection*{Data availability}
+The evaluation uses archived experiments and the evidence companion described in the appendix. The public release location, access conditions, and any restrictions are to be confirmed by the authors before submission.
+\subsection*{Code availability}
+The release location, version, and access conditions are to be confirmed by the authors before submission.
+\subsection*{Use of generative artificial intelligence in manuscript preparation}
+Generative artificial intelligence assisted drafting, translation, and format preparation of this working manuscript. The authors must confirm the tools used, the final disclosure, and their review of the text and citations before submission. Experimental use of large language models is documented separately in the methodology and evaluation.
+
+\appendix
+\section{Artifact, Trial Selection, and Audit Boundaries}
+\label{sec:artifact}
+
+\subsection{Evidence Organization}
+
+The artifact companion treats source experiments as immutable. A read-only path map resolves the archived VM project prefix to the copied local project, without rewriting historical JSON. The actual handoff package is a sibling of the project rather than the earlier path described beneath the paper directory. No result is selected merely because a historical absolute path happens to resolve. Source references retain project-relative paths, SHA-256, JSON pointers, extracted values, and derived formulas; user-specific absolute paths are confined to the local companion and omitted from this manuscript and its figures.
+
+The primary effect sources are \nolinkurl{score.json}, \nolinkurl{trial_result.json}, \nolinkurl{operational_metrics.json}, \nolinkurl{post_response_validation.json}, protected-process observations, Ground Truth, and scoring CaseFiles from the fifth-round case archives. All seven artifacts per case match their mapped original run files. The ReAct comparison uses the v5 valid-slot inventory and the 48 selected trial scores, classifications, operational metrics, and fresh PostState records. Our offline reconstruction checks all selected scores against their stored matching records, recomputes count-derived metrics and case macro/pooled micro aggregates, and reconciles the 41 unchanged selections against the prior independently rescored population. The original scorer is not invoked, and the newly admitted selections are not described as having an independent scorer rerun. The ablation uses the corrected inventory, variant/per-case aggregates, and execution reconciliation together with original run files. Direct uses SetB raw inputs/outputs and its v2 closure, retaining proposal semantics.
+
+\subsection{Case Keys and Source Fidelity}
+
+Tables and figures use the following case keys consistently:
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+C1 & \texttt{AURORA-CHAIN-001} \\
+C2 & \texttt{AURORA-CHAIN-002} \\
+C3 & \texttt{AEL-OILRIG-SIDETWIST-001} \\
+C4 & \texttt{AEL-SANDWORM-EXARAMEL-WIN-001} \\
+C5 & \texttt{AEL-WIZARD-EMOTET-001} \\
+C6 & \texttt{AEL-CARBANAK-RAT-001} \\
+C7 & \texttt{AEL-MUSTANG-PANDA-PLUGX-001} \\
+C8 & \texttt{MEP-WINDOWS-WEBSHELL-01}
+\end{tabular}
+\end{center}
+Full IDs and source commits are retained in the companion rather than using family names as fidelity certificates. Reproducing a selected C2 channel or host artifact is narrower than reproducing an entire upstream campaign. Measured transport, scenario semantics, actual carrier, and scoring facts are separate fields.
+
+\subsection{Selected Slots and Preserved Earlier Events}
+
+Figure~\ref{fig:provenance} maps eligibility and logical slots to selected runs, original score and PostState artifacts, offline arithmetic checks, and reproducible aggregates. Each system contributes three valid selected runs per case. A selected run occupies an existing slot and does not create an additional observation; the companion retains the exact slot-to-run mapping and source hashes. Selection uses the symmetric service-availability and setup-validity criterion described in RQ2 and retains normal-output evaluation failures. The historical protected-object safety incident remains separate from ordinary performance scoring.
+
+The resulting population measures complete-system behavior in valid executions rather than an unmodified first-attempt availability sequence. Recorded cleanup success, trial classification, scored action matches, and independent fresh PostState have distinct denominators and meanings. Paired comparisons retain undefined metrics and never translate an undefined difference into a win or loss.
+
+% Begin figures/figure08_provenance.tex
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figure08_provenance.pdf}
+\caption{Audited valid-trial population and aggregation. The symmetric eligibility rule admits one valid selected run per logical slot. Original score and fresh PostState artifacts are reconciled with classification and operational records; TP/FP/FN and case macro/pooled micro metrics are recomputed offline. Forty-eight slots yield 24 runs per system and 24 logical pairs. Full prompt-body capture remains incomplete; arithmetic consistency is distinct from complete input replay or an independent scorer rerun}
+\label{fig:provenance}
+\end{figure}
+
+% End figures/figure08_provenance.tex
+
+
+\subsection{Incomplete Inputs and Administrative Provenance}
+
+Table~\ref{tab:boundaries} reports material audit limits. Baseline stage metadata and call-audit records retain model labels, usage and selected execution observations, but do not provide complete raw prompt bodies. Current selection hashes bind the supplied files; they do not establish historical whole-log immutability or a universal audit of every model input against Ground Truth. Coverage categories from an earlier selected population are not reused as measurements for the updated valid-trial population.
+
+The ablation matrix has actual completed smoke-mode executions while its old formal gate and schedule fields remain unadvanced. Reconciliation documents both states. It does not create absent manifests, per-call audits, or tool-call records. Later qualification fields in four case metadata files leave an incomplete amendment timeline, and two qualification receipts fail self-hash consistency. These archive issues are preserved without changing measured counts or trial classifications. Partial available stage metadata identifies calls and configuration, but cannot fill the missing independent call-level input evidence. A4's external object observations are also not substituted for its omitted internal verification.
+
+
+% Begin tables/table6_boundaries.tex
+\begin{table}[htbp]
+\centering
+\caption{Audit coverage limits. Counts report missing or present artifacts in the retained evidence, without filling gaps or changing trial outcomes. Companion manifests provide per-source SHA-256, JSON pointers, and aggregation formulas}
+\label{tab:boundaries}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{@{}p{32mm}p{19mm}X@{}}
+\toprule
+Evidence group & Observed coverage / gap & Allowed interpretation \\
+\midrule
+RQ1 model metadata & 42 & calls lack returned model identity; requested alias only \\
+Baseline prompt bodies & 48 & trials lack complete raw model-input bodies; no verbatim replay \\
+Baseline input boundary & Partial & metadata and hashes do not prove complete per-call isolation \\
+Baseline returned model & 423/423 & selected call records identify the label; backend weights are not pinned \\
+Ablation call audit & 32 & cells lack independent per-call audit \\
+Ablation execute metadata & 12 & cells lack execute-run metadata \\
+Ablation A4 status & 8 & cells complete without internal post-verification \\
+Direct raw integrity & 64 & files hash-checked; not proof of response success \\
+Direct backend identity & 0 & confirmed identities; alias does not identify backend \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% End tables/table6_boundaries.tex
+
+
+\subsection{Implementation Version and Context Projection}
+
+The archived v8 freeze lists 17 code/template assets. Fifteen current files match their listed digests; the current ReAct runner and public runner script differ. Consequently this paper does not describe the entire present source tree as an exact v8 snapshot. Inspection of current authorization and host-tool implementation establishes implementation behavior, while archived trial artifacts establish observed historical outcomes. These are recorded as distinct provenance levels. No inference that a later source repair was present in every earlier run is made solely from inspecting today's files.
+
+All 16 RQ1 stage metadata files have empty experience-history inputs and disabled writes. Available C2Trace stage metadata from the baseline and ablation shares that configuration, but some stage files are absent. We claim no evaluated learning-from-history effect. The compact CaseFile view excludes dedicated top-level safety fields while retaining prior audit/action receipts, which can contain evidence-derived authorization claims. It is therefore a restricted projection, not a guarantee that all identity information is recursively removed. Ground Truth separation is supported by the inspected entrypoint and available input-boundary evidence; where call inputs are absent, we disclose the verification limit rather than claiming complete reconstruction.
+
+\subsection{Local Reconstruction and Citation Scope}
+
+The companion includes the evidence map, chapter blueprint, source manifest, verified result JSON, displayed-table bindings, figure source receipts, and generation scripts. Rebuilding tables and figures reads these files only. Original experiment artifacts, scorer, protocols, schedules, and old drafts are unmodified. Earlier ransomware content and pending August draft claims are excluded; those drafts are backed up separately. Numerical figures are vector PDFs with values sourced from the same verified data; the authors' original architecture is retained as a raster image. The manuscript uses the Springer Nature journal template.
+
+Inherited bibliographic entries follow the supplied literature ledger, and selected recent works are checked against supplied primary PDF front matter and abstracts. Publisher metadata and all remote source versions have not been independently revalidated online. No absent DOI, venue page range, missing prompt, model identity, attack step, or statistical test is invented. This local revision performs offline analysis and document generation only; the valid-trial comparison includes the separately collected completion runs supplied in the handoff. No model API, Live experiment, or scorer is invoked by the reconstruction. The format migration retrieved only the public journal guidelines and official template.
+
+\clearpage
+\bibliography{references}
+\end{document}

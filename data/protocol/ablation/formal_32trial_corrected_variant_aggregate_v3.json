@@ -1,0 +1,238 @@
+{
+  "schema_version": "c2trace.ablation.variant_aggregate.v3",
+  "generated_at_utc": "2026-10-07T10:36:26.518284+00:00",
+  "variants": {
+    "A1": {
+      "trace_pooled": {
+        "tp": 23,
+        "fp": 7,
+        "fn": 12,
+        "precision": 0.7666666666666667,
+        "recall": 0.6571428571428571,
+        "f1": 0.7076923076923077
+      },
+      "response_pooled": {
+        "tp": 13,
+        "fp": 0,
+        "fn": 4,
+        "precision": 1.0,
+        "recall": 0.7647058823529411,
+        "f1": 0.8666666666666666
+      },
+      "trace_macro": {
+        "precision": {
+          "value": 0.7571428571428571,
+          "n": 7,
+          "N": 8
+        },
+        "recall": {
+          "value": 0.6416666666666667,
+          "n": 8,
+          "N": 8
+        },
+        "f1": {
+          "value": 0.7441558441558441,
+          "n": 7,
+          "N": 8
+        }
+      },
+      "response_macro": {
+        "precision": {
+          "value": 1.0,
+          "n": 6,
+          "N": 8
+        },
+        "recall": {
+          "value": 0.75,
+          "n": 8,
+          "N": 8
+        },
+        "f1": {
+          "value": 1.0,
+          "n": 6,
+          "N": 8
+        }
+      },
+      "operational": {
+        "tool_calls": 116,
+        "llm_calls": 8,
+        "total_tokens": 51588
+      },
+      "response_non_null_count": 6
+    },
+    "A2": {
+      "trace_pooled": {
+        "tp": 27,
+        "fp": 12,
+        "fn": 8,
+        "precision": 0.6923076923076923,
+        "recall": 0.7714285714285715,
+        "f1": 0.7297297297297296
+      },
+      "response_pooled": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 17,
+        "precision": null,
+        "recall": 0.0,
+        "f1": null
+      },
+      "trace_macro": {
+        "precision": {
+          "value": 0.704861111111111,
+          "n": 8,
+          "N": 8
+        },
+        "recall": {
+          "value": 0.7604166666666667,
+          "n": 8,
+          "N": 8
+        },
+        "f1": {
+          "value": 0.728219696969697,
+          "n": 8,
+          "N": 8
+        }
+      },
+      "response_macro": {
+        "precision": {
+          "value": null,
+          "n": 0,
+          "N": 8
+        },
+        "recall": {
+          "value": 0.0,
+          "n": 8,
+          "N": 8
+        },
+        "f1": {
+          "value": null,
+          "n": 0,
+          "N": 8
+        }
+      },
+      "operational": {
+        "tool_calls": 98,
+        "llm_calls": 8,
+        "total_tokens": 48787
+      },
+      "response_non_null_count": 0
+    },
+    "A3": {
+      "trace_pooled": {
+        "tp": 22,
+        "fp": 7,
+        "fn": 13,
+        "precision": 0.7586206896551724,
+        "recall": 0.6285714285714286,
+        "f1": 0.6875
+      },
+      "response_pooled": {
+        "tp": 13,
+        "fp": 0,
+        "fn": 4,
+        "precision": 1.0,
+        "recall": 0.7647058823529411,
+        "f1": 0.8666666666666666
+      },
+      "trace_macro": {
+        "precision": {
+          "value": 0.7579365079365079,
+          "n": 6,
+          "N": 8
+        },
+        "recall": {
+          "value": 0.6041666666666667,
+          "n": 8,
+          "N": 8
+        },
+        "f1": {
+          "value": 0.7797202797202797,
+          "n": 6,
+          "N": 8
+        }
+      },
+      "response_macro": {
+        "precision": {
+          "value": 1.0,
+          "n": 6,
+          "N": 8
+        },
+        "recall": {
+          "value": 0.75,
+          "n": 8,
+          "N": 8
+        },
+        "f1": {
+          "value": 1.0,
+          "n": 6,
+          "N": 8
+        }
+      },
+      "operational": {
+        "tool_calls": 122,
+        "llm_calls": 34,
+        "total_tokens": 556261
+      },
+      "response_non_null_count": 6
+    },
+    "A4": {
+      "trace_pooled": {
+        "tp": 27,
+        "fp": 9,
+        "fn": 8,
+        "precision": 0.75,
+        "recall": 0.7714285714285715,
+        "f1": 0.7605633802816902
+      },
+      "response_pooled": {
+        "tp": 17,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "trace_macro": {
+        "precision": {
+          "value": 0.7395833333333334,
+          "n": 8,
+          "N": 8
+        },
+        "recall": {
+          "value": 0.7604166666666667,
+          "n": 8,
+          "N": 8
+        },
+        "f1": {
+          "value": 0.7490530303030304,
+          "n": 8,
+          "N": 8
+        }
+      },
+      "response_macro": {
+        "precision": {
+          "value": 1.0,
+          "n": 8,
+          "N": 8
+        },
+        "recall": {
+          "value": 1.0,
+          "n": 8,
+          "N": 8
+        },
+        "f1": {
+          "value": 1.0,
+          "n": 8,
+          "N": 8
+        }
+      },
+      "operational": {
+        "tool_calls": 158,
+        "llm_calls": 42,
+        "total_tokens": 729009
+      },
+      "response_non_null_count": 8
+    }
+  }
+}

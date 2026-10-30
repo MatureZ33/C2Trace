@@ -1,0 +1,312 @@
+{
+  "schema_version": "c2trace.bench.ground_truth.v3",
+  "case_id": "AF-MAAS-WIN-01",
+  "status": "template_requires_live_qualification",
+  "source_commit": "295d20d27cefce0a2d309b6c24781545e45f547d",
+  "claim": "single_windows_endpoint_projection_not_full_incident_reproduction",
+  "caldera": {
+    "bootstrap": {
+      "adversary_id": "8ca4aeb1-25e8-5b39-b7bd-aa5ff2ed7024",
+      "operation_id": "FILL_FROM_BOOTSTRAP_OPERATION",
+      "report_path": "FILL_AFTER_EXPORT",
+      "expected_ability_ids": [
+        "adc72592-418d-5a63-a5de-4053a6925502",
+        "9a4586da-acbc-5826-b2e8-1e489290e93e"
+      ]
+    },
+    "scenario": {
+      "adversary_id": "87a15fa1-bef1-51f3-9c41-c211634332ca",
+      "operation_id": "FILL_FROM_SCENARIO_OPERATION",
+      "report_path": "FILL_AFTER_EXPORT",
+      "expected_ability_ids": [
+        "58aabc7c-1ba8-5212-9d5c-6d4aeebad007",
+        "a97800a2-bd4c-56ac-bf50-be457af1c156"
+      ]
+    },
+    "planner_id": "aaa7c857-37a0-4c4a-85f7-4e9f7f30e31a",
+    "skipped_abilities_expected": []
+  },
+  "target": {
+    "agent": "manx",
+    "paw": "FILL_FROM_NEW_TCP_AGENT",
+    "pid": "FILL_FROM_NEW_TCP_AGENT",
+    "group": "c2t-<run_id>-target",
+    "path": "C:\\Users\\Public\\#{c2trace.manx_name}.exe",
+    "contact": "tcp",
+    "remote_endpoint": "192.168.21.132:7010"
+  },
+  "ability_instances": [
+    {
+      "instance_key": "bootstrap.stage_manx",
+      "operation_role": "bootstrap",
+      "operation_id": "FILL_FROM_BOOTSTRAP_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "adc72592-418d-5a63-a5de-4053a6925502",
+      "attack_mapped": false,
+      "mandatory": false,
+      "executed": null,
+      "ability_role": "support",
+      "source_node_refs": [],
+      "expected_status": "success",
+      "metric_eligible": false,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": "support ability is not an Attack Flow mandatory node",
+      "trace_facts": [
+        {
+          "trace_id": "trace.bootstrap.stage.file",
+          "trace_type": "file",
+          "canonical_key": "file:path+sha256",
+          "required": true,
+          "discriminative": true,
+          "anchor": false,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:file_metadata"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "expected_value": {
+            "path": "C:\\Users\\Public\\#{c2trace.manx_name}.exe",
+            "sha256": "FILL_FROM_PRE_RESPONSE_SNAPSHOT"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target_file",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Included in atomic trace P/R/F1 because C2Trace independently asserts the Manx payload file; the support producer remains outside Ability Any-Trace Recall.",
+          "producer_ability_instance": "bootstrap.stage_manx"
+        }
+      ]
+    },
+    {
+      "instance_key": "bootstrap.start_manx",
+      "operation_role": "bootstrap",
+      "operation_id": "FILL_FROM_BOOTSTRAP_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "9a4586da-acbc-5826-b2e8-1e489290e93e",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_node_refs": [
+        "attack-action--47ffc519-7b5c-419d-8b4d-d738abb1ef1f",
+        "attack-action--337ea15a-8eff-4e01-91e9-13b4aa809986"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.bootstrap.start.process",
+          "trace_type": "process",
+          "canonical_key": "process:pid+creation_time+path",
+          "required": true,
+          "discriminative": true,
+          "anchor": false,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:c2_process_attributed",
+            "c2trace:process_detail",
+            "c2trace:process_tree"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "expected_value": {
+            "pid": "FILL_FROM_TARGET_AGENT",
+            "creation_time": "FILL_FROM_PRE_RESPONSE_SNAPSHOT",
+            "path": "C:\\Users\\Public\\#{c2trace.manx_name}.exe"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "C2Trace can independently bind the live TCP owner to the Manx process.",
+          "producer_ability_instance": "bootstrap.start_manx"
+        },
+        {
+          "trace_id": "trace.bootstrap.start.network",
+          "trace_type": "network_connection",
+          "canonical_key": "network:protocol+src_ip+src_port+dst_ip+dst_port+pid",
+          "required": true,
+          "discriminative": true,
+          "anchor": false,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:network_connection"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "expected_value": {
+            "protocol": "tcp",
+            "source_ip": "FILL_VICTIM_IP",
+            "source_port": "FILL_FROM_FROZEN_EVENT",
+            "destination_ip": "192.168.21.132",
+            "destination_port": 7010,
+            "pid": "FILL_FROM_TARGET_AGENT"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/network_connections",
+            "capture_stage": "before_response",
+            "selection": {
+              "kind": "object_matching_trace_expected_value",
+              "match_fields": [
+                "protocol",
+                "source_ip",
+                "source_port",
+                "destination_ip",
+                "destination_port",
+                "pid"
+              ]
+            }
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "The seed alert itself is excluded; only an independently obtained C2Trace tool finding may match this trace.",
+          "producer_ability_instance": "bootstrap.start_manx"
+        }
+      ]
+    },
+    {
+      "instance_key": "scenario.shell_proof",
+      "operation_role": "scenario",
+      "operation_id": "FILL_FROM_SCENARIO_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "58aabc7c-1ba8-5212-9d5c-6d4aeebad007",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_node_refs": [
+        "attack-action--8b19cc76-f722-4b26-8100-5f96c5437ee8"
+      ],
+      "expected_status": "success",
+      "metric_eligible": false,
+      "atomic_trace_eligible": false,
+      "metric_exclusion_reason": "Current C2Trace has no arbitrary-file search or historical process telemetry; the marker is independently verifiable but not scoreable as a C2Trace finding.",
+      "trace_facts": [
+        {
+          "trace_id": "trace.scenario.shell.marker",
+          "trace_type": "file",
+          "canonical_key": "file:path+sha256",
+          "required": true,
+          "discriminative": true,
+          "anchor": false,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "expected_value": {
+            "path": "C:\\Users\\Public\\#{c2trace.manx_name}.shell.txt",
+            "sha256": "FILL_FROM_PRE_RESPONSE_SNAPSHOT"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/shell_marker",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": false,
+          "eligibility_reason": "Used to prove ability execution and reported in Trace-Producing Ability Ratio.",
+          "producer_ability_instance": "scenario.shell_proof"
+        }
+      ]
+    },
+    {
+      "instance_key": "scenario.run_key",
+      "operation_role": "scenario",
+      "operation_id": "FILL_FROM_SCENARIO_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "a97800a2-bd4c-56ac-bf50-be457af1c156",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_node_refs": [
+        "attack-action--b2f0f8a2-7563-46ea-90fe-924b943e5374"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.scenario.run_key",
+          "trace_type": "registry_run_key",
+          "canonical_key": "registry:hive+key_path+value_name+value_data",
+          "required": true,
+          "discriminative": true,
+          "anchor": false,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:persistence_linked_to_payload"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "expected_value": {
+            "hive": "HKCU",
+            "key_path": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "value_name": "C2TraceBench_#{c2trace.manx_name}",
+            "value_data": "C:\\Users\\Public\\#{c2trace.manx_name}.exe"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/run_key",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "The Run value is unique and points exactly at the attributed Manx path.",
+          "producer_ability_instance": "scenario.run_key"
+        }
+      ]
+    }
+  ],
+  "scoring_policy": {
+    "ability_any_trace_recall_denominator": "ability instances with metric_eligible=true and at least one scoreable trace_fact",
+    "one_hit_maximum_per_ability_instance": true,
+    "one_to_one_trace_matching": true,
+    "seed_alert_is_not_a_scored_finding": true,
+    "caldera_outputs_are_not_c2trace_findings": true,
+    "shared_context_cannot_score_multiple_ability_instances": true,
+    "atomic_trace_denominator": "scoreable trace_facts from every executed ability, including support abilities; this does not change the Ability Recall denominator",
+    "process_parent_edges": "evaluated only when explicitly pre-registered; the Maastricht Manx parent is a transient CALDERA PowerShell process and is not reliable frozen Ground Truth",
+    "ability_precision": "not_applicable_without_independent_ability_predictions"
+  },
+  "expected": {
+    "response": [
+      {
+        "tool": "kill_process",
+        "target": "C:\\Users\\Public\\#{c2trace.manx_name}.exe",
+        "required": true
+      },
+      {
+        "tool": "remove_file",
+        "target": "C:\\Users\\Public\\#{c2trace.manx_name}.exe",
+        "required": true
+      },
+      {
+        "tool": "remove_registry",
+        "target": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run::C2TraceBench_#{c2trace.manx_name}",
+        "required": true
+      }
+    ],
+    "non_actions": [
+      "remove_scheduled_task",
+      "remove_service"
+    ]
+  },
+  "post_response": {
+    "manx_network_absent": true,
+    "manx_process_absent": true,
+    "manx_file_absent": true,
+    "manx_run_key_absent": true,
+    "control_sandcat_alive": true,
+    "shell_marker_cleanup": "external_after_evidence_finalization_not_scored_as_c2trace"
+  },
+  "observed": null,
+  "evidence": {}
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "c2trace.bench.mapping.v4",
+  "case_id": "AURORA-CHAIN-001",
+  "source_id": "aurora-demo-chain-001-20260731",
+  "source_kind": "aurora",
+  "dataset_stratum": "public_tool_benchmark",
+  "status": "static_mapping_complete",
+  "source_steps": [
+    {
+      "step_id": "sliver.deploy",
+      "name": "Deploy and execute Sliver mTLS implant on Windows",
+      "description": "A pre-built Sliver mTLS implant is copied to the victim and executed, establishing an outbound mTLS connection to the Sliver server.",
+      "technique_id": "T1105",
+      "role": "mandatory",
+      "fidelity": "parameterized",
+      "scope_reason": "A server-generated Sliver implant is hash-verified and deployed to a run-scoped path; one mTLS session is established.",
+      "implementation": {
+        "kind": "sliver_implant",
+        "operation_role": "bootstrap",
+        "implementation_mode": "controlled_reimplementation",
+        "ability_id": "a72564a0-edc6-5c1f-9559-d29469106754",
+        "execution_platform": "windows",
+        "effective_platform": "windows",
+        "executor": "exe",
+        "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "upstream_ability_id": null,
+        "upstream_source": "https://github.com/LexusWang/Aurora-demos",
+        "privilege": "user_context",
+        "requirements": [],
+        "cleanup_policy": "deferred_external",
+        "cleanup_action_id": "cleanup.sliver_file",
+        "trace_fact_ids": [
+          "trace.sliver.file",
+          "trace.sliver.process",
+          "trace.sliver.network"
+        ],
+        "fact_dependencies": [
+          "c2trace.target_name",
+          "c2trace.victim_ip",
+          "c2trace.kali_ip"
+        ],
+        "payload_dependencies": []
+      }
+    },
+    {
+      "step_id": "sliver.get_env",
+      "name": "Issue GET_ENV via Sliver session",
+      "description": "One GET_ENV task is issued through the established Sliver session to retrieve one environment variable.",
+      "technique_id": "T1087.001",
+      "role": "mandatory",
+      "fidelity": "controlled_reimplementation",
+      "scope_reason": "The Aurora demo GET_ENV task is adapted to a single read-only environment variable retrieval via the Sliver session.",
+      "implementation": {
+        "kind": "sliver_task",
+        "operation_role": "scenario",
+        "implementation_mode": "controlled_reimplementation",
+        "ability_id": "12d97141-b4d0-5d7b-ac34-4bc81088edf7",
+        "execution_platform": "linux",
+        "effective_platform": "windows",
+        "executor": "sliver_rpc",
+        "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "upstream_ability_id": null,
+        "upstream_source": "https://github.com/LexusWang/Aurora-demos",
+        "privilege": "user_context",
+        "requirements": [],
+        "cleanup_policy": "deferred_external",
+        "cleanup_action_id": null,
+        "trace_fact_ids": [
+          "trace.sliver.get_env"
+        ],
+        "fact_dependencies": [
+          "c2trace.target_name",
+          "c2trace.victim_ip",
+          "c2trace.kali_ip"
+        ],
+        "payload_dependencies": []
+      }
+    }
+  ],
+  "source_relations": [
+    {
+      "source_step_id": "sliver.deploy",
+      "target_step_id": "sliver.get_env",
+      "relation": "sequence"
+    }
+  ],
+  "linearization": {
+    "source_step_order": [
+      "sliver.deploy",
+      "sliver.get_env"
+    ],
+    "ability_order": [
+      "a72564a0-edc6-5c1f-9559-d29469106754",
+      "12d97141-b4d0-5d7b-ac34-4bc81088edf7"
+    ],
+    "interpretation": "Deterministic Sliver scheduling preserves the frozen source order/causality inside the declared single-endpoint boundary."
+  }
+}

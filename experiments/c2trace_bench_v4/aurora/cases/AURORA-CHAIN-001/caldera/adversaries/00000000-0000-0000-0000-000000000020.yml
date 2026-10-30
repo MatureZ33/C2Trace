@@ -1,0 +1,5 @@
+id: 00000000-0000-0000-0000-000000000020
+name: c2trace_aurora_scenario
+description: Aurora scenario adversary
+atomic_ordering:
+- 12d97141-b4d0-5d7b-ac34-4bc81088edf7

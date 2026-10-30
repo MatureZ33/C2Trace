@@ -1,0 +1,340 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://c2trace.local/schemas/c2trace.bench.mapping.v4",
+  "title": "Public source step to CALDERA ability mapping",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "source_id",
+    "source_kind",
+    "dataset_stratum",
+    "status",
+    "source_steps",
+    "source_relations",
+    "linearization"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "c2trace.bench.mapping.v4"
+    },
+    "case_id": {
+      "$ref": "#/$defs/caseId"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_kind": {
+      "enum": [
+        "attack_flow",
+        "attack_evaluations",
+        "ctid_micro",
+        "caldera_native"
+      ]
+    },
+    "dataset_stratum": {
+      "enum": [
+        "named_chain_projection",
+        "micro_emulation_plan",
+        "platform_native_control"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "static_mapping_complete",
+        "excluded"
+      ]
+    },
+    "source_steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/sourceStep"
+      }
+    },
+    "source_relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sourceRelation"
+      }
+    },
+    "linearization": {
+      "type": "object",
+      "required": [
+        "source_step_order",
+        "ability_order",
+        "interpretation"
+      ],
+      "properties": {
+        "source_step_order": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "ability_order": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/uuid"
+          }
+        },
+        "interpretation": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "caseId": {
+      "type": "string",
+      "pattern": "^(AF|AEL|MEP|STK)-[A-Z0-9][A-Z0-9-]*$"
+    },
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "sourceStep": {
+      "type": "object",
+      "required": [
+        "step_id",
+        "name",
+        "technique_id",
+        "role",
+        "fidelity",
+        "scope_reason",
+        "implementation"
+      ],
+      "properties": {
+        "step_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "technique_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^T[0-9]{4}(?:\\.[0-9]{3})?$"
+        },
+        "role": {
+          "enum": [
+            "mandatory",
+            "context_only",
+            "out_of_scope"
+          ]
+        },
+        "fidelity": {
+          "enum": [
+            "exact",
+            "parameterized",
+            "technique_equivalent",
+            "controlled_substitution",
+            "controlled_reimplementation",
+            "unmapped"
+          ]
+        },
+        "scope_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "implementation": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/implementation"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "implementation": {
+      "type": "object",
+      "required": [
+        "kind",
+        "operation_role",
+        "implementation_mode",
+        "ability_id",
+        "execution_platform",
+        "effective_platform",
+        "executor",
+        "command_sha256",
+        "privilege",
+        "requirements",
+        "cleanup_policy",
+        "trace_fact_ids"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "caldera_ability",
+            "target_runtime",
+            "compound_plan",
+            "external_cleanup"
+          ]
+        },
+        "operation_role": {
+          "enum": [
+            "bootstrap",
+            "scenario",
+            "external_cleanup"
+          ]
+        },
+        "implementation_mode": {
+          "enum": [
+            "upstream_direct",
+            "derived_ability",
+            "controlled_reimplementation",
+            "runtime_semantics",
+            "deferred_external_cleanup"
+          ]
+        },
+        "ability_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "execution_platform": {
+          "enum": [
+            "windows",
+            "linux"
+          ]
+        },
+        "effective_platform": {
+          "const": "windows"
+        },
+        "executor": {
+          "enum": [
+            "cmd",
+            "psh",
+            "sh"
+          ]
+        },
+        "command_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "upstream_ability_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "upstream_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "privilege": {
+          "enum": [
+            "agent_context",
+            "user",
+            "elevated"
+          ]
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "cleanup_policy": {
+          "enum": [
+            "none",
+            "deferred_external",
+            "not_applicable"
+          ]
+        },
+        "cleanup_action_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "trace_fact_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fact_dependencies": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "payload_dependencies": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "sourceRelation": {
+      "type": "object",
+      "required": [
+        "source_step_id",
+        "target_step_id",
+        "relation"
+      ],
+      "properties": {
+        "source_step_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_step_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relation": {
+          "enum": [
+            "sequence",
+            "causal",
+            "branch",
+            "context"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

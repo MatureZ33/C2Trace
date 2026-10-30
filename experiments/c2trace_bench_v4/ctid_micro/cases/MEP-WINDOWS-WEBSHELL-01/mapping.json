@@ -1,0 +1,180 @@
+{
+  "schema_version": "c2trace.bench.mapping.v4",
+  "case_id": "MEP-WINDOWS-WEBSHELL-01",
+  "source_id": "ctid-micro-emulation-plans-2025-05-28",
+  "source_kind": "ctid_micro",
+  "dataset_stratum": "micro_emulation_plan",
+  "status": "static_mapping_complete",
+  "source_steps": [
+    {
+      "step_id": "webshell.deploy",
+      "name": "Copy Windows WebShell to victim",
+      "description": "",
+      "technique_id": "T1105",
+      "role": "mandatory",
+      "fidelity": "parameterized",
+      "scope_reason": "The pinned official archive is hash-verified and copied to a run-scoped path.",
+      "implementation": {
+        "kind": "caldera_ability",
+        "operation_role": "bootstrap",
+        "implementation_mode": "upstream_direct",
+        "ability_id": "03677b83-9e45-54e3-9d87-b10d6ba2c201",
+        "execution_platform": "windows",
+        "effective_platform": "windows",
+        "executor": "psh",
+        "command_sha256": "4fbfc6d0e58f85dea63076ed419b9bb2d373ee04b8452a385a02426542340c2b",
+        "upstream_ability_id": null,
+        "upstream_source": null,
+        "privilege": "agent_context",
+        "requirements": [],
+        "cleanup_policy": "deferred_external",
+        "cleanup_action_id": "cleanup.webshell_file",
+        "trace_fact_ids": [
+          "trace.webshell.file"
+        ],
+        "fact_dependencies": [
+          "c2trace.caldera_http",
+          "c2trace.target_name"
+        ],
+        "payload_dependencies": [
+          "c2t_v4_windows_webshell_056bb041.zip"
+        ]
+      }
+    },
+    {
+      "step_id": "webshell.start",
+      "name": "Start HTTP WebShell",
+      "description": "",
+      "technique_id": "T1505.003",
+      "role": "mandatory",
+      "fidelity": "parameterized",
+      "scope_reason": "The official binary listens forever on a run-scoped RFC1918 port until response.",
+      "implementation": {
+        "kind": "caldera_ability",
+        "operation_role": "bootstrap",
+        "implementation_mode": "upstream_direct",
+        "ability_id": "7d8a50d4-9e38-50f4-bf5a-e34b7509e837",
+        "execution_platform": "windows",
+        "effective_platform": "windows",
+        "executor": "psh",
+        "command_sha256": "d9c62fd2784906a3da1e0bfe69913426e7277a22473579db3eea64aa4710395c",
+        "upstream_ability_id": null,
+        "upstream_source": null,
+        "privilege": "agent_context",
+        "requirements": [],
+        "cleanup_policy": "deferred_external",
+        "cleanup_action_id": "cleanup.webshell_process",
+        "trace_fact_ids": [
+          "trace.webshell.process",
+          "trace.webshell.listener"
+        ],
+        "fact_dependencies": [
+          "c2trace.target_name",
+          "c2trace.victim_ip",
+          "c2trace.webshell_port"
+        ],
+        "payload_dependencies": []
+      }
+    },
+    {
+      "step_id": "webshell.groups",
+      "name": "Execute whoami /groups over WebShell",
+      "description": "",
+      "technique_id": "T1069.001",
+      "role": "mandatory",
+      "fidelity": "controlled_reimplementation",
+      "scope_reason": "The published discovery command is sent by a CALDERA-controlled Kali driver and writes a scoreable file.",
+      "implementation": {
+        "kind": "caldera_ability",
+        "operation_role": "scenario",
+        "implementation_mode": "controlled_reimplementation",
+        "ability_id": "dc934e5a-3184-5b6f-8535-a78cc2adfac5",
+        "execution_platform": "linux",
+        "effective_platform": "windows",
+        "executor": "sh",
+        "command_sha256": "3a56a5e8da16f239644733d1a6fcaee003823fafeb0e55c85d6db655bb283283",
+        "upstream_ability_id": null,
+        "upstream_source": null,
+        "privilege": "agent_context",
+        "requirements": [],
+        "cleanup_policy": "deferred_external",
+        "cleanup_action_id": "cleanup.groups_file",
+        "trace_fact_ids": [
+          "trace.webshell.groups.file"
+        ],
+        "fact_dependencies": [
+          "c2trace.target_name",
+          "c2trace.victim_ip",
+          "c2trace.webshell_port"
+        ],
+        "payload_dependencies": []
+      }
+    },
+    {
+      "step_id": "webshell.processes",
+      "name": "Execute tasklist over WebShell",
+      "description": "",
+      "technique_id": "T1057",
+      "role": "mandatory",
+      "fidelity": "controlled_reimplementation",
+      "scope_reason": "The published discovery command is sent by a CALDERA-controlled Kali driver and writes a scoreable file.",
+      "implementation": {
+        "kind": "caldera_ability",
+        "operation_role": "scenario",
+        "implementation_mode": "controlled_reimplementation",
+        "ability_id": "87bd9d84-f8b7-5810-9a53-ce0a9cdb589d",
+        "execution_platform": "linux",
+        "effective_platform": "windows",
+        "executor": "sh",
+        "command_sha256": "3314c7406624b3a3d6837213f570073e07c30ba5c68f97a46ca5eb79cb331ca3",
+        "upstream_ability_id": null,
+        "upstream_source": null,
+        "privilege": "agent_context",
+        "requirements": [],
+        "cleanup_policy": "deferred_external",
+        "cleanup_action_id": "cleanup.tasks_file",
+        "trace_fact_ids": [
+          "trace.webshell.tasks.file"
+        ],
+        "fact_dependencies": [
+          "c2trace.target_name",
+          "c2trace.victim_ip",
+          "c2trace.webshell_port"
+        ],
+        "payload_dependencies": []
+      }
+    }
+  ],
+  "source_relations": [
+    {
+      "source_step_id": "webshell.deploy",
+      "target_step_id": "webshell.start",
+      "relation": "sequence"
+    },
+    {
+      "source_step_id": "webshell.start",
+      "target_step_id": "webshell.groups",
+      "relation": "sequence"
+    },
+    {
+      "source_step_id": "webshell.groups",
+      "target_step_id": "webshell.processes",
+      "relation": "sequence"
+    }
+  ],
+  "linearization": {
+    "source_step_order": [
+      "webshell.deploy",
+      "webshell.start",
+      "webshell.groups",
+      "webshell.processes"
+    ],
+    "ability_order": [
+      "03677b83-9e45-54e3-9d87-b10d6ba2c201",
+      "7d8a50d4-9e38-50f4-bf5a-e34b7509e837",
+      "dc934e5a-3184-5b6f-8535-a78cc2adfac5",
+      "87bd9d84-f8b7-5810-9a53-ce0a9cdb589d"
+    ],
+    "interpretation": "Deterministic CALDERA scheduling preserves the frozen source order/causality inside the declared single-endpoint boundary."
+  }
+}

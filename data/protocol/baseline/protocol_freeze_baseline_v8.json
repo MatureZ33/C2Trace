@@ -1,0 +1,130 @@
+{
+  "schema_version": "c2trace.bench.baseline_protocol_freeze.v8",
+  "created_at": "2026-10-04T00:00:00+00:00",
+  "offline_only_freeze": true,
+  "comparison": {
+    "system": "single-agent public-task LangGraph ReAct baseline",
+    "requested_model": "deepseek-chat",
+    "temperature": 0,
+    "same_canonical_alert": true,
+    "same_low_level_windows_interfaces": true,
+    "private_treatment_components_injected": false
+  },
+  "budgets": {
+    "max_tool_calls_per_stage": 50,
+    "max_llm_calls_per_stage": 20,
+    "max_total_tokens_per_stage": 300000,
+    "budget_role": "independent baseline ceiling, not a treatment architecture budget"
+  },
+  "scoring": {
+    "module": "c2trace.bench_v4.scorer.score_case",
+    "projection": "c2trace.baseline.neutral_records.project_for_scoring",
+    "projection_timing": "after model and tool execution return",
+    "model_context_contains_answer": false,
+    "primary_trace_unit": "registered trace fact",
+    "secondary_trace_unit": "unique observable entity deduplicated across ability instances"
+  },
+  "input_boundary": {
+    "visible": [
+      "canonical MinimalAlert",
+      "public_task_spec",
+      "public_tool_schema",
+      "generic_system_safety",
+      "runtime tool observations requested by the model"
+    ],
+    "hidden": [
+      "evaluation answer data",
+      "target binding",
+      "precomputed post-run state",
+      "scoring projection",
+      "CaseFile",
+      "StrategyTree",
+      "C2-KB"
+    ],
+    "post_state": {
+      "precomputed_file_injection": false,
+      "runtime_check_post_state": true,
+      "runtime_observation_is_logged": true
+    }
+  },
+  "files": {
+    "public_task_spec_sha256": "6efb078282db82131f9c02cacf35b5cf95dc8596dea7b1f388bb3a7022a138f1",
+    "prompt_dry_run_sha256": "55ff1b75d6dd30f0a72bb8404d5f1d82ab6cae856f38e529e43e791377b2cc2a",
+    "prompt_execute_sha256": "ebafbef46f2b3b59113e7230948887c6385e2db6c014fd926651a8c0b14bcc70",
+    "tool_schema_sha256": "2a69e6f86aa2e7b4c106b77dabbd770e8a905d2054f282b84c64682f6aea1988",
+    "src_c2trace_baseline_react_runner.py_sha256": "45a3770c4a14a8c76b9b33ab322966d289f333f1e4cc9be8dfbcdb46d2fad098",
+    "src_c2trace_baseline_react_agent.py_sha256": "a65c3798f4e7a8a78db309ea7b186e03a88bc5bd2f54317665e88f9a20962606",
+    "src_c2trace_baseline_neutral_records.py_sha256": "4d5262b91b2dc2e26c0b10e5fcc0eb8078a682f066ed88d816e1156125e7fe19",
+    "src_c2trace_bench_v4_scorer.py_sha256": "1111d203d53fc90999c3d9617d3e3885a65ace987fc1f585466eda02f784dc65",
+    "scripts_public_react_runner.py_sha256": "4d1b885b3a2f1c27f4ce04838399d5b335798c30be92cac45f540b6bda0ae64b",
+    "src_c2trace_models.py_sha256": "2ff0aacb93d002dfd853aff721e541a3bc1f2fd281e23dea35d40d77209a5237",
+    "src_c2trace_orchestrator.py_sha256": "66d70d3079e05a1d507aba54997d1ff103b7dc78f5411c39868c85406af41d4b",
+    "src_c2trace_agents_target_identity.py_sha256": "8f9a4e265db31b2830f1c4f7f22b66a77ce188ff74adfea103ed883b4e8fd3f1",
+    "src_c2trace_agents_auditor.py_sha256": "f58e0f53c5ece16c3b17c60f0e603ef4796b27e88bd6b147650c2ae2593587c3",
+    "src_c2trace_agents_planner.py_sha256": "418b2eef53a1309be8bc5bd343c0e05bd24476eba5b487bf9c1fae8b435a246f",
+    "src_c2trace_agents_executor.py_sha256": "8b8fa68b68c5e64c11af66e1c40837761ad502fc8397a9579044849cdbc65375",
+    "src_c2trace_target_safety.py_sha256": "ea667b36586e2675d6ffdc0b2bf7c2b60af40ab73ae26a6046cf577fd3785229",
+    "src_c2trace_bench_v4_live_controller.py_sha256": "7951e1fd028827c8735da684cee8f7a651b90bad34c166c8461e94652905a78d",
+    "src_c2trace_bench_v4_transaction.py_sha256": "ecc066805fab4966b902dc1c03566c2acb625b6727424f39eb143b1a4d55f2ba",
+    "experiments_c2trace_bench_v4_aurora_cases_AURORA-CHAIN-002_ground_truth.template.json_sha256": "d289d5977dc48e63c9698012b35baaa8c0130576811b8bbf9e5e57d04c6b515c",
+    "run_case.py_sha256": "e868ec52ee3f6654c8f098b02b24d1b073737b4bcbfd1075cd7a5d2d8e4a8e10",
+    "tests_test_multi_instance_target_binding.py_sha256": "39c0fde8397ab2bb063cddd496f5f1be3287bb3c6a1d0b2a08af9ed58ad4cd63"
+  },
+  "formal_schedule": {
+    "path": "绗竴杞熀绾垮姣斿疄楠?formal_live_schedule_v1.json",
+    "sha256": "f284095e001afa27a0b3eb8cf7d9c1c0dbfa475382a1a51724c3bb3ede388d6a",
+    "schedule_sha256": "83b7244f9ff33549669d41a5ce4c84aca432c4f725bc78d4090c17cf0f7d4f3c",
+    "trial_count": 48,
+    "paired_block_count": 24
+  },
+  "failure_policy": {
+    "automatic_rerun": false,
+    "failed_trial_is_retained": true,
+    "replacement_trial": "requires explicit protocol amendment and is excluded from the original primary analysis",
+    "trial_statuses": [
+      "planned",
+      "completed",
+      "infrastructure_invalid",
+      "evaluation_valid_pass",
+      "evaluation_valid_fail"
+    ]
+  },
+  "response_model_reporting": {
+    "requested_model_field": "requested_model",
+    "observed_model_source": "per-call llm_call_audit.response_model",
+    "provider_omitted_value": "empty string; report omitted count, never infer backend identity"
+  },
+  "ground_truth_materialization": {
+    "secondary_network_source_port": "resolved from unique before_response host observation for secondary PID",
+    "primary_network_source_port": "resolved from the selected Suricata source event",
+    "archived_v6_pilot": "retained unchanged and excluded from formal primary analysis because network2 used the primary port"
+  },
+  "live_policy": {
+    "formal_live_started": false,
+    "next_gate": "one fresh paired pilot using v8 protocol (AURORA-CHAIN-002), then independent audit and explicit user authorization",
+    "old_results_are_excluded": true
+  },
+  "supersedes": "protocol_freeze_baseline_v7.json",
+  "frozen_at": "2026-10-04T00:00:00+00:00",
+  "treatment_amendment": {
+    "amendment_date": "2026-10-04",
+    "reason": "Close the multi-instance sibling identity gap exposed by the v7 pilot; no scorer, Ground Truth, baseline input, or ReAct treatment change.",
+    "changes": [
+      "orchestrator.py: before sibling kill, invoke read-only check_process and require exact PID/path/creation_time identity",
+      "orchestrator.py: resolve sibling identity checks against sibling PID and stop the response branch fail-closed on missing, ambiguous, or drifted identity",
+      "executor.py: correlate check_process creation time into the existing C2 process attribution without fabricating a finding",
+      "tests/test_multi_instance_target_binding.py: regression coverage for identity enrichment and sibling PID binding"
+    ],
+    "non_changes": [
+      "No scoring algorithm or Ground Truth modification",
+      "No ReAct runner, prompt, tool schema, or model change",
+      "No automatic rerun of v7 or replacement of its archived result"
+    ]
+  },
+  "test_receipt": {
+    "command": "python -m pytest -q tests/test_bench_v4_transaction.py tests/test_bench_v4_scoring.py tests/test_multi_instance_target_binding.py tests/test_orchestrator_flow.py tests/test_react_public_baseline.py tests/test_baseline_infrastructure.py tests/test_baseline_hash_verification.py tests/test_react_baseline_review.py tests/test_gt_isolation.py",
+    "exit_code": 0,
+    "passed": 119,
+    "network_or_live_access": false
+  }
+}

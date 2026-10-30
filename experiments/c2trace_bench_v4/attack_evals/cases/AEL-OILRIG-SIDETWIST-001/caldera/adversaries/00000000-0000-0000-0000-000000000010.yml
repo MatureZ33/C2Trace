@@ -1,0 +1,7 @@
+---
+id: 00000000-0000-0000-0000-000000000010
+name: c2t-sidetwist-bootstrap
+description: Deploy SideTwist C2 implant
+adversary_id: 00000000-0000-0000-0000-000000000010
+atomic_ordering:
+- e2f21646-bd1c-51d2-8dec-674fa2b31136

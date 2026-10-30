@@ -1,0 +1,5 @@
+id: 00000000-0000-0000-0000-000000000010
+name: c2trace_aurora_bootstrap
+description: Aurora bootstrap adversary
+atomic_ordering:
+- b83657a1-fdc7-5d2e-a6b9-c0e8532f7bd1

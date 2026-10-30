@@ -1,0 +1,45 @@
+{
+  "schema_version": "c2trace.bench.caldera_bundle.v4",
+  "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+  "source_id": "ael-mustang-panda-plugx-001-20260923",
+  "abilities": [
+    {
+      "id": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+      "path": "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/caldera/abilities/e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b.yml",
+      "sha256": "2fe59d835fb9149ea3f93aa9b602d18ba52d438ec10623d5e9dc35c33ee3a195",
+      "role": "bootstrap",
+      "command_sha256": "3ff329ab44722905ec95afb90b56ee89b7ef01df1a4599aa9bea608322a0fd08"
+    },
+    {
+      "id": "f4e3d2c1-b6a5-4d8f-9c0b-1e2f3a4b5c6d",
+      "path": "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/caldera/abilities/f4e3d2c1-b6a5-4d8f-9c0b-1e2f3a4b5c6d.yml",
+      "sha256": "d8d0f2f807bb301ed80377863e5d12b075edf895ad2ea1d98d6b191f9c5e456a",
+      "role": "scenario",
+      "command_sha256": "cf4ed43af30e78cd9542dba79cf06e9504f49e57591e8633e1fbc532e31b743c"
+    }
+  ],
+  "adversaries": [
+    {
+      "id": "00000000-0000-0000-0000-000000000030",
+      "path": "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/caldera/adversaries/00000000-0000-0000-0000-000000000030.yml",
+      "sha256": "4aeafe3eba26cf86988eaf0f71bf1a5ad6d9b491e315ed1501612a36f5954909",
+      "operation_role": "bootstrap",
+      "execution_agent_role": "control"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000040",
+      "path": "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/caldera/adversaries/00000000-0000-0000-0000-000000000040.yml",
+      "sha256": "ff934145a639aec098b00d0e3a1cfd154175096baea1844e7a18e0066af32eb8",
+      "operation_role": "scenario",
+      "execution_agent_role": "driver"
+    }
+  ],
+  "sources": [
+    {
+      "id": "c4f8e3b2-d5e7-4f9a-1b3c-4d5e6f7a8b9c",
+      "path": "attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/caldera/sources/c4f8e3b2-d5e7-4f9a-1b3c-4d5e6f7a8b9c.template.yml",
+      "sha256": "f2b8add802755979bbcbb3bfc9b38b33c91aacb4e4251742c9be4057342695aa",
+      "operation_role": "runtime"
+    }
+  ]
+}

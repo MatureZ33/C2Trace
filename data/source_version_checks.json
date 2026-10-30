@@ -1,0 +1,122 @@
+[
+  {
+    "path": "src/c2trace/models.py",
+    "protocol_sha256": "2ff0aacb93d002dfd853aff721e541a3bc1f2fd281e23dea35d40d77209a5237",
+    "included_source_sha256": "2ff0aacb93d002dfd853aff721e541a3bc1f2fd281e23dea35d40d77209a5237",
+    "matches_protocol": true
+  },
+  {
+    "path": "src/c2trace/orchestrator.py",
+    "protocol_sha256": "66d70d3079e05a1d507aba54997d1ff103b7dc78f5411c39868c85406af41d4b",
+    "included_source_sha256": "66d70d3079e05a1d507aba54997d1ff103b7dc78f5411c39868c85406af41d4b",
+    "matches_protocol": true
+  },
+  {
+    "path": "src/c2trace/agents/target_identity.py",
+    "protocol_sha256": "8f9a4e265db31b2830f1c4f7f22b66a77ce188ff74adfea103ed883b4e8fd3f1",
+    "included_source_sha256": "8f9a4e265db31b2830f1c4f7f22b66a77ce188ff74adfea103ed883b4e8fd3f1",
+    "matches_protocol": true
+  },
+  {
+    "path": "src/c2trace/agents/auditor.py",
+    "protocol_sha256": "f58e0f53c5ece16c3b17c60f0e603ef4796b27e88bd6b147650c2ae2593587c3",
+    "included_source_sha256": "f58e0f53c5ece16c3b17c60f0e603ef4796b27e88bd6b147650c2ae2593587c3",
+    "matches_protocol": true
+  },
+  {
+    "path": "src/c2trace/agents/planner.py",
+    "protocol_sha256": "418b2eef53a1309be8bc5bd343c0e05bd24476eba5b487bf9c1fae8b435a246f",
+    "included_source_sha256": "418b2eef53a1309be8bc5bd343c0e05bd24476eba5b487bf9c1fae8b435a246f",
+    "matches_protocol": true
+  },
+  {
+    "path": "src/c2trace/agents/executor.py",
+    "protocol_sha256": "8b8fa68b68c5e64c11af66e1c40837761ad502fc8397a9579044849cdbc65375",
+    "included_source_sha256": "8b8fa68b68c5e64c11af66e1c40837761ad502fc8397a9579044849cdbc65375",
+    "matches_protocol": true
+  },
+  {
+    "path": "src/c2trace/target_safety.py",
+    "protocol_sha256": "ea667b36586e2675d6ffdc0b2bf7c2b60af40ab73ae26a6046cf577fd3785229",
+    "included_source_sha256": "ea667b36586e2675d6ffdc0b2bf7c2b60af40ab73ae26a6046cf577fd3785229",
+    "matches_protocol": true
+  },
+  {
+    "path": "src/c2trace/bench_v4/scorer.py",
+    "protocol_sha256": "1111d203d53fc90999c3d9617d3e3885a65ace987fc1f585466eda02f784dc65",
+    "included_source_sha256": "1111d203d53fc90999c3d9617d3e3885a65ace987fc1f585466eda02f784dc65",
+    "matches_protocol": true
+  },
+  {
+    "path": "src/c2trace/bench_v4/live_controller.py",
+    "protocol_sha256": "7951e1fd028827c8735da684cee8f7a651b90bad34c166c8461e94652905a78d",
+    "included_source_sha256": "7951e1fd028827c8735da684cee8f7a651b90bad34c166c8461e94652905a78d",
+    "matches_protocol": true
+  },
+  {
+    "path": "src/c2trace/bench_v4/transaction.py",
+    "protocol_sha256": "ecc066805fab4966b902dc1c03566c2acb625b6727424f39eb143b1a4d55f2ba",
+    "included_source_sha256": "ecc066805fab4966b902dc1c03566c2acb625b6727424f39eb143b1a4d55f2ba",
+    "matches_protocol": true
+  },
+  {
+    "path": "src/c2trace/baseline/react_runner.py",
+    "protocol_sha256": "45a3770c4a14a8c76b9b33ab322966d289f333f1e4cc9be8dfbcdb46d2fad098",
+    "included_source_sha256": "f73445fd781699b047ac66c6bbaf1f4def57f608b2898bf26fee9fc8bea43f0c",
+    "matches_protocol": false
+  },
+  {
+    "path": "src/c2trace/baseline/react_agent.py",
+    "protocol_sha256": "a65c3798f4e7a8a78db309ea7b186e03a88bc5bd2f54317665e88f9a20962606",
+    "included_source_sha256": "a65c3798f4e7a8a78db309ea7b186e03a88bc5bd2f54317665e88f9a20962606",
+    "matches_protocol": true
+  },
+  {
+    "path": "src/c2trace/baseline/neutral_records.py",
+    "protocol_sha256": "4d5262b91b2dc2e26c0b10e5fcc0eb8078a682f066ed88d816e1156125e7fe19",
+    "included_source_sha256": "4d5262b91b2dc2e26c0b10e5fcc0eb8078a682f066ed88d816e1156125e7fe19",
+    "matches_protocol": true
+  },
+  {
+    "path": "scripts/public_react_runner.py",
+    "protocol_sha256": "4d1b885b3a2f1c27f4ce04838399d5b335798c30be92cac45f540b6bda0ae64b",
+    "included_source_sha256": "28c5eb464114b8b996f1a0c1c7be2e56a8862a660111c5f2426013b423db0f33",
+    "matches_protocol": false
+  },
+  {
+    "path": "run_case.py",
+    "protocol_sha256": "e868ec52ee3f6654c8f098b02b24d1b073737b4bcbfd1075cd7a5d2d8e4a8e10",
+    "included_source_sha256": "e868ec52ee3f6654c8f098b02b24d1b073737b4bcbfd1075cd7a5d2d8e4a8e10",
+    "matches_protocol": true
+  },
+  {
+    "path": "tests/test_multi_instance_target_binding.py",
+    "protocol_sha256": "39c0fde8397ab2bb063cddd496f5f1be3287bb3c6a1d0b2a08af9ed58ad4cd63",
+    "included_source_sha256": "39c0fde8397ab2bb063cddd496f5f1be3287bb3c6a1d0b2a08af9ed58ad4cd63",
+    "matches_protocol": true
+  },
+  {
+    "path": "experiments/c2trace_bench_v4/aurora/cases/AURORA-CHAIN-002/ground_truth.template.json",
+    "protocol_sha256": "d289d5977dc48e63c9698012b35baaa8c0130576811b8bbf9e5e57d04c6b515c",
+    "included_source_sha256": "d289d5977dc48e63c9698012b35baaa8c0130576811b8bbf9e5e57d04c6b515c",
+    "matches_protocol": true
+  },
+  {
+    "path": "src/c2trace/authorization.py",
+    "protocol_sha256": null,
+    "included_source_sha256": "ff7868ca33021a48f3b3f1fe31de98cd09ca7509812a81c0b465384d75f57469",
+    "matches_protocol": false
+  },
+  {
+    "path": "src/c2trace/mcp/server.py",
+    "protocol_sha256": null,
+    "included_source_sha256": "f406ecb494a211e7cc80a310486b5e551e7ccb6324f484ec8b0877efa94a54fd",
+    "matches_protocol": false
+  },
+  {
+    "path": "src/c2trace/tools/system.py",
+    "protocol_sha256": null,
+    "included_source_sha256": "ea6381f79270fb57be8f4bed1157fbe86206ad90d011d5a8ecdc6ab90554f3f1",
+    "matches_protocol": false
+  }
+]

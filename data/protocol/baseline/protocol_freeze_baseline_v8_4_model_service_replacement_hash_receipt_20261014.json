@@ -1,0 +1,178 @@
+{
+  "schema_version": "c2trace.baseline.model_service_replacement_hash_receipt.v8.4",
+  "created_at": "2026-10-14T00:00:00Z",
+  "offline_only": true,
+  "amendment": {
+    "path": "protocol_freeze_baseline_v8_4_model_service_replacement_amendment_20261014.json",
+    "sha256": "a957142eac49f05e9115d9e3acd2fdeb260f2e5546a372d6e694fe75aaf35086"
+  },
+  "frozen_sources": {
+    "protocol_freeze_baseline_v8.json": "5de85f3b881c6fac82aecc875659be96bc87b47ab93f8fd981c7bf9df94d52df",
+    "protocol_freeze_baseline_v8_amendment_20261004.json": "1dde902f3f34b3e0a81b847458a1bcc8bd603702da744c73d4b08783941a7c54",
+    "protocol_freeze_baseline_v8_2_schedule_amendment_20261004.json": "d14dd855bfcb366bb6b36f22a9b083f81286060c31c3dff2cc9077a67e9fa4e5",
+    "第一轮基线对比实验/formal_live_schedule_v2.json": "c130b0c8fd89ea321e0c4554d1b697feae3ab4ff980aebe6b7a5f59a7178ae7a",
+    "第一轮基线对比实验/formal_live_gate_v8_2_final_20261004.json": "183ab5ba072d01a8b6446400c089bceb737719dafcd26e40408b1d4f90a824e1",
+    "第一轮基线对比实验/final_offline_closure_20261006_v4/canonical_inventory.json": "5c6e0b5c28d5271680da0c17793431f7a18a889cce3a21d0fd69064c814a7d3e"
+  },
+  "batch_software_lock": {
+    "path": "case_study/runs/aurora-qual-20261005T235827Z/software_lock.json",
+    "sha256": "e0db7c879e5006766ae57fe8fe9c01bc62af0da15f8837d3b79b19785bee8817",
+    "identical_across": [
+      "case_study/runs/aurora-qual-20261005T235827Z/software_lock.json",
+      "case_study/runs/react-aurora-qual-20261005T095002Z/software_lock.json",
+      "case_study/runs/sidetwist-qual-20261005T095119Z/software_lock.json",
+      "case_study/runs/carbanak-qual-20261005T100243Z/software_lock.json",
+      "case_study/runs/react-aurora-qual-20261005T100358Z/software_lock.json",
+      "case_study/runs/aurora002-qual-20261005T100527Z/software_lock.json",
+      "case_study/runs/react-aurora-qual-20261005T102335Z/software_lock.json",
+      "case_study/runs/aurora002-qual-20261005T115029Z/software_lock.json"
+    ]
+  },
+  "drifted_case_json": {
+    "AEL-MUSTANG-PANDA-PLUGX-001": {
+      "locked": "9c57b25c3d8160aba2435c2f536cf18939c07a1d13dd3e166c3ed2a99c73552c",
+      "actual": "d8df5c5f55ba787708001d8d56ea044258327f545d2d6e1026ba605db003d4ee"
+    },
+    "AEL-OILRIG-SIDETWIST-001": {
+      "locked": "c38740cd9be96b74fd1827b10bec3c86e3abe88a4074b50ed16562996db4c40e",
+      "actual": "0d8999dc85c8ab1840433e9a392ac5e439e733e4832c0964beaff43474115244"
+    },
+    "AEL-SANDWORM-EXARAMEL-WIN-001": {
+      "locked": "5518f2aab98da1e9aa095f84d926be5c31e1b2f5a30d4db8932483403d625296",
+      "actual": "739879936257deb656eb076b1b1dbe00c3c9eff2692ce0927c3835bf030e499a"
+    },
+    "AEL-WIZARD-EMOTET-001": {
+      "locked": "313e9967688ce14809a9673bbd0ba14651f6162a3adf193c4b094ad4ac80a483",
+      "actual": "66c2f537ea76a927f2632afe085a8e35ac0a520c551a4eb0711f815f64139e2d"
+    }
+  },
+  "historical_failure_runs_preserved": [
+    {
+      "trial_id": "V8-PB-009-R3-C2TRACE",
+      "run_id": "V8-PB-009-R3-C2TRACE-REPAIR-20261005T163000Z",
+      "dir": "case_study/runs/aurora-qual-20261005T235827Z/trials/V8-PB-009-R3-C2TRACE-REPAIR-20261005T163000Z",
+      "cause": "URLError (transport) at initial_strategy_tree"
+    },
+    {
+      "trial_id": "V8-PB-010-R3-REACT",
+      "run_id": "formal-V8-PB-010-R3-REACT-20261005T020500Z",
+      "dir": "case_study/runs/react-aurora-qual-20261005T095002Z/trials/formal-V8-PB-010-R3-REACT-20261005T020500Z",
+      "cause": "HTTP 402 Insufficient Balance"
+    },
+    {
+      "trial_id": "V8-PB-010-R3-C2TRACE",
+      "run_id": "formal-V8-PB-010-R3-C2TRACE-20261005T021500Z",
+      "dir": "case_study/runs/sidetwist-qual-20261005T095119Z/trials/formal-V8-PB-010-R3-C2TRACE-20261005T021500Z",
+      "cause": "HTTP 402"
+    },
+    {
+      "trial_id": "V8-PB-011-R3-C2TRACE",
+      "run_id": "formal-V8-PB-011-R3-C2TRACE-REPLACEMENT-20261005T021000Z",
+      "dir": "case_study/runs/carbanak-qual-20261005T100243Z/trials/formal-V8-PB-011-R3-C2TRACE-REPLACEMENT-20261005T021000Z",
+      "cause": "HTTP 402"
+    },
+    {
+      "trial_id": "V8-PB-011-R3-REACT",
+      "run_id": "formal-V8-PB-011-R3-REACT-20261005T022000Z",
+      "dir": "case_study/runs/react-aurora-qual-20261005T100358Z/trials/formal-V8-PB-011-R3-REACT-20261005T022000Z",
+      "cause": "HTTP 402 Insufficient Balance"
+    },
+    {
+      "trial_id": "V8-PB-012-R2-C2TRACE",
+      "run_id": "V8-PB-012-R2-C2TRACE-20261005T023000Z",
+      "dir": "case_study/runs/aurora002-qual-20261005T100527Z/trials/V8-PB-012-R2-C2TRACE-20261005T023000Z",
+      "cause": "HTTP 402"
+    },
+    {
+      "trial_id": "V8-PB-012-R2-REACT",
+      "run_id": "V8-PB-012-R2-REACT-REPLACEMENT-20261005T031000Z",
+      "dir": "case_study/runs/react-aurora-qual-20261005T102335Z/trials/V8-PB-012-R2-REACT-REPLACEMENT-20261005T031000Z",
+      "cause": "HTTP 402 Insufficient Balance"
+    }
+  ],
+  "admitted_without_new_live": {
+    "trial_id": "V8-PB-012-R2-C2TRACE",
+    "run_id": "V8-PB-012-R2-C2TRACE-REPLACEMENT2-20261005T033000Z",
+    "dir": "case_study/runs/aurora002-qual-20261005T115029Z/trials/V8-PB-012-R2-C2TRACE-REPLACEMENT2-20261005T033000Z",
+    "trial_class": "evaluation_valid_pass",
+    "trace_f1": 0.9090909090909091,
+    "response_action_f1": 1.0,
+    "wrong_target": false,
+    "post_state_passed": true,
+    "total_tokens": 130061,
+    "llm_calls": 7,
+    "tool_calls": 24
+  },
+  "authorized_replacement_slots": [
+    {
+      "order": 1,
+      "logical_trial_id": "V8-PB-009-R3-C2TRACE",
+      "block": "PB-009",
+      "case_id": "AURORA-CHAIN-001",
+      "repetition": 3,
+      "system": "c2trace",
+      "launcher": "scripts/run_c2trace_bench_v4_aurora.py",
+      "original_batch": "case_study/runs/aurora-qual-20261005T235827Z"
+    },
+    {
+      "order": 2,
+      "logical_trial_id": "V8-PB-010-R3-REACT",
+      "block": "PB-010",
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "repetition": 3,
+      "system": "react",
+      "launcher": "scripts/run_baseline_react_sidetwist.py",
+      "original_batch": "case_study/runs/react-aurora-qual-20261005T095002Z"
+    },
+    {
+      "order": 3,
+      "logical_trial_id": "V8-PB-010-R3-C2TRACE",
+      "block": "PB-010",
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "repetition": 3,
+      "system": "c2trace",
+      "launcher": "scripts/run_c2trace_bench_v4_sidetwist.py",
+      "original_batch": "case_study/runs/sidetwist-qual-20261005T095119Z"
+    },
+    {
+      "order": 4,
+      "logical_trial_id": "V8-PB-011-R3-C2TRACE",
+      "block": "PB-011",
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "repetition": 3,
+      "system": "c2trace",
+      "launcher": "scripts/run_c2trace_bench_v4_carbanak.py",
+      "original_batch": "case_study/runs/carbanak-qual-20261005T100243Z"
+    },
+    {
+      "order": 5,
+      "logical_trial_id": "V8-PB-011-R3-REACT",
+      "block": "PB-011",
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "repetition": 3,
+      "system": "react",
+      "launcher": "scripts/run_baseline_react_carbanak.py",
+      "original_batch": "case_study/runs/react-aurora-qual-20261005T100358Z"
+    },
+    {
+      "order": 6,
+      "logical_trial_id": "V8-PB-012-R2-REACT",
+      "block": "PB-012",
+      "case_id": "AURORA-CHAIN-002",
+      "repetition": 2,
+      "system": "react",
+      "launcher": "scripts/run_baseline_react_aurora002.py",
+      "original_batch": "case_study/runs/react-aurora-qual-20261005T102335Z"
+    }
+  ],
+  "block_internal_order_preserved": {
+    "PB-009": "C2TRACE only (missing side)",
+    "PB-010": "REACT -> C2TRACE",
+    "PB-011": "C2TRACE -> REACT",
+    "PB-012": "REACT only (missing side)"
+  },
+  "case_json_modification_to_satisfy_hash": false,
+  "new_live_started": false,
+  "batch_created": false,
+  "run_created": false
+}

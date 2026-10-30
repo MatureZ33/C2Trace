@@ -1,0 +1,126 @@
+{
+  "schema_version": "c2trace.bench.evidence_plan.v4",
+  "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+  "source_id": "ael-mustang-panda-plugx-001-20260923",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "trace_facts": [
+    {
+      "trace_id": "trace.plugx.network",
+      "trace_type": "network_connection",
+      "ability_instance_id": "bootstrap.deploy_plugx",
+      "required": true,
+      "discriminative": true,
+      "anchor": true,
+      "shared_context": false,
+      "observable_by": [
+        "host_snapshot",
+        "c2trace:network_connection"
+      ],
+      "valid_window": "after_scenario_before_response"
+    },
+    {
+      "trace_id": "trace.plugx.file",
+      "trace_type": "file",
+      "ability_instance_id": "bootstrap.deploy_plugx",
+      "required": true,
+      "discriminative": true,
+      "anchor": true,
+      "shared_context": false,
+      "observable_by": [
+        "host_snapshot",
+        "c2trace:file"
+      ],
+      "valid_window": "after_scenario_before_response"
+    },
+    {
+      "trace_id": "trace.plugx.process",
+      "trace_type": "process",
+      "ability_instance_id": "bootstrap.deploy_plugx",
+      "required": true,
+      "discriminative": true,
+      "anchor": true,
+      "shared_context": false,
+      "observable_by": [
+        "host_snapshot",
+        "c2trace:process"
+      ],
+      "valid_window": "after_scenario_before_response"
+    },
+    {
+      "trace_id": "trace.plugx.enum_processes",
+      "trace_type": "process",
+      "ability_instance_id": "scenario.enum_processes",
+      "required": true,
+      "discriminative": false,
+      "anchor": false,
+      "shared_context": true,
+      "observable_by": [
+        "host_snapshot",
+        "c2trace:process"
+      ],
+      "valid_window": "after_scenario_before_response"
+    }
+  ],
+  "captures": [
+    {
+      "capture_id": "baseline.host",
+      "stage": "baseline",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.py"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "before.host",
+      "stage": "before_response",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [
+        "trace.plugx.file",
+        "trace.plugx.process",
+        "trace.plugx.network",
+        "trace.plugx.enum_processes"
+      ],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.py",
+        "case_id": "AEL-MUSTANG-PANDA-PLUGX-001"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "before.network",
+      "stage": "before_response",
+      "collector": "suricata",
+      "trace_fact_ids": [
+        "trace.plugx.network"
+      ],
+      "selector": {
+        "signature_id": 9800001,
+        "network_mode": "outbound_established"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "after_dryrun.host",
+      "stage": "after_dryrun",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.py"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "after_execute.host",
+      "stage": "after_execute",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.py"
+      },
+      "required": true
+    }
+  ]
+}

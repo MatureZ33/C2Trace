@@ -1,0 +1,11 @@
+---
+id: b3f7e2a1-c4d6-5e8f-9a1b-2c3d4e5f6a7b
+name: c2t-emotet-source
+description: Emotet C2 runtime source
+facts:
+- trait: c2trace.victim_ip
+  value: "192.168.21.145"
+- trait: c2trace.kali_ip
+  value: "192.168.21.132"
+- trait: c2trace.target_name
+  value: "c2t_<run_id>"

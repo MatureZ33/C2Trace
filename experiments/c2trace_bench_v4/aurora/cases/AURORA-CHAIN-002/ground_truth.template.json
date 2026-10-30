@@ -1,0 +1,261 @@
+{
+  "schema_version": "c2trace.bench.ground_truth.v4",
+  "case_id": "AURORA-CHAIN-002",
+  "source_id": "aurora-demo-chain-002-20260731",
+  "source_kind": "aurora",
+  "dataset_stratum": "public_tool_benchmark",
+  "target_kind": "meterpreter_reverse_tcp_implant",
+  "ability_instances": [
+    {
+      "instance_key": "bootstrap.deploy_dual_implant",
+      "operation_role": "bootstrap",
+      "operation_id": "FILL_FROM_BOOTSTRAP_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "b83657a1-fdc7-5d2e-a6b9-c0e8532f7bd1",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_step_ids": [
+        "meterpreter.deploy"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.meterpreter.file",
+          "trace_type": "file",
+          "canonical_key": "file:path+sha256",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": true,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:file"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_dual_implant",
+          "expected_value": {
+            "path": "C:\\Users\\Public\\#{c2trace.target_name}.exe",
+            "sha256": "FILL_FROM_BEFORE_RESPONSE"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/file",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response. Shared payload file used by both implant instances."
+        },
+        {
+          "trace_id": "trace.meterpreter.process1",
+          "trace_type": "process",
+          "canonical_key": "process:pid+creation_time+path",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:process"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_dual_implant",
+          "expected_value": {
+            "pid": "FILL_FROM_TARGET",
+            "creation_time": "FILL_FROM_BEFORE_RESPONSE",
+            "path": "C:\\Users\\Public\\#{c2trace.target_name}.exe"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/process1",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response. First implant process instance."
+        },
+        {
+          "trace_id": "trace.meterpreter.process2",
+          "trace_type": "process",
+          "canonical_key": "process:pid+creation_time+path",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:process"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_dual_implant",
+          "expected_value": {
+            "pid": "FILL_FROM_TARGET_SECONDARY",
+            "creation_time": "FILL_FROM_BEFORE_RESPONSE",
+            "path": "C:\\Users\\Public\\#{c2trace.target_name}.exe"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/process2",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response. Second implant process instance."
+        },
+        {
+          "trace_id": "trace.meterpreter.network1",
+          "trace_type": "network_connection",
+          "canonical_key": "network:protocol+src_ip+src_port+dst_ip+dst_port+pid",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:network_connection"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_dual_implant",
+          "expected_value": {
+            "protocol": "tcp",
+            "src_ip": "#{c2trace.victim_ip}",
+            "src_port": "FILL_FROM_SURICATA",
+            "dst_ip": "#{c2trace.kali_ip}",
+            "dst_port": 18447,
+            "pid": "FILL_FROM_TARGET"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/network1",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response. First implant reverse-TCP connection."
+        },
+        {
+          "trace_id": "trace.meterpreter.network2",
+          "trace_type": "network_connection",
+          "canonical_key": "network:protocol+src_ip+src_port+dst_ip+dst_port+pid",
+          "required": true,
+          "discriminative": true,
+          "anchor": true,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:network_connection"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "bootstrap.deploy_dual_implant",
+          "expected_value": {
+            "protocol": "tcp",
+            "src_ip": "#{c2trace.victim_ip}",
+            "src_port": "FILL_FROM_BEFORE_RESPONSE",
+            "dst_ip": "#{c2trace.kali_ip}",
+            "dst_port": 18447,
+            "pid": "FILL_FROM_TARGET_SECONDARY"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/network2",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "Pre-registered, discriminative and observable before response. Second implant reverse-TCP connection."
+        }
+      ]
+    },
+    {
+      "instance_key": "scenario.arp_query",
+      "operation_role": "scenario",
+      "operation_id": "FILL_FROM_SCENARIO_OPERATION",
+      "link_id": "FILL_FROM_CALDERA_LINK",
+      "ability_id": "c94768b2-0ed8-5e3f-b7ca-d1f9643a8ce2",
+      "attack_mapped": true,
+      "mandatory": true,
+      "executed": null,
+      "ability_role": "attack_mapped_mandatory",
+      "source_step_ids": [
+        "meterpreter.arp_query"
+      ],
+      "expected_status": "success",
+      "metric_eligible": true,
+      "atomic_trace_eligible": true,
+      "metric_exclusion_reason": null,
+      "trace_facts": [
+        {
+          "trace_id": "trace.meterpreter.arp_query",
+          "trace_type": "process",
+          "canonical_key": "process:pid+creation_time+path",
+          "required": true,
+          "discriminative": false,
+          "anchor": false,
+          "shared_context": false,
+          "observable_by": [
+            "host_snapshot",
+            "c2trace:process"
+          ],
+          "valid_window": "after_scenario_before_response",
+          "producer_ability_instance": "scenario.arp_query",
+          "expected_value": {
+            "pid": "FILL_FROM_TARGET",
+            "creation_time": "FILL_FROM_BEFORE_RESPONSE",
+            "path": "C:\\Users\\Public\\#{c2trace.target_name}.exe"
+          },
+          "source_evidence": {
+            "artifact": "evidence/before_response.json",
+            "json_pointer": "/target/process1",
+            "capture_stage": "before_response"
+          },
+          "scoreable_by_c2trace": true,
+          "eligibility_reason": "ARP_QUERY is issued through the primary session's process; the same process must be observable."
+        }
+      ]
+    }
+  ],
+  "identity_constraints": {
+    "shared_payload_sha256": "88480a2bc36307ef579f786033267a4e12e41b66c372c43faa2a3ac55ce79308",
+    "two_distinct_pids_required": true,
+    "two_distinct_network_connections_required": true,
+    "same_dst_ip_dst_port": {
+      "dst_ip": "#{c2trace.kali_ip}",
+      "dst_port": 18447
+    },
+    "same_path": "C:\\Users\\Public\\#{c2trace.target_name}.exe"
+  },
+  "response_actions": [
+    {
+      "tool": "kill_process",
+      "required": true,
+      "arguments": {
+        "pid": "FILL_FROM_TARGET",
+        "expected_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "target": "response_target"
+    },
+    {
+      "tool": "kill_process",
+      "required": true,
+      "arguments": {
+        "pid": "FILL_FROM_TARGET_SECONDARY",
+        "expected_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "target": "response_target_secondary"
+    },
+    {
+      "tool": "remove_file",
+      "required": true,
+      "arguments": {
+        "path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "target": "response_target"
+    }
+  ],
+  "scoring_policy": {
+    "one_to_one_trace_matching": true,
+    "ability_precision": "not_applicable_without_independent_ability_predictions",
+    "seed_alert_scored": false,
+    "support_and_harness_traces_scored": false
+  }
+}

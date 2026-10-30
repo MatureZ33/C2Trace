@@ -1,0 +1,279 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://c2trace.local/schemas/c2trace.bench.target_profile.v4",
+  "title": "C2Trace Bench v4 control and response target profile",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "source_id",
+    "dataset_stratum",
+    "control_agent",
+    "target",
+    "runtime_facts",
+    "identity_requirements",
+    "protected_control"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "c2trace.bench.target_profile.v4"
+    },
+    "case_id": {
+      "$ref": "#/$defs/caseId"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dataset_stratum": {
+      "enum": [
+        "named_chain_projection",
+        "micro_emulation_plan",
+        "platform_native_control"
+      ]
+    },
+    "control_agent": {
+      "type": "object",
+      "required": [
+        "kind",
+        "group",
+        "batch_lifetime"
+      ],
+      "properties": {
+        "kind": {
+          "const": "sandcat"
+        },
+        "group": {
+          "const": "c2t-control"
+        },
+        "batch_lifetime": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "kind",
+        "target_type",
+        "network_mode",
+        "agent_backed",
+        "bootstrap_required",
+        "group_template",
+        "path_template",
+        "executor_order",
+        "contact",
+        "response_identity"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "manx",
+            "sandcat",
+            "ctid_windows_webshell",
+            "webshell",
+            "other"
+          ]
+        },
+        "target_type": {
+          "enum": [
+            "manx_tcp_client",
+            "sandcat_http_client",
+            "windows_webshell_http_listener",
+            "other"
+          ]
+        },
+        "network_mode": {
+          "enum": [
+            "outbound_active_flow",
+            "inbound_listener"
+          ]
+        },
+        "agent_backed": {
+          "type": "boolean"
+        },
+        "bootstrap_required": {
+          "type": "boolean"
+        },
+        "group_template": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "path_template": {
+          "type": "string",
+          "minLength": 1
+        },
+        "executor_order": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "cmd",
+              "psh",
+              "sh"
+            ]
+          }
+        },
+        "contact": {
+          "$ref": "#/$defs/contact"
+        },
+        "response_identity": {
+          "enum": [
+            "process_file_network",
+            "web_process_file_network"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "runtime_facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "trait",
+          "value_template",
+          "sensitive"
+        ],
+        "properties": {
+          "trait": {
+            "type": "string",
+            "pattern": "^c2trace\\.[a-z0-9_.-]+$"
+          },
+          "value_template": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sensitive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "identity_requirements": {
+      "type": "object",
+      "required": [
+        "new_paw",
+        "created_after_bootstrap",
+        "exact_path",
+        "different_pid_from_control",
+        "exactly_one_match"
+      ],
+      "properties": {
+        "new_paw": {
+          "type": "boolean"
+        },
+        "created_after_bootstrap": {
+          "const": true
+        },
+        "exact_path": {
+          "const": true
+        },
+        "different_pid_from_control": {
+          "const": true
+        },
+        "exactly_one_match": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "protected_control": {
+      "type": "object",
+      "required": [
+        "bind"
+      ],
+      "properties": {
+        "bind": {
+          "type": "array",
+          "minItems": 8,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "paw",
+              "pid",
+              "creation_time",
+              "path",
+              "sha256",
+              "group",
+              "host",
+              "contact"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "caseId": {
+      "type": "string",
+      "pattern": "^(AF|AEL|MEP|STK)-[A-Z0-9][A-Z0-9-]*$"
+    },
+    "contact": {
+      "type": "object",
+      "required": [
+        "protocol",
+        "direction",
+        "listener_address_template",
+        "listener_port",
+        "peer_address_template",
+        "suricata_signature_id"
+      ],
+      "properties": {
+        "protocol": {
+          "enum": [
+            "tcp",
+            "udp",
+            "http",
+            "https"
+          ]
+        },
+        "direction": {
+          "enum": [
+            "outbound",
+            "inbound"
+          ]
+        },
+        "listener_address_template": {
+          "type": "string",
+          "minLength": 1
+        },
+        "listener_port": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "peer_address_template": {
+          "type": "string",
+          "minLength": 1
+        },
+        "peer_port": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "remote_host_template": {
+          "type": "string",
+          "minLength": 1
+        },
+        "remote_port": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "suricata_signature_id": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,339 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://c2trace.local/schemas/c2trace.bench.ground_truth.v4",
+  "title": "C2Trace Bench v4 generic ability-instance Ground Truth",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "source_id",
+    "source_kind",
+    "dataset_stratum",
+    "target_kind",
+    "ability_instances",
+    "response_actions",
+    "scoring_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "c2trace.bench.ground_truth.v4"
+    },
+    "case_id": {
+      "$ref": "#/$defs/caseId"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_kind": {
+      "enum": [
+        "attack_flow",
+        "attack_evaluations",
+        "ctid_micro",
+        "caldera_native"
+      ]
+    },
+    "dataset_stratum": {
+      "enum": [
+        "named_chain_projection",
+        "micro_emulation_plan",
+        "platform_native_control"
+      ]
+    },
+    "target_kind": {
+      "enum": [
+        "manx",
+        "sandcat",
+        "ctid_windows_webshell",
+        "webshell",
+        "other"
+      ]
+    },
+    "ability_instances": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/abilityInstance"
+      }
+    },
+    "response_actions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/responseAction"
+      }
+    },
+    "scoring_policy": {
+      "type": "object",
+      "required": [
+        "one_to_one_trace_matching",
+        "ability_precision",
+        "seed_alert_scored"
+      ],
+      "properties": {
+        "one_to_one_trace_matching": {
+          "const": true
+        },
+        "ability_precision": {
+          "const": "not_applicable_without_independent_ability_predictions"
+        },
+        "seed_alert_scored": {
+          "const": false
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "caseId": {
+      "type": "string",
+      "pattern": "^(AF|AEL|MEP|STK)-[A-Z0-9][A-Z0-9-]*$"
+    },
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "relativePath": {
+      "type": "string",
+      "pattern": "^(?![A-Za-z]:)(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+"
+    },
+    "abilityInstance": {
+      "type": "object",
+      "required": [
+        "instance_key",
+        "operation_role",
+        "operation_id",
+        "link_id",
+        "ability_id",
+        "attack_mapped",
+        "mandatory",
+        "executed",
+        "ability_role",
+        "source_step_ids",
+        "expected_status",
+        "metric_eligible",
+        "atomic_trace_eligible",
+        "metric_exclusion_reason",
+        "trace_facts"
+      ],
+      "properties": {
+        "instance_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "operation_role": {
+          "enum": [
+            "bootstrap",
+            "scenario"
+          ]
+        },
+        "operation_id": {
+          "type": "string"
+        },
+        "link_id": {
+          "type": "string"
+        },
+        "ability_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "attack_mapped": {
+          "type": "boolean"
+        },
+        "mandatory": {
+          "type": "boolean"
+        },
+        "executed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "ability_role": {
+          "enum": [
+            "support",
+            "attack_mapped_mandatory",
+            "attack_mapped_optional"
+          ]
+        },
+        "source_step_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "expected_status": {
+          "const": "success"
+        },
+        "metric_eligible": {
+          "type": "boolean"
+        },
+        "atomic_trace_eligible": {
+          "type": "boolean"
+        },
+        "metric_exclusion_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "trace_facts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/traceFact"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "traceFact": {
+      "type": "object",
+      "required": [
+        "trace_id",
+        "trace_type",
+        "canonical_key",
+        "required",
+        "discriminative",
+        "anchor",
+        "shared_context",
+        "observable_by",
+        "valid_window",
+        "producer_ability_instance",
+        "expected_value",
+        "source_evidence",
+        "scoreable_by_c2trace",
+        "eligibility_reason"
+      ],
+      "properties": {
+        "trace_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "trace_type": {
+          "enum": [
+            "network_connection",
+            "process",
+            "process_parent_edge",
+            "file",
+            "registry_value",
+            "registry_run_key",
+            "scheduled_task",
+            "service",
+            "powershell_history",
+            "dns_cache"
+          ]
+        },
+        "canonical_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "discriminative": {
+          "type": "boolean"
+        },
+        "anchor": {
+          "type": "boolean"
+        },
+        "shared_context": {
+          "type": "boolean"
+        },
+        "observable_by": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "valid_window": {
+          "enum": [
+            "post_bootstrap",
+            "after_scenario_before_response"
+          ]
+        },
+        "producer_ability_instance": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_value": {
+          "type": "object"
+        },
+        "source_evidence": {
+          "type": "object",
+          "required": [
+            "artifact",
+            "json_pointer",
+            "capture_stage"
+          ],
+          "properties": {
+            "artifact": {
+              "$ref": "#/$defs/relativePath"
+            },
+            "json_pointer": {
+              "type": "string",
+              "pattern": "^(?:/(?:[^~/]|~0|~1)*)*$"
+            },
+            "capture_stage": {
+              "enum": [
+                "post_bootstrap",
+                "before_response"
+              ]
+            },
+            "selection": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        },
+        "scoreable_by_c2trace": {
+          "type": "boolean"
+        },
+        "eligibility_reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "responseAction": {
+      "type": "object",
+      "required": [
+        "tool",
+        "required",
+        "arguments"
+      ],
+      "properties": {
+        "tool": {
+          "enum": [
+            "kill_process",
+            "remove_file",
+            "remove_registry",
+            "remove_scheduled_task",
+            "remove_service"
+          ]
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "arguments": {
+          "type": "object"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "c2trace.bench.target_profile.v4",
+  "case_id": "MEP-WINDOWS-WEBSHELL-01",
+  "source_id": "ctid-micro-emulation-plans-2025-05-28",
+  "dataset_stratum": "micro_emulation_plan",
+  "control_agent": {
+    "kind": "sandcat",
+    "group": "c2t-control",
+    "batch_lifetime": true
+  },
+  "target": {
+    "kind": "ctid_windows_webshell",
+    "target_type": "windows_webshell_http_listener",
+    "network_mode": "inbound_listener",
+    "agent_backed": false,
+    "bootstrap_required": true,
+    "group_template": null,
+    "path_template": "C:\\Users\\Public\\c2t_<run_id>.exe",
+    "executor_order": [
+      "sh"
+    ],
+    "contact": {
+      "protocol": "http",
+      "direction": "inbound",
+      "listener_address_template": "<victim_ip>",
+      "listener_port": 18080,
+      "peer_address_template": "192.168.21.132",
+      "peer_port": null,
+      "suricata_signature_id": 9204005
+    },
+    "response_identity": "web_process_file_network"
+  },
+  "runtime_facts": [
+    {
+      "trait": "c2trace.caldera_http",
+      "value_template": "http://192.168.21.132:8888",
+      "sensitive": false
+    },
+    {
+      "trait": "c2trace.target_name",
+      "value_template": "c2t_<run_id>",
+      "sensitive": false
+    },
+    {
+      "trait": "c2trace.victim_ip",
+      "value_template": "<victim_ip>",
+      "sensitive": false
+    },
+    {
+      "trait": "c2trace.webshell_port",
+      "value_template": "<allocated_18080_18979>",
+      "sensitive": false
+    }
+  ],
+  "identity_requirements": {
+    "new_paw": false,
+    "created_after_bootstrap": true,
+    "exact_path": true,
+    "different_pid_from_control": true,
+    "exactly_one_match": true
+  },
+  "protected_control": {
+    "bind": [
+      "paw",
+      "pid",
+      "creation_time",
+      "path",
+      "sha256",
+      "group",
+      "host",
+      "contact"
+    ]
+  }
+}

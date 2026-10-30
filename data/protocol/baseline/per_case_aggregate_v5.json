@@ -1,0 +1,178 @@
+[
+  {
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "system": "c2trace",
+    "n": 3,
+    "pass_count": 3,
+    "fail_count": 0,
+    "trace_f1": 0.8571428571428571,
+    "response_action_f1": 1.0,
+    "wrong_target_any": false,
+    "post_state_all_passed": true
+  },
+  {
+    "case_id": "AEL-CARBANAK-RAT-001",
+    "system": "react",
+    "n": 3,
+    "pass_count": 2,
+    "fail_count": 1,
+    "trace_f1": 0.8571428571428571,
+    "response_action_f1": 1.0,
+    "wrong_target_any": false,
+    "post_state_all_passed": true
+  },
+  {
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "system": "c2trace",
+    "n": 3,
+    "pass_count": 3,
+    "fail_count": 0,
+    "trace_f1": 0.5714285714285715,
+    "response_action_f1": 1.0,
+    "wrong_target_any": false,
+    "post_state_all_passed": true
+  },
+  {
+    "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+    "system": "react",
+    "n": 3,
+    "pass_count": 2,
+    "fail_count": 1,
+    "trace_f1": 0.3636363636363636,
+    "response_action_f1": 0.8888888888888888,
+    "wrong_target_any": false,
+    "post_state_all_passed": false
+  },
+  {
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "system": "c2trace",
+    "n": 3,
+    "pass_count": 3,
+    "fail_count": 0,
+    "trace_f1": 0.8571428571428571,
+    "response_action_f1": 1.0,
+    "wrong_target_any": false,
+    "post_state_all_passed": true
+  },
+  {
+    "case_id": "AEL-OILRIG-SIDETWIST-001",
+    "system": "react",
+    "n": 3,
+    "pass_count": 2,
+    "fail_count": 1,
+    "trace_f1": 0.75,
+    "response_action_f1": 1.0,
+    "wrong_target_any": false,
+    "post_state_all_passed": true
+  },
+  {
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "system": "c2trace",
+    "n": 3,
+    "pass_count": 3,
+    "fail_count": 0,
+    "trace_f1": 0.8571428571428571,
+    "response_action_f1": 1.0,
+    "wrong_target_any": false,
+    "post_state_all_passed": true
+  },
+  {
+    "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "system": "react",
+    "n": 3,
+    "pass_count": 1,
+    "fail_count": 2,
+    "trace_f1": 0.8571428571428571,
+    "response_action_f1": 0.8888888888888888,
+    "wrong_target_any": false,
+    "post_state_all_passed": false
+  },
+  {
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "system": "c2trace",
+    "n": 3,
+    "pass_count": 3,
+    "fail_count": 0,
+    "trace_f1": 0.8571428571428571,
+    "response_action_f1": 1.0,
+    "wrong_target_any": false,
+    "post_state_all_passed": true
+  },
+  {
+    "case_id": "AEL-WIZARD-EMOTET-001",
+    "system": "react",
+    "n": 3,
+    "pass_count": 1,
+    "fail_count": 2,
+    "trace_f1": 0.5824175824175825,
+    "response_action_f1": 0.8888888888888888,
+    "wrong_target_any": false,
+    "post_state_all_passed": false
+  },
+  {
+    "case_id": "AURORA-CHAIN-001",
+    "system": "c2trace",
+    "n": 3,
+    "pass_count": 3,
+    "fail_count": 0,
+    "trace_f1": 0.8571428571428571,
+    "response_action_f1": 1.0,
+    "wrong_target_any": false,
+    "post_state_all_passed": true
+  },
+  {
+    "case_id": "AURORA-CHAIN-001",
+    "system": "react",
+    "n": 3,
+    "pass_count": 3,
+    "fail_count": 0,
+    "trace_f1": 0.8571428571428571,
+    "response_action_f1": 1.0,
+    "wrong_target_any": false,
+    "post_state_all_passed": true
+  },
+  {
+    "case_id": "AURORA-CHAIN-002",
+    "system": "c2trace",
+    "n": 3,
+    "pass_count": 3,
+    "fail_count": 0,
+    "trace_f1": 0.9090909090909091,
+    "response_action_f1": 1.0,
+    "wrong_target_any": false,
+    "post_state_all_passed": true
+  },
+  {
+    "case_id": "AURORA-CHAIN-002",
+    "system": "react",
+    "n": 3,
+    "pass_count": 1,
+    "fail_count": 2,
+    "trace_f1": 0.8030303030303031,
+    "response_action_f1": 1.0,
+    "wrong_target_any": false,
+    "post_state_all_passed": true
+  },
+  {
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "system": "c2trace",
+    "n": 3,
+    "pass_count": 3,
+    "fail_count": 0,
+    "trace_f1": 0.9090909090909091,
+    "response_action_f1": 1.0,
+    "wrong_target_any": false,
+    "post_state_all_passed": true
+  },
+  {
+    "case_id": "MEP-WINDOWS-WEBSHELL-01",
+    "system": "react",
+    "n": 3,
+    "pass_count": 0,
+    "fail_count": 3,
+    "trace_f1": 0.23703703703703705,
+    "response_action_f1": null,
+    "wrong_target_any": false,
+    "post_state_all_passed": false
+  }
+]

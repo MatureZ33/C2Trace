@@ -1,0 +1,10 @@
+id: c94768b2-0ed8-5e3f-b7ca-d1f9643a8ce2
+name: c2trace_meterpreter_arp_query
+description: Issue ARP_QUERY via Meterpreter session
+tactic: discovery
+technique_id: T1018
+platforms:
+  linux:
+    sh:
+      command: meterpreter_rpc arp -a
+executor: sh

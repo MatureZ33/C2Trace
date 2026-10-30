@@ -1,0 +1,6 @@
+id: e2d8c134-fdb9-52b4-8957-ac0727cde535
+name: MEP-WINDOWS-WEBSHELL-01 - bootstrap
+description: Frozen Bench v4 bootstrap adversary for MEP-WINDOWS-WEBSHELL-01.
+atomic_ordering:
+- 03677b83-9e45-54e3-9d87-b10d6ba2c201
+- 7d8a50d4-9e38-50f4-bf5a-e34b7509e837

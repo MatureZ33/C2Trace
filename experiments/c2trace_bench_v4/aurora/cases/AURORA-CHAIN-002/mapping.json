@@ -1,0 +1,100 @@
+{
+  "schema_version": "c2trace.bench.mapping.v4",
+  "case_id": "AURORA-CHAIN-002",
+  "source_id": "aurora-demo-chain-002-20260731",
+  "source_kind": "aurora",
+  "dataset_stratum": "public_tool_benchmark",
+  "status": "static_mapping_complete",
+  "source_steps": [
+    {
+      "step_id": "meterpreter.deploy",
+      "name": "Deploy and execute dual Meterpreter reverse-TCP implants on Windows",
+      "description": "A pre-built x64 Meterpreter stageless reverse-TCP payload is copied to the victim and executed twice, establishing two outbound reverse-TCP connections to the Metasploit handler.",
+      "technique_id": "T1105",
+      "role": "mandatory",
+      "fidelity": "parameterized",
+      "scope_reason": "A pre-built Meterpreter payload is hash-verified and deployed to a run-scoped path; two reverse-TCP sessions are established from two distinct process instances of the same payload.",
+      "implementation": {
+        "kind": "meterpreter_implant",
+        "operation_role": "bootstrap",
+        "implementation_mode": "controlled_reimplementation",
+        "ability_id": "b83657a1-fdc7-5d2e-a6b9-c0e8532f7bd1",
+        "execution_platform": "windows",
+        "effective_platform": "windows",
+        "executor": "exe",
+        "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "upstream_ability_id": null,
+        "upstream_source": "https://github.com/LexusWang/Aurora-demos",
+        "privilege": "user_context",
+        "requirements": [],
+        "cleanup_policy": "deferred_external",
+        "cleanup_action_id": "cleanup.meterpreter_file",
+        "trace_fact_ids": [
+          "trace.meterpreter.file",
+          "trace.meterpreter.process1",
+          "trace.meterpreter.process2",
+          "trace.meterpreter.network1",
+          "trace.meterpreter.network2"
+        ],
+        "fact_dependencies": [
+          "c2trace.target_name",
+          "c2trace.victim_ip",
+          "c2trace.kali_ip"
+        ],
+        "payload_dependencies": []
+      }
+    },
+    {
+      "step_id": "meterpreter.arp_query",
+      "name": "Issue ARP_QUERY via Meterpreter session",
+      "description": "One ARP_QUERY task (arp -a) is issued through the primary Meterpreter session to retrieve the ARP cache.",
+      "technique_id": "T1018",
+      "role": "mandatory",
+      "fidelity": "controlled_reimplementation",
+      "scope_reason": "The Aurora demo ARP_QUERY task is adapted to a single read-only ARP cache retrieval via the Meterpreter session.",
+      "implementation": {
+        "kind": "meterpreter_task",
+        "operation_role": "scenario",
+        "implementation_mode": "controlled_reimplementation",
+        "ability_id": "c94768b2-0ed8-5e3f-b7ca-d1f9643a8ce2",
+        "execution_platform": "linux",
+        "effective_platform": "windows",
+        "executor": "meterpreter_rpc",
+        "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "upstream_ability_id": null,
+        "upstream_source": "https://github.com/LexusWang/Aurora-demos",
+        "privilege": "user_context",
+        "requirements": [],
+        "cleanup_policy": "deferred_external",
+        "cleanup_action_id": null,
+        "trace_fact_ids": [
+          "trace.meterpreter.arp_query"
+        ],
+        "fact_dependencies": [
+          "c2trace.target_name",
+          "c2trace.victim_ip",
+          "c2trace.kali_ip"
+        ],
+        "payload_dependencies": []
+      }
+    }
+  ],
+  "source_relations": [
+    {
+      "source_step_id": "meterpreter.deploy",
+      "target_step_id": "meterpreter.arp_query",
+      "relation": "sequence"
+    }
+  ],
+  "linearization": {
+    "source_step_order": [
+      "meterpreter.deploy",
+      "meterpreter.arp_query"
+    ],
+    "ability_order": [
+      "b83657a1-fdc7-5d2e-a6b9-c0e8532f7bd1",
+      "c94768b2-0ed8-5e3f-b7ca-d1f9643a8ce2"
+    ],
+    "interpretation": "Deterministic Meterpreter scheduling preserves the frozen source order/causality inside the declared single-endpoint boundary with two implant instances."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "c2trace.bench.operation_plan.v4",
+  "case_id": "MEP-WINDOWS-WEBSHELL-01",
+  "source_id": "ctid-micro-emulation-plans-2025-05-28",
+  "dataset_stratum": "micro_emulation_plan",
+  "planner_id": "aaa7c857-37a0-4c4a-85f7-4e9f7f30e31a",
+  "obfuscator": "plain-text",
+  "runtime_source": {
+    "id_template": "705acfa3-a4f7-54a8-8d25-8687d4d86f8b",
+    "facts": [
+      "c2trace.caldera_http",
+      "c2trace.target_name",
+      "c2trace.victim_ip",
+      "c2trace.webshell_port"
+    ]
+  },
+  "operations": [
+    {
+      "role": "bootstrap",
+      "execution_agent_role": "control",
+      "adversary_id": "e2d8c134-fdb9-52b4-8957-ac0727cde535",
+      "agent_group_template": "c2t-control",
+      "atomic_ordering": [
+        "03677b83-9e45-54e3-9d87-b10d6ba2c201",
+        "7d8a50d4-9e38-50f4-bf5a-e34b7509e837"
+      ],
+      "mandatory_ability_ids": [
+        "03677b83-9e45-54e3-9d87-b10d6ba2c201",
+        "7d8a50d4-9e38-50f4-bf5a-e34b7509e837"
+      ]
+    },
+    {
+      "role": "scenario",
+      "execution_agent_role": "driver",
+      "adversary_id": "3a169ff6-4a1d-5500-bd43-d6122920a18a",
+      "agent_group_template": "c2t-driver",
+      "atomic_ordering": [
+        "dc934e5a-3184-5b6f-8535-a78cc2adfac5",
+        "87bd9d84-f8b7-5810-9a53-ce0a9cdb589d"
+      ],
+      "mandatory_ability_ids": [
+        "dc934e5a-3184-5b6f-8535-a78cc2adfac5",
+        "87bd9d84-f8b7-5810-9a53-ce0a9cdb589d"
+      ]
+    }
+  ]
+}

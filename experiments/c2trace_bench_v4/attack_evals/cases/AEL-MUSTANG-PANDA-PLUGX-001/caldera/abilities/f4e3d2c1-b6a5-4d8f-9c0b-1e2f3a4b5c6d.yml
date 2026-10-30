@@ -1,0 +1,16 @@
+name: PlugX Process Enumeration
+description: Enumerate processes via PlugX C2 channel
+tactics:
+- tactic: discovery
+  technique_id: T1057
+technique:
+  attack_id: T1057
+  name: Process Discovery
+platforms:
+  linux:
+    sh:
+      command: echo plugx_enum_processes
+executors:
+- name: sh
+  platform: linux
+  command: echo plugx_enum_processes

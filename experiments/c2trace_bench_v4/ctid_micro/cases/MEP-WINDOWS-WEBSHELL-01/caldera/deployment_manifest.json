@@ -1,0 +1,68 @@
+{
+  "schema_version": "c2trace.bench.caldera_bundle.v4",
+  "case_id": "MEP-WINDOWS-WEBSHELL-01",
+  "source_id": "ctid-micro-emulation-plans-2025-05-28",
+  "abilities": [
+    {
+      "id": "03677b83-9e45-54e3-9d87-b10d6ba2c201",
+      "path": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/caldera/abilities/03677b83-9e45-54e3-9d87-b10d6ba2c201.yml",
+      "sha256": "3c297a85c0bf074f3345359b539e2a4a720c4d4ba0e7f39a56b1d5adce9c9255",
+      "role": "bootstrap",
+      "command_sha256": "4fbfc6d0e58f85dea63076ed419b9bb2d373ee04b8452a385a02426542340c2b"
+    },
+    {
+      "id": "7d8a50d4-9e38-50f4-bf5a-e34b7509e837",
+      "path": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/caldera/abilities/7d8a50d4-9e38-50f4-bf5a-e34b7509e837.yml",
+      "sha256": "b1aabfe10531636396d67a270d8b74a719f739b4df5ebc5bf11df67a34bf2d34",
+      "role": "bootstrap",
+      "command_sha256": "d9c62fd2784906a3da1e0bfe69913426e7277a22473579db3eea64aa4710395c"
+    },
+    {
+      "id": "dc934e5a-3184-5b6f-8535-a78cc2adfac5",
+      "path": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/caldera/abilities/dc934e5a-3184-5b6f-8535-a78cc2adfac5.yml",
+      "sha256": "899f1e10fe24749cc2e1cf4b9caf7428388d89d9c61e444efaf47b50e8df08ff",
+      "role": "scenario",
+      "command_sha256": "3a56a5e8da16f239644733d1a6fcaee003823fafeb0e55c85d6db655bb283283"
+    },
+    {
+      "id": "87bd9d84-f8b7-5810-9a53-ce0a9cdb589d",
+      "path": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/caldera/abilities/87bd9d84-f8b7-5810-9a53-ce0a9cdb589d.yml",
+      "sha256": "9f1c97325e8a6d29cbfb2acf993f92b2eb8428413cc810216337315e4ce01c47",
+      "role": "scenario",
+      "command_sha256": "3314c7406624b3a3d6837213f570073e07c30ba5c68f97a46ca5eb79cb331ca3"
+    }
+  ],
+  "adversaries": [
+    {
+      "id": "e2d8c134-fdb9-52b4-8957-ac0727cde535",
+      "path": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/caldera/adversaries/e2d8c134-fdb9-52b4-8957-ac0727cde535.yml",
+      "sha256": "f5b71431d20b72c1ffe47656978267cdfa80958462d33fa9b4fec7e6a84af04d",
+      "operation_role": "bootstrap",
+      "execution_agent_role": "control"
+    },
+    {
+      "id": "3a169ff6-4a1d-5500-bd43-d6122920a18a",
+      "path": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/caldera/adversaries/3a169ff6-4a1d-5500-bd43-d6122920a18a.yml",
+      "sha256": "5c81a401f7d893b84bdf18f8a5cea9765ab8cdb6089254ea7aa62adfc4b36b03",
+      "operation_role": "scenario",
+      "execution_agent_role": "driver"
+    }
+  ],
+  "sources": [
+    {
+      "id": "705acfa3-a4f7-54a8-8d25-8687d4d86f8b",
+      "path": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/caldera/sources/705acfa3-a4f7-54a8-8d25-8687d4d86f8b.template.yml",
+      "sha256": "2008db03605d27e2808369a14bd2865abded6b0131a94f63edf6a89b4d5fc129",
+      "operation_role": "shared"
+    }
+  ],
+  "payloads": [
+    {
+      "path": "ctid_micro/cases/MEP-WINDOWS-WEBSHELL-01/caldera/payloads/c2t_v4_windows_webshell_056bb041.zip",
+      "sha256": "056bb041b34d619e31c90639af508a2e6428fd42ccdad28e2d97f0360c333540",
+      "role": "official_upstream_payload",
+      "caldera_name": "c2t_v4_windows_webshell_056bb041.zip",
+      "source_path": "micro_emulation_plans/src/webshell/windows_webshell.zip"
+    }
+  ]
+}

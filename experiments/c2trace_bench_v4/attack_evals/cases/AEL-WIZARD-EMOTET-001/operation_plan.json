@@ -1,0 +1,43 @@
+{
+  "schema_version": "c2trace.bench.operation_plan.v4",
+  "case_id": "AEL-WIZARD-EMOTET-001",
+  "source_id": "ael-wizard-emotet-001-20260923",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "planner_id": "00000000-0000-0000-0000-000000000001",
+  "obfuscator": "plain-text",
+  "runtime_source": {
+    "id_template": "b3f7e2a1-c4d6-5e8f-9a1b-2c3d4e5f6a7b",
+    "facts": [
+      "c2trace.victim_ip",
+      "c2trace.kali_ip",
+      "c2trace.target_name"
+    ]
+  },
+  "operations": [
+    {
+      "role": "bootstrap",
+      "execution_agent_role": "control",
+      "adversary_id": "00000000-0000-0000-0000-000000000010",
+      "agent_group_template": "c2t-control",
+      "atomic_ordering": [
+        "a1b2c3d4-e5f6-5a7b-8c9d-0e1f2a3b4c5d"
+      ],
+      "mandatory_ability_ids": [
+        "a1b2c3d4-e5f6-5a7b-8c9d-0e1f2a3b4c5d"
+      ]
+    },
+    {
+      "role": "scenario",
+      "execution_agent_role": "driver",
+      "adversary_id": "00000000-0000-0000-0000-000000000020",
+      "agent_group_template": "c2t-driver",
+      "atomic_ordering": [
+        "d4c3b2a1-f6e5-5b7a-9d8c-1f0e2a3b4c5d"
+      ],
+      "mandatory_ability_ids": [
+        "d4c3b2a1-f6e5-5b7a-9d8c-1f0e2a3b4c5d"
+      ]
+    }
+  ]
+}

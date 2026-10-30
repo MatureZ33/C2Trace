@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://c2trace.local/schemas/c2trace.bench.cleanup_plan.v4",
+  "title": "C2Trace Bench v4 fail-closed post-scoring cleanup plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "source_id",
+    "dataset_stratum",
+    "fail_closed",
+    "actions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "c2trace.bench.cleanup_plan.v4"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^(AF|AEL|MEP|STK)-[A-Z0-9][A-Z0-9-]*$"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dataset_stratum": {
+      "enum": [
+        "named_chain_projection",
+        "micro_emulation_plan",
+        "platform_native_control"
+      ]
+    },
+    "fail_closed": {
+      "const": true
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "action_id",
+          "source_step_ids",
+          "phase",
+          "tool",
+          "target_template",
+          "identity_validation",
+          "required"
+        ],
+        "properties": {
+          "action_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{1,127}$"
+          },
+          "source_step_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "phase": {
+            "const": "after_scoring"
+          },
+          "tool": {
+            "enum": [
+              "stop_process",
+              "remove_file",
+              "remove_directory",
+              "remove_registry",
+              "remove_scheduled_task",
+              "remove_service",
+              "restore_file",
+              "external_command"
+            ]
+          },
+          "target_template": {
+            "type": "object"
+          },
+          "identity_validation": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "path",
+                "sha256",
+                "pid",
+                "creation_time",
+                "registry_value",
+                "task_action",
+                "service_binary",
+                "run_id"
+              ]
+            }
+          },
+          "required": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

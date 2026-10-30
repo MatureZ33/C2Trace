@@ -1,0 +1,12 @@
+id: b2c3d4e5-2f3a-6b4c-9d5e-6f7a8b9c0d1e
+name: Exaramel get-user task
+description: Issue a get-user task via the Exaramel C2 channel
+tactic: discovery
+technique:
+  attack_id: T1087
+  name: Account Discovery
+platforms:
+  linux:
+    sh:
+      command: echo 'get-user task issued via runner'
+      timeout: 360

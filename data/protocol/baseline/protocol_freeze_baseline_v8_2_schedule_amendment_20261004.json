@@ -1,0 +1,47 @@
+{
+  "schema_version": "c2trace.baseline.protocol_schedule_amendment.v8.2",
+  "created_at": "2026-10-04T00:00:00Z",
+  "offline_only": true,
+  "supersedes": "protocol_freeze_baseline_v8_amendment_20261004.json",
+  "treatment_changed": false,
+  "case_count": 8,
+  "system_count": 2,
+  "repetitions_per_case": 3,
+  "trial_count": 48,
+  "paired_block_count": 24,
+  "schedule": {
+    "path": "第一轮基线对比实验/formal_live_schedule_v2.json",
+    "sha256": "c130b0c8fd89ea321e0c4554d1b697feae3ab4ff980aebe6b7a5f59a7178ae7a",
+    "namespace": "V8-PB"
+  },
+  "protocol": {
+    "path": "protocol_freeze_baseline_v8_amendment_20261004.json",
+    "sha256": "1dde902f3f34b3e0a81b847458a1bcc8bd603702da744c73d4b08783941a7c54"
+  },
+  "collision_resolution": {
+    "historical_trial_id": "PB-001-R3-C2TRACE",
+    "historical_run_id": "formal-PB-001-R3-C2TRACE-20261003T170449Z",
+    "historical_status": "evaluation_valid_fail",
+    "preserve": true,
+    "delete": false,
+    "overwrite": false,
+    "include_in_new_primary_48": false,
+    "replacement_namespace": "V8-PB"
+  },
+  "unchanged": [
+    "case set",
+    "case order",
+    "pairing",
+    "randomization",
+    "within-block order",
+    "model input boundary",
+    "treatment",
+    "prompts",
+    "tools",
+    "scorer",
+    "Ground Truth rules",
+    "repetition count"
+  ],
+  "formal_live_authorized": true,
+  "formal_live_started": false
+}

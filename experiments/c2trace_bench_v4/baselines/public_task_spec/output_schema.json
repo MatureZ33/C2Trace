@@ -1,0 +1,40 @@
+{
+  "schema_version": "c2trace.public_react_output.v1",
+  "type": "object",
+  "required": [
+    "observations",
+    "actions"
+  ],
+  "properties": {
+    "observations": {
+      "type": "array",
+      "item": {
+        "type": "object",
+        "required": [
+          "kind",
+          "details"
+        ],
+        "properties": {
+          "kind": "network|process|file|persistence",
+          "details": "Fields copied from tool results",
+          "evidence_refs": "Optional references to recorded tool calls"
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "item": {
+        "type": "object",
+        "required": [
+          "tool",
+          "arguments"
+        ],
+        "properties": {
+          "tool": "One response tool from tool_schema.json",
+          "arguments": "Arguments for that response tool"
+        }
+      }
+    }
+  },
+  "forbidden_fields": "Private framework reports, target bindings, evaluation answers, and scorer-only fields are not valid output."
+}

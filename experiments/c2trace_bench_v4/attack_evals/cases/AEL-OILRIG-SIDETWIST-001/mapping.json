@@ -1,0 +1,34 @@
+{
+  "schema_version": "c2trace.bench.mapping.v4",
+  "case_id": "AEL-OILRIG-SIDETWIST-001",
+  "source_id": "ael-oilrig-sidetwist-001-20260923",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "techniques": [
+    {
+      "technique_id": "T1071.001",
+      "tactic": "command-and-control",
+      "description": "Application Layer Protocol: Web Protocols"
+    },
+    {
+      "technique_id": "T1573.001",
+      "tactic": "command-and-control",
+      "description": "Encrypted Channel: Symmetric Cryptography"
+    },
+    {
+      "technique_id": "T1059.003",
+      "tactic": "execution",
+      "description": "Command and Scripting Interpreter: Windows Command Shell"
+    },
+    {
+      "technique_id": "T1087",
+      "tactic": "discovery",
+      "description": "Account Discovery"
+    },
+    {
+      "technique_id": "T1082",
+      "tactic": "discovery",
+      "description": "System Information Discovery"
+    }
+  ]
+}

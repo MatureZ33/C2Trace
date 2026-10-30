@@ -1,0 +1,45 @@
+{
+  "schema_version": "c2trace.bench.caldera_bundle.v4",
+  "case_id": "AEL-OILRIG-SIDETWIST-001",
+  "source_id": "ael-oilrig-sidetwist-001-20260923",
+  "abilities": [
+    {
+      "id": "e2f21646-bd1c-51d2-8dec-674fa2b31136",
+      "path": "attack_evals/cases/AEL-OILRIG-SIDETWIST-001/caldera/abilities/e2f21646-bd1c-51d2-8dec-674fa2b31136.yml",
+      "sha256": "0c91e0cd63f2516aa925a66426f456378b0d0fa4609f29b7add0afd231f65baa",
+      "role": "bootstrap",
+      "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "1bf5dcff-a65b-5606-becc-a6327f063578",
+      "path": "attack_evals/cases/AEL-OILRIG-SIDETWIST-001/caldera/abilities/1bf5dcff-a65b-5606-becc-a6327f063578.yml",
+      "sha256": "39e87449b93daf7bdc1e9002ed3304f24ac35e8ad07201270fe378f547aea0c4",
+      "role": "scenario",
+      "command_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "adversaries": [
+    {
+      "id": "00000000-0000-0000-0000-000000000010",
+      "path": "attack_evals/cases/AEL-OILRIG-SIDETWIST-001/caldera/adversaries/00000000-0000-0000-0000-000000000010.yml",
+      "sha256": "8011bc2715cf830158ad2709a358bfae83cbf472588684598ed60b1f406f1a99",
+      "operation_role": "bootstrap",
+      "execution_agent_role": "control"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000020",
+      "path": "attack_evals/cases/AEL-OILRIG-SIDETWIST-001/caldera/adversaries/00000000-0000-0000-0000-000000000020.yml",
+      "sha256": "ea598b0e72096dd9f44e88e59335336d04314e73f2b41707b128dbb18203b802",
+      "operation_role": "scenario",
+      "execution_agent_role": "driver"
+    }
+  ],
+  "sources": [
+    {
+      "id": "a708ebb1-bda2-5113-8bb8-0cb594f1ef88",
+      "path": "attack_evals/cases/AEL-OILRIG-SIDETWIST-001/caldera/sources/a708ebb1-bda2-5113-8bb8-0cb594f1ef88.template.yml",
+      "sha256": "c10d352585c690c1fd3f99a582117a9b7025968c134d8e28b3df070a47c371d5",
+      "operation_role": "runtime"
+    }
+  ]
+}

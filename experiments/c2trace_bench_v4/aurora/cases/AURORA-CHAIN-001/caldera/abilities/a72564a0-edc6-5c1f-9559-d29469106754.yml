@@ -1,0 +1,10 @@
+id: a72564a0-edc6-5c1f-9559-d29469106754
+name: c2trace_sliver_deploy_implant
+description: Deploy and execute Sliver mTLS implant on Windows
+tactic: command-and-control
+technique_id: T1105
+platforms:
+  windows:
+    psh:
+      command: Start-Process c2t_implant.exe
+executor: psh

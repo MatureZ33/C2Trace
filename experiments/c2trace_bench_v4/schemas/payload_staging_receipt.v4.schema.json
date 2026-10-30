@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://c2trace.local/schemas/c2trace.bench.payload_staging_receipt.v4",
+  "title": "C2Trace Bench v4 CALDERA payload staging receipt",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "case_id",
+    "deployment_manifest_sha256",
+    "caldera_server",
+    "payload_name",
+    "expected_sha256",
+    "observed_sha256",
+    "verified_at_utc",
+    "verification_method"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "c2trace.bench.payload_staging_receipt.v4"
+    },
+    "receipt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_id": {
+      "const": "MEP-WINDOWS-WEBSHELL-01"
+    },
+    "deployment_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "caldera_server": {
+      "type": "string",
+      "pattern": "^https?://[^/]+/?$"
+    },
+    "payload_name": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{1,255}$"
+    },
+    "expected_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "observed_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "verified_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "verification_method": {
+      "enum": [
+        "caldera_api_readback_sha256",
+        "server_filesystem_sha256"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

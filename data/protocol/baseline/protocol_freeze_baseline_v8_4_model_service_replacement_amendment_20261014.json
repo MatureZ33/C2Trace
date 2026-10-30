@@ -1,0 +1,225 @@
+{
+  "schema_version": "c2trace.baseline.protocol_model_service_replacement_amendment.v8.4",
+  "created_at": "2026-10-14T00:00:00Z",
+  "offline_only": true,
+  "supersedes_for_scope": "protocol_freeze_baseline_v8_2_schedule_amendment_20261004.json",
+  "does_not_supersede": [
+    "protocol_freeze_baseline_v8.json",
+    "protocol_freeze_baseline_v8_amendment_20261004.json",
+    "protocol_freeze_baseline_v8_2_schedule_amendment_20261004.json",
+    "第一轮基线对比实验/formal_live_schedule_v2.json",
+    "第一轮基线对比实验/formal_live_gate_v8_2_final_20261004.json",
+    "第一轮基线对比实验/final_offline_closure_20261006_v4/"
+  ],
+  "purpose": "Exclude model-service-unavailability failures (pre-first-valid-response) from method-performance analysis and authorize exactly one replacement attempt per affected logical slot.",
+  "scope": {
+    "case_count": 8,
+    "system_count": 2,
+    "repetitions_per_case": 3,
+    "logical_slots_total": 48,
+    "paired_blocks_total": 24,
+    "slots_authorized_this_amendment": 6,
+    "slots_admitted_by_audit_no_new_live": 1
+  },
+  "treatment_unchanged": true,
+  "unchanged": [
+    "case set",
+    "case order",
+    "pairing",
+    "randomization",
+    "within-block order",
+    "model input boundary",
+    "treatment",
+    "prompts",
+    "tool schema",
+    "scorer",
+    "Ground Truth rules",
+    "PostState rules",
+    "protected-object safety boundary",
+    "repetition count",
+    "requested model identifier (deepseek-chat)"
+  ],
+  "frozen_references": {
+    "project_root": "C:\\Users\\LAB_USER\\lunwen\\C2Trace",
+    "base_protocol": {
+      "path": "protocol_freeze_baseline_v8.json",
+      "sha256": "5de85f3b881c6fac82aecc875659be96bc87b47ab93f8fd981c7bf9df94d52df"
+    },
+    "v8_amendment": {
+      "path": "protocol_freeze_baseline_v8_amendment_20261004.json",
+      "sha256": "1dde902f3f34b3e0a81b847458a1bcc8bd603702da744c73d4b08783941a7c54"
+    },
+    "v8_2_schedule_amendment": {
+      "path": "protocol_freeze_baseline_v8_2_schedule_amendment_20261004.json",
+      "sha256": "d14dd855bfcb366bb6b36f22a9b083f81286060c31c3dff2cc9077a67e9fa4e5"
+    },
+    "formal_live_schedule_v2": {
+      "path": "第一轮基线对比实验/formal_live_schedule_v2.json",
+      "sha256": "c130b0c8fd89ea321e0c4554d1b697feae3ab4ff980aebe6b7a5f59a7178ae7a"
+    },
+    "canonical_inventory_v4": {
+      "path": "第一轮基线对比实验/final_offline_closure_20261006_v4/canonical_inventory.json",
+      "sha256": "5c6e0b5c28d5271680da0c17793431f7a18a889cce3a21d0fd69064c814a7d3e"
+    },
+    "batch_software_lock": {
+      "representative_batch": "case_study/runs/aurora-qual-20261005T235827Z",
+      "sha256": "e0db7c879e5006766ae57fe8fe9c01bc62af0da15f8837d3b79b19785bee8817",
+      "identical_across_all_8_batches": true,
+      "file_count": 473,
+      "tree_sha256": "f5576544754e0e814f8656d26c9febaeee011a28f219ecb99247af59020bb444",
+      "model": "deepseek-chat",
+      "planner_temperature": 0.2,
+      "auditor_temperature": 0.1,
+      "vm_snapshot_id": "strategy_a_no_snapshot"
+    },
+    "react_frozen_fingerprint_from_original_manifest": {
+      "tool_schema_sha256": "2a69e6f86aa2e7b4c106b77dabbd770e8a905d2054f282b84c64682f6aea1988",
+      "prompt_dry_run_sha256": "55ff1b75d6dd30f0a72bb8404d5f1d82ab6cae856f38e529e43e791377b2cc2a",
+      "prompt_execute_sha256": "ebafbef46f2b3b59113e7230948887c6385e2db6c014fd926651a8c0b14bcc70",
+      "temperature": 0,
+      "execution_contract": "public_task_neutral_v1",
+      "system": "langgraph-react-public-task"
+    }
+  },
+  "model_service_failure_exclusion_rule": {
+    "applies_when": "failure occurs before the first valid model response",
+    "error_classes": [
+      "http_402_insufficient_balance",
+      "authentication_error",
+      "balance_unavailable",
+      "connection_error",
+      "transport_error",
+      "urlerror"
+    ],
+    "symmetry": "identical rule applied to both C2Trace and Public ReAct",
+    "evidence_required": [
+      "successful_call_count == 0",
+      "total_tokens == 0",
+      "tool_calls == 0",
+      "no valid model response captured"
+    ],
+    "old_trial_class_files_unmodified": true,
+    "new_eligibility_label": "excluded_from_method_performance_analysis_due_to_model_service_unavailability",
+    "old_results_retained_as": "availability_inclusive_sensitivity_material",
+    "not_a_method_failure": true
+  },
+  "replacement_policy": {
+    "attempts_per_logical_slot": 1,
+    "automatic_rerun": false,
+    "rerun_on_evaluation_valid_fail": false,
+    "note": "evaluation_valid_fail arising from a normal model output remains a valid result and must NOT be rerun.",
+    "no_directory_overwrite": true,
+    "run_id_pattern": "<logical-trial-id>-REPLACEMENT-MODELSVC-<UTC>"
+  },
+  "case_json_drift_reconciliation": {
+    "status": "controller_only_no_block",
+    "first_seen": "2026-10-14 offline identity reconciliation against batch software_lock",
+    "frozen_tree_comparison": {
+      "locked_files": 473,
+      "matched": 469,
+      "missing": 0,
+      "content_mismatch": 4
+    },
+    "differing_files": [
+      "experiments/c2trace_bench_v4/attack_evals/cases/AEL-MUSTANG-PANDA-PLUGX-001/case.json",
+      "experiments/c2trace_bench_v4/attack_evals/cases/AEL-OILRIG-SIDETWIST-001/case.json",
+      "experiments/c2trace_bench_v4/attack_evals/cases/AEL-SANDWORM-EXARAMEL-WIN-001/case.json",
+      "experiments/c2trace_bench_v4/attack_evals/cases/AEL-WIZARD-EMOTET-001/case.json"
+    ],
+    "field_level_diff": {
+      "field": "status",
+      "json_path": "$.status",
+      "kind": "top_level_field_added",
+      "value": "qualification_pending_live",
+      "prior_value": "<absent>",
+      "classification": "controller-only",
+      "byte_exact_reconstruction_verified": true,
+      "note": "Removing the appended status line restores the locked sha256 byte-for-byte for all 4 files. No other field differs."
+    },
+    "in_scope_for_this_amendment": {
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "slots": [
+        "PB-010/R3/REACT",
+        "PB-010/R3/C2TRACE"
+      ]
+    },
+    "out_of_scope_drifted_cases_reported_not_blocking": [
+      "AEL-MUSTANG-PANDA-PLUGX-001",
+      "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "AEL-WIZARD-EMOTET-001"
+    ],
+    "treatment_critical_assets_verified_identical": {
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "frozen_files": 13,
+      "non_conforming": 1,
+      "non_conforming_file": "case.json (status field only)",
+      "verified_identical": [
+        "mapping.json",
+        "ground_truth.template.json",
+        "target_profile.json",
+        "operation_plan.json",
+        "evidence_plan.json",
+        "cleanup_plan.json",
+        "caldera/deployment_manifest.json",
+        "caldera/abilities/*.yml",
+        "caldera/adversaries/*.yml",
+        "caldera/sources/*.template.yml"
+      ]
+    },
+    "code_consumption_analysis": {
+      "baseline_path_reads_case_status": false,
+      "evidence": [
+        "src/c2trace/bench_v4/validation.py: zero status references",
+        "src/c2trace/bench_v4/runtime.py: load_runtime_case reads only case_id and contracts",
+        "RuntimeCase.case used only via case_id property",
+        "only ablation run_variant.py gates on case.status == qualification_pending_live, which is not on this baseline path"
+      ],
+      "enters_model_prompt": false,
+      "enters_ground_truth": false,
+      "enters_scorer": false,
+      "changes_attack_semantics": false,
+      "triggers_targeted_rerun": false
+    },
+    "prior_ablation_provenance": {
+      "file": "消融C2Trace/formal_32trial_authorization_provenance_v3.json",
+      "already_recorded": true,
+      "modification": "added status=qualification_pending_live field only"
+    },
+    "action": "proceed_with_6_slot_replacement_without_modifying_case_json"
+  },
+  "react_launcher_provenance_note": {
+    "owned_by_software_lock": false,
+    "reason": "software_lock selection patterns cover *c2trace_bench_v4*.py, start_suricata_s002.ps1, stop_suricata_s002.ps1; case-specific ReAct launchers are not matched",
+    "compensating_control": "ReAct treatment fingerprint frozen from each original batch formal_result_manifest.json (tool_schema_sha256, prompt hashes, temperature, execution_contract)",
+    "launchers_verified_present": [
+      "scripts/run_baseline_react_sidetwist.py",
+      "scripts/run_baseline_react_carbanak.py",
+      "scripts/run_baseline_react_aurora002.py"
+    ]
+  },
+  "gates": {
+    "api_availability_gate_required_before_live": true,
+    "api_availability_gate_spec": {
+      "model": "deepseek-chat",
+      "case_data_included": false,
+      "must_obtain_one_successful_response": true,
+      "record_fields": [
+        "response_model",
+        "status",
+        "latency_ms",
+        "token_counts",
+        "timestamp_utc"
+      ],
+      "must_not_record": [
+        "api_key",
+        "authorization_header",
+        "credential_material"
+      ],
+      "on_failure": "do not create batch/Run; do not start attack; stop immediately"
+    }
+  },
+  "existing_results_unchanged": true,
+  "existing_trial_class_files_not_modified": true,
+  "automatic_rerun": false,
+  "formal_32trial_ablation_untouched": true
+}

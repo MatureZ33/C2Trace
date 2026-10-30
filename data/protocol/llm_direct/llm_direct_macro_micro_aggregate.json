@@ -1,0 +1,49 @@
+{
+  "schema_version": "llm_direct.macro_micro_aggregate.v1",
+  "n_cases": 8,
+  "trace": {
+    "macro_average": {
+      "precision": 0.625,
+      "recall": 0.15625,
+      "f1": 0.25
+    },
+    "pooled_micro_average": {
+      "tp": 5,
+      "fp": 4,
+      "fn": 30,
+      "precision": 0.5555555555555556,
+      "recall": 0.14285714285714285,
+      "f1": 0.22727272727272727
+    },
+    "sum_counts": {
+      "tp": 5,
+      "fp": 4,
+      "fn": 30
+    }
+  },
+  "response_action_proposal": {
+    "macro_average": {
+      "precision": 0.4479166666666667,
+      "recall": 0.4791666666666667,
+      "f1": 0.4583333333333333
+    },
+    "pooled_micro_average": {
+      "tp": 8,
+      "fp": 11,
+      "fn": 9,
+      "precision": 0.42105263157894735,
+      "recall": 0.47058823529411764,
+      "f1": 0.4444444444444444
+    },
+    "sum_counts": {
+      "tp": 8,
+      "fp": 11,
+      "fn": 9
+    }
+  },
+  "execution": {
+    "tool_calls_per_case": 0,
+    "llm_calls_per_case": 1,
+    "actual_response_executed": false
+  }
+}

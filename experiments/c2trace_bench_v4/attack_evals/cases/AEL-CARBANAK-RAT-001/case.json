@@ -1,0 +1,55 @@
+{
+  "schema_version": "c2trace.bench.case.v4",
+  "case_id": "AEL-CARBANAK-RAT-001",
+  "name": "AEL Carbanak HTTPS script RAT slice",
+  "status": "qualification_pending_live",
+  "dataset_stratum": "named_chain_projection",
+  "source_kind": "attack_evaluations",
+  "source": {
+    "source_id": "ael-carbanak-rat-001-20260813",
+    "source_lock": "attack_evals/raw/Enterprise/carbanak/Emulation_Plan/Scenario_1/README.md",
+    "artifact_id": "ael-carbanak-http-rat",
+    "artifact_path": "Enterprise/carbanak/Resources/step1/http-rat.js",
+    "artifact_sha256": "49159d814f7b66d77c11c1570528876ce2865892d7da7207e8c986e6e11fabb8"
+  },
+  "claim": {
+    "claim_type": "compound_behavior_plan",
+    "statement": "AEL-derived Carbanak slice using the public http-rat.js script RAT and Carbon-ACK HTTPS C2 server; one cscript.exe-hosted implant deployed, one HTTPS callback established, one ENUM_SYSTEM task issued.",
+    "full_original_reproduction": false
+  },
+  "scope": {
+    "platform": "windows",
+    "endpoint_count": 1,
+    "included": [
+      "Carbanak http-rat.js script RAT deployment via cscript.exe",
+      "HTTPS callback to Carbon-ACK C2 server",
+      "one ENUM_SYSTEM system enumeration task"
+    ],
+    "excluded": [
+      "Office delivery",
+      "Screenshots and credentials",
+      "Lateral movement",
+      "VNC persistence",
+      "Monetary theft impact"
+    ]
+  },
+  "contracts": {
+    "mapping": "attack_evals/cases/AEL-CARBANAK-RAT-001/mapping.json",
+    "ground_truth": "attack_evals/cases/AEL-CARBANAK-RAT-001/ground_truth.template.json",
+    "target_profile": "attack_evals/cases/AEL-CARBANAK-RAT-001/target_profile.json",
+    "operation_plan": "attack_evals/cases/AEL-CARBANAK-RAT-001/operation_plan.json",
+    "evidence_plan": "attack_evals/cases/AEL-CARBANAK-RAT-001/evidence_plan.json",
+    "cleanup_plan": "attack_evals/cases/AEL-CARBANAK-RAT-001/cleanup_plan.json",
+    "caldera_bundle": "attack_evals/cases/AEL-CARBANAK-RAT-001/caldera/deployment_manifest.json"
+  },
+  "dependency_paths": [
+    "attack_evals/cases/AEL-CARBANAK-RAT-001/caldera/deployment_manifest.json"
+  ],
+  "safety": {
+    "isolated_lab_only": true,
+    "vm_snapshot_required": false,
+    "control_agent_protected": true,
+    "destructive_impact_allowed": false,
+    "cleanup_after_scoring": true
+  }
+}

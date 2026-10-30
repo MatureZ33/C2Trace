@@ -1,0 +1,67 @@
+{
+  "schema_version": "c2trace.bench.evidence_plan.v4",
+  "case_id": "AURORA-CHAIN-001",
+  "source_id": "aurora-demo-chain-001-20260731",
+  "dataset_stratum": "public_tool_benchmark",
+  "captures": [
+    {
+      "capture_id": "baseline.host",
+      "stage": "baseline",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "before.host",
+      "stage": "before_response",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [
+        "trace.sliver.file",
+        "trace.sliver.process",
+        "trace.sliver.network",
+        "trace.sliver.get_env"
+      ],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.exe",
+        "case_id": "AURORA-CHAIN-001"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "before.network",
+      "stage": "before_response",
+      "collector": "suricata",
+      "trace_fact_ids": [
+        "trace.sliver.network"
+      ],
+      "selector": {
+        "signature_id": 9300005,
+        "network_mode": "outbound_established"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "after_dryrun.host",
+      "stage": "after_dryrun",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "required": true
+    },
+    {
+      "capture_id": "after_execute.host",
+      "stage": "after_execute",
+      "collector": "host_snapshot",
+      "trace_fact_ids": [],
+      "selector": {
+        "target_path": "C:\\Users\\Public\\c2t_<run_id>.exe"
+      },
+      "required": true
+    }
+  ]
+}

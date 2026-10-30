@@ -1,0 +1,93 @@
+{
+  "schema_version": "c2trace.ablation.authorization_provenance.v3",
+  "generated_at_utc": "2026-10-07T10:55:41+00:00",
+  "purpose": "Record gate provenance and authorization chain for formal 32-trial ablation; does not itself authorize Live or auto-rerun.",
+  "authorization_chain": [
+    {
+      "step": "1_offline_gate_v2",
+      "file": "formal_ablation_32trial_gate_v2_20261007.json",
+      "sha256": "543b61154a9f6a7dc1de13fa130d32dc2c3fe034be5dc9a6cf29313dfa729377",
+      "status": "READY_FOR_FORMAL_32TRIAL_USER_AUTHORIZATION",
+      "formal_32trial_authorized": false,
+      "next_step": "user_authorization_required_for_formal_32trial"
+    },
+    {
+      "step": "2_schedule_v2",
+      "file": "formal_ablation_schedule_v2_20261007.json",
+      "sha256": "1e2168027ef6c51db9ee6006a25d2ca2e3e66aaab00936a78b0c299d6fc62273",
+      "schedule_status": "planned_pending_offline_reconciliation",
+      "trial_count": 32,
+      "requested_model": "deepseek-chat"
+    },
+    {
+      "step": "3_case_assets_receipt",
+      "file": "case_compatibility/ablation_v1_legacy_case_assets_receipt.json",
+      "sha256": "f9298ce35d99235e1f0000195692c65cb20fce1b5143b931f762bc0c7cc28c3d",
+      "case_count": 8
+    },
+    {
+      "step": "4_corrected_inventory_v3",
+      "file": "formal_32trial_corrected_inventory_v3.json",
+      "sha256": "06ba05ff9301e3768ba22b419b1cb2a67b40ccc5d4f11a486c62e3f86ee2d053",
+      "total_trials": 32
+    },
+    {
+      "step": "5_corrected_variant_aggregate_v3",
+      "file": "formal_32trial_corrected_variant_aggregate_v3.json",
+      "sha256": "ff57ed7ae8c0322e11106370de22e5877c474c9916f16dc51e5b1955721483c7"
+    },
+    {
+      "step": "6_corrected_per_case_aggregate_v3",
+      "file": "formal_32trial_corrected_per_case_aggregate_v3.json",
+      "sha256": "ae2c8192e485f85714597dca3e95488c76695c562539ddc68e9e67b1a9884bfc"
+    },
+    {
+      "step": "7_evidence_gap_receipt_v3",
+      "file": "formal_32trial_evidence_gap_receipt_v3.json",
+      "sha256": "ac787e8e7f4c1725272b2f998af56d8830a259fce3eeea73e3795ddc98c233a4"
+    },
+    {
+      "step": "8_execution_reconciliation_v3",
+      "file": "formal_32trial_execution_reconciliation_v3.json",
+      "sha256": "3137638d4a343646bd2b116fac9aa0df2d6bac6eef05a05c4a36de0bc051fe91",
+      "reconciliation_status": "READY_FOR_FORMAL_32TRIAL_USER_AUTHORIZATION"
+    },
+    {
+      "step": "9_corrected_report_v3",
+      "file": "formal_32trial_corrected_report_v3.md",
+      "sha256": "b070806fdcb0bb9ad8d4626c9b8c8ae1884042dd3f94482e5763378ab07e9b7f"
+    }
+  ],
+  "gate_status": "READY_FOR_FORMAL_32TRIAL_USER_AUTHORIZATION",
+  "formal_32trial_authorized": false,
+  "formal_32trial_started": false,
+  "user_authorization_required": true,
+  "automatic_rerun": false,
+  "correction_note": "GLM v1 inventory read wrong score.json field names (trace_metrics/response_metrics instead of metrics/counts). v3 re-reads correct fields. GLM v1 report must NOT be used for paper.",
+  "case_json_modification": {
+    "modified_cases": [
+      "AEL-WIZARD-EMOTET-001",
+      "AEL-MUSTANG-PANDA-PLUGX-001",
+      "AEL-OILRIG-SIDETWIST-001",
+      "AEL-SANDWORM-EXARAMEL-WIN-001"
+    ],
+    "modification": "added status=qualification_pending_live field only",
+    "enters_model_prompt": false,
+    "enters_ground_truth": false,
+    "enters_scorer": false,
+    "changes_attack_semantics": false,
+    "triggers_targeted_rerun": false
+  },
+  "evidence_gaps_summary": {
+    "formal_result_manifest": "32/32 missing",
+    "variant_receipt": "32/32 missing",
+    "llm_call_audit": "32/32 missing",
+    "c2trace_execute_tool_calls": "32/32 missing",
+    "c2trace_execute_run_metadata": "12/32 missing",
+    "per_call_audit_status": "partially_verified"
+  },
+  "rerun_determination": "NO_RERUN_REQUIRED_PENDING_OFFLINE_CLOSURE",
+  "targeted_rerun_list": [],
+  "statistical_boundary": "descriptive ablation analysis; 1 repetition per cell; no significance claim",
+  "this_file_sha256": "89186c09c0d12cbee3f810839557a99f350e03718d52d9aa6c9b34ee7680f947"
+}

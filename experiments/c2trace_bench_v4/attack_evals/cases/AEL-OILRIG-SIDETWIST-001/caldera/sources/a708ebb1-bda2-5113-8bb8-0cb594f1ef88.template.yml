@@ -1,0 +1,11 @@
+---
+id: a708ebb1-bda2-5113-8bb8-0cb594f1ef88
+name: c2t-sidetwist-source
+description: SideTwist C2 runtime source
+facts:
+- trait: c2trace.victim_ip
+  value: "192.168.21.145"
+- trait: c2trace.kali_ip
+  value: "192.168.21.132"
+- trait: c2trace.target_name
+  value: "c2t_<run_id>"

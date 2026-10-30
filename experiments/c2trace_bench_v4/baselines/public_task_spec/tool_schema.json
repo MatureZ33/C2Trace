@@ -1,0 +1,56 @@
+{
+  "schema_version": "c2trace.public_react_tools.v1",
+  "read_only": {
+    "check_network": "Inspect matching TCP flows or listeners.",
+    "check_process": "Inspect process identity, executable path, command line, and creation time.",
+    "check_process_tree": "Inspect the parent process chain for a process.",
+    "check_file_metadata": "Inspect existence, hash, signature status, and timestamps for a path.",
+    "check_recent_files": "Inspect bounded metadata for recently modified files in safe roots.",
+    "check_persistence_all": "Inspect non-system persistence entries.",
+    "check_powershell_history": "Inspect matching PowerShell history lines.",
+    "check_dns_cache": "Inspect DNS cache entries.",
+    "check_post_state": "Inspect current network, process, file, and persistence state after requested actions."
+  },
+  "response": {
+    "kill_process": {
+      "arguments": [
+        "process_name",
+        "pid",
+        "expected_path"
+      ],
+      "effect": "Terminate one matching process."
+    },
+    "remove_file": {
+      "arguments": [
+        "file_path"
+      ],
+      "effect": "Remove one file inside the experiment file root."
+    },
+    "remove_registry": {
+      "arguments": [
+        "reg_path",
+        "value_name",
+        "expected_value"
+      ],
+      "effect": "Remove one non-system registry value after an optional value check."
+    },
+    "remove_scheduled_task": {
+      "arguments": [
+        "task_name",
+        "task_path"
+      ],
+      "effect": "Remove one non-system scheduled task."
+    },
+    "remove_service": {
+      "arguments": [
+        "service_name"
+      ],
+      "effect": "Remove one non-system service."
+    }
+  },
+  "recording": {
+    "tool_calls_are_raw": true,
+    "failed_calls_must_be_recorded": true,
+    "model_must_not_claim_success_without_successful_tool_result": true
+  }
+}
