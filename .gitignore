@@ -6,6 +6,7 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .pytest_cache/
+.runtime_validation_temp/
 build/
 dist/
 results/
@@ -15,9 +16,18 @@ data/baseline/
 data/ablation/
 data/llm_direct/
 variants/A*/
+variants/rq3_core/
+variants/rq3_payload/
 paper/*.aux
 paper/*.log
 paper/*.out
 paper/*.bbl
 paper/*.blg
 paper/*.synctex.gz
+
+# Reconstructed from archive parts by extract_artifacts.py.
+/SOURCE_MANIFEST.json
+/archives/ablation.zip
+/archives/ablation_sources.zip
+/archives/provenance.zip
+/data/protocol/ablation/export_integrity.json

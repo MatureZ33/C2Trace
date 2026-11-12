@@ -1,24 +1,24 @@
 {
-  "schema_version": "llm_direct.macro_micro_aggregate.v1",
+  "schema_version": "llm_direct.macro_micro_aggregate.v2",
   "n_cases": 8,
   "trace": {
     "macro_average": {
-      "precision": 0.625,
-      "recall": 0.15625,
-      "f1": 0.25
+      "precision": 0.8416666666666667,
+      "recall": 0.6625,
+      "f1": 0.7396103896103896
     },
     "pooled_micro_average": {
-      "tp": 5,
-      "fp": 4,
-      "fn": 30,
-      "precision": 0.5555555555555556,
-      "recall": 0.14285714285714285,
-      "f1": 0.22727272727272727
+      "tp": 23,
+      "fp": 5,
+      "fn": 12,
+      "precision": 0.8214285714285714,
+      "recall": 0.6571428571428571,
+      "f1": 0.7301587301587301
     },
     "sum_counts": {
-      "tp": 5,
-      "fp": 4,
-      "fn": 30
+      "tp": 23,
+      "fp": 5,
+      "fn": 12
     }
   },
   "response_action_proposal": {
@@ -45,5 +45,6 @@
     "tool_calls_per_case": 0,
     "llm_calls_per_case": 1,
     "actual_response_executed": false
-  }
+  },
+  "scoring_revision": "adapter_alignment"
 }

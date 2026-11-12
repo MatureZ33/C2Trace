@@ -76,7 +76,6 @@ def build_software_lock(
             "model": model,
             "planner_temperature": 0.2,
             "auditor_temperature": 0.1,
-            "experience_history": "frozen_empty",
             "vm_snapshot_id": str(vm_snapshot_id or "").strip(),
         },
         "environment_secrets_included": False,

@@ -26,8 +26,8 @@
   {
     "path": "src/c2trace/agents/planner.py",
     "protocol_sha256": "418b2eef53a1309be8bc5bd343c0e05bd24476eba5b487bf9c1fae8b435a246f",
-    "included_source_sha256": "418b2eef53a1309be8bc5bd343c0e05bd24476eba5b487bf9c1fae8b435a246f",
-    "matches_protocol": true
+    "included_source_sha256": "dc20daf25dd7630b1cf3e5a7938ba4ad03c0258b377ad7b5a86cd03720d8d1b6",
+    "matches_protocol": false
   },
   {
     "path": "src/c2trace/agents/executor.py",
@@ -50,8 +50,8 @@
   {
     "path": "src/c2trace/bench_v4/live_controller.py",
     "protocol_sha256": "7951e1fd028827c8735da684cee8f7a651b90bad34c166c8461e94652905a78d",
-    "included_source_sha256": "7951e1fd028827c8735da684cee8f7a651b90bad34c166c8461e94652905a78d",
-    "matches_protocol": true
+    "included_source_sha256": "7c54a5b84cce62270ac3d2645a3cda70f29bcf41758a3f467cbb494b15009bf2",
+    "matches_protocol": false
   },
   {
     "path": "src/c2trace/bench_v4/transaction.py",
@@ -62,7 +62,7 @@
   {
     "path": "src/c2trace/baseline/react_runner.py",
     "protocol_sha256": "45a3770c4a14a8c76b9b33ab322966d289f333f1e4cc9be8dfbcdb46d2fad098",
-    "included_source_sha256": "f73445fd781699b047ac66c6bbaf1f4def57f608b2898bf26fee9fc8bea43f0c",
+    "included_source_sha256": "0d021ac4347a880b257b6031d7da1f78f992114ef873e9412a74637b75314c0c",
     "matches_protocol": false
   },
   {
@@ -80,14 +80,14 @@
   {
     "path": "scripts/public_react_runner.py",
     "protocol_sha256": "4d1b885b3a2f1c27f4ce04838399d5b335798c30be92cac45f540b6bda0ae64b",
-    "included_source_sha256": "28c5eb464114b8b996f1a0c1c7be2e56a8862a660111c5f2426013b423db0f33",
+    "included_source_sha256": "d5e696524714c7137f35bd6f0ae8a0a0b81d85ce081de2758a236fc0ca041917",
     "matches_protocol": false
   },
   {
     "path": "run_case.py",
     "protocol_sha256": "e868ec52ee3f6654c8f098b02b24d1b073737b4bcbfd1075cd7a5d2d8e4a8e10",
-    "included_source_sha256": "e868ec52ee3f6654c8f098b02b24d1b073737b4bcbfd1075cd7a5d2d8e4a8e10",
-    "matches_protocol": true
+    "included_source_sha256": "d00f94db1874a7a0ce0b209098671c58e49c90f818ee4ca51d8ac4dce996d1a0",
+    "matches_protocol": false
   },
   {
     "path": "tests/test_multi_instance_target_binding.py",
@@ -98,8 +98,8 @@
   {
     "path": "experiments/c2trace_bench_v4/aurora/cases/AURORA-CHAIN-002/ground_truth.template.json",
     "protocol_sha256": "d289d5977dc48e63c9698012b35baaa8c0130576811b8bbf9e5e57d04c6b515c",
-    "included_source_sha256": "d289d5977dc48e63c9698012b35baaa8c0130576811b8bbf9e5e57d04c6b515c",
-    "matches_protocol": true
+    "included_source_sha256": "c7b3617db5e2139e33984b6c75b49a4504f3d22e66d33019a1d3eea390819eb8",
+    "matches_protocol": false
   },
   {
     "path": "src/c2trace/authorization.py",

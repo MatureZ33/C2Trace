@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass
 from enum import StrEnum
 import hashlib
 import json
@@ -523,6 +523,3 @@ class TrialReceipt:
 class SplitPolicy:
     development_roots: int = 2
     minimum_unseen_root_tool_roots: int = 6
-    experience_history_forbidden_splits: tuple[SplitName, ...] = field(
-        default=(SplitName.SEEN_ROOT_UNSEEN_STATE, SplitName.UNSEEN_ROOT_TOOL)
-    )

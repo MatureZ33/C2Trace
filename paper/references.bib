@@ -28,7 +28,7 @@
 }
 
 @inproceedings{nodoze2019,
-  author = {Weilong Han and Elisa Bertino and Bhavani Thuraisingham},
+  author = {Wajih Ul Hassan and Shengjian Guo and Ding Li and Zhengzhang Chen and Kangkook Jee and Zhichun Li and Adam Bates},
   title = {{NoDoze}: Combatting Threat Alert Fatigue with Automated Provenance Triage},
   booktitle = {Proceedings of the Network and Distributed System Security Symposium},
   publisher = {Internet Society},
@@ -85,7 +85,7 @@
 
 @techreport{openc2-2019,
   author = {{OASIS Open}},
-  title = {{OpenC2} Language Specification Version 1.0},
+  title = {Open Command and Control ({OpenC2}) Language Specification Version 1.0},
   institution = {OASIS Open},
   year = {2019},
   url = {https://www.oasis-open.org/standard/oc2-ls-v1-0/}
@@ -206,15 +206,15 @@
   title = {Attack Flow},
   howpublished = {GitHub repository, version 295d20d27cefce0a2d309b6c24781545e45f547d},
   year = {2026},
-  url = {https://github.com/center-for-threat-informed-defense/attack-flow}
+  url = {https://github.com/center-for-threat-informed-defense/attack-flow/tree/295d20d27cefce0a2d309b6c24781545e45f547d},
 }
 
 @misc{attackevals-ael-repo,
   author = {{MITRE Engenuity}},
   title = {{ATT\&CK} Evaluations Library},
   howpublished = {GitHub repository, version 5594518da57ba41faaaaa99b3e0078d29504b033},
-  year = {2025},
-  url = {https://github.com/attackevals/ael}
+  year = {2026},
+  url = {https://github.com/attackevals/ael/tree/5594518da57ba41faaaaa99b3e0078d29504b033},
 }
 
 @misc{ctid-ael-repo,
@@ -222,15 +222,16 @@
   title = {Adversary Emulation Library},
   howpublished = {GitHub repository, version 4467a6eed6e67d25009704130e1d27d1a8007f57},
   year = {2025},
-  url = {https://github.com/center-for-threat-informed-defense/adversary_emulation_library}
+  url = {https://github.com/center-for-threat-informed-defense/adversary_emulation_library/tree/4467a6eed6e67d25009704130e1d27d1a8007f57},
 }
 
 @article{aurora2026,
   author = {Lingzhi Wang and Zhenyuan Li and Yi Jiang and Zhengkai Wang and Xiangmin Shen and Wei Ruan and Yan Chen},
-  title = {From Sands to Mansions: Actionable, Customizable and Causality-Preserving Cyberattack Emulation with {LLM}-Powered Symbolic Planning},
+  title = {From Sands to Mansions: Towards Automated Cyberattack Emulation with Classical Planning and Large Language Models},
   journal = {arXiv preprint arXiv:2407.16928},
   year = {2026},
-  url = {https://arxiv.org/abs/2407.16928}
+  url = {https://arxiv.org/abs/2407.16928v4},
+  note = {Version 4},
 }
 
 
@@ -239,8 +240,8 @@
   title = {{SecRespond}: Benchmarking {AI} Agents for Real-World Post-Compromise Incident Response},
   journal = {arXiv preprint arXiv:2607.26791},
   year = {2026},
-  note = {Version 1; metadata and scope checked against the supplied full text},
-  url = {https://arxiv.org/abs/2607.26791}
+  note = {Version 1},
+  url = {https://arxiv.org/abs/2607.26791v1},
 }
 
 @article{sirbench2026,
@@ -249,7 +250,7 @@
   journal = {arXiv preprint arXiv:2604.12040},
   year = {2026},
   note = {Version 1},
-  url = {https://arxiv.org/abs/2604.12040}
+  url = {https://arxiv.org/abs/2604.12040v1},
 }
 
 @article{opensec2026,
@@ -258,5 +259,115 @@
   journal = {arXiv preprint arXiv:2601.21083},
   year = {2026},
   note = {Version 3},
-  url = {https://arxiv.org/abs/2601.21083}
+  url = {https://arxiv.org/abs/2601.21083v3},
+}
+
+% Public sources for the C5 introductory example.
+@misc{ael-wizard-spider-plan,
+  author = {{MITRE ATT\&CK Evaluations}},
+  title = {{Wizard Spider Emulation Plan: Scenario 1}},
+  year = {n.d.},
+  howpublished = {ATT\&CK Evaluations Library, GitHub},
+  url = {https://github.com/attackevals/ael/blob/5594518da57ba41faaaaa99b3e0078d29504b033/Enterprise/wizard_spider/Emulation_Plan/Scenario_1/README.md},
+  note = {Revision 5594518da57ba41faaaaa99b3e0078d29504b033; accessed 15 October 2026}
+}
+
+@misc{ael-emotet-component,
+  author = {{MITRE ATT\&CK Evaluations}},
+  title = {{Wizard Spider Resources: Emotet}},
+  year = {n.d.},
+  howpublished = {ATT\&CK Evaluations Library, GitHub},
+  url = {https://github.com/attackevals/ael/blob/5594518da57ba41faaaaa99b3e0078d29504b033/Enterprise/wizard_spider/Resources/Emotet/README.md},
+  note = {Revision 5594518da57ba41faaaaa99b3e0078d29504b033; accessed 15 October 2026}
+}
+
+
+@inproceedings{kersten2023structure,
+  author = {Leon Kersten and Tom Mulders and Emmanuele Zambon and Chris Snijders and Luca Allodi},
+  title = {{'Give Me Structure'}: Synthesis and Evaluation of a (Network) Threat Analysis Process Supporting Tier 1 Investigations in a Security Operation Center},
+  booktitle = {Nineteenth Symposium on Usable Privacy and Security},
+  pages = {97--111},
+  publisher = {USENIX Association},
+  year = {2023},
+  url = {https://www.usenix.org/conference/soups2023/presentation/kersten}
+}
+
+@inproceedings{kersten2025field,
+  author = {Leon Kersten and Kim Beelen and Emmanuele Zambon and Chris Snijders and Luca Allodi},
+  title = {A Field Study to Uncover and a Tool to Support the Alert Investigation Process of Tier-1 Analysts},
+  booktitle = {Symposium on Usable Security and Privacy},
+  publisher = {Internet Society},
+  year = {2025},
+  doi = {10.14722/usec.2025.23034},
+  url = {https://www.ndss-symposium.org/wp-content/uploads/usec25-34.pdf}
+}
+
+@inproceedings{stevens2022ready,
+  author = {Rock Stevens and Daniel Votipka and Josiah Dykstra and Fernando Tomlinson and Erin Quartararo and Colin Ahern and Michelle L. Mazurek},
+  title = {How Ready is Your Ready? Assessing the Usability of Incident Response Playbook Frameworks},
+  booktitle = {CHI Conference on Human Factors in Computing Systems},
+  publisher = {ACM},
+  year = {2022},
+  doi = {10.1145/3491102.3517559},
+  url = {https://www.eecs.tufts.edu/~dvotipka/files/papers/Stevens2022Playbooks.pdf}
+}
+
+@article{shaked2023operations,
+  author = {Avi Shaked and Yulia Cherdantseva and Pete Burnap and Peter Maynard},
+  title = {Operations-informed incident response playbooks},
+  journal = {Computers \& Security},
+  volume = {134},
+  pages = {103454},
+  year = {2023},
+  doi = {10.1016/j.cose.2023.103454},
+  url = {https://orca.cardiff.ac.uk/id/eprint/165303/}
+}
+
+
+@misc{mitre-c2,
+  author = {{MITRE}},
+  title = {Command and Control: {ATT\&CK} Tactic {TA0011}},
+  year = {n.d.},
+  url = {https://attack.mitre.org/tactics/TA0011/},
+  note = {Accessed 30 October 2026}
+}
+
+@misc{suricata-eve,
+  author = {{Open Information Security Foundation}},
+  title = {{Suricata} 8.0.0 Documentation: {EVE JSON} Format},
+  year = {n.d.},
+  url = {https://docs.suricata.io/en/suricata-8.0.0/output/eve/eve-json-format.html},
+  note = {Accessed 30 October 2026}
+}
+
+@misc{windows-process,
+  author = {{Microsoft}},
+  title = {{Win32\_Process} Class},
+  year = {n.d.},
+  url = {https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-process},
+  note = {Accessed 30 October 2026}
+}
+
+@misc{mitre-rundll32,
+  author = {{MITRE}},
+  title = {System Binary Proxy Execution: Rundll32, {ATT\&CK} Sub-technique {T1218.011}},
+  year = {n.d.},
+  url = {https://attack.mitre.org/techniques/T1218/011/},
+  note = {Accessed 30 October 2026}
+}
+
+@misc{mitre-persistence,
+  author = {{MITRE}},
+  title = {Persistence: {ATT\&CK} Tactic {TA0003}},
+  year = {n.d.},
+  url = {https://attack.mitre.org/tactics/TA0003/},
+  note = {Accessed 30 October 2026}
+}
+
+@misc{mcp-tools,
+  author = {{Model Context Protocol}},
+  title = {Tools: {Model Context Protocol} Specification, Revision 2025-06-18},
+  year = {2025},
+  url = {https://modelcontextprotocol.io/specification/2025-06-18/server/tools},
+  note = {Accessed 30 October 2026}
 }

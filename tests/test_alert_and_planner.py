@@ -222,18 +222,13 @@ def test_planner_must_call_llm_and_build_strategy_tree():
     case = CaseFile.from_alert(_alert())
     fake = FakeLLM(_tree_payload())
 
-    experience_context = [{
-        "alert_pattern": {"alert_type": "c2_http_beacon", "protocol": "http", "remote_port": 8888},
-        "lessons": ["HTTP C2 seeds should be traced through network, process, file, persistence, and verification."],
-    }]
-    tree = PlannerAgent(llm_client=fake, knowledge_pack=_kb(), experience_context=experience_context).create_strategy_tree(case)
+    tree = PlannerAgent(llm_client=fake, knowledge_pack=_kb()).create_strategy_tree(case)
 
     assert fake.calls == 1
     assert "Planner Initial StrategyTree Prompt" in fake.last_kwargs["system_prompt"]
     assert fake.last_kwargs["user_payload"]["minimal_c2_seed_alert"]["remote_ip"] == "192.168.21.132"
     assert "c2_kb" in fake.last_kwargs["user_payload"]
     assert "casefile_summary" in fake.last_kwargs["user_payload"]
-    assert fake.last_kwargs["user_payload"]["sanitized_experience_history"] == experience_context
     assert "allowed_tools" in fake.last_kwargs["user_payload"]
     assert isinstance(tree, StrategyTree)
     assert case.strategy_tree is tree

@@ -1,0 +1,280 @@
+{
+  "schema_version": "llm_direct.adapter_alignment_provenance.v1",
+  "semantics": "Scoring-only alignment of retained predictions; no new model calls or host execution.",
+  "source_original_archive_sha256": "b2d8f1a855a9f7e1dbdbf572f00ac478aa8e1b1ed14de000948953cce6a4e7e2",
+  "archive_sha256": "72ed93e70bc38c30e7e2035f93e7b4cac2a69670943cdf6c0633b8b6a0afa55d",
+  "files": 96,
+  "cases": [
+    {
+      "case_id": "AURORA-CHAIN-001",
+      "ground_truth_source_original_sha256": "b7ab5d482a309b1c68a7acc60695578b8dafd38090fdfe77811862ab2f222f13",
+      "original_manifest_source_sha256": "5b6f49ebfe40f49adb51b2d8862ddd95176cea6b48c31959c52c2d290edbf910",
+      "corrected_score_source_original_sha256": "5289aa7e6a5a1df9aedb92537836599d7c26efa6d5c68c8799cbc4c0e38ad832",
+      "adapted_casefile_source_original_sha256": "09b084529e2d4378ff3e3c77e5b35e2bd1cb68b121b9d824896b2ff145e48a28",
+      "exports": [
+        {
+          "path": "data/llm_direct/AURORA-CHAIN-001/score.json",
+          "source_artifact": "retained_scoring_correction/AURORA-CHAIN-001/adapter_corrected_score.json",
+          "source_original_sha256": "5289aa7e6a5a1df9aedb92537836599d7c26efa6d5c68c8799cbc4c0e38ad832",
+          "sha256": "dea514e8d8a68d8b5c81d978b268170944744264793dd9ac2a454ce766b80fb2",
+          "bytes": 22928,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AURORA-CHAIN-001/adapted_casefile.json",
+          "source_artifact": "retained_scoring_correction/AURORA-CHAIN-001/adapted_casefile.json",
+          "source_original_sha256": "09b084529e2d4378ff3e3c77e5b35e2bd1cb68b121b9d824896b2ff145e48a28",
+          "sha256": "d27c86c96c1f6b636efc459f7905c477592d9339d5e45d6f43ec5bb72f710813",
+          "bytes": 4065,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AURORA-CHAIN-001/ground_truth.json",
+          "source_artifact": "original_baseline/AURORA-CHAIN-001/ground_truth.json",
+          "source_original_sha256": "b7ab5d482a309b1c68a7acc60695578b8dafd38090fdfe77811862ab2f222f13",
+          "sha256": "a42cd2202b38097b562306f45a1dd14298f82ea7617391c43e34fa15410a19bb",
+          "bytes": 7809,
+          "export_changed": true
+        }
+      ]
+    },
+    {
+      "case_id": "AURORA-CHAIN-002",
+      "ground_truth_source_original_sha256": "af7f197bd8934462b6e44aba745dd0fa566f5cb036eeb84aeea8e653e48aefd9",
+      "original_manifest_source_sha256": "c1ae25ae2d0a2cf263567be6485d4186ef80eeea6a5a6fd7df465b65f77177dc",
+      "corrected_score_source_original_sha256": "a533626754231e208be30a275d340d686bdce557615338cb5f5cacd3540200fd",
+      "adapted_casefile_source_original_sha256": "ac26085e389d93febe58445ba1d00eeea75cebb278586feaa281356afe8ae6bc",
+      "exports": [
+        {
+          "path": "data/llm_direct/AURORA-CHAIN-002/score.json",
+          "source_artifact": "retained_scoring_correction/AURORA-CHAIN-002/adapter_corrected_score.json",
+          "source_original_sha256": "a533626754231e208be30a275d340d686bdce557615338cb5f5cacd3540200fd",
+          "sha256": "fbe5331f0cd6e727340ed897b02b5fd3735584f61d8b9eac6275bba8949f449e",
+          "bytes": 29288,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AURORA-CHAIN-002/adapted_casefile.json",
+          "source_artifact": "retained_scoring_correction/AURORA-CHAIN-002/adapted_casefile.json",
+          "source_original_sha256": "ac26085e389d93febe58445ba1d00eeea75cebb278586feaa281356afe8ae6bc",
+          "sha256": "51f729fde051df752d36e62a24e42a382e46690c6d7e95ce93eb4d061bd42d92",
+          "bytes": 5361,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AURORA-CHAIN-002/ground_truth.json",
+          "source_artifact": "original_baseline/AURORA-CHAIN-002/ground_truth.json",
+          "source_original_sha256": "af7f197bd8934462b6e44aba745dd0fa566f5cb036eeb84aeea8e653e48aefd9",
+          "sha256": "5beacc08ce49a15520cd0c52054cc9c171df260ad31a65933cc38076643c409e",
+          "bytes": 11004,
+          "export_changed": true
+        }
+      ]
+    },
+    {
+      "case_id": "AEL-OILRIG-SIDETWIST-001",
+      "ground_truth_source_original_sha256": "19d541301102f4b98c4c9541d2e93b21522eeb12e20f0f94f2cc77496a575a7f",
+      "original_manifest_source_sha256": "70ecc4cc724fd9343307b3084c6cdcf0c9867ac9e5eb51f5f0076c957d6741e3",
+      "corrected_score_source_original_sha256": "64dac3655410ea3d1018839ed4c3bc5205cc7fa11ff91790aec6f02b74f70098",
+      "adapted_casefile_source_original_sha256": "05b0f3a7a031d42e3e7c7f9b2d4f17478970a691a5b7a0df40be0fb3da68e7b1",
+      "exports": [
+        {
+          "path": "data/llm_direct/AEL-OILRIG-SIDETWIST-001/score.json",
+          "source_artifact": "retained_scoring_correction/AEL-OILRIG-SIDETWIST-001/adapter_corrected_score.json",
+          "source_original_sha256": "64dac3655410ea3d1018839ed4c3bc5205cc7fa11ff91790aec6f02b74f70098",
+          "sha256": "649cc3acda4215baf15472d8faa9347243ee5163e1515882772c91317778a209",
+          "bytes": 21294,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AEL-OILRIG-SIDETWIST-001/adapted_casefile.json",
+          "source_artifact": "retained_scoring_correction/AEL-OILRIG-SIDETWIST-001/adapted_casefile.json",
+          "source_original_sha256": "05b0f3a7a031d42e3e7c7f9b2d4f17478970a691a5b7a0df40be0fb3da68e7b1",
+          "sha256": "23a062631cc171312544fd14e7cee542473b2f901261b3e7851eba4b02604f93",
+          "bytes": 3894,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AEL-OILRIG-SIDETWIST-001/ground_truth.json",
+          "source_artifact": "original_baseline/AEL-OILRIG-SIDETWIST-001/ground_truth.json",
+          "source_original_sha256": "19d541301102f4b98c4c9541d2e93b21522eeb12e20f0f94f2cc77496a575a7f",
+          "sha256": "5a35c392be4f84bb90a4c8c2c81f4b61fe6828f26491db9ede47513bbb2e9862",
+          "bytes": 7647,
+          "export_changed": true
+        }
+      ]
+    },
+    {
+      "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
+      "ground_truth_source_original_sha256": "6cc7872b61f25f9f2ac983c1e9ade60f76586a02379c551e01c95d714c8f9adf",
+      "original_manifest_source_sha256": "7817653d1602de514bd2788f4edb054ca3462f5d9abbf39e7733f4b45d4d0ab3",
+      "corrected_score_source_original_sha256": "59d411a12c5d727f1fcc9e1a8893432501c3b9f2cf67b2a209848e8a7fda2851",
+      "adapted_casefile_source_original_sha256": "e245c9f499700b250eade2b0b0ee226e31606cfe7d40b05dbefde6398312cf20",
+      "exports": [
+        {
+          "path": "data/llm_direct/AEL-SANDWORM-EXARAMEL-WIN-001/score.json",
+          "source_artifact": "retained_scoring_correction/AEL-SANDWORM-EXARAMEL-WIN-001/adapter_corrected_score.json",
+          "source_original_sha256": "59d411a12c5d727f1fcc9e1a8893432501c3b9f2cf67b2a209848e8a7fda2851",
+          "sha256": "28199fab62ec9c8d4a5ae081ccd425a2b171c0158e3f393d72fd87f57a677399",
+          "bytes": 23029,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AEL-SANDWORM-EXARAMEL-WIN-001/adapted_casefile.json",
+          "source_artifact": "retained_scoring_correction/AEL-SANDWORM-EXARAMEL-WIN-001/adapted_casefile.json",
+          "source_original_sha256": "e245c9f499700b250eade2b0b0ee226e31606cfe7d40b05dbefde6398312cf20",
+          "sha256": "afa5a5a5c7227ff655059b9b0fc9b084ebffba360f537c102064f6f4b0188517",
+          "bytes": 4172,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AEL-SANDWORM-EXARAMEL-WIN-001/ground_truth.json",
+          "source_artifact": "original_baseline/AEL-SANDWORM-EXARAMEL-WIN-001/ground_truth.json",
+          "source_original_sha256": "6cc7872b61f25f9f2ac983c1e9ade60f76586a02379c551e01c95d714c8f9adf",
+          "sha256": "2449d5e84a482d4da4a78cb14201d843cce6f76e6a96369509ede1d3b48a82b4",
+          "bytes": 7694,
+          "export_changed": true
+        }
+      ]
+    },
+    {
+      "case_id": "AEL-WIZARD-EMOTET-001",
+      "ground_truth_source_original_sha256": "8d195b35a97f850152aab5f05cbf9f40dc823ce40f0ba07886eb5fc41c821a7a",
+      "original_manifest_source_sha256": "d674d405f8eb99a406398cef28b944cc62050355f3e5cd4b46c88a95a3ed00d4",
+      "corrected_score_source_original_sha256": "170b3e40736ddf822bce6fe6dc04e1aee7487ba9c0d45c09bd2bea93d4a811e4",
+      "adapted_casefile_source_original_sha256": "15db1cc79bc9ae63f4976691b331b3ea19247578f9da3f557e71e90bfa81ccb0",
+      "exports": [
+        {
+          "path": "data/llm_direct/AEL-WIZARD-EMOTET-001/score.json",
+          "source_artifact": "retained_scoring_correction/AEL-WIZARD-EMOTET-001/adapter_corrected_score.json",
+          "source_original_sha256": "170b3e40736ddf822bce6fe6dc04e1aee7487ba9c0d45c09bd2bea93d4a811e4",
+          "sha256": "00ddfe758402a86ccd3479bf87ba182c751588d910301427c1a5ba3546c7e2f6",
+          "bytes": 22548,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AEL-WIZARD-EMOTET-001/adapted_casefile.json",
+          "source_artifact": "retained_scoring_correction/AEL-WIZARD-EMOTET-001/adapted_casefile.json",
+          "source_original_sha256": "15db1cc79bc9ae63f4976691b331b3ea19247578f9da3f557e71e90bfa81ccb0",
+          "sha256": "e9419f5c5171d3605a8d9357d03cbd8aff5e3ebcb6fde68379f27e73672c8d33",
+          "bytes": 4111,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AEL-WIZARD-EMOTET-001/ground_truth.json",
+          "source_artifact": "original_baseline/AEL-WIZARD-EMOTET-001/ground_truth.json",
+          "source_original_sha256": "8d195b35a97f850152aab5f05cbf9f40dc823ce40f0ba07886eb5fc41c821a7a",
+          "sha256": "cff4191ef62c627bf2fd1a4bdd5cd2279a457cefe5c6887290a10d701909dfb1",
+          "bytes": 7549,
+          "export_changed": true
+        }
+      ]
+    },
+    {
+      "case_id": "AEL-CARBANAK-RAT-001",
+      "ground_truth_source_original_sha256": "126e9476c0d11206bec09e0f1f0664ab7c47d416845022cd71483c56aee06be9",
+      "original_manifest_source_sha256": "d2727c8d0a4f4887a1f21cbd5671d5445a27a4f68eb024cb18f2ae4f92ffdf6f",
+      "corrected_score_source_original_sha256": "6ce75ebfd982523be23c4b3a593a2240be1ecfcc94847a6c3624afd4cbe7abcc",
+      "adapted_casefile_source_original_sha256": "750a3cbbfed90f09cd7b502b2f2a646ae1bb92b53598c52616cb7e6bedc22f10",
+      "exports": [
+        {
+          "path": "data/llm_direct/AEL-CARBANAK-RAT-001/score.json",
+          "source_artifact": "retained_scoring_correction/AEL-CARBANAK-RAT-001/adapter_corrected_score.json",
+          "source_original_sha256": "6ce75ebfd982523be23c4b3a593a2240be1ecfcc94847a6c3624afd4cbe7abcc",
+          "sha256": "6bb6a53ef48e842acacfe3cb196b32b3b052ba70ad4fbe5bb03041569f97cedd",
+          "bytes": 22664,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AEL-CARBANAK-RAT-001/adapted_casefile.json",
+          "source_artifact": "retained_scoring_correction/AEL-CARBANAK-RAT-001/adapted_casefile.json",
+          "source_original_sha256": "750a3cbbfed90f09cd7b502b2f2a646ae1bb92b53598c52616cb7e6bedc22f10",
+          "sha256": "3e51a4af7eba1dc6c35c2a5a19c6eb7a3d72af32b7adb5bdd121ea031544f80f",
+          "bytes": 3862,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AEL-CARBANAK-RAT-001/ground_truth.json",
+          "source_artifact": "original_baseline/AEL-CARBANAK-RAT-001/ground_truth.json",
+          "source_original_sha256": "126e9476c0d11206bec09e0f1f0664ab7c47d416845022cd71483c56aee06be9",
+          "sha256": "9e0d8077d68b77acb526b777d2d73d61125f68d4dcb0d2789c4ae17b4052ae32",
+          "bytes": 7837,
+          "export_changed": true
+        }
+      ]
+    },
+    {
+      "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
+      "ground_truth_source_original_sha256": "f389dad62ed94bb4522d58054be4a4a06a9be9cc5e05bd8eb21ea30fe46fc1ef",
+      "original_manifest_source_sha256": "318047abcf8740d9ab7bad2546768f136c33442233814f310be4c19b02c41ec5",
+      "corrected_score_source_original_sha256": "669291c02b219ff6b33c75f20e771586def3bfec0c8b4ba8496ed4e17d070898",
+      "adapted_casefile_source_original_sha256": "9cb68663a59b0ff2ab6497098c3fd80cfbb262defa02b4d9ecc5a500e1ac170e",
+      "exports": [
+        {
+          "path": "data/llm_direct/AEL-MUSTANG-PANDA-PLUGX-001/score.json",
+          "source_artifact": "retained_scoring_correction/AEL-MUSTANG-PANDA-PLUGX-001/adapter_corrected_score.json",
+          "source_original_sha256": "669291c02b219ff6b33c75f20e771586def3bfec0c8b4ba8496ed4e17d070898",
+          "sha256": "317fa3ca738e96b369c6e895fee51a85f15fd173f70351c5f0327e866e8d9fb0",
+          "bytes": 21863,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AEL-MUSTANG-PANDA-PLUGX-001/adapted_casefile.json",
+          "source_artifact": "retained_scoring_correction/AEL-MUSTANG-PANDA-PLUGX-001/adapted_casefile.json",
+          "source_original_sha256": "9cb68663a59b0ff2ab6497098c3fd80cfbb262defa02b4d9ecc5a500e1ac170e",
+          "sha256": "14b644113175a1d08f7be0946f6a96556cef1a2480fbc1520c0ee4f2d41a814b",
+          "bytes": 4045,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/AEL-MUSTANG-PANDA-PLUGX-001/ground_truth.json",
+          "source_artifact": "original_baseline/AEL-MUSTANG-PANDA-PLUGX-001/ground_truth.json",
+          "source_original_sha256": "f389dad62ed94bb4522d58054be4a4a06a9be9cc5e05bd8eb21ea30fe46fc1ef",
+          "sha256": "8359e251d18971896308532b4e33cb3a7f743960feaaaedb3157e388f790f770",
+          "bytes": 7678,
+          "export_changed": true
+        }
+      ]
+    },
+    {
+      "case_id": "MEP-WINDOWS-WEBSHELL-01",
+      "ground_truth_source_original_sha256": "6cac7af38dc32473b8d0234795c5bedac9ea1f8659769e9ae4d5b16572034b4a",
+      "original_manifest_source_sha256": "371ca0fe7a10e8243b5d96704851920873a78f10797b0f81d6113380ca4c9ed4",
+      "corrected_score_source_original_sha256": "5888cf4d5ed3ab357f1b6e06d52ec2bc360cd73e658ff8fbb9b5bd6a03804728",
+      "adapted_casefile_source_original_sha256": "30e1d854115373061ad1db3fb69f073cba82087cb96cd750b9f97d6e1b2a3c73",
+      "exports": [
+        {
+          "path": "data/llm_direct/MEP-WINDOWS-WEBSHELL-01/score.json",
+          "source_artifact": "retained_scoring_correction/MEP-WINDOWS-WEBSHELL-01/adapter_corrected_score.json",
+          "source_original_sha256": "5888cf4d5ed3ab357f1b6e06d52ec2bc360cd73e658ff8fbb9b5bd6a03804728",
+          "sha256": "1aa1dee77bbd52b83b84bd4f8aa427a4db2f9a07c69fc33525a5e8050dcc8b4b",
+          "bytes": 30216,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/MEP-WINDOWS-WEBSHELL-01/adapted_casefile.json",
+          "source_artifact": "retained_scoring_correction/MEP-WINDOWS-WEBSHELL-01/adapted_casefile.json",
+          "source_original_sha256": "30e1d854115373061ad1db3fb69f073cba82087cb96cd750b9f97d6e1b2a3c73",
+          "sha256": "d7cc17877d3a2a015b1d89e3d320cee67b906aec0acb823f370ebacb6a0bd6a8",
+          "bytes": 6959,
+          "export_changed": true
+        },
+        {
+          "path": "data/llm_direct/MEP-WINDOWS-WEBSHELL-01/ground_truth.json",
+          "source_artifact": "original_baseline/MEP-WINDOWS-WEBSHELL-01/ground_truth.json",
+          "source_original_sha256": "6cac7af38dc32473b8d0234795c5bedac9ea1f8659769e9ae4d5b16572034b4a",
+          "sha256": "c94c29af2ac75a9f8ac1af663c96b2e429e124eb3a783ba2766cfec588ff5cb5",
+          "bytes": 10125,
+          "export_changed": true
+        }
+      ]
+    }
+  ],
+  "redaction_policy": "Existing public-export credential and profile-path redaction; archived prediction/evidence/call content retained unchanged.",
+  "source_original_protocol_sha256": {
+    "llm_direct_per_case_aggregate.json": "f77b40c521bf9629260433834b674742ea2319b693b7abe9272b7be4ee2c3971",
+    "llm_direct_macro_micro_aggregate.json": "966870f0e30b9800b491aa3e7fd81a97e1fd1a981083795c83c771d2baf695e5",
+    "llm_direct_trial_inventory.json": "a40edbc9c00690e24d7bde39f266303eb5e034cbcaf96bbd6c7161ece3c9cf98",
+    "llm_direct_closure_manifest.json": "c4324dd74c84b3f6302f79b85a95f55003cb1996e842fb35816c7bdd5f292644"
+  }
+}

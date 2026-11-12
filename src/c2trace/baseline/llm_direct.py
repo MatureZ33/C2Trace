@@ -121,6 +121,14 @@ def prediction_to_casefile(prediction: PredictionIR, source_alert: Mapping[str, 
         value = str(entity.get("value") or entity.get("path") or entity.get("name") or "")
         if not finding_type or not value:
             continue
+        details = dict(entity["details"]) if isinstance(entity.get("details"), dict) else {}
+        # Match the scorer's vocabulary using only explicit prediction fields.
+        if finding_type == "process":
+            finding_type = "process_detail"
+        elif finding_type == "file":
+            finding_type = "file_metadata"
+            if not details.get("path"):
+                details["path"] = value
         findings.append({
             "finding_id": f"direct-finding-{index:04d}",
             "finding_type": finding_type,
@@ -128,7 +136,7 @@ def prediction_to_casefile(prediction: PredictionIR, source_alert: Mapping[str, 
             "evidence": str(entity.get("evidence") or "explicit model prediction"),
             "source": "llm_direct_prediction",
             "confidence": float(entity.get("confidence", 0.0) or 0.0),
-            "details": entity.get("details") if isinstance(entity.get("details"), dict) else {},
+            "details": details,
         })
     action_results = []
     for index, action in enumerate(prediction.proposed_actions, start=1):

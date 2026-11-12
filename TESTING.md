@@ -1,13 +1,22 @@
 # Release verification
 
-Verified locally on Windows with Python 3.12, MCP 1.28.1 and cryptography 49.0.0. Historical evaluation metadata records Python 3.11.9 on Windows 10; the release check is not a rerun of those experiments.
+Verified offline on Windows for the November 12, 2026 update:
 
-* Editable package installation and `run_case.py --help` succeeded.
-* 161 included offline tests passed. One dependency warning concerns a Pydantic settings forward reference in the local MCP test; it did not fail the test suite.
-* Offline aggregation verified all 96 selected records and their reported per-case metrics; baseline pooled counts match the final v5 reference. Undefined metrics remain null.
-* All eight graphics referenced by `paper/main.tex`, the bibliography, class and supplied style files are present. The existing manuscript was not rewritten or recompiled as part of packaging.
-* The included figure drawing source was checked for Python syntax; figure regeneration was not included in this validation. Existing paper PDFs are the authoritative graphics.
+* 150 application, planning, authorization, transport, scoring and adapter tests passed. One existing Pydantic settings forward-reference warning was reported by the MCP transport test.
+* Offline aggregation verified 160 selected records: 8 RQ1, 48 live RQ2, 8 offline RQ2 and 96 RQ3 trials.
+* All 96 RQ3 scoring inputs were rescored against their saved scenario references; TP/FP/FN, precision, recall and F1 matched the retained records.
+* All eight Direct LLM original scores, corrected scores and action-proposal scores were reproduced. The original model outputs are preserved.
+* The FULL/A1/A2/A3 command-line help entries and mocked Planner/profile checks passed. Python source syntax was checked across the main application and the two RQ3 source packages.
+* Archive integrity, file checksums and credential-pattern scans passed. Local caches and test fixtures generated during release verification are excluded from the distribution.
 
-The three Planner dependency-repair test fixtures were updated to use an unknown dependency: a missing evidence-gate edge is already fixed by deterministic gate insertion and no longer invokes LLM repair. These test-only changes preserve bounded-repair assertions and do not change the application implementation. A legacy regression test depending on unrelated internal July trial directories is outside the public test selection. A scorer's static contract fixture is supplied under `tests/fixtures/` and does not count as an additional evaluated case.
+To repeat the offline checks:
 
-No model API, VM deployment or live response experiment was executed for this release. Passing offline tests does not establish historical whole-stack identity or eliminate the empirical validity limitations described in the manuscript.
+```shell
+python scripts/extract_artifacts.py
+python scripts/recompute_results.py
+python scripts/rescore_rq3.py
+python scripts/recompute_direct_adapter.py
+python -m pytest -q
+```
+
+No new model inference, VM deployment or live response experiment was performed during release verification. The manuscript source and its referenced graphics were checked for file availability; LaTeX compilation was not part of this verification.

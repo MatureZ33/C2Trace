@@ -2,8 +2,6 @@ import json
 import sys
 from types import SimpleNamespace
 
-import run_case
-from c2trace.models import CaseFile
 from run_case import (
     cli_exit_code_for_status,
     main,
@@ -151,35 +149,3 @@ def test_live_response_requires_both_auditor_safety_inputs(tmp_path, monkeypatch
         assert main() == 2
 
 
-def test_experience_io_failure_is_reported_after_case_outputs_are_preserved(tmp_path, monkeypatch):
-    alert_path = tmp_path / "alert.json"
-    alert_path.write_text(json.dumps({
-        "case_id": "IO-FAILURE-CASE",
-        "remote_ip": "192.0.2.10",
-        "protocol": "http",
-    }), encoding="utf-8")
-    output = tmp_path / "output"
-
-    def fake_run_alert(self, alert, source_events=None, source_artifacts=None):
-        case = CaseFile.from_alert(alert)
-        case.final_status = "completed"
-        return case
-
-    def fail_write(*args, **kwargs):
-        raise OSError("disk full")
-
-    monkeypatch.setattr(run_case.WorkflowController, "run_alert", fake_run_alert)
-    monkeypatch.setattr(run_case, "write_experience", fail_write)
-    monkeypatch.setattr(sys, "argv", [
-        "run_case.py",
-        "--alert",
-        str(alert_path),
-        "--output",
-        str(output),
-        "--write-experience",
-    ])
-
-    assert main() == 3
-    metadata = json.loads((output / "run_metadata.json").read_text(encoding="utf-8"))
-    assert metadata["experience"]["status"] == "write_failed"
-    assert (output / "casefile.json").exists()

@@ -1,0 +1,63 @@
+{
+  "schema_version": "c2trace.public.rq3.96.v1",
+  "n_trials": 96,
+  "n_attempts": 102,
+  "n_cases": 8,
+  "repetitions_per_configuration_and_case": 3,
+  "mapping": {
+    "FULL": "FULL",
+    "A1": "B1-GENERIC-PLANNER",
+    "A2": "B4-NO-CMDLINE-PAYLOAD",
+    "A3": "B3-NO-AUDITOR"
+  },
+  "collection": {
+    "Q6": [
+      "FULL",
+      "A1",
+      "A3"
+    ],
+    "Q7": [
+      "A2"
+    ]
+  },
+  "selection": "Use the unique infrastructure-valid, denominator-included attempt for each registered cell.",
+  "excluded_attempts": 6,
+  "transport_failures_retained": [
+    "Q7-B4-C2-R3",
+    "Q7-B4-C3-R3",
+    "Q7-B4-C4-R3",
+    "Q7-B4-C5-R3"
+  ],
+  "tokens": "Four A2 C2-C5 R3 transport failures returned no usage. Raw fields remain zero. Derived token counts are null for those trials; Table 5 uses recorded sums divided by all 24 trials.",
+  "scope": "B2 role-private memory, earlier A1-A4 smoke runs and B72 are excluded from the paper population.",
+  "credentials": "Credential values were redacted from exported records; metrics and scientific observations are retained.",
+  "poststate": "Independent host checks occur before external cleanup.",
+  "case_order": [
+    "AURORA-CHAIN-001",
+    "AURORA-CHAIN-002",
+    "AEL-OILRIG-SIDETWIST-001",
+    "AEL-SANDWORM-EXARAMEL-WIN-001",
+    "AEL-WIZARD-EMOTET-001",
+    "AEL-CARBANAK-RAT-001",
+    "AEL-MUSTANG-PANDA-PLUGX-001",
+    "MEP-WINDOWS-WEBSHELL-01"
+  ],
+  "source_schedules": [
+    {
+      "campaign": "Q6",
+      "original_sha256": "ecfcf27faec01b962c864526a55cf521160fd8de088947739103116eac0756a1",
+      "included_source_variants": [
+        "FULL",
+        "B1-GENERIC-PLANNER",
+        "B3-NO-AUDITOR"
+      ]
+    },
+    {
+      "campaign": "Q7",
+      "original_sha256": "c9bec99d758b7f40f18bc51abfa68aa285586dcaeee27f708036c37e028a1aee",
+      "included_source_variants": [
+        "B4-NO-CMDLINE-PAYLOAD"
+      ]
+    }
+  ]
+}

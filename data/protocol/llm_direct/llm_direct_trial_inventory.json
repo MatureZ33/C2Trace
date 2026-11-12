@@ -1,30 +1,32 @@
 {
-  "schema_version": "llm_direct.offline_inventory.v1",
-  "source": "第一轮基线对比实验/LLM-Direct-SetB-20261001",
+  "schema_version": "llm_direct.offline_inventory.v2",
+  "source": "archives/llm_direct.zip",
   "cases": [
     {
       "case_id": "AEL-CARBANAK-RAT-001",
       "required_files": {
-        "sanitized_evidence.json": true,
-        "sanitizer_receipt.json": true,
+        "adapted_casefile.json": true,
+        "casefile.json": true,
+        "formal_result_manifest.json": true,
+        "formal_result_manifest_before_adapter_alignment.json": true,
+        "ground_truth.json": true,
         "llm_call.json": true,
         "prediction_ir.json": true,
-        "casefile.json": true,
         "proposed_action_score.json": true,
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
         "score.json": true,
-        "formal_result_manifest.json": true
+        "score_before_adapter_alignment.json": true
       },
       "all_required_files_present": true,
-      "source_manifest_sha256": "d2727c8d0a4f4887a1f21cbd5671d5445a27a4f68eb024cb18f2ae4f92ffdf6f",
-      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AEL-CARBANAK-RAT-001/formal_result_manifest.normalized.json",
       "trial_class": "evaluation_valid_fail",
       "trace": {
-        "tp": 1,
+        "tp": 3,
         "fp": 0,
-        "fn": 3,
+        "fn": 1,
         "precision": 1.0,
-        "recall": 0.25,
-        "f1": 0.4
+        "recall": 0.75,
+        "f1": 0.8571428571428571
       },
       "response_action_proposal": {
         "metric_semantics": "proposal only; no host response executed",
@@ -57,40 +59,58 @@
       },
       "actual_response_executed": false,
       "post_state": "not_applicable_for_llm_direct",
-      "source_files_sha256": {
+      "manifest": "data/llm_direct/AEL-CARBANAK-RAT-001/formal_result_manifest.json",
+      "source_original_manifest_sha256": "d2727c8d0a4f4887a1f21cbd5671d5445a27a4f68eb024cb18f2ae4f92ffdf6f",
+      "source_original_files_sha256": {
         "sanitized_evidence.json": "30e53782c4928b1ffe478cb082e9dea8a2aab67e74721dd3900a37092d1a2303",
         "sanitizer_receipt.json": "f4d7cecbe761c9ffe7a2b2924131dec5f2fc63b16846f2a701dde7bec458165f",
         "llm_call.json": "55e4c2ebe3d78f7eb6958eeebb1b08313b649e41e97267806185ca85e4753a86",
         "prediction_ir.json": "386ac082c1cc2385bb6aac885c194bd2980efabef6f801da3c9c3857bc211c74",
         "casefile.json": "74928f8f0d834263c3022530e552217b4c32dc05cafe148983a9688b38f41ba2",
         "proposed_action_score.json": "addcaa23923b6ce22a3d125ecb31fe29324909ae813ad0047b21211aa0dd12be",
-        "score.json": "0638948eadc19582f771aa64e6428f8160ea27e4ff529da53e20bce7fdf130ed",
-        "formal_result_manifest.json": "d2727c8d0a4f4887a1f21cbd5671d5445a27a4f68eb024cb18f2ae4f92ffdf6f"
+        "score_before_adapter_alignment.json": "0638948eadc19582f771aa64e6428f8160ea27e4ff529da53e20bce7fdf130ed",
+        "formal_result_manifest_before_adapter_alignment.json": "d2727c8d0a4f4887a1f21cbd5671d5445a27a4f68eb024cb18f2ae4f92ffdf6f"
+      },
+      "exported_files_sha256": {
+        "adapted_casefile.json": "3e51a4af7eba1dc6c35c2a5a19c6eb7a3d72af32b7adb5bdd121ea031544f80f",
+        "casefile.json": "e8e4c8a6f6a2c27493199f165151719c6e619f5d51f0e24b1c0005a4751b00ce",
+        "formal_result_manifest.json": "2305e2148a91df375ecfa4b6caf33a592796a54dcb3f55e4e8d0034cdf8f45af",
+        "formal_result_manifest_before_adapter_alignment.json": "0dbc19c31ba4480a199522710b370c40ca5f6f78c9d8def8ae30b316228fb25c",
+        "ground_truth.json": "9e0d8077d68b77acb526b777d2d73d61125f68d4dcb0d2789c4ae17b4052ae32",
+        "llm_call.json": "f63b49766cf958c3c7bfa3e172652e4aab52cecfce814909e8ced0a9f36883c5",
+        "prediction_ir.json": "528885e30172f166347b0eb98b8cfe7f881cebbe32408e136e0c68373a2ed82b",
+        "proposed_action_score.json": "ff4740840ab0ce59a2f599d29fa2ad49918eba9044082be7a0ec2926705a6051",
+        "sanitized_evidence.json": "36f20ba5bb267522b023983b3d8df3f8db56b0c6a8cbbf54e18a6bad7e0e0f97",
+        "sanitizer_receipt.json": "0a8dce23769d4cd31a1426a81358e2b761138e344db680a196edce7e72440338",
+        "score.json": "6bb6a53ef48e842acacfe3cb196b32b3b052ba70ad4fbe5bb03041569f97cedd",
+        "score_before_adapter_alignment.json": "4a968d7f4204a79bb748463c904ace7752466419e63b6a0b73df8c8a5936c970"
       }
     },
     {
       "case_id": "AEL-MUSTANG-PANDA-PLUGX-001",
       "required_files": {
-        "sanitized_evidence.json": true,
-        "sanitizer_receipt.json": true,
+        "adapted_casefile.json": true,
+        "casefile.json": true,
+        "formal_result_manifest.json": true,
+        "formal_result_manifest_before_adapter_alignment.json": true,
+        "ground_truth.json": true,
         "llm_call.json": true,
         "prediction_ir.json": true,
-        "casefile.json": true,
         "proposed_action_score.json": true,
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
         "score.json": true,
-        "formal_result_manifest.json": true
+        "score_before_adapter_alignment.json": true
       },
       "all_required_files_present": true,
-      "source_manifest_sha256": "318047abcf8740d9ab7bad2546768f136c33442233814f310be4c19b02c41ec5",
-      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AEL-MUSTANG-PANDA-PLUGX-001/formal_result_manifest.normalized.json",
       "trial_class": "evaluation_valid_fail",
       "trace": {
-        "tp": 1,
-        "fp": 0,
-        "fn": 3,
-        "precision": 1.0,
-        "recall": 0.25,
-        "f1": 0.4
+        "tp": 2,
+        "fp": 1,
+        "fn": 2,
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "f1": 0.5714285714285715
       },
       "response_action_proposal": {
         "metric_semantics": "proposal only; no host response executed",
@@ -123,40 +143,58 @@
       },
       "actual_response_executed": false,
       "post_state": "not_applicable_for_llm_direct",
-      "source_files_sha256": {
+      "manifest": "data/llm_direct/AEL-MUSTANG-PANDA-PLUGX-001/formal_result_manifest.json",
+      "source_original_manifest_sha256": "318047abcf8740d9ab7bad2546768f136c33442233814f310be4c19b02c41ec5",
+      "source_original_files_sha256": {
         "sanitized_evidence.json": "3601f9f1f81800f3ac2b716db701d8188b5f1edc25a21f50009ea340c20e8b25",
         "sanitizer_receipt.json": "5146e9fe3990cf8ce1783a185fca092537998fc4e8249936febb528e47558879",
         "llm_call.json": "27ddaa21d15fe5681de95f0fa4ec203003f077a3854154c97ec445648e7e72ff",
         "prediction_ir.json": "9359aa4772fb6c46ac3b291a38e584d722f0d963ce5a1dbc1b09439064b0fd3c",
         "casefile.json": "dc213c4637df7372d4173f08af81b7fb3812ba28446ebe5ab22de68e5edb2d3f",
         "proposed_action_score.json": "e6e4b3808693ddcfee4886b1233732d1ad48f5869b22df120ed0cb0c85b4e4ca",
-        "score.json": "87094138adf81e8cc555ef3c680be7904dbfdc3c2938fa5c2eb8ed1d1f80915a",
-        "formal_result_manifest.json": "318047abcf8740d9ab7bad2546768f136c33442233814f310be4c19b02c41ec5"
+        "score_before_adapter_alignment.json": "87094138adf81e8cc555ef3c680be7904dbfdc3c2938fa5c2eb8ed1d1f80915a",
+        "formal_result_manifest_before_adapter_alignment.json": "318047abcf8740d9ab7bad2546768f136c33442233814f310be4c19b02c41ec5"
+      },
+      "exported_files_sha256": {
+        "adapted_casefile.json": "14b644113175a1d08f7be0946f6a96556cef1a2480fbc1520c0ee4f2d41a814b",
+        "casefile.json": "96742fc8a617bea8648bf75c2c431db832d7339f72b36315b1f44326d05ba23a",
+        "formal_result_manifest.json": "1c11dcfa43959a346e9281a4314c4c1b017f07ba19ad16bd0fa85c58a8948ffc",
+        "formal_result_manifest_before_adapter_alignment.json": "65c8b8507bea1d84612e358c6383ae3bcd01bd9234b5dbc572714ef897fd6c80",
+        "ground_truth.json": "8359e251d18971896308532b4e33cb3a7f743960feaaaedb3157e388f790f770",
+        "llm_call.json": "623d0d25d80cba37ca25b78b60b04ed15085232fc01988438066a9f635e5f467",
+        "prediction_ir.json": "7e35edeed67045ad585f4a82dec4ab4e059681079ed8dfd6165143d356d706ad",
+        "proposed_action_score.json": "7b8531cd95ea62b01adafad89a00bc5f0d01ecbaaf6a30f6ad4443f1d0d32a14",
+        "sanitized_evidence.json": "12853b64a5c1b5e210a5a803b7f914c2b20d35d5644163d61f11718ed1aa2c92",
+        "sanitizer_receipt.json": "154eb8516698ad539921c6bfed538f8c86ae2c144187adb45978011cecde4550",
+        "score.json": "317fa3ca738e96b369c6e895fee51a85f15fd173f70351c5f0327e866e8d9fb0",
+        "score_before_adapter_alignment.json": "3fb07df95e0eadc6f1a6b0f635deb59599ccd15bda6e2bb0c4bde1e35832cd2e"
       }
     },
     {
       "case_id": "AEL-OILRIG-SIDETWIST-001",
       "required_files": {
-        "sanitized_evidence.json": true,
-        "sanitizer_receipt.json": true,
+        "adapted_casefile.json": true,
+        "casefile.json": true,
+        "formal_result_manifest.json": true,
+        "formal_result_manifest_before_adapter_alignment.json": true,
+        "ground_truth.json": true,
         "llm_call.json": true,
         "prediction_ir.json": true,
-        "casefile.json": true,
         "proposed_action_score.json": true,
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
         "score.json": true,
-        "formal_result_manifest.json": true
+        "score_before_adapter_alignment.json": true
       },
       "all_required_files_present": true,
-      "source_manifest_sha256": "70ecc4cc724fd9343307b3084c6cdcf0c9867ac9e5eb51f5f0076c957d6741e3",
-      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AEL-OILRIG-SIDETWIST-001/formal_result_manifest.normalized.json",
       "trial_class": "evaluation_valid_fail",
       "trace": {
-        "tp": 0,
+        "tp": 2,
         "fp": 1,
-        "fn": 4,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
+        "fn": 2,
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "f1": 0.5714285714285715
       },
       "response_action_proposal": {
         "metric_semantics": "proposal only; no host response executed",
@@ -189,40 +227,58 @@
       },
       "actual_response_executed": false,
       "post_state": "not_applicable_for_llm_direct",
-      "source_files_sha256": {
+      "manifest": "data/llm_direct/AEL-OILRIG-SIDETWIST-001/formal_result_manifest.json",
+      "source_original_manifest_sha256": "70ecc4cc724fd9343307b3084c6cdcf0c9867ac9e5eb51f5f0076c957d6741e3",
+      "source_original_files_sha256": {
         "sanitized_evidence.json": "85745197e2545935649224c8a3f4d866bad6dd4d4bb9440ae40db52536d933ed",
         "sanitizer_receipt.json": "ebba36204b1433cff17d881267841e8f6b73017334ef801e682b64358460c440",
         "llm_call.json": "68b8c02d83ed02fc3cfdc979b9a13e468e1acdc2f6873c3331a8bf80298205b4",
         "prediction_ir.json": "058846c4eab0f53ead887e0c76886890d9c17e079858cc34f8d0d6535d72d82c",
         "casefile.json": "b09b5a6ec9db14fd6dea35076d505d25565bc353674d45963b8d3880ad257786",
         "proposed_action_score.json": "672729c246ccbb5ee36ac92e859623de80c50e6f3113fc0f24cc868392b24e00",
-        "score.json": "8cc1a864ff69312d34dbf672b6225febdb4f97a81356c86138ad84e55eec2590",
-        "formal_result_manifest.json": "70ecc4cc724fd9343307b3084c6cdcf0c9867ac9e5eb51f5f0076c957d6741e3"
+        "score_before_adapter_alignment.json": "8cc1a864ff69312d34dbf672b6225febdb4f97a81356c86138ad84e55eec2590",
+        "formal_result_manifest_before_adapter_alignment.json": "70ecc4cc724fd9343307b3084c6cdcf0c9867ac9e5eb51f5f0076c957d6741e3"
+      },
+      "exported_files_sha256": {
+        "adapted_casefile.json": "23a062631cc171312544fd14e7cee542473b2f901261b3e7851eba4b02604f93",
+        "casefile.json": "9b6bbf161d2df5a910445efac7393971efd5e0c10e960d4b9e03a5e3189d1425",
+        "formal_result_manifest.json": "0d0fca814139ea63d2cf3015003df807d000cede60d847da95134d600c2fc2db",
+        "formal_result_manifest_before_adapter_alignment.json": "e1a6b91db31289e1f9f3566a38e7915d685e291e97294b7e94667f3e84ebb035",
+        "ground_truth.json": "5a35c392be4f84bb90a4c8c2c81f4b61fe6828f26491db9ede47513bbb2e9862",
+        "llm_call.json": "912d0f554adce23013d30860a8206603f6da3a0dd57d3c05948824bdea793579",
+        "prediction_ir.json": "0f975c570b0d2563728d88f113271d4db7f1fdc404e74f733790567954879b80",
+        "proposed_action_score.json": "a32eb8beb1ba5c1a4fa88f125ae9e831aa2defaf6c703e691b82a3c788aea8e5",
+        "sanitized_evidence.json": "958833dc9d98bc5d19c7433f9de994ba7d9c320a1eafcadc36c9b138a61fe409",
+        "sanitizer_receipt.json": "5cb5b8b52bd209a00e3a83971c06499164786a0789be6e80a08e757ca61b6a0f",
+        "score.json": "649cc3acda4215baf15472d8faa9347243ee5163e1515882772c91317778a209",
+        "score_before_adapter_alignment.json": "a4058ca8b6a58c15c51b74a1cbc45bcd416745eede4a9abeb527ee65b07d44bf"
       }
     },
     {
       "case_id": "AEL-SANDWORM-EXARAMEL-WIN-001",
       "required_files": {
-        "sanitized_evidence.json": true,
-        "sanitizer_receipt.json": true,
+        "adapted_casefile.json": true,
+        "casefile.json": true,
+        "formal_result_manifest.json": true,
+        "formal_result_manifest_before_adapter_alignment.json": true,
+        "ground_truth.json": true,
         "llm_call.json": true,
         "prediction_ir.json": true,
-        "casefile.json": true,
         "proposed_action_score.json": true,
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
         "score.json": true,
-        "formal_result_manifest.json": true
+        "score_before_adapter_alignment.json": true
       },
       "all_required_files_present": true,
-      "source_manifest_sha256": "7817653d1602de514bd2788f4edb054ca3462f5d9abbf39e7733f4b45d4d0ab3",
-      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AEL-SANDWORM-EXARAMEL-WIN-001/formal_result_manifest.normalized.json",
       "trial_class": "evaluation_valid_fail",
       "trace": {
-        "tp": 1,
+        "tp": 3,
         "fp": 0,
-        "fn": 3,
+        "fn": 1,
         "precision": 1.0,
-        "recall": 0.25,
-        "f1": 0.4
+        "recall": 0.75,
+        "f1": 0.8571428571428571
       },
       "response_action_proposal": {
         "metric_semantics": "proposal only; no host response executed",
@@ -255,40 +311,58 @@
       },
       "actual_response_executed": false,
       "post_state": "not_applicable_for_llm_direct",
-      "source_files_sha256": {
+      "manifest": "data/llm_direct/AEL-SANDWORM-EXARAMEL-WIN-001/formal_result_manifest.json",
+      "source_original_manifest_sha256": "7817653d1602de514bd2788f4edb054ca3462f5d9abbf39e7733f4b45d4d0ab3",
+      "source_original_files_sha256": {
         "sanitized_evidence.json": "9ebf710fb488bc725b1ae3c284072c56fec3f1ccea5a46bb29c0aa4ac96dbc54",
         "sanitizer_receipt.json": "08f732f6d8926f3d7f63d96dade041a2aa2b3e5fd6be0b225f5ef91d1d1a6c08",
         "llm_call.json": "7a402fbf8db736153367c7f672b666d710bdad13c24f6afd399fc1aed1b66626",
         "prediction_ir.json": "60fb68afdf9d5174203e2089c595a00bf7bcdeffe7efef42b693fe4066c1f6de",
         "casefile.json": "e4754baa551935a7fbef33310f7f89174a919692706043c4416cc793393d3563",
         "proposed_action_score.json": "02e29e3ae3a2a60a3194a03a2bd34f9ba90cd31d6703aa14f7d3b60c7ea47d85",
-        "score.json": "469f49afe1dc56debed692165862c41305f888b53a134d14f60fef4e68dfc7bc",
-        "formal_result_manifest.json": "7817653d1602de514bd2788f4edb054ca3462f5d9abbf39e7733f4b45d4d0ab3"
+        "score_before_adapter_alignment.json": "469f49afe1dc56debed692165862c41305f888b53a134d14f60fef4e68dfc7bc",
+        "formal_result_manifest_before_adapter_alignment.json": "7817653d1602de514bd2788f4edb054ca3462f5d9abbf39e7733f4b45d4d0ab3"
+      },
+      "exported_files_sha256": {
+        "adapted_casefile.json": "afa5a5a5c7227ff655059b9b0fc9b084ebffba360f537c102064f6f4b0188517",
+        "casefile.json": "78d5d62e34a1311afffe627df535d5ff14bb49298cf079ce93e66615a8964e43",
+        "formal_result_manifest.json": "267968da77e346e6c4e88f9a656c85aeb95d407f21a0bece99f27244e5ad8850",
+        "formal_result_manifest_before_adapter_alignment.json": "220151ac1dbff67f9a04272f042ac3f120cccc0034a4baa69a7036420ee3d605",
+        "ground_truth.json": "2449d5e84a482d4da4a78cb14201d843cce6f76e6a96369509ede1d3b48a82b4",
+        "llm_call.json": "b59ecbe4c89e3999141683781870fde7af32710ba4234216c5678e594463d680",
+        "prediction_ir.json": "ac37f0b2e4195af4c9531da7e17d2484232119212659e959ed8f0689a86fd98c",
+        "proposed_action_score.json": "e0faac468bbf5c71727900e17bf9c5e34825fde6cf869e9251614ff03018030c",
+        "sanitized_evidence.json": "dab40260d983777544258856c514fd81a081bb99c8f7d42e8ebd1698fb61116c",
+        "sanitizer_receipt.json": "24a4ec8fd0115b89cf69e7d0b5bf3648c5700190222338269a0075f6bcc54ce9",
+        "score.json": "28199fab62ec9c8d4a5ae081ccd425a2b171c0158e3f393d72fd87f57a677399",
+        "score_before_adapter_alignment.json": "f3822a8cc9d80f7782a68b812b6b78869f9300da69c69ccb625e1a8265f0efeb"
       }
     },
     {
       "case_id": "AEL-WIZARD-EMOTET-001",
       "required_files": {
-        "sanitized_evidence.json": true,
-        "sanitizer_receipt.json": true,
+        "adapted_casefile.json": true,
+        "casefile.json": true,
+        "formal_result_manifest.json": true,
+        "formal_result_manifest_before_adapter_alignment.json": true,
+        "ground_truth.json": true,
         "llm_call.json": true,
         "prediction_ir.json": true,
-        "casefile.json": true,
         "proposed_action_score.json": true,
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
         "score.json": true,
-        "formal_result_manifest.json": true
+        "score_before_adapter_alignment.json": true
       },
       "all_required_files_present": true,
-      "source_manifest_sha256": "d674d405f8eb99a406398cef28b944cc62050355f3e5cd4b46c88a95a3ed00d4",
-      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AEL-WIZARD-EMOTET-001/formal_result_manifest.normalized.json",
       "trial_class": "evaluation_valid_fail",
       "trace": {
-        "tp": 1,
+        "tp": 3,
         "fp": 0,
-        "fn": 3,
+        "fn": 1,
         "precision": 1.0,
-        "recall": 0.25,
-        "f1": 0.4
+        "recall": 0.75,
+        "f1": 0.8571428571428571
       },
       "response_action_proposal": {
         "metric_semantics": "proposal only; no host response executed",
@@ -321,40 +395,58 @@
       },
       "actual_response_executed": false,
       "post_state": "not_applicable_for_llm_direct",
-      "source_files_sha256": {
+      "manifest": "data/llm_direct/AEL-WIZARD-EMOTET-001/formal_result_manifest.json",
+      "source_original_manifest_sha256": "d674d405f8eb99a406398cef28b944cc62050355f3e5cd4b46c88a95a3ed00d4",
+      "source_original_files_sha256": {
         "sanitized_evidence.json": "8eea743802c0d9574508bdc44c4fcae10afddc9f12e615abb0c02e15513ac697",
         "sanitizer_receipt.json": "9d3a95f0f5e7611df75b4e4428695ee5026c58c62ba723c508429f7e0f4ee9ed",
         "llm_call.json": "de0975bf88bbfc9d2d6ce52e87a2059c1acbf28845102405fd7faba9ec0e410f",
         "prediction_ir.json": "5bbc44d5603b226d268b836bc206c1c8ce8b9068c60cee4befbfbc6e5312d214",
         "casefile.json": "bff5ca45b5f01a698e477189926750a00224f35b2bc4ca28f1504ada3a735dc9",
         "proposed_action_score.json": "d5f6b253afd7f012a11b08f199d509f5a276ab3db8756f4a697a45f8e4b9b1f3",
-        "score.json": "727523f87a51662062b61a7bcdf84f80c09d672b7f2b89c2ad2fbbd7fdb8932b",
-        "formal_result_manifest.json": "d674d405f8eb99a406398cef28b944cc62050355f3e5cd4b46c88a95a3ed00d4"
+        "score_before_adapter_alignment.json": "727523f87a51662062b61a7bcdf84f80c09d672b7f2b89c2ad2fbbd7fdb8932b",
+        "formal_result_manifest_before_adapter_alignment.json": "d674d405f8eb99a406398cef28b944cc62050355f3e5cd4b46c88a95a3ed00d4"
+      },
+      "exported_files_sha256": {
+        "adapted_casefile.json": "e9419f5c5171d3605a8d9357d03cbd8aff5e3ebcb6fde68379f27e73672c8d33",
+        "casefile.json": "be5ace65ae10f7223a1543e1969a1d8c22d4bd1fcfa3ac56aa93f15653826a7c",
+        "formal_result_manifest.json": "40eb92f43250a783b6d3263f1f282708c921db82b1f586abcc75214c5af51bc7",
+        "formal_result_manifest_before_adapter_alignment.json": "146d7dfd4472ef4ea48ced428cfd49b874595a1b5133967be97fabf9b5c180f0",
+        "ground_truth.json": "cff4191ef62c627bf2fd1a4bdd5cd2279a457cefe5c6887290a10d701909dfb1",
+        "llm_call.json": "04bd139848b94eb7d2e02a94d5f1e7b3fa0895f8b8a4b6b806a25308b3a2158c",
+        "prediction_ir.json": "049d99a5af28db8288fa6860d8c5a615e12599f6b17ff8c164744080d887479d",
+        "proposed_action_score.json": "eac5067bee343311ebfd041d0e8e49ad284b464aa2d2ec7eecb809ed71e00ae5",
+        "sanitized_evidence.json": "1fc5e6bd61f6904a4f0b8a8858364652ed0bb5fa303ad6be7e4b59995cde24f5",
+        "sanitizer_receipt.json": "53d9b49ceef5bbc04825312ff1788aa8e215ac2810f7892111c5df12c45f19cc",
+        "score.json": "00ddfe758402a86ccd3479bf87ba182c751588d910301427c1a5ba3546c7e2f6",
+        "score_before_adapter_alignment.json": "179758458fd7e80e5e50d4f8af2ddaada75a31e9717fd278ad63c05252848e1e"
       }
     },
     {
       "case_id": "AURORA-CHAIN-001",
       "required_files": {
-        "sanitized_evidence.json": true,
-        "sanitizer_receipt.json": true,
+        "adapted_casefile.json": true,
+        "casefile.json": true,
+        "formal_result_manifest.json": true,
+        "formal_result_manifest_before_adapter_alignment.json": true,
+        "ground_truth.json": true,
         "llm_call.json": true,
         "prediction_ir.json": true,
-        "casefile.json": true,
         "proposed_action_score.json": true,
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
         "score.json": true,
-        "formal_result_manifest.json": true
+        "score_before_adapter_alignment.json": true
       },
       "all_required_files_present": true,
-      "source_manifest_sha256": "5b6f49ebfe40f49adb51b2d8862ddd95176cea6b48c31959c52c2d290edbf910",
-      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AURORA-CHAIN-001/formal_result_manifest.normalized.json",
       "trial_class": "evaluation_valid_fail",
       "trace": {
-        "tp": 1,
+        "tp": 3,
         "fp": 0,
-        "fn": 3,
+        "fn": 1,
         "precision": 1.0,
-        "recall": 0.25,
-        "f1": 0.4
+        "recall": 0.75,
+        "f1": 0.8571428571428571
       },
       "response_action_proposal": {
         "metric_semantics": "proposal only; no host response executed",
@@ -387,40 +479,58 @@
       },
       "actual_response_executed": false,
       "post_state": "not_applicable_for_llm_direct",
-      "source_files_sha256": {
+      "manifest": "data/llm_direct/AURORA-CHAIN-001/formal_result_manifest.json",
+      "source_original_manifest_sha256": "5b6f49ebfe40f49adb51b2d8862ddd95176cea6b48c31959c52c2d290edbf910",
+      "source_original_files_sha256": {
         "sanitized_evidence.json": "c5aeb3cdbb46e431043b5f733f0906e47c0dced0905b0374a2c43c32ad4e8d29",
         "sanitizer_receipt.json": "9c0eaf233c687a250260b59c4004474c0c0b2d34b63399ac38444a3d1e358c46",
         "llm_call.json": "56e49544eabbc71c9c84e1e9e0b7e97e85023f8d68af640deb35adcff224bcd9",
         "prediction_ir.json": "f167b43a630558e4e40294d0dc2ffaebbee2be18e709923404fd1d84f6a2ee64",
         "casefile.json": "12754e6466c3bbeb172db64b7ba2e090324ea31a9cc8390cbdb602a735bee5b8",
         "proposed_action_score.json": "36fd44e6ec172bd2023727e9e014ab3f9f4728fa04aa00dbc61ad69a9121b271",
-        "score.json": "c9b590ef4a2b6958c42cae21fa71f229633148115d97303e6ba93b71b6571d11",
-        "formal_result_manifest.json": "5b6f49ebfe40f49adb51b2d8862ddd95176cea6b48c31959c52c2d290edbf910"
+        "score_before_adapter_alignment.json": "c9b590ef4a2b6958c42cae21fa71f229633148115d97303e6ba93b71b6571d11",
+        "formal_result_manifest_before_adapter_alignment.json": "5b6f49ebfe40f49adb51b2d8862ddd95176cea6b48c31959c52c2d290edbf910"
+      },
+      "exported_files_sha256": {
+        "adapted_casefile.json": "d27c86c96c1f6b636efc459f7905c477592d9339d5e45d6f43ec5bb72f710813",
+        "casefile.json": "2a8a606c990b8d7b33bc15a00d01d6e79fbebc9a9f98fa44d6d0e649c9245d3f",
+        "formal_result_manifest.json": "1f0bca76d21a509bd45cc87f34cf33d4b7edfb8661e0dca84330a6fd85b327bd",
+        "formal_result_manifest_before_adapter_alignment.json": "843dd3c7d05702693ad9ef8fb1ef9990749558bc5c0af8e1293a9c68d4bcba1a",
+        "ground_truth.json": "a42cd2202b38097b562306f45a1dd14298f82ea7617391c43e34fa15410a19bb",
+        "llm_call.json": "dd52e0bc498a9f23135a8c884fe889d888e04e4f261c6e64f4a0dc20d9a1af74",
+        "prediction_ir.json": "345b25f18884b04f375065ee663dfef2fd12901db36cb4d2e232bda8852618f8",
+        "proposed_action_score.json": "3f26b6ff1b06bce6d4f3f653ad7f41a9160c532fb238265bb1eb5d2b08535fa9",
+        "sanitized_evidence.json": "d3c01c174dc00a4aae9b837098e259969689ff43ee6dc8c68364903efaa73ccc",
+        "sanitizer_receipt.json": "a731b9428a1a1cf6c5c6d8cfa266dcc1adbc75620c5c4f5189786197a5bf113b",
+        "score.json": "dea514e8d8a68d8b5c81d978b268170944744264793dd9ac2a454ce766b80fb2",
+        "score_before_adapter_alignment.json": "4c30e9d7c11b78ac5c895980b65a5138408f09cba2ade0943b3d22b9c1679d6b"
       }
     },
     {
       "case_id": "AURORA-CHAIN-002",
       "required_files": {
-        "sanitized_evidence.json": true,
-        "sanitizer_receipt.json": true,
+        "adapted_casefile.json": true,
+        "casefile.json": true,
+        "formal_result_manifest.json": true,
+        "formal_result_manifest_before_adapter_alignment.json": true,
+        "ground_truth.json": true,
         "llm_call.json": true,
         "prediction_ir.json": true,
-        "casefile.json": true,
         "proposed_action_score.json": true,
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
         "score.json": true,
-        "formal_result_manifest.json": true
+        "score_before_adapter_alignment.json": true
       },
       "all_required_files_present": true,
-      "source_manifest_sha256": "c1ae25ae2d0a2cf263567be6485d4186ef80eeea6a5a6fd7df465b65f77177dc",
-      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/AURORA-CHAIN-002/formal_result_manifest.normalized.json",
       "trial_class": "evaluation_valid_fail",
       "trace": {
-        "tp": 0,
+        "tp": 3,
         "fp": 2,
-        "fn": 6,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
+        "fn": 3,
+        "precision": 0.6,
+        "recall": 0.5,
+        "f1": 0.5454545454545454
       },
       "response_action_proposal": {
         "metric_semantics": "proposal only; no host response executed",
@@ -453,40 +563,58 @@
       },
       "actual_response_executed": false,
       "post_state": "not_applicable_for_llm_direct",
-      "source_files_sha256": {
+      "manifest": "data/llm_direct/AURORA-CHAIN-002/formal_result_manifest.json",
+      "source_original_manifest_sha256": "c1ae25ae2d0a2cf263567be6485d4186ef80eeea6a5a6fd7df465b65f77177dc",
+      "source_original_files_sha256": {
         "sanitized_evidence.json": "dea7dc7864b398340d18b2cb4c4f0265644229209291caee832b96dfde69e829",
         "sanitizer_receipt.json": "a342552e17aa6551a982e1cb67a6878eb860fe31a86e80a9bf5cbdff736f5b2e",
         "llm_call.json": "1a1c53039f1253bf5acc75593c2b0704ba64d6a02f8db149f0aa6988890adfa1",
         "prediction_ir.json": "88fe14f6fdd0252d37cc35d6ad2f5a655123e0fc71497a939da885a700cdb74b",
         "casefile.json": "1fcfc269f75c425c907ce9e2a547c1124741fce11f676756021d483ea5ccb1a3",
         "proposed_action_score.json": "a2b6b5ba7c65a1e8f2574c3b8b5c534027c2904db519016ec38ea290a3ca20e1",
-        "score.json": "056c7310617769159fa87f1c2bd10ed10e939ceafd8b018b0a2b139d77412d86",
-        "formal_result_manifest.json": "c1ae25ae2d0a2cf263567be6485d4186ef80eeea6a5a6fd7df465b65f77177dc"
+        "score_before_adapter_alignment.json": "056c7310617769159fa87f1c2bd10ed10e939ceafd8b018b0a2b139d77412d86",
+        "formal_result_manifest_before_adapter_alignment.json": "c1ae25ae2d0a2cf263567be6485d4186ef80eeea6a5a6fd7df465b65f77177dc"
+      },
+      "exported_files_sha256": {
+        "adapted_casefile.json": "51f729fde051df752d36e62a24e42a382e46690c6d7e95ce93eb4d061bd42d92",
+        "casefile.json": "a4b1631ce84ffca3e7f392e1e3e68a0d956931f59a0204c9b9b7531c94b76e94",
+        "formal_result_manifest.json": "b9a1a837db190cd900982fb57bc048693131dd8ee71e9ff11a215a678bdd348e",
+        "formal_result_manifest_before_adapter_alignment.json": "52d85de4e5dbb8b4e8b32fddc5935a8430dbbfa72ec2d277697248c541506182",
+        "ground_truth.json": "5beacc08ce49a15520cd0c52054cc9c171df260ad31a65933cc38076643c409e",
+        "llm_call.json": "a1bd03354cbb8661da9089b85bc39374220c7f5f698802f728d459a91fcc0255",
+        "prediction_ir.json": "21c5ac5d691c575be603f0ccefce595edebc423d1b572fe28931929c62d729a1",
+        "proposed_action_score.json": "6f3a7341f5ff52b28295e642c1cb30499dfe8cd1d8263235b5d61cc0b66b2b61",
+        "sanitized_evidence.json": "c428d7ae29700938d438cb938e16f0dc08f09e991d10b7a518746964c5f2d514",
+        "sanitizer_receipt.json": "298ed3edfd4623bbb088f67eba874095bef5261ccc0fd81eb7315b6e2e3cd168",
+        "score.json": "fbe5331f0cd6e727340ed897b02b5fd3735584f61d8b9eac6275bba8949f449e",
+        "score_before_adapter_alignment.json": "ac0c6df20cd6c88b65f68415f6ae25e510cd710f47ed98a42e362d5caafd1fb4"
       }
     },
     {
       "case_id": "MEP-WINDOWS-WEBSHELL-01",
       "required_files": {
-        "sanitized_evidence.json": true,
-        "sanitizer_receipt.json": true,
+        "adapted_casefile.json": true,
+        "casefile.json": true,
+        "formal_result_manifest.json": true,
+        "formal_result_manifest_before_adapter_alignment.json": true,
+        "ground_truth.json": true,
         "llm_call.json": true,
         "prediction_ir.json": true,
-        "casefile.json": true,
         "proposed_action_score.json": true,
+        "sanitized_evidence.json": true,
+        "sanitizer_receipt.json": true,
         "score.json": true,
-        "formal_result_manifest.json": true
+        "score_before_adapter_alignment.json": true
       },
       "all_required_files_present": true,
-      "source_manifest_sha256": "371ca0fe7a10e8243b5d96704851920873a78f10797b0f81d6113380ca4c9ed4",
-      "normalized_manifest": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2/normalized_manifests/MEP-WINDOWS-WEBSHELL-01/formal_result_manifest.normalized.json",
       "trial_class": "evaluation_valid_fail",
       "trace": {
-        "tp": 0,
+        "tp": 4,
         "fp": 1,
-        "fn": 5,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0
+        "fn": 1,
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1": 0.8000000000000002
       },
       "response_action_proposal": {
         "metric_semantics": "proposal only; no host response executed",
@@ -519,16 +647,33 @@
       },
       "actual_response_executed": false,
       "post_state": "not_applicable_for_llm_direct",
-      "source_files_sha256": {
+      "manifest": "data/llm_direct/MEP-WINDOWS-WEBSHELL-01/formal_result_manifest.json",
+      "source_original_manifest_sha256": "371ca0fe7a10e8243b5d96704851920873a78f10797b0f81d6113380ca4c9ed4",
+      "source_original_files_sha256": {
         "sanitized_evidence.json": "440457480f3743cf2276aa7c2b36c38a4dbc479e928c83e92636f8bcd4da84bd",
         "sanitizer_receipt.json": "0b50bf2b379312975be6deb308178ad802e1e6e54b072254e1cb2a1d6a3dbfd0",
         "llm_call.json": "9ae68bd1f04f0778d0d14e821d8aab27f860aab29c45ae991bb7d64a0ad09376",
         "prediction_ir.json": "ab55d70b459f2a6e87e1390998c1ac69ace6ec90421f50335d10db567ace0552",
         "casefile.json": "5faebf9ec6922ae79acf875a4daff2fe9413aa508168b553b2aaf1353d4ee234",
         "proposed_action_score.json": "1a6232fd4326460b8e7d565e6ac4057d5dc73c540ae13644766ca1f41b4d0cbb",
-        "score.json": "5943addb0b359d0475e1d97a36354c04a07ee047072036ba0ae2353049fdc002",
-        "formal_result_manifest.json": "371ca0fe7a10e8243b5d96704851920873a78f10797b0f81d6113380ca4c9ed4"
+        "score_before_adapter_alignment.json": "5943addb0b359d0475e1d97a36354c04a07ee047072036ba0ae2353049fdc002",
+        "formal_result_manifest_before_adapter_alignment.json": "371ca0fe7a10e8243b5d96704851920873a78f10797b0f81d6113380ca4c9ed4"
+      },
+      "exported_files_sha256": {
+        "adapted_casefile.json": "d7cc17877d3a2a015b1d89e3d320cee67b906aec0acb823f370ebacb6a0bd6a8",
+        "casefile.json": "48ecf8be3a3ad4f8295e3ee02d8092ca33821186b0d9e73eecfe292e54e3e626",
+        "formal_result_manifest.json": "8bc0b2f8c1a7e81907b4e3eb2f8128a34b5f6dc2769f6372cf71b599ac58a96f",
+        "formal_result_manifest_before_adapter_alignment.json": "1c883d24ec8b2d3b83ac825899ce161e2c6e6f6dd2cf5835cf3a4bb625b7b7e4",
+        "ground_truth.json": "c94c29af2ac75a9f8ac1af663c96b2e429e124eb3a783ba2766cfec588ff5cb5",
+        "llm_call.json": "bd8c6607426089373ac7def5caaca4fc9c367435ecda5517cebbf03a4a341a52",
+        "prediction_ir.json": "fcd862ecb54cc5d6993e649a02041f2873c751f247ed6d26a0c7f0908d40206d",
+        "proposed_action_score.json": "80c5938ead0772b550ac677b6603fe32fc3ff86db062ea228f0be7f0b1b4a3b9",
+        "sanitized_evidence.json": "4bd7733603999bc7f9d8eac23c0927e0270b036d881244d726d69d66b68124bb",
+        "sanitizer_receipt.json": "491c4bbef34c2edabb286745795c623ba0f43d1c63099b5e19671de7ff6dbdeb",
+        "score.json": "1aa1dee77bbd52b83b84bd4f8aa427a4db2f9a07c69fc33525a5e8050dcc8b4b",
+        "score_before_adapter_alignment.json": "64ecbcaa06f7116b07fd89d5dcd05d7dea100ce8604d041e2866ba908c721a03"
       }
     }
-  ]
+  ],
+  "scoring_revision": "adapter_alignment"
 }

@@ -19,7 +19,6 @@ sys.path.insert(0, str(ROOT / "src"))
 from c2trace.agents import AuditorAgent, ExecutorAgent, PlannerAgent
 from c2trace.agents.target_identity import TargetIdentityValidator
 from c2trace.config import load_env_file
-from c2trace.experience import ExperienceEligibilityError, load_experience_context, write_experience
 from c2trace.kb import load_c2kb
 from c2trace.models import CaseFile, MinimalAlert, ValidationError
 from c2trace.orchestrator import RecentFileDiscoveryPolicy, WorkflowController
@@ -177,9 +176,6 @@ def main() -> int:
         ),
     )
     parser.add_argument("--max-steps", type=int, default=60, help="Maximum StrategyTree execution steps")
-    parser.add_argument("--write-experience", action="store_true", help="Write sanitized reusable experience after the case")
-    parser.add_argument("--experience-history", help="Experience history directory to read from and/or write to")
-    parser.add_argument("--experience-top-k", type=int, default=3, help="Number of sanitized experience records to pass to Planner when --experience-history is set")
     args = parser.parse_args()
     response_tools = sorted(set(args.response_tools or RESPONSE_TOOLS))
     if args.execute_response and not (
@@ -235,9 +231,6 @@ def main() -> int:
             "reviewed_target_input": reviewed_input.path if reviewed_input else "",
             "reviewed_target_input_sha256": reviewed_input.sha256 if reviewed_input else "",
             "max_steps": args.max_steps,
-            "write_experience": args.write_experience,
-            "experience_history": str(Path(args.experience_history).resolve()) if args.experience_history else "",
-            "experience_top_k": args.experience_top_k,
         },
     }
 
@@ -333,17 +326,6 @@ def main() -> int:
     except (OSError, UnicodeError, ValueError) as exc:
         print(f"Unable to load C2 knowledge pack: {exc}", file=sys.stderr)
         return 2
-    experience_context = []
-    if args.experience_history:
-        try:
-            experience_context = load_experience_context(
-                args.experience_history,
-                alert,
-                top_k=args.experience_top_k,
-            )
-        except (OSError, UnicodeError, ValueError) as exc:
-            print(f"Unable to load experience history: {exc}", file=sys.stderr)
-            return 2
     # Auditor creates and exclusively owns the per-run Ed25519 private key.
     # Infrastructure receives only its public key.
     auditor = AuditorAgent(require_llm=args.require_auditor_llm)
@@ -454,7 +436,6 @@ def main() -> int:
     auditor.target_validator = target_validator
     planner = PlannerAgent(
         knowledge_pack=kb,
-        experience_context=experience_context,
         allowed_response_tools=set(response_tools),
         strategy_tree_template=strategy_tree_template,
         tool_catalog=catalog,
@@ -495,27 +476,11 @@ def main() -> int:
         "run_case",
         details=run_metadata["input"],
     )
-    auxiliary_exit_code = 0
-    if args.write_experience:
-        experience_root = Path(args.experience_history) if args.experience_history else ROOT / "results" / "experience_history"
-        try:
-            experience_path = write_experience(case, experience_root)
-            case.add_timeline("experience_written", f"Sanitized experience record written to {experience_path}", "experience")
-            run_metadata["experience"] = {"status": "written", "path": str(experience_path.resolve())}
-        except ExperienceEligibilityError as exc:
-            case.add_timeline("experience_skipped", str(exc), "experience")
-            run_metadata["experience"] = {"status": "skipped_ineligible", "reason": str(exc)}
-            print(f"Experience not written: {exc}", file=sys.stderr)
-        except (OSError, UnicodeError, TypeError, ValueError) as exc:
-            case.add_timeline("experience_write_failed", str(exc), "experience")
-            run_metadata["experience"] = {"status": "write_failed", "reason": str(exc)}
-            auxiliary_exit_code = 3
-            print(f"Experience write failed: {exc}", file=sys.stderr)
     finished_at = datetime.now(timezone.utc)
     # A completed Python process is not necessarily a successful incident run.
     # Make shell automation fail closed on attribution/response/verification
     # outcomes while retaining both accepted terminal modes.
-    cli_exit_code = auxiliary_exit_code or cli_exit_code_for_status(case.final_status)
+    cli_exit_code = cli_exit_code_for_status(case.final_status)
     run_metadata["finished_at"] = finished_at.isoformat()
     run_metadata["duration_ms"] = round((time.perf_counter() - started_clock) * 1000, 3)
     run_metadata["result"] = {

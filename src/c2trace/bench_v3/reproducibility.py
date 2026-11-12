@@ -119,7 +119,6 @@ def build_software_lock(
             "model": model or os.environ.get("DEEPSEEK_MODEL") or "deepseek-chat",
             "planner_temperature": 0.2,
             "auditor_temperature": 0.1,
-            "experience_history": "frozen_empty",
             "vm_snapshot_id": str(vm_snapshot_id or "").strip(),
         },
     }

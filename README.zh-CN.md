@@ -1,24 +1,30 @@
-# C2Trace 初稿复现包
+# C2Trace
 
-本包对应旧8案初稿，以及2026年10月15日更新后的基线数据。包含系统源码、案例静态定义、已选定实验记录、消融变体源码和完整 LaTeX 稿件；不包含后续新增案例与双基线开发工作。
+C2Trace 根据网络告警调查 Windows 主机，通过领域规划指导、共享 CaseFile、独立审核与受约束执行完成响应，并在执行后验证主机状态。
 
-**查看系统实现：**从 `run_case.py`、`src/c2trace/agents/`、`src/c2trace/orchestrator.py`、`src/c2trace/mcp/` 开始。知识库实现在 `kb.py`，历史经验实现在 `experience.py`；本次实验未开启历史经验读写，不能声称它带来实验收益。
+## 实验数据
 
-**查看论文：**`paper/main.tex` 是完整主稿。将 `paper` 内的文件和子文件夹上传到 Overleaf，选择 pdfLaTeX。未修改当前论文内容，也未将后续绘图草稿替换进来。
+| 实验 | 次数 | 内容 |
+|---|---:|---|
+| RQ1 | 8 | 八个场景的效果实验 |
+| RQ2 在线基线 | 48 | C2Trace 与 Public ReAct，每场景每系统重复三次 |
+| RQ2 离线基线 | 8 | 固定输入下的调查发现和动作提案 |
+| RQ3 | 96 | 完整系统及三个变体，每场景每配置重复三次 |
 
-**查看和复算数据：**在仓库根目录执行：
+RQ3 采用论文编号：A1 对应原 B1，移除领域知识及专用规划指导；A2 对应原 B4，关闭调查阶段的命令行载荷路径提取；A3 对应原 B3，移除独立证据审核并保留执行防护。完整系统独立保留24次试验。原始记录的运行编号保持不变，编号对应关系见数据清单。A2 为后续批次，四次首次请求传输失败仍计入24次试验。
+
+## 离线复核
 
 ```shell
 python scripts/extract_artifacts.py
 python scripts/recompute_results.py
+python scripts/rescore_rq3.py
 ```
 
-解压后，`data/effect` 为8条效果记录，`data/baseline` 为48条基线记录，`data/ablation` 为32条消融记录，`data/llm_direct` 为8条单次推理记录。总计96条记录，不是96个独立场景。耗时、调用数和 Token 来自这些记录。
+需要 Python 3.11 或更新版本；解压脚本自动合并分卷并核对校验值，命令不调用模型、不连接实验主机。结果位于 `results/recomputed/`，包含逐次、逐场景及汇总结果。未定义指标保留为空。离线 LLM 采用已纠正的输出适配评分，Trace F1 为0.730，Action F1为0.444；原始模型输出保持不变。
 
-复算结果在 `results/recomputed`：每条记录和每个案例的 TP、FP、FN、Precision、Recall、F1，以及时间和 Token 均可查阅。`null` 表示该指标在对应条件下未定义或没有记录，不能改成0。基线复算采用最终选定的v5数据，保留有效实验中的失败结果；消融仍按描述性 smoke 实验解释。
+## 代码与论文
 
-数据中的密钥、认证字段和个人用户目录经过脱敏。为保持实验事实可追踪，保留实验用 IP、PID、路径主体、文件哈希和数值记录。原记录中的历史摘要不代表脱敏后文件的摘要，发布包校验请使用新的清单。
+主程序在 `src/c2trace/`，入口为 `run_case.py`。通用领域知识和提示位于 `kb/` 与 `prompts/`。解压后，`variants/rq3_core/` 提供完整系统、A1和A3的源代码，`variants/rq3_payload/` 提供A2的源代码。通过 `python scripts/run_ablation.py --variant A1 --help` 查看论文编号入口。
 
-本包提供离线数据复算和源代码检查。重新在虚拟机运行实验仍需安装外部工具、配置自己的密钥并采集当前对象身份；不包含虚拟机镜像、第三方植入体二进制或现成凭据。源码与每次历史运行完全一致的保证超出了已留存证据，具体版本检查见 `data/source_version_checks.json`。
-
-完整安装、测试与实验边界见 [README.md](README.md)。
+`paper/` 包含本地提供的论文源文件及其引用图片。运行和安装说明见英文 [README](README.md)，验证结果见 [TESTING.md](TESTING.md)。

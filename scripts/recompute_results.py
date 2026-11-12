@@ -15,6 +15,7 @@ FIELDS = ('tp','fp','fn','precision','recall','f1')
 COSTS = ('llm_calls','tool_calls','prompt_tokens','completion_tokens','total_tokens',
          'case_duration_ms','end_to_end_duration_ms','investigation_duration_ms',
          'response_duration_ms','verification_duration_ms')
+TOKEN_COSTS = ('prompt_tokens','completion_tokens','total_tokens')
 
 def read(p): return json.loads(p.read_text(encoding='utf-8-sig'))
 def metrics(tp,fp,fn):
@@ -55,10 +56,22 @@ def run():
         else:
             row['response']=score_metric(score,'response')
             row['cost']=read(path/'operational_metrics.json')['metrics']
+            if entry['experiment']=='ablation':
+                outcome=read(path/'trial_result.json')
+                assert outcome['infrastructure_valid'] is True,entry
+                assert outcome['include_in_evaluation_denominator'] is True,entry
+                assert outcome['run_id']==entry['run_id'],entry
+                row['cleanup_completed']=outcome.get('cleanup_completed')
+                if not entry['token_usage_available']:
+                    # Keep original records unchanged. These zero fields reflect
+                    # unavailable usage after transport failure, not measured zero.
+                    row['raw_recorded_tokens']={k:row['cost'][k] for k in TOKEN_COSTS}
+                    assert all(v==0 for v in row['raw_recorded_tokens'].values()),entry
+                    row['cost']={**row['cost'],**dict.fromkeys(TOKEN_COSTS)}
             post=read(path/'post_response_validation.json')
             row['poststate_passed']=post.get('passed')
             if entry['experiment']=='effect': expected=reference['rq1']['per_case'][entry['case_id']]
-            elif entry['experiment']=='ablation': expected=reference['ablation']['per_case'][entry['case_id']][entry['system']]
+            elif entry['experiment']=='ablation': expected=reference['ablation']['per_trial'][entry['run_id']]
             else: expected=None
         if expected:
             for kind in ['trace','response']:
@@ -68,7 +81,11 @@ def run():
         row['trial_class']=score.get('trial_class')
         rows.append(row)
     populations=collections.Counter(r['experiment'] for r in rows)
-    assert populations=={'effect':8,'baseline':48,'ablation':32,'llm_direct':8},populations
+    assert populations=={'effect':8,'baseline':48,'ablation':96,'llm_direct':8},populations
+    ablation=[r for r in rows if r['experiment']=='ablation']
+    assert collections.Counter(r['system'] for r in ablation)==dict.fromkeys(('FULL','A1','A2','A3'),24)
+    assert len({(r['system'],r['case_id'],r['repeat']) for r in ablation})==96
+    assert sum(not r['token_usage_available'] for r in ablation)==4
     groups=collections.defaultdict(list)
     for r in rows:groups[(r['experiment'],r['system'])].append(r)
     summaries={};case_rows=[]
@@ -94,7 +111,29 @@ def run():
                 summary['macro'][kind][k]={'n_defined':len(values),'mean':sum(values)/len(values) if values else None}
         for k in COSTS:
             values=[r['cost'][k] for r in members if r['cost'].get(k) is not None]
-            summary['cost'][k]={'n_defined':len(values),'sum':sum(values) if values else None,'mean':sum(values)/len(values) if values else None}
+            total=sum(values) if values else None
+            mean_defined=sum(values)/len(values) if values else None
+            summary['cost'][k]={'n_defined':len(values),'sum':total,'mean':mean_defined}
+            if experiment=='ablation' and k in TOKEN_COSTS:
+                summary['cost'][k].update(mean=total/len(members) if total is not None else None,
+                    mean_recorded_per_trial=total/len(members) if total is not None else None,
+                    mean_defined=mean_defined, n_usage_unavailable=len(members)-len(values))
+        if experiment=='ablation':
+            expected=reference['ablation']['variants'][system]
+            for kind in ('trace','response'):
+                for k in FIELDS: assert same(summary[kind][k],expected[kind][k]),(system,kind,k)
+                assert same(summary['macro'][kind]['f1']['mean'],expected['macro'][kind]['f1'])
+                assert summary['macro'][kind]['f1']['n_defined']==expected['macro'][kind]['n_defined']
+            assert summary['poststate_passed']==expected['poststate_passed']
+            assert summary['poststate_defined']==24
+            for k,cost in expected['cost'].items():
+                for field in ('sum','mean','n_defined'):
+                    assert same(summary['cost'][k][field],cost[field]),(system,k,field)
+            for item in local:
+                case_expected=reference['ablation']['per_case'][item['case_id']][system]
+                assert item['n']==3
+                for kind in ('trace','response'):
+                    for k in FIELDS: assert same(item[kind][k],case_expected[kind][k])
         summaries[experiment+'/'+system]=summary
     for system in ['c2trace','react']:
         got=summaries['baseline/'+system]
@@ -112,7 +151,7 @@ def main():
         (args.output/(name+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     flat=[]
     for r in rows:
-        item={k:r.get(k) for k in ['experiment','system','case_id','trial_id','run_id','trial_class','poststate_passed']}
+        item={k:r.get(k) for k in ['experiment','system','source_variant','source_campaign','case_id','trial_id','run_id','trial_class','poststate_passed','token_usage_available']}
         for kind in ['trace','response']:
             item.update({kind+'_'+k:v for k,v in r[kind].items()})
         item.update({k:r['cost'].get(k) for k in COSTS});flat.append(item)

@@ -1223,7 +1223,7 @@ def render_teacher_report(run_root: Path, index: Mapping[str, Any]) -> str:
         "",
         "## 4. C2Trace 三智能体活动",
         "",
-        f"- Planner：依据最小告警、C2-KB、空历史经验和 MCP 工具目录生成 StrategyTree。Planner 调用完整成功：`{str(planner_ok).lower()}`。证据：{_evidence_citation(index, 'c2trace_dryrun/run_metadata.json')}。",
+        f"- Planner：依据最小告警、C2-KB 和 MCP 工具目录生成 StrategyTree。Planner 调用完整成功：`{str(planner_ok).lower()}`。证据：{_evidence_citation(index, 'c2trace_dryrun/run_metadata.json')}。",
         f"- Executor：经 stdio MCP 调查网络、进程、文件和相关输出；在授权后 exact-once 执行响应，并重新查询真实状态。证据：{_evidence_citation(index, 'c2trace_execute/run_metadata.json')}。",
         f"- Auditor：LLM 给出语义理由，确定性内核锁定 PID、路径、创建时间、端口和哈希，再签发一次性授权。Auditor 调用全部成功：`{str(auditor_ok).lower()}`。证据：{_evidence_citation(index, 'c2trace_execute/casefile.json')}。",
         f"- 本次全部 LLM usage 记录的 token 合计：`{total_tokens}`。",

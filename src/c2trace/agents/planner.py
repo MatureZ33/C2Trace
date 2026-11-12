@@ -41,14 +41,12 @@ class PlannerAgent:
         *,
         llm_client: Any | None = None,
         knowledge_pack: C2KnowledgePack,
-        experience_context: list[dict[str, Any]] | None = None,
         allowed_response_tools: set[str] | list[str] | tuple[str, ...] | None = None,
         strategy_tree_template: dict[str, Any] | None = None,
         tool_catalog: list[dict[str, Any]] | None = None,
     ) -> None:
         self.llm_client = llm_client or DeepSeekClient()
         self.knowledge_pack = knowledge_pack
-        self.experience_context = experience_context or []
         self.tool_catalog = [dict(item) for item in (tool_catalog or [])]
         catalog_names = {
             str(item.get("name") or "")
@@ -91,7 +89,6 @@ class PlannerAgent:
             "minimal_c2_seed_alert": case.source_alert,
             "casefile_summary": case.compact_summary(),
             "c2_kb": self.knowledge_pack.to_prompt_context(),
-            "sanitized_experience_history": self.experience_context,
             "mcp_tool_catalog": [
                 {
                     "name": item.get("name"),
@@ -117,8 +114,6 @@ class PlannerAgent:
                 "The JSON root must contain tree_id, root_objective, and nodes.",
                 "Do not include PID, process path, payload path, registry value, Sandcat, Caldera operation result, or any host-side answer unless it is already in the alert.",
                 "Use alert fields for remote_ip, remote_port, protocol, victim_ip.",
-                "Sanitized experience history is reusable pattern memory only; do not treat it as current-case evidence.",
-                "Never copy concrete PID, IP, process path, payload path, registry value, Run Key, Sandcat, or Caldera answers from experience history.",
                 "Use placeholders for unknown evidence, such as {{evidence.pid}}, {{evidence.process_path}}, {{evidence.persistence.reg_path}}, {{evidence.persistence.value_name}}.",
                 "investigate and verify nodes use allowed read-only tools.",
                 "response nodes use allowed response tools and must depend on an evidence_sufficient_for_response decision node.",
@@ -538,7 +533,6 @@ class PlannerAgent:
             "blocked_response_node": blocked_node.to_dict(),
             "audit_feedback": reason,
             "c2_kb": self.knowledge_pack.to_prompt_context(),
-            "sanitized_experience_history": self.experience_context,
             "allowed_read_only_tools": [
                 "check_network",
                 "check_process",
@@ -555,7 +549,6 @@ class PlannerAgent:
                 "Every node must be type investigate.",
                 "Do not add response nodes.",
                 "Do not invent host-side artifacts.",
-                "Sanitized experience history is pattern memory only, not current-case evidence.",
                 "Use placeholders for unknown evidence.",
             ],
         }

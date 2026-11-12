@@ -1,32 +1,24 @@
 {
-  "schema_version": "llm_direct.offline_closure_manifest.v1",
-  "generated_at": "2026-10-05T19:11:55.819150+00:00",
-  "source_directory": "第一轮基线对比实验/LLM-Direct-SetB-20261001",
-  "output_directory": "第一轮基线对比实验/LLM-Direct-SetB-20261001-offline-closure-v2",
+  "schema_version": "llm_direct.offline_closure_manifest.v2",
   "case_count": 8,
   "all_cases_closed": true,
-  "original_setb_unchanged": true,
+  "source_archive": "archives/llm_direct.zip",
+  "archive_sha256": "72ed93e70bc38c30e7e2035f93e7b4cac2a69670943cdf6c0633b8b6a0afa55d",
   "no_new_model_api_calls": true,
   "no_live_infrastructure_started": true,
+  "original_prediction_and_call_files_unchanged": true,
+  "scoring_revision": "adapter_alignment",
   "semantics": {
-    "trace": "unified trace scorer output from score.json",
-    "response": "Response Action Proposal metrics from proposed_action_score.json",
+    "trace": "Scorer output from adapted_casefile.json; current result stored in score.json",
+    "response": "Action-proposal metrics from unchanged proposed_action_score.json",
     "actual_response_success_rate": "not measured; no host response executed"
   },
-  "source_manifest_sha256": {
-    "AEL-CARBANAK-RAT-001": "d2727c8d0a4f4887a1f21cbd5671d5445a27a4f68eb024cb18f2ae4f92ffdf6f",
-    "AEL-MUSTANG-PANDA-PLUGX-001": "318047abcf8740d9ab7bad2546768f136c33442233814f310be4c19b02c41ec5",
-    "AEL-OILRIG-SIDETWIST-001": "70ecc4cc724fd9343307b3084c6cdcf0c9867ac9e5eb51f5f0076c957d6741e3",
-    "AEL-SANDWORM-EXARAMEL-WIN-001": "7817653d1602de514bd2788f4edb054ca3462f5d9abbf39e7733f4b45d4d0ab3",
-    "AEL-WIZARD-EMOTET-001": "d674d405f8eb99a406398cef28b944cc62050355f3e5cd4b46c88a95a3ed00d4",
-    "AURORA-CHAIN-001": "5b6f49ebfe40f49adb51b2d8862ddd95176cea6b48c31959c52c2d290edbf910",
-    "AURORA-CHAIN-002": "c1ae25ae2d0a2cf263567be6485d4186ef80eeea6a5a6fd7df465b65f77177dc",
-    "MEP-WINDOWS-WEBSHELL-01": "371ca0fe7a10e8243b5d96704851920873a78f10797b0f81d6113380ca4c9ed4"
-  },
   "artifacts": {
-    "llm_direct_trial_inventory.json": "0d566c05a0b6274aca6fe6c61551dd031c6ef963d2e5f29bdd7a0264b7b408ce",
-    "llm_direct_per_case_aggregate.json": "6c57c1669ac13fed7e2c673a8b49aabf75226ca6d0403a201a12745405057853",
-    "llm_direct_macro_micro_aggregate.json": "59273ec236803142b19f06a610279caca4166806366a97245ca842d9d406ffec",
-    "llm_direct_offline_closure_report.md": "43cb5cc55a420a3c245eb7c9e96ad942180ed6c4e3c4ab7adb85f99d45cad8f1"
+    "adapter_alignment_metrics.json": "77548186a8133da7facf955c8ea1dee69418a8e372f6d6baa76049571ec81930",
+    "adapter_alignment_provenance.json": "3a1e6e72656bec513333aee59ccbe7544feb6b7e5860a0fe1f9a6da0feb57f82",
+    "llm_direct_macro_micro_aggregate.json": "68c6b9fba078f7a6b028f7dca0426af74aaeb4a26f14a3d2da8a68425e54e21e",
+    "llm_direct_per_case_aggregate.json": "fe30bc6455160628b28cb4511ec079495524d8372703f1df3da59791d81dc3df",
+    "llm_direct_trial_inventory.json": "ec83ac1fb6f770c89cc8d0c837b40c29665963a530cd211126e98118881b1e57",
+    "README.md": "3ed4c74aa8ad9e0eeb76f1f04a28f289e528f0f8cc86c8437a39c722a6cb697c"
   }
 }

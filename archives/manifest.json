@@ -1,9 +1,234 @@
 [
   {
-    "path": "archives/effect.zip",
-    "sha256": "9bf65080e7bcdc8780a4d40cb72cb3722dc91c1ccdbd0939ecc423e4c1443d68",
-    "bytes": 1132172,
-    "files": 331
+    "path": "archives/ablation.zip",
+    "sha256": "bc000e1e21912f28ef992277393611968dce0a9d3e1ce546150e4da9ceac5fba",
+    "bytes": 21127638,
+    "files": 5915,
+    "parts": [
+      {
+        "path": "archives/ablation.zip.part001",
+        "bytes": 524288,
+        "sha256": "0d72b18c9ba8dde66e723a8f0149833f4d9ba91045b0b3ca076c82ba2e9e1fc1"
+      },
+      {
+        "path": "archives/ablation.zip.part002",
+        "bytes": 524288,
+        "sha256": "4c46e67c0f8434a1767fc97b607fe68d5272ee826ce417d0adfb6273bfbe5754"
+      },
+      {
+        "path": "archives/ablation.zip.part003",
+        "bytes": 524288,
+        "sha256": "13ef6fc6d1cb0a31b291e1754a36d2612ab425b1334c51cafd8163419541d010"
+      },
+      {
+        "path": "archives/ablation.zip.part004",
+        "bytes": 524288,
+        "sha256": "594cd771b6cbc01b0ea5e58af3105a9bc823435348e820f0fc04cbd6ae7afc4c"
+      },
+      {
+        "path": "archives/ablation.zip.part005",
+        "bytes": 524288,
+        "sha256": "72552adaed588a9827f76da4e7274e6492178b7ed49b620d8a63930b8df925f4"
+      },
+      {
+        "path": "archives/ablation.zip.part006",
+        "bytes": 524288,
+        "sha256": "8983c0517c1f58daeda8628545294531e85d03ca522659ef8645241e719720c1"
+      },
+      {
+        "path": "archives/ablation.zip.part007",
+        "bytes": 524288,
+        "sha256": "faa3377cd4ff5108a23138031d71fc9c69ca75e3fbee81f68d8d504cb3798004"
+      },
+      {
+        "path": "archives/ablation.zip.part008",
+        "bytes": 524288,
+        "sha256": "45338b7b120fdc2c46d765a4e584da6c5237e88c21ae9d6d312da0cc111f699f"
+      },
+      {
+        "path": "archives/ablation.zip.part009",
+        "bytes": 524288,
+        "sha256": "e53df957982944beca5cec8cdad14f656dab0091c9f65fb55029ccce5a0b7087"
+      },
+      {
+        "path": "archives/ablation.zip.part010",
+        "bytes": 524288,
+        "sha256": "d99d39ce0e7436053eb6edf8f58c0b70a5f481d789f03a8782f8459ed07a6498"
+      },
+      {
+        "path": "archives/ablation.zip.part011",
+        "bytes": 524288,
+        "sha256": "0096f6e1f9106d6ee0ba8b4801aa7faf1e6ac59b128e46689d31f2356e7d3761"
+      },
+      {
+        "path": "archives/ablation.zip.part012",
+        "bytes": 524288,
+        "sha256": "8251fe0ece3b35cb8378abc1c6affffbb22113c8b839facc9b6a9fa7993dac04"
+      },
+      {
+        "path": "archives/ablation.zip.part013",
+        "bytes": 524288,
+        "sha256": "5edbe07c4926c284f1280d3b78451634b01f0501ce70919f52187bd600bac2ad"
+      },
+      {
+        "path": "archives/ablation.zip.part014",
+        "bytes": 524288,
+        "sha256": "6acb1e049c8fb4e27e1fc990a33b2d58c12ab7183a54aff36082645b61281b2c"
+      },
+      {
+        "path": "archives/ablation.zip.part015",
+        "bytes": 524288,
+        "sha256": "f17ba59fd878db769ca26e1bc000d7536cffe3f6fd7e7d363a29a547ca81f3d8"
+      },
+      {
+        "path": "archives/ablation.zip.part016",
+        "bytes": 524288,
+        "sha256": "4daf0067c9cdd93543d07d43fac74ed8107b8e101591c16b2369bb1acd3ed04a"
+      },
+      {
+        "path": "archives/ablation.zip.part017",
+        "bytes": 524288,
+        "sha256": "074466fd37dbf4c76faffc80b2ec65c710e208e9859d1f017e6d1c0dd348812c"
+      },
+      {
+        "path": "archives/ablation.zip.part018",
+        "bytes": 524288,
+        "sha256": "f5728a9149011f10dc42de130efdad4d67afa23ae4130d6122a864c811c43281"
+      },
+      {
+        "path": "archives/ablation.zip.part019",
+        "bytes": 524288,
+        "sha256": "51fef8b21206fd4333e633939461d4c0c6e895c5e3798640d3c23549cfd13601"
+      },
+      {
+        "path": "archives/ablation.zip.part020",
+        "bytes": 524288,
+        "sha256": "1c03de14c7d784a77078afb52e56e60614946ce0ad7ffbbc2cb87e458a364576"
+      },
+      {
+        "path": "archives/ablation.zip.part021",
+        "bytes": 524288,
+        "sha256": "a3b2bc06077bdf388ca609ad5ca3b59963d94248101151da8cac5e9dc8c2815a"
+      },
+      {
+        "path": "archives/ablation.zip.part022",
+        "bytes": 524288,
+        "sha256": "54414c8b714d1f772535c68461c1652408ee282ced5261289317dd38d780d46e"
+      },
+      {
+        "path": "archives/ablation.zip.part023",
+        "bytes": 524288,
+        "sha256": "f3ce9c6145f5fb0c4c190a70a7e6c12831f06eca9b087fb859dc1dced6b2e4a6"
+      },
+      {
+        "path": "archives/ablation.zip.part024",
+        "bytes": 524288,
+        "sha256": "9fac806d2c2f361a05ae551110aa1d6d6ba2e291bdde71f06f96369d433abcf8"
+      },
+      {
+        "path": "archives/ablation.zip.part025",
+        "bytes": 524288,
+        "sha256": "ca8f75d4439177060b680ef31cc40e23b917891f79b3310f657467308be8d979"
+      },
+      {
+        "path": "archives/ablation.zip.part026",
+        "bytes": 524288,
+        "sha256": "5991590ee94634c23ea68635838a2814bdd00a26faa481e1b8bb568af1296ca6"
+      },
+      {
+        "path": "archives/ablation.zip.part027",
+        "bytes": 524288,
+        "sha256": "e920c5e87798f88d6606c2fad1863d4d8c3a7bd9a1386617371aaedfddd11072"
+      },
+      {
+        "path": "archives/ablation.zip.part028",
+        "bytes": 524288,
+        "sha256": "007af5cd04aa0b8e596d09e56eddfa1e74f9892aedad3d4030e63f55806c8b7f"
+      },
+      {
+        "path": "archives/ablation.zip.part029",
+        "bytes": 524288,
+        "sha256": "dce51173d502b9af8a57316cd73a8f5b945987b2f5b4adf9bacffa557ba92834"
+      },
+      {
+        "path": "archives/ablation.zip.part030",
+        "bytes": 524288,
+        "sha256": "53c2f6906aade9d996a799670634525dc6e53d6e9863bd9c0a450cdbe7d75c84"
+      },
+      {
+        "path": "archives/ablation.zip.part031",
+        "bytes": 524288,
+        "sha256": "5d79d1fa30670bb5f6c0a971175b8eff4c8aa3a2805a5580671910853a4f048e"
+      },
+      {
+        "path": "archives/ablation.zip.part032",
+        "bytes": 524288,
+        "sha256": "2b3e21e0c9d347a3d7b7127b0428cbcbe3a4da5467f63e617f4a61ffe5a9439b"
+      },
+      {
+        "path": "archives/ablation.zip.part033",
+        "bytes": 524288,
+        "sha256": "72859c124769dca929e0219e354e3a36a2df93495520b0b06c0ff7a60ccca51b"
+      },
+      {
+        "path": "archives/ablation.zip.part034",
+        "bytes": 524288,
+        "sha256": "4bd7396bb4f3fc26c22616da8e00d6d7c4c6d9de69f4eb1970e5c14f4930a03e"
+      },
+      {
+        "path": "archives/ablation.zip.part035",
+        "bytes": 524288,
+        "sha256": "2677bb12091e404f149b89d6bfc59acfdb15ed1af6d0bdc219b9200c566ab7aa"
+      },
+      {
+        "path": "archives/ablation.zip.part036",
+        "bytes": 524288,
+        "sha256": "afa90f6b38df43f70f5c42bfceb60569bb8a05c77ce06fe4c73a4fbf6386ae08"
+      },
+      {
+        "path": "archives/ablation.zip.part037",
+        "bytes": 524288,
+        "sha256": "4ac9bfd226e5b304de904f306f6370817c1ef86b431c42f4545d279eed52830c"
+      },
+      {
+        "path": "archives/ablation.zip.part038",
+        "bytes": 524288,
+        "sha256": "2d052379a0fcfecf2c2389cc6aced7833ec3577520a4076f34756f4eddf6449f"
+      },
+      {
+        "path": "archives/ablation.zip.part039",
+        "bytes": 524288,
+        "sha256": "42a2aed1ac8c002e8aba6dc42c7e121e69b483e606dabb87cdc05347dd695c2d"
+      },
+      {
+        "path": "archives/ablation.zip.part040",
+        "bytes": 524288,
+        "sha256": "0ee2613a48d6a59fe13f989948130a38686a70cbb96728ce7894066c847de2bd"
+      },
+      {
+        "path": "archives/ablation.zip.part041",
+        "bytes": 156118,
+        "sha256": "0279686b5ad470c6f61e29288888908e2caf74db39aab2ae92399f1c7f2f8e94"
+      }
+    ]
+  },
+  {
+    "path": "archives/ablation_sources.zip",
+    "sha256": "4d1da9069891ea9c8cccf2024d6c3b49e871e0ada591e1f2a9cbf84bf9e22cad",
+    "bytes": 816555,
+    "files": 232,
+    "parts": [
+      {
+        "path": "archives/ablation_sources.zip.part001",
+        "bytes": 524288,
+        "sha256": "159153eb129e94682b7f1fbb77ea2dc83e5da85f5fcdf73cef5fc674cae90d3f"
+      },
+      {
+        "path": "archives/ablation_sources.zip.part002",
+        "bytes": 292267,
+        "sha256": "e118cf5bf7ce2b18518245edf9b9be1cd3d93ba727a6a4e1d2bace18084ef0f2"
+      }
+    ]
   },
   {
     "path": "archives/baseline.zip",
@@ -12,21 +237,33 @@
     "files": 2088
   },
   {
-    "path": "archives/ablation.zip",
-    "sha256": "5319368db1dd69a956d899b71e84dd3c45189340fe5807c6e41933ff5ebae302",
-    "bytes": 3690753,
-    "files": 1276
+    "path": "archives/effect.zip",
+    "sha256": "9bf65080e7bcdc8780a4d40cb72cb3722dc91c1ccdbd0939ecc423e4c1443d68",
+    "bytes": 1132172,
+    "files": 331
   },
   {
     "path": "archives/llm_direct.zip",
-    "sha256": "b2d8f1a855a9f7e1dbdbf572f00ac478aa8e1b1ed14de000948953cce6a4e7e2",
-    "bytes": 98526,
-    "files": 64
+    "sha256": "72ed93e70bc38c30e7e2035f93e7b4cac2a69670943cdf6c0633b8b6a0afa55d",
+    "bytes": 164126,
+    "files": 96
   },
   {
-    "path": "archives/ablation_sources.zip",
-    "sha256": "f55ee95b43825f4cf39543413e77189df27f521e02a1250c75656e335464ba00",
-    "bytes": 1492786,
-    "files": 404
+    "path": "archives/provenance.zip",
+    "sha256": "ebc122ec74156fc0f63e751c21c7e4d481ac329f59b07fa98691112f24a2293f",
+    "bytes": 768006,
+    "files": 2,
+    "parts": [
+      {
+        "path": "archives/provenance.zip.part001",
+        "bytes": 524288,
+        "sha256": "cef694a406257792807d61713b65923c7949c0496866a97b8ad1d18d1269f254"
+      },
+      {
+        "path": "archives/provenance.zip.part002",
+        "bytes": 243718,
+        "sha256": "e1569f3b313d8bd1f354028464a4051f2351af53c87bc80ea8bc88b9df93303a"
+      }
+    ]
   }
 ]
